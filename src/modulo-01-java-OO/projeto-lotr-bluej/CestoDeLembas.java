@@ -14,9 +14,6 @@ public class CestoDeLembas
     
     public boolean podeDividirEmPares()
     {
-        if (this.qtdLembas > 2 && this.qtdLembas % 2 == 0)
-            return true;
-        
-       return false;
+       return this.qtdLembas > 2 && this.qtdLembas % 2 == 0;
     }
 }
