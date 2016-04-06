@@ -5,7 +5,6 @@ public class CestoDeLembas
     public CestoDeLembas(int qtdLembas)
     {   
         //verifica se a quaintidade de lembas informada está entre 1 e 100
-
         if (qtdLembas >= 1 && qtdLembas <= 100)
             this.qtdLembas = qtdLembas;
         else {
@@ -14,7 +13,8 @@ public class CestoDeLembas
         }
     }
     
-    public boolean podeDividirEmPares() {
+    public boolean podeDividirEmPares()
+    {
         // se a quantidade for inferior a 2, logo é impossível ser divida em um número par
         if (this.qtdLembas <= 2)
             return false;
