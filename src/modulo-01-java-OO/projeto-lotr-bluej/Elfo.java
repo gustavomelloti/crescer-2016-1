@@ -14,6 +14,6 @@ public class Elfo {
     public void atirarFlechaEmDwarf(Dwarf d)
     {
         this.atirarFlecha();
-        d.perderVida(this.danoAtaque);
+        d.receberFlechada();
     }
 }

@@ -7,8 +7,8 @@ public class Dwarf
         this.qtdVida = 110;
     }
     
-    public void perderVida(int qtdVidaPerdida)
+    public void receberFlechada()
     {
-        this.qtdVida = qtdVida - qtdVidaPerdida;
+        this.qtdVida -= 10;
     }
 }
