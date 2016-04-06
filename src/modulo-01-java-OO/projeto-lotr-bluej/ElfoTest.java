@@ -24,24 +24,33 @@ public class ElfoTest
     }
     
     @Test
-    public void verificarSeElfoFoiInstanciadoCom42Flechas()
+    public void verificarSeElfoFoiInstanciadoComQuantidadePadraoDe42Flechas()
     {
         Elfo e = new Elfo("Gustavo");
         assertEquals(42, e.getFlechas());
     }
     
     @Test
-    public void verificarToStringAoCriarElfoComNomeGustavo()
+    public void verificarSeElfoFoiInstanciadoInformando50Flechas()
+    {
+        Elfo e = new Elfo("Gustavo", 50);
+        assertEquals(50, e.getFlechas());
+    }
+    
+    
+    @Test
+    public void verificarToStringAoCriarElfo()
     {
         Elfo e = new Elfo("Gustavo");
-        assertEquals("Gustavo possui 42 flecha(s) e 0 nívei(s) de experiência.", e.toString());
+        assertEquals(e.getNome() + " possui " + e.getFlechas() + " flecha(s) e " + e.getExperiencia() + " nívei(s) de experiência.", e.toString());
     }
     
     @Test
-    public void verificarToStringAoCriarElfoComNomeGustavoEAtirarUmaFlecha()
+    public void verificarToStrinAposElfoAtirarFlecha()
     {
         Elfo e = new Elfo("Gustavo");
+        String toStringAntesAtirar = e.toString();
         e.atirarFlechaEmDwarf(new Dwarf("Pedro"));
-        assertEquals("Gustavo possui 41 flecha(s) e 1 nívei(s) de experiência.", e.toString());
+        assertNotEquals(toStringAntesAtirar, e.toString());
     }
 }
