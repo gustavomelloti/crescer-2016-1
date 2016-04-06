@@ -29,4 +29,19 @@ public class ElfoTest
         Elfo e = new Elfo("Gustavo");
         assertEquals(42, e.getFlechas());
     }
+    
+    @Test
+    public void verificarToStringAoCriarElfoComNomeGustavo()
+    {
+        Elfo e = new Elfo("Gustavo");
+        assertEquals("Gustavo possui 42 flecha(s) e 0 nívei(s) de experiência.", e.toString());
+    }
+    
+    @Test
+    public void verificarToStringAoCriarElfoComNomeGustavoEAtirarUmaFlecha()
+    {
+        Elfo e = new Elfo("Gustavo");
+        e.atirarFlechaEmDwarf(new Dwarf("Pedro"));
+        assertEquals("Gustavo possui 41 flecha(s) e 1 nívei(s) de experiência.", e.toString());
+    }
 }
