@@ -13,4 +13,19 @@ public class Dwarf
     {
         this.qtdVida -= 10;
     }
+    
+    public void setNome(String nome) 
+    {
+        this.nome = nome;
+    }
+    
+    public String getNome()
+    {
+        return this.nome;
+    }
+    
+    public int getQtdVida()
+    {
+        return this.qtdVida;
+    }
 }
