@@ -2,13 +2,16 @@
 dependency1.from=Elfo
 dependency1.to=Dwarf
 dependency1.type=UsesDependency
+dependency2.from=Dwarf
+dependency2.to=Elfo
+dependency2.type=UsesDependency
 objectbench.height=76
 objectbench.width=668
 package.editor.height=400
 package.editor.width=570
 package.editor.x=30
 package.editor.y=30
-package.numDependencies=1
+package.numDependencies=2
 package.numTargets=3
 package.showExtends=true
 package.showUses=true

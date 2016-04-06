@@ -1,6 +1,6 @@
 public class Elfo {
     private String nome;
-    private int experiencia, flechas = 42;
+    private int experiencia, flechas = 42, danoAtaque = 10;
     
     public Elfo(String nome) {
         this.nome = nome;
@@ -14,6 +14,6 @@ public class Elfo {
     public void atirarFlechaEmDwarf(Dwarf d)
     {
         this.atirarFlecha();
-        d.perderVida(10);
+        d.perderVida(this.danoAtaque);
     }
 }
