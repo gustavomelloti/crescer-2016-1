@@ -16,6 +16,11 @@ public class Elfo {
         d.receberFlechada();
     }
     
+    public String toString()
+    {
+        return this.nome + " possui " + this.flechas + " flecha(s) e " + this.experiencia + " nívei(s) de experiência.";
+    }
+    
     public int getExperiencia()
     {
         return this.experiencia;
