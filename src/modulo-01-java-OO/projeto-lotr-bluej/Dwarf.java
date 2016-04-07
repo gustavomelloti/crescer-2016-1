@@ -13,7 +13,8 @@ public class Dwarf
     
     public void receberFlechada()
     {
-        this.qtdVida -= 10;
+        if (this.qtdVida >= 10)
+            this.qtdVida -= 10;
         
         if (this.qtdVida == 0)
             this.status = Status.MORTO;
