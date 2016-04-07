@@ -31,10 +31,20 @@ public class DwarfTest
    public void dwarfRecebeFlechaAteMorrer()
    {
        Dwarf d = new Dwarf("Gustavo");
-       
+ 
        for (int i = 0; i <= 10;i++)
            d.receberFlechada();
      
        assertEquals(Status.MORTO, d.getStatus()); 
+   }
+   
+   public void verificarSeVidaPermanece0AposMorrerETentarPerderVida()
+   {
+       Dwarf d = new Dwarf("Gustavo");
+       
+       for (int i = 0; i <= 11;i++)
+           d.receberFlechada();
+       
+       assertEquals(0, d.getQtdVida());
    }
 }
