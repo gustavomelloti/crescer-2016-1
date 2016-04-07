@@ -49,8 +49,8 @@ public class ElfoTest
     public void verificarToStrinAposElfoAtirarFlecha()
     {
         Elfo e = new Elfo("Gustavo");
-        String toStringAntesAtirar = e.toString();
+        String esperado = e.toString();
         e.atirarFlechaEmDwarf(new Dwarf("Pedro"));
-        assertNotEquals(toStringAntesAtirar, e.toString());
+        assertFalse(esperado.equals(e.toString()));
     }
 }
