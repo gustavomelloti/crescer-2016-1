@@ -37,7 +37,6 @@ public class ElfoTest
         assertEquals(50, e.getFlechas());
     }
     
-    
     @Test
     public void verificarToStringAoCriarElfo()
     {

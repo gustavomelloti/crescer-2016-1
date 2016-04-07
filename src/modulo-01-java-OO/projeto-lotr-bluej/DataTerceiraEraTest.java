@@ -13,10 +13,10 @@ public class DataTerceiraEraTest
     }
     
     @Test
-    public void testarComAno3024QueNaoEhBissexto()
+    public void testarComAno3024QueEhBissexto()
     {
         DataTerceiraEra ano3024 = new DataTerceiraEra(1, 10, 3024);
-        assertFalse(ano3024.ehBissexto());
+        assertTrue(ano3024.ehBissexto());
     }
     
     @Test

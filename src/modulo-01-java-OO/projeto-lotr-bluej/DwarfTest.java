@@ -19,4 +19,22 @@ public class DwarfTest
        Dwarf d = new Dwarf("Gustavo");
        assertEquals(110, d.getQtdVida());
    }
+   
+   @Test
+   public void dwarfNasceVivo() 
+   {
+       Dwarf dwarf = new Dwarf("Gustavo");
+       assertEquals(Status.VIVO, dwarf.getStatus());
+   }
+   
+   @Test
+   public void dwarfRecebeFlechaAteMorrer()
+   {
+       Dwarf d = new Dwarf("Gustavo");
+       
+       for (int i = 0; i <= 10;i++)
+           d.receberFlechada();
+     
+       assertEquals(Status.MORTO, d.getStatus()); 
+   }
 }
