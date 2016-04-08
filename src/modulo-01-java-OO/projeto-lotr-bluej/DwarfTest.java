@@ -156,4 +156,42 @@ public class DwarfTest
         assertEquals(90, d.getQtdVida());
         assertEquals(6, d.getExperiencia());
    }
+   
+   @Test
+   public void dwarfTentaSorteComUmItemBotaComQuantidade2()
+   {
+       Dwarf d = new Dwarf("Gustavo", new DataTerceiraEra(1,1,2016));
+       Inventario inventario = new Inventario();
+       Item armadura = new Item(2, "Armadura");
+       
+       inventario.adicionarItem(armadura);
+       d.getInventario().adicionarItem(armadura);
+       
+       for (int i = 0; i <= 2; i++)
+            d.receberFlechada();
+       
+       assertEquals(1002, d.getInventario().getItens().get(0).getQuantidade());
+   }
+   
+   @Test
+   public void dwarfTentaSorteComTresItens()
+   {
+       Dwarf d = new Dwarf("Gustavo", new DataTerceiraEra(1,1,2016));
+       Inventario inventario = new Inventario();
+       Item armadura = new Item(2, "Armadura");
+       Item espada = new Item(3, "Espada");
+       Item bota = new Item(4, "Bota");
+       
+       inventario.adicionarItem(armadura);
+       d.getInventario().adicionarItem(armadura);
+       d.getInventario().adicionarItem(espada);
+       d.getInventario().adicionarItem(bota);
+       
+       for (int i = 0; i <= 2; i++)
+            d.receberFlechada();
+       
+       assertEquals(1002, d.getInventario().getItens().get(0).getQuantidade());
+       assertEquals(1003, d.getInventario().getItens().get(1).getQuantidade());
+       assertEquals(1004, d.getInventario().getItens().get(2).getQuantidade());
+   }
 }
