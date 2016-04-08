@@ -38,13 +38,21 @@ public class Dwarf
     {
         double numeroASerRetornado = 101;
         
-        if (this.dataNascimento.ehBissexto() && this.qtdVida >= 80 && this.qtdVida <= 90)
+        if (this.dataNascimento.ehBissexto() && this.qtdVida >= 80 && this.qtdVida <= 90) {
              numeroASerRetornado*= -33;
-             
+             this.tentarSorte();
+        }
+        
         if (!this.dataNascimento.ehBissexto() && (this.nome.equals("Seixas") || this.nome.equals("Meireles")))
             numeroASerRetornado= (numeroASerRetornado *33) % 100.00;
 
         return numeroASerRetornado;
+    }
+    
+    public void tentarSorte()
+    {
+        for (int i = 0; i < this.inventario.getItens().size(); i++)
+            this.inventario.getItens().get(i).incrementar100();
     }
     
     public void adicionarItem(Item item)

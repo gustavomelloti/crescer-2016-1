@@ -18,4 +18,9 @@ public class Item
     {
         return this.descricao;
     }
+    
+    public void incrementar100()
+    {
+        this.quantidade+= 1000;
+    }
 }
