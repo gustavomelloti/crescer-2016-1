@@ -17,6 +17,7 @@ public class InventarioTest
         assertSame(armadura, i.getItens().get(0));
     }
     
+    @Test
     public void testarRemocaoDeItem()
     {
         Inventario i = new Inventario();
@@ -30,6 +31,7 @@ public class InventarioTest
         assertFalse(i.getItens().contains(armadura));
     }
     
+    @Test
     public void testarInsercaoDe3Itens()
     {
         Inventario i = new Inventario();
