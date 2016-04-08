@@ -34,6 +34,19 @@ public class Dwarf
             this.status = Status.MORTO;
     }
     
+    public double getNumeroSorte ()
+    {
+        double numeroASerRetornado = 101;
+        
+        if (this.dataNascimento.ehBissexto() && this.qtdVida >= 80 && this.qtdVida <= 90)
+             numeroASerRetornado*= -33;
+             
+        if (!this.dataNascimento.ehBissexto() && (this.nome.equals("Seixas") || this.nome.equals("Meireles")))
+            numeroASerRetornado= (numeroASerRetornado *33) % 100.00;
+
+        return numeroASerRetornado;
+    }
+    
     public void adicionarItem(Item item)
     {
         this.inventario.adicionarItem(item);
@@ -42,19 +55,6 @@ public class Dwarf
     public void perderItem(Item item)
     {
         this.inventario.removerItem(item);
-    }
-    
-    public double getNumeroSorte ()
-    {   
-        double numeroASerRetornado = 101;
-        
-        if (this.dataNascimento.ehBissexto() && this.qtdVida >= 80 && this.qtdVida <= 90)
-             numeroASerRetornado*= -33;
-             
-        if (!this.dataNascimento.ehBissexto() && (this.nome.equals("Seixas") || this.nome.equals("Meireles")))
-            numeroASerRetornado = (numeroASerRetornado * 33) % 100;
-
-        return numeroASerRetornado;
     }
     
     public void setNome(String nome) 
@@ -85,5 +85,10 @@ public class Dwarf
     public DataTerceiraEra getDataNascimento()
     {
         return this.dataNascimento;
+    }
+    
+    public int getExperiencia()
+    {
+        return this.experiencia;
     }
 }
