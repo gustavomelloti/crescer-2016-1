@@ -163,7 +163,6 @@ public class DwarfTest
        Dwarf d = new Dwarf("Gustavo", new DataTerceiraEra(1,1,2016));
        Inventario inventario = new Inventario();
        Item armadura = new Item(2, "Armadura");
-       
        inventario.adicionarItem(armadura);
        d.getInventario().adicionarItem(armadura);
        

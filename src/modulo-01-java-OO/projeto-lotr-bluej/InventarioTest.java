@@ -84,4 +84,16 @@ public class InventarioTest
         Inventario inventario = new Inventario();
         assertNull(inventario.getItemComMaiorQuantidade());    
     }
+    
+    @Test
+    public void ordenarInventarioCom2tens()
+    {
+        Inventario inventario = new Inventario();
+        Item armadura = new Item(15, "armadura");
+        Item bota = new Item(10, "bota");
+        inventario.adicionarItem(armadura);
+        inventario.adicionarItem(bota);
+        inventario.ordenarItens();
+        //assertSame(bota, inventario.getItens().get(0));    
+    }
 }
