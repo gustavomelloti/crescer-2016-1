@@ -51,4 +51,15 @@ public class Inventario
         
         return this.itens.isEmpty() ? null : this.itens.get(posicaoMaior);
     }
+    
+    public void ordenarItens()
+    {
+        ArrayList<Item> aux = new ArrayList<Item>(this.itens.size());
+        
+        for (int i = this.itens.size() - 1; i >= 0 ;i--) {
+            aux.add(i, this.itens.get(i));
+        }
+        
+        this.itens = aux;
+    }
 }
