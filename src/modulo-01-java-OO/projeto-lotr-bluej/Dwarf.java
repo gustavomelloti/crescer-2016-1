@@ -1,14 +1,21 @@
 public class Dwarf
 {
-    private int qtdVida;
+    private int qtdVida = 110;
     private String nome;
-    private Status status;
+    private Status status = Status.VIVO;
+    private Inventario inventario = new Inventario();
+    private DataTerceiraEra dataNascimento;
     
     public Dwarf(String nome)
     {
-        this.nome    = nome;
-        this.qtdVida = 110;
-        this.status  = Status.VIVO;
+        this.nome = nome;
+        this.dataNascimento = new DataTerceiraEra(1, 1, 1);
+    }
+    
+    public Dwarf(String nome, DataTerceiraEra dataNascimento)
+    {
+         this.nome = nome;
+         this.dataNascimento = dataNascimento;
     }
     
     public void receberFlechada()
@@ -18,6 +25,16 @@ public class Dwarf
         
         if (this.qtdVida == 0)
             this.status = Status.MORTO;
+    }
+    
+    public void adicionarItem(Item item)
+    {
+        this.inventario.adicionarItem(item);
+    }
+    
+    public void perderItem(Item item)
+    {
+        this.inventario.removerItem(item);
     }
     
     public void setNome(String nome) 
@@ -38,5 +55,15 @@ public class Dwarf
     public Status getStatus()
     {
         return this.status;
+    }
+    
+    public Inventario getInventario()
+    {
+        return this.inventario;
+    }
+    
+    public DataTerceiraEra getDataNascimento()
+    {
+        return this.dataNascimento;
     }
 }
