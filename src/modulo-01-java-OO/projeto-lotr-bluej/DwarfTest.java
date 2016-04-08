@@ -47,4 +47,17 @@ public class DwarfTest
        
        assertEquals(0, d.getQtdVida());
    }
+   
+   public void testarConstrutorComDataTerceiraEraPadrao()
+   {
+       Dwarf d = new Dwarf("Gustavo");
+       assertEquals(new DataTerceiraEra(1, 1, 1), d.getDataNascimento());
+   }
+   
+   public void testarConstrutorInformandoDataTerceiraEra()
+   {
+       DataTerceiraEra nascimentoDwarf = new DataTerceiraEra(12, 12, 2018);
+       Dwarf d = new Dwarf("Gustavo", nascimentoDwarf);
+       assertSame(nascimentoDwarf, d.getDataNascimento());
+   }
 }
