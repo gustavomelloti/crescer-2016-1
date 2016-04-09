@@ -19,8 +19,8 @@ public class Item
         return this.descricao;
     }
     
-    public void incrementar100()
+    public void setQuantidade(int quantidade)
     {
-        this.quantidade+= 1000;
-    }
+        this.quantidade = quantidade;
+    }  
 }
