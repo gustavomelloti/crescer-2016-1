@@ -7,7 +7,7 @@ import java.util.*;
 public class HobbitContadorTest
 {
     @Test
-    public void tresParesEDeveRetornar840()
+    public void calcularDiferencaComtresPares()
     {
         ArrayList<ArrayList<Integer>> arrayDePares = new ArrayList<>();
         arrayDePares.add(new ArrayList<>(Arrays.asList(15, 18)));
@@ -21,7 +21,7 @@ public class HobbitContadorTest
     }
     
     @Test
-    public void passandoUmPar()
+    public void calcularDiferencaComUmPar()
     {
         ArrayList<ArrayList<Integer>> arrayDePares = new ArrayList<>();
         arrayDePares.add(new ArrayList<>(Arrays.asList(6, 4)));
@@ -32,7 +32,7 @@ public class HobbitContadorTest
         assertEquals(12, obitdo);
     }
     
-    public void passandoArrayVazio()
+    public void calcularDiferencaComArrayVazio()
     {
         ArrayList<ArrayList<Integer>> arrayDePares = new ArrayList<>();        
         HobbitContador contador = new HobbitContador();
@@ -42,5 +42,14 @@ public class HobbitContadorTest
         assertEquals(0, obitdo);
     }
     
-    
+    public void calcularDiferencaComParDePrimos()
+    {
+        ArrayList<ArrayList<Integer>> arrayDePares = new ArrayList<>();
+        arrayDePares.add(new ArrayList<>(Arrays.asList(43, 31)));
+        
+        HobbitContador contador = new HobbitContador();
+        int obitdo = contador.calcularDiferenca(arrayDePares);
+        
+        assertEquals(0, obitdo);
+    }
 }
