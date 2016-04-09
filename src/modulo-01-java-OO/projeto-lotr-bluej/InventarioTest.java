@@ -94,6 +94,39 @@ public class InventarioTest
         inventario.adicionarItem(armadura);
         inventario.adicionarItem(bota);
         inventario.ordenarItens();
-        //assertSame(bota, inventario.getItens().get(0));    
+        assertSame(bota, inventario.getItens().get(0));
+        assertSame(armadura, inventario.getItens().get(1));
+    }
+    
+    @Test
+    public void ordenarInventarioCom3itensSemPrecisarModificar()
+    {
+        Inventario inventario = new Inventario();
+        Item armadura = new Item(15, "armadura");
+        Item bota = new Item(40, "bota");
+        Item espada = new Item(50, "espada");
+        inventario.adicionarItem(armadura);
+        inventario.adicionarItem(bota);
+        inventario.adicionarItem(espada);
+        inventario.ordenarItens();
+        assertSame(armadura, inventario.getItens().get(0));
+        assertSame(bota, inventario.getItens().get(1));
+        assertSame(espada, inventario.getItens().get(2));
+    }
+    
+    @Test
+    public void ordenarInventarioCom3itensNecessitandoOrdenar()
+    {
+        Inventario inventario = new Inventario();
+        Item armadura = new Item(15, "armadura");
+        Item bota = new Item(40, "bota");
+        Item espada = new Item(50, "espada");
+        inventario.adicionarItem(espada);
+        inventario.adicionarItem(bota);
+        inventario.adicionarItem(armadura);
+        inventario.ordenarItens();
+        assertSame(armadura, inventario.getItens().get(0));
+        assertSame(bota, inventario.getItens().get(1));
+        assertSame(espada, inventario.getItens().get(2));
     }
 }
