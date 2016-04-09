@@ -53,13 +53,19 @@ public class Inventario
     }
     
     public void ordenarItens()
-    {
-        ArrayList<Item> aux = new ArrayList<Item>(this.itens.size());
-        
-        for (int i = this.itens.size() - 1; i >= 0 ;i--) {
-            aux.add(i, this.itens.get(i));
+    {   
+      int i = this.itens.size()-1;
+      while (i > 0) {
+          int ultimoTrocado = 0;
+          for (int j = 0; j < i; j++) {
+              if (this.itens.get(j).getQuantidade() > this.itens.get(j+1).getQuantidade()) {
+                  Item t = this.itens.get(j);
+                  this.itens.set(j, this.itens.get(j+1));
+                  this.itens.set(j+1,t);
+                  ultimoTrocado = j;
+                }
+            }
+            i = ultimoTrocado;
         }
-        
-        this.itens = aux;
-    }
+    }     
 }
