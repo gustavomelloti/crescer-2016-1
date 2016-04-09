@@ -52,7 +52,7 @@ public class Dwarf
     public void tentarSorte()
     {
         for (int i = 0; i < this.inventario.getItens().size(); i++)
-            this.inventario.getItens().get(i).incrementar100();
+            this.inventario.getItens().get(i).setQuantidade(this.inventario.getItens().get(i).getQuantidade() + 1000);    
     }
     
     public void adicionarItem(Item item)
