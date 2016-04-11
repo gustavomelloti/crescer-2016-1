@@ -1,7 +1,5 @@
-public class Elfo {
-    private String nome;
-    private int experiencia, flechas;
-    private Inventario inventario;
+public class Elfo extends Personagem {
+    private int flechas;
     
     public Elfo(String nome)
     {
@@ -29,23 +27,8 @@ public class Elfo {
         return this.nome + " possui " + this.flechas + " flecha(s) e " + this.experiencia + " nívei(s) de experiência.";
     }
     
-    public int getExperiencia()
-    {
-        return this.experiencia;
-    }
-    
     public int getFlechas()
     {
         return this.flechas;
-    }
-    
-    public String getNome()
-    {
-        return this.nome;
-    }
-    
-    public Inventario getInventario()
-    {
-        return this.inventario;
     }
 }

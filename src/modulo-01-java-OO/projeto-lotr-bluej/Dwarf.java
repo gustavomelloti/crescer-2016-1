@@ -1,9 +1,7 @@
-public class Dwarf
+public class Dwarf extends Personagem
 {
-    private int qtdVida = 110, experiencia = 0;
-    private String nome;
+    private int qtdVida = 110;
     private Status status = Status.VIVO;
-    protected Inventario inventario = new Inventario();
     private DataTerceiraEra dataNascimento;
    
     public Dwarf(String nome)
@@ -24,6 +22,7 @@ public class Dwarf
         
         if (numeroSorte < 0) {
             experiencia+=2;
+            this.tentarSorte();
             return;
         }
         
@@ -38,10 +37,8 @@ public class Dwarf
     {
         double numeroASerRetornado = 101;
         
-        if (this.dataNascimento.ehBissexto() && this.qtdVida >= 80 && this.qtdVida <= 90) {
+        if (this.dataNascimento.ehBissexto() && this.qtdVida >= 80 && this.qtdVida <= 90)
              numeroASerRetornado*= -33;
-             this.tentarSorte();
-        }
         
         if (!this.dataNascimento.ehBissexto() && (this.nome.equals("Seixas") || this.nome.equals("Meireles")))
             numeroASerRetornado= (numeroASerRetornado *33) % 100.00;
@@ -53,28 +50,8 @@ public class Dwarf
     {
         double numeroDaSorte = this.getNumeroSorte();
         
-        if (numeroDaSorte ==  -3333.0)
+        if (numeroDaSorte == -3333.0)
             this.inventario.aumentar100();    
-    }
-    
-    public void adicionarItem(Item item)
-    {
-        this.inventario.adicionarItem(item);
-    }
-    
-    public void perderItem(Item item)
-    {
-        this.inventario.removerItem(item);
-    }
-    
-    public void setNome(String nome) 
-    {
-        this.nome = nome;
-    }
-    
-    public String getNome()
-    {
-        return this.nome;
     }
     
     public int getQtdVida()
@@ -86,19 +63,9 @@ public class Dwarf
     {
         return this.status;
     }
-    
-    public Inventario getInventario()
-    {
-        return this.inventario;
-    }
-    
+   
     public DataTerceiraEra getDataNascimento()
     {
         return this.dataNascimento;
-    }
-    
-    public int getExperiencia()
-    {
-        return this.experiencia;
     }
 }
