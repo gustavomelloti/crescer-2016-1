@@ -52,12 +52,12 @@ public class IrishDwarf
     public void tentarSorte()
     {
         for (int i = 0; i < this.inventario.getItens().size(); i++) {
-            int somaQuantidade = 0;
-       
-            for (int j = this.inventario.getItens().get(i).getQuantidade(); j >= 0; j--)
-                somaQuantidade+= j;
-
-            this.inventario.getItens().get(i).setQuantidade(this.inventario.getItens().get(i).getQuantidade() + (1000*somaQuantidade));   
+            int quantidadeItens = this.inventario.getItens().get(i).getQuantidade();
+            //seta a nova quantidade do item conforme a seguinte fórmula(quantidade do item + soma da quantidade do item *1000)
+            this.inventario.getItens().get(i).setQuantidade(
+               //quantidade de itens  + 1000 * (soma a quantidade do item utilizando o conceito de PA)
+                quantidadeItens + (1000*((( 1 + quantidadeItens) * quantidadeItens) / 2))
+            );   
         }
     }
     
