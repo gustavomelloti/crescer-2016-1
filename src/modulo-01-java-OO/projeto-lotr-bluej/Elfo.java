@@ -1,6 +1,7 @@
 public class Elfo {
     private String nome;
     private int experiencia, flechas;
+    private Inventario inventario;
     
     public Elfo(String nome)
     {
@@ -41,5 +42,10 @@ public class Elfo {
     public String getNome()
     {
         return this.nome;
+    }
+    
+    public Inventario getInventario()
+    {
+        return this.inventario;
     }
 }
