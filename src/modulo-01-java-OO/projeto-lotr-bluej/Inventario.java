@@ -24,6 +24,21 @@ public class Inventario
         this.itens.remove(i);
     }
     
+    public void aumentar100()
+    {
+        for (Item item : this.itens) {
+            item.aumentar1000Unidades();
+        }
+    
+    }
+    
+    public void aumentarProporcional()
+    {
+        for (Item item : this.itens) {
+            item.aumentar1000Unidades();
+        }
+    }
+    
     public String getDescricoesItens()
     {
         String descricaoItens = "";

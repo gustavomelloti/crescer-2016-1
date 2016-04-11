@@ -19,8 +19,14 @@ public class Item
         return this.descricao;
     }
     
-    public void setQuantidade(int quantidade)
+    public void aumentar1000Unidades()
     {
-        this.quantidade = quantidade;
-    }  
+        this.quantidade += 1000;
+    }
+    
+    public void aumentarProporcionalQuantidade()
+    {
+        int resultado = this.quantidade * (this.quantidade + 1) / 2;
+        this.quantidade += (resultado * 1000);
+    }
 }
