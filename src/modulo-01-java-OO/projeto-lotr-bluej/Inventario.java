@@ -35,7 +35,7 @@ public class Inventario
     public void aumentarProporcional()
     {
         for (Item item : this.itens) {
-            item.aumentar1000Unidades();
+            item.aumentarQuantidadeProporcionalmente();
         }
     }
     

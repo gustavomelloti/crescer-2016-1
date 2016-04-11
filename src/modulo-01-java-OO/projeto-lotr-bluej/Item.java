@@ -24,7 +24,7 @@ public class Item
         this.quantidade += 1000;
     }
     
-    public void aumentarProporcionalQuantidade()
+    public void aumentarQuantidadeProporcionalmente()
     {
         int resultado = this.quantidade * (this.quantidade + 1) / 2;
         this.quantidade += (resultado * 1000);

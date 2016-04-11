@@ -1,7 +1,5 @@
 public class Dwarf extends Personagem
 {
-    private int qtdVida = 110;
-    private Status status = Status.VIVO;
     private DataTerceiraEra dataNascimento;
    
     public Dwarf(String nome)
