@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+import java.util.*;
 
 public class Inventario
 {
@@ -54,6 +54,7 @@ public class Inventario
     
     public void ordenarItens()
     {   
+      /*
       int i = this.itens.size()-1;
       while (i > 0) {
           int ultimoTrocado = 0;
@@ -66,6 +67,11 @@ public class Inventario
                 }
             }
             i = ultimoTrocado;
-        }
+        }*/
+        Collections.sort(this.itens, new Comparator<Item>() {
+            public int compare(Item item1, Item item2) {
+                return Integer.compare(item1.getQuantidade(), item2.getQuantidade());
+            }
+        });
     }     
 }
