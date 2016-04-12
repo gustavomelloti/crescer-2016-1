@@ -4,7 +4,25 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class ElfoTest
-{
+{   
+    @Test
+    public void verificarQuantidadeDeElfosAoCriarUmElfo()
+    {
+        int qtdElfosAntesDeCriar = Elfo.getContador();
+        Elfo f = new Elfo("Gustavo");
+        assertTrue(qtdElfosAntesDeCriar+1 == Elfo.getContador());
+    }
+    
+    @Test
+    public void verificarQuantidadeDeElfosAoCriarUmElfoUmElfoUmElfoVerdeUmElfoNoturno()
+    {
+        int qtdElfosAntesDeCriar = Elfo.getContador();
+        Elfo elfo = new Elfo("Gustavo");
+        ElfoVerde verde = new ElfoVerde("Green");
+        ElfoNoturno noturno = new ElfoNoturno("Noturno");
+        assertTrue(qtdElfosAntesDeCriar+3 == Elfo.getContador());
+    }
+    
     @Test
     public void verificarSePerdeuUmaFlechaAoAtirarFlecha()
     {

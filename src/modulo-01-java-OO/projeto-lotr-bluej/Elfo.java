@@ -1,18 +1,23 @@
 public class Elfo extends Personagem {
-    private int flechas;
-     
+    private int flechas = 42;
+    private static int contador = 0;
+    
+    public Elfo()
+    {
+        this.contador++;
+    }
+    
     public Elfo(String nome)
     {
         this.nome = nome;
-        this.flechas = 42;
         this.qtdVida = 100;
+        contador++;
     }
     
     public Elfo(String nome, int flechas)
     {
-        this.nome = nome;
+        this(nome);
         this.flechas = flechas;
-        this.qtdVida = 100;
     }
     
     public void atirarFlechaEmDwarf(Dwarf d)
@@ -30,5 +35,10 @@ public class Elfo extends Personagem {
     public int getFlechas()
     {
         return this.flechas;
+    }
+    
+    public static int getContador()
+    {
+        return contador;
     }
 }
