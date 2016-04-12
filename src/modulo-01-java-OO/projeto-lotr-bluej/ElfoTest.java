@@ -10,7 +10,7 @@ public class ElfoTest
     {
         int qtdElfosAntesDeCriar = Elfo.getContador();
         Elfo f = new Elfo("Gustavo");
-        assertTrue(qtdElfosAntesDeCriar+1 == Elfo.getContador());
+        assertEquals(qtdElfosAntesDeCriar+1, Elfo.getContador());
     }
     
     @Test
@@ -20,9 +20,15 @@ public class ElfoTest
         Elfo elfo = new Elfo("Gustavo");
         ElfoVerde verde = new ElfoVerde("Green");
         ElfoNoturno noturno = new ElfoNoturno("Noturno");
-        assertTrue(qtdElfosAntesDeCriar+3 == Elfo.getContador());
+        assertEquals(qtdElfosAntesDeCriar+3, Elfo.getContador());
     }
     
+    @Test
+    public void verificarQuantidadeSemCriarElfo()
+    {
+        assertEquals(Elfo.getContador(), Elfo.getContador());
+    }
+  
     @Test
     public void verificarSePerdeuUmaFlechaAoAtirarFlecha()
     {
