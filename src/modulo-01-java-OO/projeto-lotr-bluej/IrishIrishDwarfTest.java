@@ -10,15 +10,14 @@ public class IrishIrishDwarfTest
    public void verificarSePerdeuDezDeVidaAoReceberFlechada()
    {
        IrishDwarf d = new IrishDwarf("Gustavo");
-       int vidaAtual = d.getQtdVida();
        d.receberFlechada();
-       assertEquals(vidaAtual-10, d.getQtdVida());
+       assertTrue(100.00 == d.getQtdVida());
    }
    
    public void verificarSeIrishDwarfFoiInstanciadoCom110DeVida()
    {
        IrishDwarf d = new IrishDwarf("Gustavo");
-       assertEquals(110, d.getQtdVida());
+       assertTrue(110.00 == d.getQtdVida());
    }
    
    @Test
@@ -47,7 +46,7 @@ public class IrishIrishDwarfTest
        for (int i = 0; i <= 11;i++)
            d.receberFlechada();
        
-       assertEquals(0, d.getQtdVida());
+       assertTrue(0.00 == d.getQtdVida());
    }
 
    @Test
@@ -118,7 +117,7 @@ public class IrishIrishDwarfTest
    {
         IrishDwarf d = new IrishDwarf("Seixas", new DataTerceiraEra(1, 1, 2015));
         d.receberFlechada();
-        assertEquals(110, d.getQtdVida());
+        assertTrue(110.00 == d.getQtdVida());
         assertEquals(0, d.getExperiencia());
    }
    
@@ -127,7 +126,7 @@ public class IrishIrishDwarfTest
    {
         IrishDwarf d = new IrishDwarf("Seixas", new DataTerceiraEra(1, 1, 2016));
         d.receberFlechada();
-        assertEquals(100, d.getQtdVida());
+        assertTrue(100.00 == d.getQtdVida());
    }
    
    @Test
@@ -135,7 +134,7 @@ public class IrishIrishDwarfTest
    {
         IrishDwarf d = new IrishDwarf("Gustavo", new DataTerceiraEra(1, 1, 2015));
         d.receberFlechada();
-        assertEquals(100, d.getQtdVida());
+        assertTrue(100.00 == d.getQtdVida());
    }
    
    @Test
@@ -143,7 +142,7 @@ public class IrishIrishDwarfTest
    {
         IrishDwarf d = new IrishDwarf("Gustavo", new DataTerceiraEra(1, 1, 2016));
         d.receberFlechada();
-        assertEquals(100, d.getQtdVida());
+        assertTrue(100.00 == d.getQtdVida());
    }
    
    @Test
@@ -154,8 +153,8 @@ public class IrishIrishDwarfTest
         for (int i = 0; i <= 4; i++)
             d.receberFlechada();
             
-        assertEquals(90, d.getQtdVida());
-        assertEquals(6, d.getExperiencia());
+        assertTrue(90.00 == d.getQtdVida());
+        assertTrue(6.00 == d.getExperiencia());
    }
    
    @Test

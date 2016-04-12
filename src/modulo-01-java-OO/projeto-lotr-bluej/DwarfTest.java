@@ -9,15 +9,15 @@ public class DwarfTest
    public void verificarSePerdeuDezDeVidaAoReceberFlechada()
    {
        Dwarf d = new Dwarf("Gustavo");
-       int vidaAtual = d.getQtdVida();
+       double vidaAtual = d.getQtdVida();
        d.receberFlechada();
-       assertEquals(vidaAtual-10, d.getQtdVida());
+       assertTrue(100.00 == d.getQtdVida());
    }
    
    public void verificarSeDwarfFoiInstanciadoCom110DeVida()
    {
        Dwarf d = new Dwarf("Gustavo");
-       assertEquals(110, d.getQtdVida());
+       assertTrue(110.00 == d.getQtdVida());
    }
    
    @Test
@@ -46,7 +46,7 @@ public class DwarfTest
        for (int i = 0; i <= 11;i++)
            d.receberFlechada();
        
-       assertEquals(0, d.getQtdVida());
+       assertTrue(0.00 == d.getQtdVida());
    }
 
    @Test
@@ -117,7 +117,7 @@ public class DwarfTest
    {
         Dwarf d = new Dwarf("Seixas", new DataTerceiraEra(1, 1, 2015));
         d.receberFlechada();
-        assertEquals(110, d.getQtdVida());
+        assertTrue(110.00 == d.getQtdVida());
         assertEquals(0, d.getExperiencia());
    }
    
@@ -126,7 +126,7 @@ public class DwarfTest
    {
         Dwarf d = new Dwarf("Seixas", new DataTerceiraEra(1, 1, 2016));
         d.receberFlechada();
-        assertEquals(100, d.getQtdVida());
+        assertTrue(100.00 == d.getQtdVida());
    }
    
    @Test
@@ -134,7 +134,7 @@ public class DwarfTest
    {
         Dwarf d = new Dwarf("Gustavo", new DataTerceiraEra(1, 1, 2015));
         d.receberFlechada();
-        assertEquals(100, d.getQtdVida());
+        assertTrue(100.00 == d.getQtdVida());
    }
    
    @Test
@@ -142,7 +142,7 @@ public class DwarfTest
    {
         Dwarf d = new Dwarf("Gustavo", new DataTerceiraEra(1, 1, 2016));
         d.receberFlechada();
-        assertEquals(100, d.getQtdVida());
+        assertTrue(100.00 == d.getQtdVida());
    }
    
    @Test
@@ -153,7 +153,7 @@ public class DwarfTest
         for (int i = 0; i <= 4; i++)
             d.receberFlechada();
             
-        assertEquals(90, d.getQtdVida());
+        assertTrue(90.00 == d.getQtdVida());
         assertEquals(6, d.getExperiencia());
    }
    
