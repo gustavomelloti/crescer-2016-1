@@ -6,11 +6,6 @@ public class Personagem
     protected Inventario inventario = new Inventario();
     protected Status status = Status.VIVO;
     
-    public int getExperiencia()
-    {
-        return this.experiencia;
-    }
-    
     public void adicionarItem(Item item)
     {
         this.inventario.adicionarItem(item);
@@ -34,5 +29,15 @@ public class Personagem
     public double getQtdVida()
     {
         return this.qtdVida;
+    }
+    
+    public Status getStatus()
+    {
+        return this.status;
+    }
+    
+    public int getExperiencia()
+    {
+        return this.experiencia;
     }
 }
