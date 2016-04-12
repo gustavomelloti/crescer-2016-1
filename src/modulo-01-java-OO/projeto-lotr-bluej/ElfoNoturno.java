@@ -15,7 +15,7 @@ public class ElfoNoturno extends Elfo
         super.atirarFlechaEmDwarf(d);
         this.experiencia+= 2;
         
-        double qtdVidaAposAtirarFlecha = this.qtdVida - this.qtdVida * 0.05;
+        double qtdVidaAposAtirarFlecha = this.qtdVida - 5;
         
         if (qtdVidaAposAtirarFlecha <= 0)
             this.status = Status.MORTO;

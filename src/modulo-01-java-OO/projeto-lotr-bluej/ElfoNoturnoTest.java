@@ -15,7 +15,7 @@ public class ElfoNoturnoTest
    }
    
    @Test
-   public void verificarExperienciaAoAtirarTresFlecha()
+   public void verificarExperienciaAoAtirarTresFlechas()
    {
        ElfoNoturno elfo = new ElfoNoturno("Gustavo");
        Dwarf d = new Dwarf("Paul");
@@ -23,5 +23,29 @@ public class ElfoNoturnoTest
        elfo.atirarFlechaEmDwarf(d);
        elfo.atirarFlechaEmDwarf(d);
        assertEquals(9, elfo.getExperiencia());
+   }
+   
+   @Test
+   public void verificarSeElfoMorreAposAtirarVinteFlechas()
+   {
+       ElfoNoturno elfo = new ElfoNoturno("Gustavo");
+       Dwarf d = new Dwarf("Paul");
+       
+       for (int i = 0; i < 20; i++)
+           elfo.atirarFlechaEmDwarf(d);
+   
+       assertEquals(Status.MORTO, elfo.getStatus());
+   }
+   
+   @Test
+   public void verificarExperienciaAposAtirarVinteFlechas()
+   {
+       ElfoNoturno elfo = new ElfoNoturno("Gustavo");
+       Dwarf d = new Dwarf("Paul");
+       
+       for (int i = 0; i < 20; i++)
+           elfo.atirarFlechaEmDwarf(d);
+   
+       assertEquals(60, elfo.getExperiencia());
    }
 }
