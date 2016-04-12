@@ -31,4 +31,23 @@ public class ElfoVerdeTest
        elfoV.adicionarItem(arco);
        assertTrue(elfoV.getInventario().getItens().contains(arco));
    }
+   
+   @Test
+   public void verificarGanhoExperienciaAoAtirarFlecha()
+   {
+       ElfoVerde elfo = new ElfoVerde("Gustavo");
+       elfo.atirarFlechaEmDwarf(new Dwarf("Paulo"));
+       assertEquals(2, elfo.getExperiencia());
+   }
+   
+   @Test
+   public void verificarExperienciaAoAtirarTresFlecha()
+   {
+       ElfoVerde elfo = new ElfoVerde("Gustavo");
+       Dwarf d = new Dwarf("Paul");
+       elfo.atirarFlechaEmDwarf(d);
+       elfo.atirarFlechaEmDwarf(d);
+       elfo.atirarFlechaEmDwarf(d);
+       assertEquals(6, elfo.getExperiencia());
+   }
 }
