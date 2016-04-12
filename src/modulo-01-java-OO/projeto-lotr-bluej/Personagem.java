@@ -1,7 +1,8 @@
 public class Personagem
 {
     protected String nome;
-    protected int experiencia, qtdVida = 110;
+    protected int experiencia = 0;
+    protected double qtdVida = 0;
     protected Inventario inventario = new Inventario();
     protected Status status = Status.VIVO;
     
@@ -28,5 +29,10 @@ public class Personagem
     public Inventario getInventario()
     {
         return this.inventario;
+    }
+    
+    public double getQtdVida()
+    {
+        return this.qtdVida;
     }
 }
