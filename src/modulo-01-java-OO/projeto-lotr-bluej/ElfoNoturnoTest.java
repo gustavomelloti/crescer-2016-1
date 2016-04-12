@@ -26,12 +26,12 @@ public class ElfoNoturnoTest
    }
    
    @Test
-   public void verificarSeElfoMorreAposAtirarSessentaFlechas()
+   public void verificarSeElfoMorreAposAtirarNoventaFlechas()
    {
        ElfoNoturno elfo = new ElfoNoturno("Gustavo");
        Dwarf d = new Dwarf("Paul");
        
-       for (int i = 0; i < 60; i++)
+       for (int i = 0; i < 90; i++)
            elfo.atirarFlechaEmDwarf(d);
    
        assertEquals(Status.MORTO, elfo.getStatus());
