@@ -4,23 +4,21 @@ public class Elfo extends Personagem {
     public Elfo(String nome)
     {
         this.nome = nome;
-        this.experiencia = 0;
         this.flechas = 42;
-        super.qtdVida = 100;
+        this.qtdVida = 100;
     }
     
     public Elfo(String nome, int flechas)
     {
         this.nome = nome;
-        this.experiencia = 0;
         this.flechas = flechas;
-        super.qtdVida = 100;
+        this.qtdVida = 100;
     }
     
     public void atirarFlechaEmDwarf(Dwarf d)
     {
-        experiencia++;
-        flechas--;
+        this.experiencia++;
+        this.flechas--;
         d.receberFlechada();
     }
     

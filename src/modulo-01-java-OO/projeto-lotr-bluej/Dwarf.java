@@ -6,12 +6,14 @@ public class Dwarf extends Personagem
     {
         this.nome = nome;
         this.dataNascimento = new DataTerceiraEra(1, 1, 1);
+        this.qtdVida = 110.00;
     }
     
     public Dwarf(String nome, DataTerceiraEra dataNascimento)
     {
          this.nome = nome;
          this.dataNascimento = dataNascimento;
+         this.qtdVida = 110.00;
     }
     
     public void receberFlechada()
@@ -50,11 +52,6 @@ public class Dwarf extends Personagem
         
         if (numeroDaSorte == -3333.0)
             this.inventario.aumentar100();    
-    }
-    
-    public int getQtdVida()
-    {
-        return this.qtdVida;
     }
     
     public Status getStatus()
