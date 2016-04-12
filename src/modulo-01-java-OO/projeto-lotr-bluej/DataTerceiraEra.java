@@ -28,4 +28,10 @@ public class DataTerceiraEra
     {
         return this.ano % 400 == 0 || this.ano % 4 == 0 && this.ano % 100 != 0;
     }
+    
+    public boolean equals(Object obj)
+    {
+        DataTerceiraEra d = (DataTerceiraEra) obj;
+        return d != null && this.dia == d.dia && this.mes == d.mes && this.ano == d.ano; 
+    }
 }
