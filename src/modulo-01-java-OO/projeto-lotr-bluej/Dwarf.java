@@ -63,4 +63,9 @@ public class Dwarf extends Personagem
     {
         return this.dataNascimento;
     }
+    
+    public static Dwarf descobrirMenosVida(Dwarf d1, Dwarf d2)
+    {
+        return d1.getQtdVida() < d2.getQtdVida() ? d1 : d2;  
+    }
 }
