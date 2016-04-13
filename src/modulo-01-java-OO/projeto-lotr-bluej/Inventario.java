@@ -103,6 +103,12 @@ public class Inventario
                 return false;
         }
         
+        for (Item i: inventarioComparado.getItens())
+        {
+            if (!this.itens.contains(i))
+                return false;
+        }
+        
         return true;
     }
 }

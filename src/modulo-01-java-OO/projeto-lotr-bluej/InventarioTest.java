@@ -200,4 +200,18 @@ public class InventarioTest
         i2.adicionarItem(espada);
         assertFalse(i1.equals(i2));
      }
+     
+     @Test
+     public void compararInventarioComDoisItensIguaisComInventarioComDoisItens()
+     {
+        Inventario i1 = new Inventario();
+        Inventario i2 = new Inventario();
+        Item espada = new Item(10, "Espada");
+        Item armadura = new Item(10, "Armadura");
+        i1.adicionarItem(espada);
+        i1.adicionarItem(espada);
+        i2.adicionarItem(espada);
+        i2.adicionarItem(armadura);
+        assertFalse(i1.equals(i2));
+     }
 }
