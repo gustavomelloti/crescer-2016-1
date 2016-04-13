@@ -5,12 +5,18 @@ import org.junit.Test;
 
 public class ElfoTest
 {   
+    @After
+    public void clear()
+    {
+        System.gc();
+    }
+    
     @Test
     public void verificarQuantidadeDeElfosAoCriarUmElfo()
     {
         int qtdElfosAntesDeCriar = Elfo.getContador();
         Elfo f = new Elfo("Gustavo");
-        assertEquals(qtdElfosAntesDeCriar+1, Elfo.getContador());
+        assertEquals(1, Elfo.getContador());
     }
     
     @Test
@@ -20,13 +26,13 @@ public class ElfoTest
         Elfo elfo = new Elfo("Gustavo");
         ElfoVerde verde = new ElfoVerde("Green");
         ElfoNoturno noturno = new ElfoNoturno("Noturno");
-        assertEquals(qtdElfosAntesDeCriar+3, Elfo.getContador());
+        assertEquals(3, Elfo.getContador());
     }
     
     @Test
     public void verificarQuantidadeSemCriarElfo()
     {
-        assertEquals(Elfo.getContador(), Elfo.getContador());
+        assertEquals(0, Elfo.getContador());
     }
   
     @Test

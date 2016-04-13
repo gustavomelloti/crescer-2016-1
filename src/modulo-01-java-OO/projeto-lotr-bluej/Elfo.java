@@ -20,6 +20,11 @@ public class Elfo extends Personagem {
         this.flechas = flechas;
     }
     
+    protected void finalize() throws Throwable {
+        Elfo.contador--;
+        super.finalize();
+    }
+    
     public void atirarFlechaEmDwarf(Dwarf d)
     {
         this.experiencia++;
