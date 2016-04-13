@@ -2,6 +2,7 @@ import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import java.util.*;
 
 
 public class InventarioTest
@@ -129,4 +130,60 @@ public class InventarioTest
         assertSame(bota, inventario.getItens().get(1));
         assertSame(espada, inventario.getItens().get(2));
     }
+    
+    @Test
+    public void compararInventariosComMesmosItens()
+    {
+        Inventario i1 = new Inventario();
+        Inventario i2 = new Inventario();
+        Item espada = new Item(10, "Espada");
+        Item armadura = new Item(10, "Armadura");
+        i1.adicionarItem(espada);
+        i1.adicionarItem(armadura);
+        i2.adicionarItem(espada);
+        i2.adicionarItem(armadura);
+        assertTrue(i1.equals(i2));
+    }
+    
+    @Test
+    public void compararInventariosComMesmosItensEmOrdemDiferente()
+    {
+        Inventario i1 = new Inventario();
+        Inventario i2 = new Inventario();
+        Item espada = new Item(10, "Espada");
+        Item armadura = new Item(10, "Armadura");
+        i1.adicionarItem(espada);
+        i1.adicionarItem(armadura);
+        i2.adicionarItem(armadura);
+        i2.adicionarItem(espada);
+        assertTrue(i1.equals(i2));
+    }
+    
+     @Test
+     public void comprarInventariosComQuantidadesDiferentes()
+     {
+        Inventario i1 = new Inventario();
+        Inventario i2 = new Inventario();
+        Item espada = new Item(10, "Espada");
+        Item armadura = new Item(10, "Armadura");
+        i1.adicionarItem(espada);
+        i1.adicionarItem(armadura);
+        i2.adicionarItem(espada);
+        assertFalse(i1.equals(i2));
+     }
+     
+     @Test
+     public void comprarInventariosDiferentesComQuantidadesIguais()
+     {
+        Inventario i1 = new Inventario();
+        Inventario i2 = new Inventario();
+        Item espada = new Item(10, "Espada");
+        Item armadura = new Item(10, "Armadura");
+        Item arco = new Item(10, "Arco");
+        i1.adicionarItem(espada);
+        i1.adicionarItem(armadura);
+        i2.adicionarItem(espada);
+        i2.adicionarItem(arco);
+        assertFalse(i1.equals(i2));
+     }
 }

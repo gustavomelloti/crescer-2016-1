@@ -40,4 +40,17 @@ public abstract class Personagem
     {
         return this.experiencia;
     }
+    
+    public boolean equals(Object obj)
+    {
+        Personagem p = (Personagem) obj;
+        
+        return 
+            obj != null &&
+            this.nome.equals(p.nome) &&
+            this.experiencia == p.experiencia &&
+            this.qtdVida == p.qtdVida &&
+            this.status == p.status &&
+            this.inventario.equals(p.getInventario());      
+    }
 }

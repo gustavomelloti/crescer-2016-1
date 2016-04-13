@@ -219,4 +219,36 @@ public class DwarfTest
        Dwarf d2 = new Dwarf("Paul");
        assertSame(d2, Dwarf.descobrirMenosVida(d1, d2));
    }
+   
+   @Test
+   public void comprarDwarfsIguais()
+   {
+       Dwarf d1 = new Dwarf("Gustavo");
+       Dwarf d2 = new Dwarf("Gustavo");
+       assertTrue(d1.equals(d2));
+   }
+   
+   @Test
+   public void comprarDwarfsIguaisInformandoDataNascimento()
+   {
+       Dwarf d1 = new Dwarf("Gustavo", new DataTerceiraEra(10,12,1200));
+       Dwarf d2 = new Dwarf("Gustavo", new DataTerceiraEra(10,12,1200));
+       assertTrue(d1.equals(d2));
+   }
+   
+   @Test
+   public void comprarDwarfsComNomesIguaisInformandoDataNascimentoDiferente()
+   {
+       Dwarf d1 = new Dwarf("Gustavo", new DataTerceiraEra(10,11,1200));
+       Dwarf d2 = new Dwarf("Gustavo", new DataTerceiraEra(10,12,1200));
+       assertFalse(d1.equals(d2));
+   }
+   
+   @Test
+   public void comprarDwarfsComNomesDiferentes()
+   {
+       Dwarf d1 = new Dwarf("Gustavo");
+       Dwarf d2 = new Dwarf("Gustavo Mello");
+       assertFalse(d1.equals(d2));
+   }
 }

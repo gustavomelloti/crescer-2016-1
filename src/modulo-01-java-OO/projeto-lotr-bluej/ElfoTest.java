@@ -76,4 +76,36 @@ public class ElfoTest
         e.atirarFlechaEmDwarf(new Dwarf("Pedro"));
         assertFalse(esperado.equals(e.toString()));
     }
+    
+    @Test
+    public void compararElfosIguais()
+    {
+        Elfo elfo1 = new Elfo("gustavo");
+        Elfo elfo2 = new Elfo("gustavo");
+        assertTrue(elfo1.equals(elfo2));
+    }
+    
+    @Test
+    public void compararElfosIguaisComTrintaFlechas()
+    {
+        Elfo elfo1 = new Elfo("gustavo", 30);
+        Elfo elfo2 = new Elfo("gustavo", 30);
+        assertTrue(elfo1.equals(elfo2));
+    }
+    
+    @Test
+    public void compararElfosComNomesDiferentes()
+    {
+        Elfo elfo1 = new Elfo("gustavo");
+        Elfo elfo2 = new Elfo("gustavo Mello");
+        assertFalse(elfo1.equals(elfo2));
+    }
+    
+    @Test
+    public void compararElfosComQuantidadeDeFlechasDiferentes()
+    {
+        Elfo elfo1 = new Elfo("gustavo");
+        Elfo elfo2 = new Elfo("gustavo", 30);
+        assertFalse(elfo1.equals(elfo2));
+    }
 }

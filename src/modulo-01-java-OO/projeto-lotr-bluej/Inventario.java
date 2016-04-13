@@ -88,5 +88,21 @@ public class Inventario
                 return Integer.compare(item1.getQuantidade(), item2.getQuantidade());
             }
         });
-    }     
+    }
+    
+    public boolean equals(Object obj)
+    {
+        Inventario inventarioComparado = (Inventario) obj;
+        
+        if (inventarioComparado.getItens().size() != this.itens.size())
+            return false;
+            
+        for (Item i: this.itens)
+        {
+            if (!inventarioComparado.getItens().contains(i))
+                return false;
+        }
+        
+        return true;
+    }
 }

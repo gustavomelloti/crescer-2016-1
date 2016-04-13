@@ -41,4 +41,10 @@ public class Elfo extends Personagem {
     {
         return contador;
     }
-}
+    
+    public boolean equals(Object obj)
+    {
+        Elfo e = (Elfo) obj;
+        return e != null && super.equals(e) && this.flechas == e.flechas;
+    }
+}   
