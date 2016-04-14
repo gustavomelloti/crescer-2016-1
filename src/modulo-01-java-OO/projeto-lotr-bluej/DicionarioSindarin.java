@@ -4,13 +4,41 @@ public class DicionarioSindarin
 {
     public static void main(String[] args)
     {
+        
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("Bem-vindo ao tradutor Sindarin!!");
+        System.out.println("[P]ortugês [I]nglês");
+        
+        String idioma = scanner.nextLine();
+        
+        TradutorSindarin tradutor = criarTradutorSindarin(idioma);
+        
+        System.out.println("Digite a palavra desejada: ");
+        String palavraASerTraduzida = scanner.nextLine();
+        
+        String resposta = tradutor.traduzir(palavraASerTraduzida); 
+        System.out.println(resposta == null ? "Palavra não encontrada" : resposta);
+    }
+    
+    private static TradutorSindarin criarTradutorSindarin(String idioma)
+    {
+        switch(idioma.toLowerCase())
+        {
+            case "i":
+                return new SindarinParaIngles();
+            default:
+                return new SindarinParaPortugues();
+        }
+    }
+    
+    public void teste() {
         //declarando
         HashMap<String, String> dicionarioSindarin = new HashMap<>();
        
         //adicionando chave-valor
         dicionarioSindarin.put("terra", "amar");
         dicionarioSindarin.put("fogo", "naur");
-        dicionarioSindarin.put("fire", "naur");
         dicionarioSindarin.put("vento", "gwaew");
         dicionarioSindarin.put("água", "nen");
         dicionarioSindarin.put("coração", "gûr");
