@@ -32,6 +32,8 @@ public class ExercitoElfos
     
     public void agruparPorStatus()
     {
+        this.exercitoOrdenadoPorStatus.clear();
+        
         for (Elfo elfo: exercito.values())
         {
             if (!exercitoOrdenadoPorStatus.containsKey(elfo.getStatus()))
