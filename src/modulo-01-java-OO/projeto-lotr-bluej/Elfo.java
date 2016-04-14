@@ -52,4 +52,9 @@ public class Elfo extends Personagem {
         Elfo e = (Elfo) obj;
         return e != null && super.equals(e) && this.flechas == e.flechas;
     }
+    
+    public void tentarSorte()
+    {
+        System.out.println("Elfo tentou a sorte!!!");
+    }
 }   

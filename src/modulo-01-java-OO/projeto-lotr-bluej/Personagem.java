@@ -53,4 +53,6 @@ public abstract class Personagem
             this.status == p.status &&
             this.inventario.equals(p.getInventario());      
     }
+    
+    public abstract void tentarSorte();
 }

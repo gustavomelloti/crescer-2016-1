@@ -70,7 +70,6 @@ public class HobbitContador
         1) Altera o nome do valor limite informado por parâmetro
      
         2) Retira o break
-        
          */
        
         ArrayList<Integer> multiplos = new ArrayList<>(Arrays.asList(0));
