@@ -119,4 +119,17 @@ public class ExercitoElfosTest
         exercito.alistar(elfo);
         assertTrue(exercito.getExercitoOrdenadoPorStatus().get(Status.VIVO).contains(elfo));
      }
+     
+     @Test
+     public void ordenarComElfoVivoEAposMatarElfo()
+     {
+        ElfoNoturno elfo = new ElfoNoturno("Paul");
+        ExercitoElfos exercito = new ExercitoElfos();
+        exercito.alistar(elfo);
+        Dwarf d = new Dwarf("Leva Flecha");
+        for (int i = 0; i < 90; i++)
+           elfo.atirarFlechaEmDwarf(d);
+        exercito.agruparPorStatus();
+        assertTrue(elfo.equals(exercito.buscar(Status.MORTO).get(0)));
+     }
 }
