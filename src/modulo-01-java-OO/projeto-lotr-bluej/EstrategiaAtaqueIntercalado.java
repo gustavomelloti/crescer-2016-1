@@ -27,32 +27,31 @@ public class EstrategiaAtaqueIntercalado implements EstrategiaAtaque
     {
         ordemUltimoAtaque.clear();
         
-        if (exercitoAptoAEstrategia(exercito))
+        if (!exercitoAptoAEstrategia(exercito))
             return;
             
-        int i = 1;
-        Elfo elfoAtacante = null;
+        int i = 0;
+        Elfo anterior = new Elfo("AUX"),atual = null;
         
         while(exercito.size() != ordemUltimoAtaque.size())
         {
-            elfoAtacante = exercito.get(i);
-            
-            if (!this.ordemUltimoAtaque.contains(elfoAtacante))
+            atual = exercito.get(i);
+     
+            if (!this.ordemUltimoAtaque.contains(atual))
             {
-                if (! (elfoAtacante.getClass().equals(exercito.get(i-1).getClass()))) {
+                if (! (atual.getClass().equals(anterior.getClass())))
+                {
                     for (Dwarf dwarf : horda)
-                    {                
-                        elfoAtacante.atirarFlechaEmDwarf(dwarf);
-                        this.adicionarElfoHistoricoAtaque(elfoAtacante);
-                    }
+                        atual.atirarFlechaEmDwarf(dwarf);
+                    this.ordemUltimoAtaque.add(atual);
+                    anterior = atual;
                 }
             }
-            
-            if (i == exercito.size() -1)
-                i = 0;
+            i++;
+            if (i == exercito.size())  i = 0;
         }
     }
-    
+       
     private boolean verificarPossuiMesmoNumeroDeVerdesENoturnos(ArrayList<Elfo> exercito)
     {
         int qtdNoturnos = 0, qtdVerdes = 0;

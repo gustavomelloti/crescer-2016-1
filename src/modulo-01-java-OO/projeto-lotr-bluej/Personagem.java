@@ -46,7 +46,7 @@ public abstract class Personagem
         Personagem p = (Personagem) obj;
         
         return 
-            obj != null &&
+            p != null &&
             this.nome.equals(p.nome) &&
             this.experiencia == p.experiencia &&
             this.qtdVida == p.qtdVida &&
