@@ -132,7 +132,6 @@ public class EstrategiaAtaquePadraoTest
         
         ElfoNoturno noturno1 = new ElfoNoturno("Noturno 1");
         ElfoNoturno noturno2 = new ElfoNoturno("Noturno 2");
-
         
         exercito.alistar(verde1);
         exercito.alistar(verde2);
@@ -142,7 +141,6 @@ public class EstrategiaAtaquePadraoTest
         
         exercito.alistar(noturno1);
         exercito.alistar(noturno2);
-
         
         exercito.setEstrategia(new EstrategiaAtaquePadrao());
         exercito.atacar(horda);

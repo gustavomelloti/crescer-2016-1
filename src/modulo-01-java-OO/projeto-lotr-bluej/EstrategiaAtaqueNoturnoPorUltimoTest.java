@@ -38,7 +38,7 @@ public class EstrategiaAtaqueNoturnoPorUltimoTest
         assertTrue(noturno2.equals(exercito.getEstrategiaAtaque().getOrdemUltimoAtaque().get(6))); 
     }
     
-     @Test
+    @Test
     public void exercitoDeUmElfoVerdeAtacaHordaUmDwarf()
     {
         Dwarf dwarf = new Dwarf("Alvo");
@@ -131,5 +131,4 @@ public class EstrategiaAtaqueNoturnoPorUltimoTest
         assertTrue(noturno1.equals(exercito.getEstrategiaAtaque().getOrdemUltimoAtaque().get(5))); 
         assertTrue(noturno2.equals(exercito.getEstrategiaAtaque().getOrdemUltimoAtaque().get(6))); 
     }
-    
 }
