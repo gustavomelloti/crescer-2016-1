@@ -7,12 +7,13 @@ public class ExercitoElfos
     private boolean alterouExercito = false;
     private EstrategiaAtaque estrategia = new EstrategiaAtaquePadrao();
     
-    public void alistar(Elfo elfo)
+    public void alistar(Elfo elfo) throws NaoPodeAlistarException
     {
-        if (elfo instanceof ElfoNoturno || elfo instanceof ElfoVerde){
-            this.exercito.put(elfo.getNome(), elfo);
-            alterouExercito = true;
-        }
+        if ( !( elfo instanceof ElfoNoturno) && !(elfo instanceof ElfoVerde))
+            throw new NaoPodeAlistarException();
+        
+        this.exercito.put(elfo.getNome(), elfo);
+        alterouExercito = true;
     }
     
     public Elfo buscarPorNome(String nome)

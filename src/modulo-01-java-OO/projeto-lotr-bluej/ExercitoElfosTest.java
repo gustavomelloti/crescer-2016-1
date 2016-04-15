@@ -7,7 +7,7 @@ import java.util.*;
 public class ExercitoElfosTest
 {
     @Test
-    public void alistarElfoNoturno()
+    public void alistarElfoNoturno() throws NaoPodeAlistarException
     {
         ElfoNoturno elfoNo = new ElfoNoturno("Gustavo");
         ExercitoElfos exercito = new ExercitoElfos();
@@ -16,7 +16,7 @@ public class ExercitoElfosTest
     }
     
     @Test
-    public void alistarElfoVerde()
+    public void alistarElfoVerde() throws NaoPodeAlistarException
     {
         ElfoVerde elfoNo = new ElfoVerde("Gustavo");
         ExercitoElfos exercito = new ExercitoElfos();
@@ -25,7 +25,7 @@ public class ExercitoElfosTest
     }
     
     @Test
-    public void buscarElfoComNomeGustavo()
+    public void buscarElfoComNomeGustavo() throws NaoPodeAlistarException
     {
         ElfoVerde elfoNo = new ElfoVerde("Gustavo");
         ExercitoElfos exercito = new ExercitoElfos();
@@ -34,7 +34,7 @@ public class ExercitoElfosTest
     }
     
     @Test
-    public void buscarElfoComNomeInexistenteNoExercito()
+    public void buscarElfoComNomeInexistenteNoExercito() throws NaoPodeAlistarException
     {
         ElfoVerde elfoNo = new ElfoVerde("Gustavo");
         ExercitoElfos exercito = new ExercitoElfos();
@@ -43,7 +43,7 @@ public class ExercitoElfosTest
     }
     
     @Test
-    public void verificarAgrupacaoAposAdicionarElfoVivo()
+    public void verificarAgrupacaoAposAdicionarElfoVivo() throws NaoPodeAlistarException
     {
         ElfoVerde elfo = new ElfoVerde("Paul");
         ExercitoElfos exercito = new ExercitoElfos();
@@ -53,7 +53,7 @@ public class ExercitoElfosTest
     }
     
     @Test
-    public void verificarAgrupacaoAposAdicionarUmElfoVivoEUmElfoMorto()
+    public void verificarAgrupacaoAposAdicionarUmElfoVivoEUmElfoMorto() throws NaoPodeAlistarException
     {
         ElfoVerde vivo = new ElfoVerde("Paul");
         ElfoNoturno morto = new ElfoNoturno("Jhon");
@@ -79,7 +79,7 @@ public class ExercitoElfosTest
      }
      
      @Test
-     public void buscarPorStatusVivoComUmElfoVivo()
+     public void buscarPorStatusVivoComUmElfoVivo() throws NaoPodeAlistarException
      {
         ElfoVerde elfo = new ElfoVerde("Paul");
         ExercitoElfos exercito = new ExercitoElfos();
@@ -89,7 +89,7 @@ public class ExercitoElfosTest
      }
      
      @Test
-     public void buscarPorStatusMortoComUmElfoVivo()
+     public void buscarPorStatusMortoComUmElfoVivo() throws NaoPodeAlistarException
      {
         ElfoVerde elfo = new ElfoVerde("Paul");
         ExercitoElfos exercito = new ExercitoElfos();
@@ -99,7 +99,7 @@ public class ExercitoElfosTest
      }
      
      @Test
-     public void buscarPorStatusMortoComUmElfoMorto()
+     public void buscarPorStatusMortoComUmElfoMorto() throws NaoPodeAlistarException
      {
         ElfoNoturno elfo = new ElfoNoturno("Paul");
         ExercitoElfos exercito = new ExercitoElfos();
@@ -112,7 +112,7 @@ public class ExercitoElfosTest
      }
      
      @Test
-     public void pegarExercitoOrdenadoSemOrdenar()
+     public void pegarExercitoOrdenadoSemOrdenar() throws NaoPodeAlistarException
      {
         ElfoVerde elfo = new ElfoVerde("Paul");
         ExercitoElfos exercito = new ExercitoElfos();
@@ -121,7 +121,7 @@ public class ExercitoElfosTest
      }
      
      @Test
-     public void ordenarComElfoVivoEAposMatarElfoEOrdenar()
+     public void ordenarComElfoVivoEAposMatarElfoEOrdenar() throws NaoPodeAlistarException
      {
         ElfoNoturno elfo = new ElfoNoturno("Paul");
         ExercitoElfos exercito = new ExercitoElfos();

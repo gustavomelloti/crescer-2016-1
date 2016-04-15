@@ -8,7 +8,7 @@ public class EstrategiaAtaqueIntercaladoTest
 {
     
     @Test
-    public void ataqueIntercaladoComDoisElfosVerdeEDoisNoturnos()
+    public void ataqueIntercaladoComDoisElfosVerdeEDoisNoturnos() throws NaoPodeAlistarException
     {
         HordaDwarfs horda = new HordaDwarfs();
         horda.adicionar(new Dwarf("Alvo"));
@@ -44,7 +44,7 @@ public class EstrategiaAtaqueIntercaladoTest
     }
     
     @Test
-    public void ataqueIntercaladoComDoisElfosVerde()
+    public void ataqueIntercaladoComDoisElfosVerde() throws NaoPodeAlistarException
     {
         HordaDwarfs horda = new HordaDwarfs();
         horda.adicionar(new Dwarf("Alvo"));
@@ -66,7 +66,7 @@ public class EstrategiaAtaqueIntercaladoTest
     }
     
     @Test
-    public void ataqueIntercaladoComDoisElfosVerdeEDoisNoturnosExercitoDesordenado()
+    public void ataqueIntercaladoComDoisElfosVerdeEDoisNoturnosExercitoDesordenado() throws NaoPodeAlistarException
     {
         HordaDwarfs horda = new HordaDwarfs();
         horda.adicionar(new Dwarf("Alvo"));

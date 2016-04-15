@@ -13,7 +13,13 @@ public class ExercitoInteracao
         int qtdElfosNoturno = Integer.parseInt(sc.nextLine());
         
         for (int i = 0; i <= qtdElfosNoturno;i++)
-            exercito.alistar(new ElfoNoturno("noturno"+i));
+            try {
+                exercito.alistar(new ElfoNoturno("noturno"+i));
+            } catch (NaoPodeAlistarException e) {
+                System.out.println(e.getMessage());
+            }
+            
+            
         //implementar classe main
         //alterar passagem de parâmetro do método atacar
         //criar mais cenários de testes

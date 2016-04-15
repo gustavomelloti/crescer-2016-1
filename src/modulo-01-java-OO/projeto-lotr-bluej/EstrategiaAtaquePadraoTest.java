@@ -7,7 +7,7 @@ import java.util.*;
 public class EstrategiaAtaquePadraoTest
 {
     @Test
-    public void exercitoDeUmElfoVerdeAtacaHordaUmDwarf()
+    public void exercitoDeUmElfoVerdeAtacaHordaUmDwarf() throws NaoPodeAlistarException
     {
         Dwarf dwarf = new Dwarf("Alvo");
         HordaDwarfs horda = new HordaDwarfs();
@@ -34,7 +34,7 @@ public class EstrategiaAtaquePadraoTest
     }
     
     @Test
-    public void exercitoAtacandoHordaDwarfs()
+    public void exercitoAtacandoHordaDwarfs() throws NaoPodeAlistarException
     {
         HordaDwarfs horda = new HordaDwarfs();
         ElfoVerde elfo = new ElfoVerde("Green");
@@ -46,7 +46,7 @@ public class EstrategiaAtaquePadraoTest
     }
 
     @Test
-    public void comparandoOrdemUltimoAtaqueDeExercitoComUmElfo()
+    public void comparandoOrdemUltimoAtaqueDeExercitoComUmElfo() throws NaoPodeAlistarException
     {
         Dwarf dwarf = new Dwarf("Alvo");
         HordaDwarfs horda = new HordaDwarfs();
@@ -60,7 +60,7 @@ public class EstrategiaAtaquePadraoTest
     }
     
     @Test
-    public void comparandoOrdemUltimoAtaqueDeExercitoComTresNoturnoEUmVerde()
+    public void comparandoOrdemUltimoAtaqueDeExercitoComTresNoturnoEUmVerde() throws NaoPodeAlistarException
     {
         HordaDwarfs horda = new HordaDwarfs();
         horda.adicionar(new Dwarf("Alvo"));
@@ -86,7 +86,7 @@ public class EstrategiaAtaquePadraoTest
     }
     
     @Test
-    public void ataqueDeExercitoComTresNoturnoEUmVerdeEmHordaDeDoisElfos()
+    public void ataqueDeExercitoComTresNoturnoEUmVerdeEmHordaDeDoisElfos() throws NaoPodeAlistarException
     {
         HordaDwarfs horda = new HordaDwarfs();
         horda.adicionar(new Dwarf("Alvo"));
@@ -116,7 +116,7 @@ public class EstrategiaAtaquePadraoTest
     }
     
     @Test
-    public void ataqueDeExercitoComCincoVerdesEDoisNoturnosEmHordaDeDoisElfos()
+    public void ataqueDeExercitoComCincoVerdesEDoisNoturnosEmHordaDeDoisElfos() throws NaoPodeAlistarException
     {
         HordaDwarfs horda = new HordaDwarfs();
         horda.adicionar(new Dwarf("Alvo"));

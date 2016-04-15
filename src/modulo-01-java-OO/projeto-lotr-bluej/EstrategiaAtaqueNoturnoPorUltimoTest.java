@@ -6,7 +6,7 @@ import org.junit.Test;
 public class EstrategiaAtaqueNoturnoPorUltimoTest
 {
     @Test
-    public void verificarPosicaoAtaqueElfosNoturnosEVerdesEmbaralhados()
+    public void verificarPosicaoAtaqueElfosNoturnosEVerdesEmbaralhados() throws NaoPodeAlistarException
     {
         HordaDwarfs horda = new HordaDwarfs();
         horda.adicionar(new Dwarf("Alvo"));
@@ -22,7 +22,7 @@ public class EstrategiaAtaqueNoturnoPorUltimoTest
         
         ElfoNoturno noturno1 = new ElfoNoturno("Noturno 1");
         ElfoNoturno noturno2 = new ElfoNoturno("Noturno 2");
-        
+       
         exercito.alistar(verde1);
         exercito.alistar(verde2);
         exercito.alistar(verde3);
@@ -39,7 +39,7 @@ public class EstrategiaAtaqueNoturnoPorUltimoTest
     }
     
     @Test
-    public void exercitoDeUmElfoVerdeAtacaHordaUmDwarf()
+    public void exercitoDeUmElfoVerdeAtacaHordaUmDwarf() throws NaoPodeAlistarException
     {
         Dwarf dwarf = new Dwarf("Alvo");
         HordaDwarfs horda = new HordaDwarfs();
@@ -54,7 +54,7 @@ public class EstrategiaAtaqueNoturnoPorUltimoTest
     }
     
     @Test
-    public void verificarAtaqueSoDeElfosNoturnos()
+    public void verificarAtaqueSoDeElfosNoturnos() throws NaoPodeAlistarException
     {
         HordaDwarfs horda = new HordaDwarfs();
         horda.adicionar(new Dwarf("Alvo"));
@@ -100,7 +100,7 @@ public class EstrategiaAtaqueNoturnoPorUltimoTest
     }
     
     @Test
-    public void verificarPosicaoAtaqueElfosNoturnosEVerdesOrdemInversa()
+    public void verificarPosicaoAtaqueElfosNoturnosEVerdesOrdemInversa() throws NaoPodeAlistarException
     {
         HordaDwarfs horda = new HordaDwarfs();
         horda.adicionar(new Dwarf("Alvo"));
