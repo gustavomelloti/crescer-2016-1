@@ -5,7 +5,7 @@ public class ExercitoElfos
     private HashMap<String, Elfo> exercito = new HashMap<>();
     private HashMap<Status, ArrayList<Elfo>> exercitoOrdenadoPorStatus = new HashMap<>();
     private boolean alterouExercito = false;
-    private EstrategiaAtaque estrategia;
+    private EstrategiaAtaque estrategia = new EstrategiaAtaquePadrao();
     
     public void alistar(Elfo elfo)
     {
@@ -31,7 +31,7 @@ public class ExercitoElfos
         return this.exercitoOrdenadoPorStatus;
     }
     
-       public ArrayList<Elfo> buscar(Status status)
+    public ArrayList<Elfo> buscar(Status status)
     {
        this.verificarSePrecisaAtualizarExercitoOrdenado();
        return this.exercitoOrdenadoPorStatus.get(status);
@@ -46,8 +46,8 @@ public class ExercitoElfos
     public void atacar(HordaDwarfs horda)
     {
         this.verificarSePrecisaAtualizarExercitoOrdenado();
-        ArrayList<Elfo> elfosVivos = this.getExercitoOrdenadoPorStatus().get(Status.VIVO);
-        estrategia.executarEstrategia(elfosVivos != null ? elfosVivos : new ArrayList<Elfo>()   , horda.gethorda());
+        ArrayList<Elfo> elfosVivos = exercitoOrdenadoPorStatus.get(Status.VIVO);
+        estrategia.executarEstrategia(elfosVivos != null ? elfosVivos : new ArrayList<Elfo>(), horda.gethorda());
     }
     
     public void setEstrategia(EstrategiaAtaque estrategia)
