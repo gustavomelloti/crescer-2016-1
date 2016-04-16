@@ -31,11 +31,14 @@ public class EstrategiaAtaqueIntercalado implements EstrategiaAtaque
             return;
             
         int i = 0;
-        Elfo anterior = new Elfo("AUX"),atual = null;
+        Elfo anterior = new Elfo("AUX"), atual = null;
         
         while(exercito.size() != ordemUltimoAtaque.size())
         {
             atual = exercito.get(i);
+            
+            if (atual.getStatus() != Status.VIVO)
+                continue;
      
             if (!this.ordemUltimoAtaque.contains(atual))
             {
@@ -58,10 +61,13 @@ public class EstrategiaAtaqueIntercalado implements EstrategiaAtaque
         
         for (Elfo elfo : exercito)
         {
-            if (elfo instanceof ElfoVerde)
-                qtdVerdes++;
-            else
-                qtdNoturnos++;
+            if (elfo.getStatus() == Status.VIVO)
+            {
+                if (elfo instanceof ElfoVerde)
+                    qtdVerdes++;
+                else
+                    qtdNoturnos++;
+            }
         }
         
         return qtdNoturnos == qtdVerdes ? true : false;

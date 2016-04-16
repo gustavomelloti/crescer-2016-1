@@ -46,9 +46,7 @@ public class ExercitoElfos
     
     public void atacar(HordaDwarfs horda)
     {
-        this.verificarSePrecisaAtualizarExercitoOrdenado();
-        ArrayList<Elfo> elfosVivos = exercitoOrdenadoPorStatus.get(Status.VIVO);
-        estrategia.executarEstrategia(elfosVivos != null ? elfosVivos : new ArrayList<Elfo>(), horda.gethorda());
+        estrategia.executarEstrategia(new ArrayList<Elfo>(exercito.values()), horda.gethorda());
     }
     
     public void setEstrategia(EstrategiaAtaque estrategia)

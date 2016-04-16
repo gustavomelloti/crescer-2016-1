@@ -21,7 +21,6 @@ public class ExercitoInteracao
             
             
         //implementar classe main
-        //alterar passagem de parâmetro do método atacar
         //criar mais cenários de testes
     }
 }
