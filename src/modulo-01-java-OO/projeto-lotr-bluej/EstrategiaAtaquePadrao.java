@@ -22,7 +22,7 @@ public class EstrategiaAtaquePadrao implements EstrategiaAtaque
         
         for (Elfo e : exercito)
         {
-            if  (e.getStatus() == Status.VIVO)
+            if  (e.estaVivo())
                 qtdElfosVivos++;
         }
         
@@ -30,7 +30,7 @@ public class EstrategiaAtaquePadrao implements EstrategiaAtaque
         
         for (Elfo elfo : exercito)
         {
-            if  (elfo.getStatus() != Status.VIVO)
+            if  (!elfo.estaVivo())
                 continue;
                 
             for (Dwarf dwarf : horda)

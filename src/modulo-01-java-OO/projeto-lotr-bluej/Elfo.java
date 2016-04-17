@@ -57,4 +57,9 @@ public class Elfo extends Personagem {
     {
         System.out.println("Elfo tentou a sorte!!!");
     }
+    
+    public boolean estaVivo()
+    {
+        return this.status == Status.VIVO ? true : false;
+    }
 }   

@@ -37,7 +37,7 @@ public class EstrategiaAtaqueIntercalado implements EstrategiaAtaque
         {
             atual = exercito.get(i);
             
-            if (atual.getStatus() != Status.VIVO)
+            if (!atual.estaVivo())
                 continue;
      
             if (!this.ordemUltimoAtaque.contains(atual))

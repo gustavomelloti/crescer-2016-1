@@ -22,7 +22,7 @@ public class EstrategiaAtaqueNoturnoPorUltimo implements EstrategiaAtaque
         
         for (Elfo elfo : exercito)
         {
-            if (elfo.getStatus() != Status.VIVO)
+            if (!elfo.estaVivo())
                 continue;
                 
             for (Dwarf dwarf : horda)
