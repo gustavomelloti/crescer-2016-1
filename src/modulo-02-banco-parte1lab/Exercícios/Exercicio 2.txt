@@ -1,19 +1,23 @@
-1)
+1) Faça uma consulta (query) que retorne o nome dos empregados exibindo em ordem de admissão.
+
 Select NomeEmpregado 
 From Empregado
 Order By DataAdmissao asc
 
-2)
+2) Faça uma consulta que retorne o nome dos empregados e o salário anual, onde o cargo seja Atendente ou que o salário anual seja inferior a R$ 18.500,00.
+
 Select NomeEmpregado, (Salario * 12) as SalarioAnual
 From Empregado
 Where (Salario * 12) < 18500.00 OR Cargo = 'Atendente'
 
-3)
-Select IDCidade
-from Cidade
-WHERE Nome = 'Uberlândia'
+3) Retornar o ID da cidade de Uberlândia.
 
-4)
+Select IDCidade
+From Cidade
+Where Nome = 'Uberlândia'
+
+4) Exibir todas as cidades (ID e nome) do estado do Rio Grande do Sul
+
 Select IDCidade, Nome
-from Cidade
-WHERE UF = 'RS'
+From Cidade
+Where UF = 'RS' 
