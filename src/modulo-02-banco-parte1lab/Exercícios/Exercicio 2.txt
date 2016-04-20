@@ -1,0 +1,19 @@
+1)
+Select NomeEmpregado 
+From Empregado
+Order By DataAdmissao asc
+
+2)
+Select NomeEmpregado, (Salario * 12) as SalarioAnual
+From Empregado
+Where (Salario * 12) < 18500.00 OR Cargo = 'Atendente'
+
+3)
+Select IDCidade
+from Cidade
+WHERE Nome = 'Uberlândia'
+
+4)
+Select IDCidade, Nome
+from Cidade
+WHERE UF = 'RS'
