@@ -1,0 +1,47 @@
+--1
+Select SUBSTRING(Nome, 0, CHARINDEX(' ', Nome))
+From Associado
+
+--2
+Select Nome, YEAR(GetDate()) - YEAR(DataNascimento) AS Idade 
+From Associado
+
+--3
+Select NomeEmpregado, DATEDIFF(MONTH, DataAdmissao, '2000-12-31') as QuantidadeMesesTrabalhados
+From Empregado
+Where DataAdmissao between '1980-05-01' and '1982-01-20'
+
+--4
+Select TOP 1  cargo
+From Empregado
+group by (cargo)
+Order by (count(1)) desc
+
+--6
+Select nome,
+CASE WHEN (DATEDIFF(YEAR, DataNascimento, GETDATE() )) < 50 THEN
+	10
+ELSE
+	30
+END  data 
+From Associado
+
+
+--7
+Select UF, count(UF) as QuantidadeDeCidades
+From Cidade
+Group By(UF)
+
+--8
+Select nome, uf
+From Cidade
+Group By nome, uf
+having(count(1) > 1)
+
+--9
+Select max(IDAssociado) + 1
+From Associado
+
+--10
+Truncate Table CopiaCidade
+Insert Into CopiaCidade Select IDCidade, Nome, UF From Cidade group by nome, uf having count(1) = 1
