@@ -37,7 +37,7 @@ public class EstrategiaAtaquePadrao implements EstrategiaAtaque
             {
                 if (elfo instanceof ElfoNoturno)
                 {
-                   if (quantidadeNoturnoPodemAtacar <= 0)
+                   if (quantidadeNoturnoPodemAtacar <= 0 || !elfo.estaVivo())
                         break;
                    quantidadeNoturnoPodemAtacar--;
                 }

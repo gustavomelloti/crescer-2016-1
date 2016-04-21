@@ -204,4 +204,37 @@ public class EstrategiaAtaquePadraoTest
         assertTrue(40.00 == horda.gethorda().get(0).getQtdVida()); 
         assertTrue(40.00 == horda.gethorda().get(1).getQtdVida()); 
     }
+    
+    @Test
+    public void ataqueDeExercitoComDoisVerdesEhUmNoturnosComDezDeVida() throws NaoPodeAlistarException
+    {
+        HordaDwarfs horda = new HordaDwarfs();
+        horda.adicionar(new Dwarf("Alvo"));
+        horda.adicionar(new Dwarf("Alvo 2"));
+
+        ExercitoElfos exercito = new ExercitoElfos();
+        
+        ElfoVerde verde1 = new ElfoVerde("Green 1");
+        ElfoVerde verde2 = new ElfoVerde("Green 2");
+        
+        ElfoNoturno noturno1 = new ElfoNoturno("Noturno 1");
+
+        
+        Dwarf d = new Dwarf("Alvo3");
+        for (int i = 0; i < 89; i++)
+        {
+            noturno1.atirarFlechaEmDwarf(d);
+        }
+        
+        exercito.alistar(verde1);
+        exercito.alistar(verde2);
+        exercito.alistar(noturno1);
+
+        
+        exercito.setEstrategia(new EstrategiaAtaquePadrao());
+        exercito.atacar(horda);
+  
+        assertTrue(Status.MORTO.equals(noturno1.getStatus()));
+        assertFalse(horda.gethorda().get(0).getQtdVida() == horda.gethorda().get(1).getQtdVida() );
+    }
 }

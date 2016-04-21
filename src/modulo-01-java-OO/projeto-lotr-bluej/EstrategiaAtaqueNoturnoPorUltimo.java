@@ -21,12 +21,11 @@ public class EstrategiaAtaqueNoturnoPorUltimo implements EstrategiaAtaque
         this.ordenarNoturnoPorUltimo(exercito);
         
         for (Elfo elfo : exercito)
-        {
-            if (!elfo.estaVivo())
-                continue;
-                
+        {                
             for (Dwarf dwarf : horda)
-            {                
+            {
+                if (!elfo.estaVivo())
+                    break;
                 elfo.atirarFlechaEmDwarf(dwarf);
                 this.adicionarElfoHistoricoAtaque(elfo);
             }

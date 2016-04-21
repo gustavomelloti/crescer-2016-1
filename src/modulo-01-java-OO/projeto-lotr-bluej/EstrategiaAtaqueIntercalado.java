@@ -36,16 +36,19 @@ public class EstrategiaAtaqueIntercalado implements EstrategiaAtaque
         while(exercito.size() != ordemUltimoAtaque.size())
         {
             atual = exercito.get(i);
-            
-            if (!atual.estaVivo())
-                continue;
-     
+   
             if (!this.ordemUltimoAtaque.contains(atual))
             {
                 if (! (atual.getClass().equals(anterior.getClass())))
                 {
                     for (Dwarf dwarf : horda)
+                    {
+                        if (!atual.estaVivo())
+                            break;
+                          
                         atual.atirarFlechaEmDwarf(dwarf);
+                    }
+
                     this.ordemUltimoAtaque.add(atual);
                     anterior = atual;
                 }
@@ -61,7 +64,7 @@ public class EstrategiaAtaqueIntercalado implements EstrategiaAtaque
         
         for (Elfo elfo : exercito)
         {
-            if (elfo.getStatus() == Status.VIVO)
+            if (elfo.estaVivo())
             {
                 if (elfo instanceof ElfoVerde)
                     qtdVerdes++;
@@ -70,6 +73,6 @@ public class EstrategiaAtaqueIntercalado implements EstrategiaAtaque
             }
         }
         
-        return qtdNoturnos == qtdVerdes ? true : false;
+        return qtdNoturnos == qtdVerdes;    
     }
 }
