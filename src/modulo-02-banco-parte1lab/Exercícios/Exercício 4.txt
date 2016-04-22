@@ -1,0 +1,45 @@
+1)
+
+Select E.NomeEmpregado, D.NomeDepartamento
+From Empregado E
+Inner Join Departamento D On D.IDDepartamento = E.IDDepartamento
+
+
+2)
+
+Select A.Nome, C.Nome
+From Associado A
+Left Join Cidade C On C.IDCidade = A.IDCidade
+
+3)
+
+Select UF, Count(1) AS Total_Cidades
+From Cidade C
+Where Not Exists (Select 1 From Associado as A Where A.IDCidade = c.IDCidade)
+Group By C.UF
+
+4)
+
+Select A.Nome, C.Nome,
+	Case When C.UF IN ('RS', 'SC', 'PR') Then 
+	'***'
+	Else
+		NULL
+	End Regiao
+From Associado A
+Left Join Cidade C On C.IDCidade = A.IDCidade
+
+
+5)
+
+Select E.NomeEmpregado,
+	   DEmpregado.NomeDepartamento As DepartamentoEmpregado,
+	   G.NomeEmpregado As NomeGerente,
+	   DGerente.NomeDepartamento As DepartamentoGerente
+From Empregado As E
+Inner Join Empregado G On G.IDEmpregado = E.IDGerente
+Inner Join Departamento DGerente On DGerente.IDDepartamento = G.IDDepartamento
+Inner Join Departamento DEmpregado On DEmpregado.IDDepartamento = E.IDDepartamento
+
+6)
+Select * Into EmpregadoCopia From Empregado

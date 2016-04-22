@@ -5,7 +5,7 @@ From Associado
 
 2) Faça uma consulta que retorne o nome dos associados e a idade de cada um (em anos, exibir um número inteiro).
 
-Select Nome, YEAR(GetDate()) - YEAR(DataNascimento) AS Idade 
+Select Nome, DATEDIFF(YEAR, DataNascimento, GETDATE()) AS Idade 
 From Associado
 
 3) Faça uma consulta que liste os empregados admitidos entre 01/05/1980 e 20/01/1982. Exibir também o total de meses de trabalho até a data de 31/12/2000
@@ -77,7 +77,6 @@ Select Nome,
 From Associado
 
 13)Faça uma consulta que mostre o nome do empregado, o Salario e percentual a ser descontado do Imposto de Renda, considerando a tabela abaixo: Até R$ 1.164,00 = 0% De R$ 1.164,00 a R$ 2.326,00 = 15% Acima de R$ 2.326,00 = 27,5%.
-
 
 Select NomeEmpregado, Salario,
 	Case When Salario <= 1164.00 Then
