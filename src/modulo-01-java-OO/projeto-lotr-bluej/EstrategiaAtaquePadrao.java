@@ -18,15 +18,8 @@ public class EstrategiaAtaquePadrao implements EstrategiaAtaque
     public void executarEstrategia(ArrayList<Elfo> exercito, ArrayList<Dwarf> horda)
     {
         ordemUltimoAtaque.clear();
-        int qtdElfosVivos = 0;
-        
-        for (Elfo e : exercito)
-        {
-            if  (e.estaVivo())
-                qtdElfosVivos++;
-        }
-        
-        int quantidadeNoturnoPodemAtacar = (int) Math.floor((qtdElfosVivos * horda.size()) * 0.3);
+
+        int quantidadeNoturnoPodemAtacar = (int) Math.floor((exercito.size() * horda.size()) * 0.3);
         
         for (Elfo elfo : exercito)
         {

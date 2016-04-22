@@ -15,12 +15,8 @@ public class EstrategiaAtaqueIntercalado implements EstrategiaAtaque
             this.ordemUltimoAtaque.add(elfo);
     }
     
-    private boolean exercitoAptoAEstrategia(ArrayList<Elfo> exercito)
-    {
-        if (exercito.size() % 2 != 0 || !this.verificarPossuiMesmoNumeroDeVerdesENoturnos(exercito))
-            return false;
-            
-        return true;
+    private boolean exercitoAptoAEstrategia(ArrayList<Elfo> exercito) {
+      return exercito.size() % 2 == 0 && this.verificarPossuiMesmoNumeroDeVerdesENoturnos(exercito);
     }
     
     public void executarEstrategia(ArrayList<Elfo> exercito, ArrayList<Dwarf> horda)

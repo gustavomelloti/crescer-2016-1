@@ -1,6 +1,6 @@
 public class Elfo extends Personagem {
     private int flechas = 42;
-    private static int contador = 0;
+    private static int contador;
     
     public Elfo()
     {

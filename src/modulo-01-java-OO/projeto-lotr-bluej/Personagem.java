@@ -1,8 +1,8 @@
 public abstract class Personagem
 {
     protected String nome;
-    protected int experiencia = 0;
-    protected double qtdVida = 0;
+    protected int experiencia;
+    protected double qtdVida;
     protected Inventario inventario = new Inventario();
     protected Status status = Status.VIVO;
     
