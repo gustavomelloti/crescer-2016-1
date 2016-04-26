@@ -1,24 +1,25 @@
-1)
+1) Selecione o nome do empregado e nome do departamento que cada um está relacionado. 
 
 Select E.NomeEmpregado, D.NomeDepartamento
 From Empregado E
 Inner Join Departamento D On D.IDDepartamento = E.IDDepartamento
 
 
-2)
+2) Exibir o nome do associado e sua cidade, exibir também associados sem Cidade relacionada.
 
 Select A.Nome, C.Nome
 From Associado A
 Left Join Cidade C On C.IDCidade = A.IDCidade
 
-3)
+3) Lista os estados (UF) e total de cidades, exibir apenas as cidades que não possuem associados relacionados.
 
 Select UF, Count(1) AS Total_Cidades
 From Cidade C
 Where Not Exists (Select 1 From Associado as A Where A.IDCidade = c.IDCidade)
 Group By C.UF
 
-4)
+4) Faça uma consulta que liste o nome do associado, o nome da cidade, e uma coluna que indique se a cidade é da 
+região SUL (RS, SC, PR), se for imprimir *** (3 asteriscos), senão imprimir nulo.
 
 Select A.Nome, C.Nome,
 	Case When C.UF IN ('RS', 'SC', 'PR') Then 
@@ -30,7 +31,7 @@ From Associado A
 Left Join Cidade C On C.IDCidade = A.IDCidade
 
 
-5)
+5) Liste o nome do empregado, o nome do gerente, e o departamento de cada um.
 
 Select E.NomeEmpregado,
 	   DEmpregado.NomeDepartamento As DepartamentoEmpregado,
@@ -41,5 +42,61 @@ Inner Join Empregado G On G.IDEmpregado = E.IDGerente
 Inner Join Departamento DGerente On DGerente.IDDepartamento = G.IDDepartamento
 Inner Join Departamento DEmpregado On DEmpregado.IDDepartamento = E.IDDepartamento
 
-6)
+6) Faça uma cópia da tabela Empregado e altere o salário de todos os empregados (Empregado) que o departamento 
+fique na localidade de SAO PAULO, faça um reajuste de 14,5%
+
 Select * Into EmpregadoCopia From Empregado
+
+Begin Transaction
+Update EmpregadoCopia
+Set salario+= salario * 0.145
+Where exists ( 
+	Select E.NomeEmpregado
+	From Empregado E
+	Inner Join Departamento D On D.IDDepartamento = E.IDDepartamento
+	Where D.Localizacao = 'SAO PAULO' And EmpregadoCopia.IDEmpregado = E.IDEmpregado
+)
+Commit
+
+7) Liste a diferença  que representará o reajuste aplicado no item anterior no somatório dos salários de todos os 
+empregados.
+
+Select 
+(
+	Select sum(E.Salario)
+	From Empregado E
+	Inner Join Departamento D On D.IDDepartamento = E.IDDepartamento
+	Where D.Localizacao = 'SAO PAULO'
+)
+-
+(
+	Select (sum(E.Salario) * 100) / 114.5
+	From Empregado E
+	Inner Join Departamento D On D.IDDepartamento = E.IDDepartamento
+	Where D.Localizacao = 'SAO PAULO'
+)
+As DiferencaAposReajuste
+
+8) Liste o departamento com o empregado de maior salário.
+
+Select Top 1 D.NomeDepartamento
+From Empregado E
+Join Departamento D On D.IDDepartamento = E.IDDepartamento
+order by E.Salario Desc
+
+9) Faça uma consulta para exibir o nome de cada associado e sua cidade e juntamente com os empregados (nome) e a cidade (localidade) de seu departamento, isto deve ser exibido em uma consulta.
+
+Select A.Nome, C.Nome
+From Associado A
+Inner Join Cidade C On C.IDCidade = A.IDCidade
+Union All
+Select E.NomeEmpregado, D.Localizacao
+From Empregado E
+Inner Join Departamento D On D.IDDepartamento = E.IDDepartamento
+
+10) Lista as cidades que tenham associado relacionados. Exibr: Nome e UF apenas.
+
+Select C.Nome, C.UF
+From Cidade C
+Inner Join Associado A On A.IDCidade = C.IDCidade
+Group by C.Nome, C.UF
