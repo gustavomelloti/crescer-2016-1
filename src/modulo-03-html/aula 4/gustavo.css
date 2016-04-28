@@ -1,0 +1,42 @@
+/*escondendo */
+header h1 span:last-child {
+    display: none;
+}
+
+.personagens h2:first-child {
+    display: none;
+}
+
+.personagens ul:nth-of-type(1) {
+    display: none;
+}
+
+.treinadores {
+    display: none;
+}
+
+header {
+    width: 100%;
+    height: 120px;
+    background-color: black;
+}
+
+.personagens {
+    float:right;
+    background-color: red;
+}
+
+.digiescolhidos {
+    background-color: blue;
+}
+
+footer {
+    background-color: yellow;
+    text-align: center;
+    font-size: 14px;
+}
+
+.content {
+    background-color: silver;
+    overflow: auto;
+}
