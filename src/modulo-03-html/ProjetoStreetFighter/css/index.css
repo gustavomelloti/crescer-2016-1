@@ -64,3 +64,19 @@ body {
 .descricao {
 	font-size: 14px;
 }
+
+header {
+	font-weight: bold;
+}
+
+section {
+	margin-bottom: 20px;
+}
+
+#jogosDaSerie {
+	margin-bottom: 20px;
+}
+
+.ficha-tecnica-nome {
+	margin-bottom: 20px;
+}
