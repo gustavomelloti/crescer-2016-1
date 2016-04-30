@@ -2,6 +2,8 @@
 <html lang="pt-br">
 	<head>
 		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 		<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
 
 		<!-- Latest compiled and minified CSS -->
@@ -9,15 +11,15 @@
 
 		<!-- Optional theme -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
-
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 		<!-- Latest compiled and minified JavaScript -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
 		<link rel="stylesheet" href="css/geral.css">
-		<title>Cadastrar Contato</title>
+		<title>Cadastrar Usuário</title>
 	</head>
 	<body>
-		 <nav class="navbar navbar-inverse navbar-fixed-top">
+	    <nav class="navbar navbar-inverse navbar-fixed-top">
 	     	<div class="container">
 	        	<div class="navbar-header">
 	          		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -36,6 +38,157 @@
 	          		</ul>
 	        	</div>
 	      	</div>
-	    </nav>
+		</nav>
+		<div id="wrapper">
+	        <div id="sidebar-wrapper">
+	        	<div id="info-perfil">
+	        		<span>
+	        			<img src="img/gustavo.jpg" alt="Sem imagem" class="img-circle img-perfil">
+	        		</span>
+	        		<div id="contato-perfil">
+	        		    <span>Gustavo Mello</span>
+	        			<span>gustavomello@cwi.com.br</span>
+	        		</div>
+	        	</div>
+	            
+	            <ul class="sidebar-nav">
+	                <li>
+	                    <a href="#">DASHBOARDS</a>
+	                </li>
+	                <li class="link-interno selecionado">
+	                    <a href="#"><i class="fa fa-bar-chart" aria-hidden="true"></i> <span>Administrativo</span></a>
+	                </li>
+	                <li>
+	                    <a href="#">CADASTROS</a>
+	                </li>
+	                <li class="link-interno">
+	                    <a href="#"><i class="fa fa-user" aria-hidden="true"></i><span>Usuários</span></a>
+	                </li>
+	                </li>
+	            </ul>
+	        </div>
+	        <div id="page-content-wrapper">
+	            <div id="identificao">
+	            	<div id="modulo-acesado">
+	            		<div>Cadastro</div>
+	            		<div>Usuário</div>
+	            	</div>
+	            	<div id="caminho">
+	            		<span>Home ></span>
+	            		<span>Cadastro ></span>
+	            		<span>Usuário</span>
+	            	</div>
+	            </div>
+	            
+	            <div class="container-fluid">
+					<header class="titulo-cadastro">Cadastro de Usuário</header>
+					<form>
+					  <fieldset>
+					  	<div class="linha-form" id="linha1">
+						  	<div class="col-sm-12">
+							  	<div class="form-group">
+							     	<label for="nome">NOME</label>
+							     	<label class="descricao-aux-campo">PESSOA FÍSICA</label>
+							     	<input type="text" id="nome" name="nome" class="form-control">
+							    </div>
+						  	</div>
+						</div>
+
+						<div class="linha-form" id="linha2">
+							<div class="col-sm-12 col-md-6 col-lg-4">
+								<div class="form-group">
+						      		<label for="cpf">CPF</label>
+						      		<input type="text" id="cpf" name="cpf" class="form-control" placeholder="000 000 000-00">
+						    	</div>
+							</div>
+						    
+							<div class="col-sm-12 col-md-6 col-lg-4">
+								<div class="form-group">
+						     		<label for="email">EMAIL</label>
+									<input type="text" id="email" name="email" class="form-control" placeholder="readonly" readonly="">
+						    	</div>
+							</div>
+
+							<div class="col-sm-12 col-md-6 col-lg-4">
+								<div class="form-group">
+						      		<label for="disabled">DISABLED</label>
+						      		<input type="text" id="disabled" name="disabled" class="form-control" placeholder="disabled">
+						    	</div>
+							</div>
+						</div>
+
+
+						<div class="linha-form" id="linha3">
+							<div class="col-sm-12 col-md-6 col-lg-4">
+								<div class="form-group">
+							     	<label for="helpblock">HELP BLOCK</label>
+									<input type="text" id="helpblock" name="helpblock" class="form-control">
+								</div>
+							</div>
+
+							<div class="col-sm-12 col-md-6 col-lg-4">
+								<div class="form-group">
+							        <label for="textarea">TEXT AREA</label>
+							        <label class="descricao-aux-campo">WRITE SOME TEXT</label>
+									<textarea name="textarea" id="textarea" class="form-control" rows="3" placeholder="placeholder"></textarea>
+								</div>
+							</div>
+
+							<div class="col-sm-12 col-md-6 col-lg-4">
+								<div class="form-group">
+								    <label for="select">SELECT</label>
+								    <label class="descricao-aux-campo">LIST OF ITEMS</label>
+								    <select id="select" class="form-control select-hiden" size="2">
+								        <option>First value</option>
+								      </select>
+								</div>
+							</div>
+						</div>
+
+						<div class="linha-form" id="linha4">
+							<div class="col-sm-12 col-md-4 col-lg-3">
+								<div class="form-group">
+							     	<label for="default">DEFAULT</label>
+							     	<select id="default" name="default" class="form-control">
+							        	<option>Option 1</option>
+							      	</select>
+							    </div>
+							</div>
+
+
+							<div class="col-sm-12 col-md-4 col-lg-3">
+								<div class="form-group">
+							     	<label for="multiple">MULTIPLE</label>
+							     	<select id="multiple" name="multiple" class="form-control">
+							        	<option>Option 1</option>
+							      	</select>
+							    </div>
+							</div>
+
+
+							<div class="col-sm-12 col-md-4 col-lg-3">
+								<div class="form-group">
+							     	<label for="disabledSelect">GROUP</label>
+							     	<select id="disabledSelect" class="form-control">
+							        	<option>Option 1</option>
+							      	</select>
+							    </div>
+							</div>
+
+
+							<div class="col-sm-12 col-md-4 col-lg-3">
+								<div class="form-group">
+							     	<label for="disabledSelect">SEARCH</label>
+							     	<select id="disabledSelect" class="form-control">
+							        	<option>Option 1</option>
+							      	</select>
+							    </div>
+							</div>
+						</div>
+					  </fieldset>
+					</form>
+	            </div>
+	        </div>
+	    </div>
 	</body>
 </html>

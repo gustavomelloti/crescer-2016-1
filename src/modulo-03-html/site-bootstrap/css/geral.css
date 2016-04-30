@@ -36,61 +36,106 @@
     background-color: black;
 }
 
-
-
-
-
-
-
-
-
-
-
-#header {
-    background-color: white;
+.navbar-inverse .navbar-brand:hover{
+    color: black;
 }
 
-
-#grande {
-    width:auto;
-    height: auto;
-}
 #info-perfil {
+    height: 90px;
+    position:relative;
     margin-top: 0px;
     padding-top: 10px;
-    background-color: rgba(53,53,53,0.84);
-
+    background-color: #40404F
 }
 
-#nome-perfil {
+.img-perfil {
+    height: 70px;
+    float: left;
+}
+
+.img-perfil a {
+    height:50px; 
+    width:50px;
+}
+
+#contato-perfil {
     font-size: 14px;
     color:silver;
     padding-left: 5px;
+    padding-top: 10px;
 }
-#nome-perfil span {
-     float: right;
+
+#contato-perfil span {
     font-size: 12px;
     color:silver;
-    padding-left: 5px;
+    padding-left: 15px;
 }
 
-i {
-    font-size: 20px;
+.sidebar-nav li {
+    list-style-position:inside;
+    border-bottom: 2px solid black;
 }
 
-#header-fx {
-    height: auto;
-    width: auto;
-    display: inline;
+.link-interno i {
+    margin-right: 5px;
 }
 
+.selecionado {
+    background: #40404F;
+}
 
+.selecionado span {
+    color: #2A888B;
+}
 
+#identificao {
+    height: 100px;
+    padding-top: 20px;
+    margin-bottom: 50px;
+}
 
+#modulo-acesado {
+    float: left;
+}
 
+#caminho {
+     float: right;
+}
 
+#modulo-acesado div:first-child {
+    font-weight: bold;
+    font-size: 24px;
+}
 
+#modulo-acesado div:not(first-child) {
+    font-size: 16px;
+}
 
+#caminho span:last-of-type {
+    font-weight: bold;
+}
+
+.select-hiden{
+    overflow-y:hidden; 
+}
+
+.form-control {
+    background-color: #eee;
+}
+
+.descricao-aux-campo {
+    color: silver;
+}
+
+.titulo-cadastro {
+    font-size: 32px;
+    color: silver;
+    margin-bottom: 30px;
+}
+
+.linha-form div:last-child {
+    margin-bottom: 30px;
+}
 
 
 
@@ -119,7 +164,7 @@ i {
     height: 100%;
     margin-left: -250px;
     overflow-y: auto;
-    background: #000;
+    background: #23232C;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
@@ -163,30 +208,10 @@ i {
 }
 
 .sidebar-nav li a:hover {
-    text-decoration: none;
-    color: #fff;
-    background: rgba(255,255,255,0.2);
+    color: #2A888B;
+    background: #40404F;
 }
 
-.sidebar-nav li a:active,
-.sidebar-nav li a:focus {
-    text-decoration: none;
-}
-
-.sidebar-nav > .sidebar-brand {
-    height: 65px;
-    font-size: 18px;
-    line-height: 60px;
-}
-
-.sidebar-nav > .sidebar-brand a {
-    color: #999999;
-}
-
-.sidebar-nav > .sidebar-brand a:hover {
-    color: #fff;
-    background: none;
-}
 
 @media(min-width:768px) {
     #wrapper {
@@ -216,3 +241,9 @@ i {
         margin-right: 0;
     }
 }
+@media(max-width:768px) {
+    #identificao {
+        display: none;
+    }
+}
+    
