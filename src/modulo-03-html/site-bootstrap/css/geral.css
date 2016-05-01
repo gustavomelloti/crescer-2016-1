@@ -293,7 +293,9 @@ body {
         display: none;
     }
 
-
+    #img-global-vendas img {
+        display: none;
+    }
 }
 
 .box{ 
@@ -452,16 +454,20 @@ body {
     background-color: black;
 }
 
-#mapa > div:last-child .box .titulo #info-titulo span{
+.info-titulo span{
     display: block;
 }
 
-#mapa > div:last-child .box .titulo span:first-child{
+.titulo span:first-child{
     font-size: 15px;
 }
 
-#mapa > div:last-child .box .titulo span:last-child{
+#mapa .box .titulo span:last-child{
     font-size: 12px;
+}
+
+#mapa > div:first-child > .box {
+    padding-bottom: 55px;
 }
 
 .titulo {
@@ -475,7 +481,7 @@ body {
     margin-left: 20px;
 }
 
-#info-titulo {
+.info-titulo {
     float: left;
 }
 
@@ -496,4 +502,16 @@ body {
     font-size: 11px;
     height: 25px;
     padding-bottom: 20px;
+}
+
+#progresso-vendas {
+    float: left;
+}
+
+#img-global-vendas {
+    float: right;
+}
+
+#pregresso-vendas {
+    overflow-y:auto; 
 }
