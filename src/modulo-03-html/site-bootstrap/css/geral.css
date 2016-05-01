@@ -1,12 +1,12 @@
 .container {
     width: 100%;
     margin-right: 0px;
-    background-color: white;
+    background-color: rgb(35, 35, 44);
 }
 
 .navbar-brand {
     float: left;
-    color: black;
+    color: white;
 }
 
 #navbar {
@@ -25,11 +25,12 @@
 .navbar-nav li{
     font-size: 25px;
     padding-left: 20px;
+    color:white;
 }
 
 .navbar-inverse .navbar-brand {
     font-size: 24px;
-    color: black;
+    color: white;
 }
 
 .navbar-toggle {
@@ -37,7 +38,7 @@
 }
 
 .navbar-inverse .navbar-brand:hover{
-    color: black;
+    color: white;
 }
 
 #info-perfil {
@@ -45,7 +46,7 @@
     position:relative;
     margin-top: 0px;
     padding-top: 10px;
-    background-color: #40404F
+    background-color: rgb(35, 35, 44);
 }
 
 .img-perfil {
@@ -73,19 +74,11 @@
 
 .sidebar-nav li {
     list-style-position:inside;
-    border-bottom: 2px solid black;
+    border-bottom: 1px solid black;
 }
 
 .link-interno i {
     margin-right: 5px;
-}
-
-.selecionado {
-    background: #40404F;
-}
-
-.selecionado span {
-    color: #2A888B;
 }
 
 #identificao {
@@ -98,8 +91,8 @@
     float: left;
 }
 
-#caminho {
-     float: right;
+#caminho { 
+    float: right;
 }
 
 #modulo-acesado div:first-child {
@@ -115,6 +108,9 @@
     font-weight: bold;
 }
 
+.selecionado span {
+    color: #2A888B;
+}
 .select-hiden{
     overflow-y:hidden; 
 }
@@ -127,22 +123,9 @@
     color: silver;
 }
 
-.titulo-cadastro {
-    font-size: 32px;
-    color: silver;
-    margin-bottom: 30px;
-}
-
 .linha-form div:last-child {
     margin-bottom: 30px;
 }
-
-
-
-
-
-
-
 
 #wrapper {
     padding-left: 0;
@@ -186,8 +169,6 @@
     margin-right: -250px;
 }
 
-/* Sidebar Styles */
-
 .sidebar-nav {
     position: absolute;
     width: 250px;
@@ -206,12 +187,6 @@
     text-decoration: none;
     color: #999999;
 }
-
-.sidebar-nav li a:hover {
-    color: #2A888B;
-    background: #40404F;
-}
-
 
 @media(min-width:768px) {
     #wrapper {
@@ -240,10 +215,54 @@
         position: relative;
         margin-right: 0;
     }
-}
-@media(max-width:768px) {
-    #identificao {
+
+    #bs-example-navbar-collapse-1 {
         display: none;
+    }
+
+    .sidebar-nav li a:hover {
+        color: #2A888B;
+        background: #40404F;
+    }
+
+    .selecionado {
+        background: #40404F;
+    }
+
+    .titulo-cadastro {
+        font-size: 32px;
+        color: silver;
+        margin-bottom: 30px;
+    }
+}
+
+@media(max-width:768px) {
+    #identificao, #navbar{
+        display: none;
+    }
+
+    .sidebar-nav {
+        position: relative;
+    }
+
+    .sidebar-nav li a {
+        font-size: 11px;
+    }
+
+    .sidebar-nav li {
+        border-bottom: none;
+    }
+
+    .titulo-cadastro {
+        font-size: 12px;
+    }
+
+    .titulo-cadastro {
+        font-size: 18px;
+        color: silver;
+        margin-top: 60px;
+        margin-bottom: 30px;
+        text-align: center;
     }
 }
     
