@@ -336,7 +336,7 @@ body {
     background-clip: padding-box;
 }
 
-#info-geral, #graficos {
+#info-geral, #graficos, #mapa {
     margin-left: -30px;
     margin-right: -30px;
 }
@@ -450,4 +450,50 @@ body {
 
 .btn-default {
     background-color: black;
+}
+
+#mapa > div:last-child .box .titulo #info-titulo span{
+    display: block;
+}
+
+#mapa > div:last-child .box .titulo span:first-child{
+    font-size: 15px;
+}
+
+#mapa > div:last-child .box .titulo span:last-child{
+    font-size: 12px;
+}
+
+.titulo {
+    overflow-y: auto;
+    margin-bottom: 20px;
+    border-bottom: 2px solid black;
+}
+
+#icones-titulo i{
+    font-size: 20px;
+    margin-left: 20px;
+}
+
+#info-titulo {
+    float: left;
+}
+
+#icones-titulo {
+    float: right;
+}
+
+#table-projetos {
+    background-color: white;
+}
+
+#table-projetos thead tr th{
+    text-align: center;
+}
+
+#table-projetos tbody tr td .btn {
+    width: 72px;
+    font-size: 11px;
+    height: 25px;
+    padding-bottom: 20px;
 }
