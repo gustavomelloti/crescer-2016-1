@@ -34,19 +34,11 @@ function imprimeInstrutor(instrutores) {
 }
 
 //4
-var primeiroValor = 0;
-
-function somar(valorASomar) {
-    console.log(valorASomar+primeiroValor);
-    primeiroValor = 0;
-}
-
-function adicionar(valorASomar) {
-    if (primeiroValor === 0)
-        primeiroValor = valorASomar;
-    else
-        somar(valorASomar);
-}
+function adicionar(parcela1) {
+    return function(parcela2) {
+        return parcela1 + parcela2;
+    }
+};
 
 //5
 function fibo(n) {
@@ -109,7 +101,6 @@ function compararTipoNull(valor) {
 function compararTipoObject(obj) {
     return obj instanceof Object;
 }
-
 
 //8
 var gohan = 'gohan', goku = 'Goku';
