@@ -2,24 +2,21 @@
 
 //1
 function daisyGame(numeroPetalas) {
-    if (!isNaN(numeroPetalas))
-        console.log ((numeroPetalas % 2 === 0 ? 'Love me not'  : 'Love me'));
+    return (numeroPetalas % 2 === 0 ? 'Love me not'  : 'Love me');
 }
 
 //2
 function maiorTexto(palavras) {
+    var maiorPalavra = '';
+
     if (palavras.constructor === Array) {
-        var qtdCaracteresMaior = 0, posicaoMaiorPalavra = 0;
-
-        palavras.forEach(function(e, index){
-            if (e.length > qtdCaracteresMaior) {
-                qtdCaracteresMaior  = e.length;
-                posicaoMaiorPalavra = index;
-            }
+        palavras.forEach(function(e){
+            if (e.length > maiorPalavra.length)
+                maiorPalavra = e;
         });
-
-        console.log(palavras[posicaoMaiorPalavra]);
     }
+
+    return maiorPalavra;
 }
 
 //3
@@ -57,49 +54,23 @@ function queroCafe(mascada, precos) {
             i--;
         }
     }
-    console.log(precos.sort().toString());
+    return precos.sort().toString();
 }
 
 //7
-function contarPorTipo(obj, tipo, fn) {
-    var ocorrencias = 0;
+function contarPorTipo (objeto, tipo) {
 
-    for (var i in obj)
-        ocorrencias+= fn(obj[i], tipo);
+  // inspirado em http://stackoverflow.com/a/13467007/5194966
+  function getType(v) {
+    return v === null ? 'null' : typeof v !== 'undefined' && v.constructor === Array ? 'array' : typeof v;
+  }
 
-    console.log(ocorrencias);
-}
+  var count = 0;
+  for (var campo in objeto) {
+    if (getType(objeto[campo]) === tipo) count++;
+  }
 
-function compararTipos(valor, tipo) {
-    if (tipo === 'array')
-        return compararTipoArray(valor);
-
-    if (['function', 'string', 'number', 'boolean', 'undefined'].indexOf(tipo) !== -1)
-        return compararTipoPrimitivo(valor, tipo);
-
-    if (tipo === 'null')
-        return compararTipoNull(valor);
-
-    if (tipo === 'object')
-        return compararTipoObject(valor);
-
-    return 0;
-}
-
-function compararTipoArray(array) {
-    return array.constructor === Array;
-}
-
-function compararTipoPrimitivo(valor, tipo) {
-    return typeof valor === tipo;
-}
-
-function compararTipoNull(valor) {
-    return valor === null;
-}
-
-function compararTipoObject(obj) {
-    return obj instanceof Object;
+  return count;
 }
 
 //8
