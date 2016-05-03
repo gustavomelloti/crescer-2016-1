@@ -24,7 +24,7 @@ function maiorTexto(palavras) {
 
 //3
 function imprime(instrutores, fn) {
-    typeof (fn === 'function') 
+    typeof (fn === 'function')
         fn(instrutores);
 }
 
@@ -34,18 +34,18 @@ function imprimeInstrutor(instrutores) {
 }
 
 //4
-var somaAux = 0;
- 
-function somar(n) {
-    console.log(n+somaAux);
-    somaAux = 0;
+var primeiroValor = 0;
+
+function somar(valorASomar) {
+    console.log(valorASomar+primeiroValor);
+    primeiroValor = 0;
 }
 
-function adicionar(n) {
-    if (somaAux === 0)
-        somaAux = n;
+function adicionar(valorASomar) {
+    if (primeiroValor === 0)
+        primeiroValor = valorASomar;
     else
-        somar(n); 
+        somar(valorASomar);
 }
 
 //5
@@ -59,23 +59,20 @@ function fiboSum(n) {
 
 //6
 function queroCafe(mascada, precos) {
-    var tamanhoArray = precos.length;
-
-    for (var i = 0; i < tamanhoArray; i++) {
+    for (var i = 0; i < precos.length; i++) {
         if (precos[i] > mascada) {
             precos.splice(i, 1);
             i--;
         }
     }
-
-    return (precos.sort()).toString();
+    console.log(precos.sort().toString());
 }
 
 //7
 function contarPorTipo(obj, tipo, fn) {
     var ocorrencias = 0;
 
-    for (var i in obj) 
+    for (var i in obj)
         ocorrencias+= fn(obj[i], tipo);
 
     console.log(ocorrencias);
@@ -110,7 +107,7 @@ function compararTipoNull(valor) {
 }
 
 function compararTipoObject(obj) {
-    obj instanceof Object;
+    return obj instanceof Object;
 }
 
 
@@ -129,9 +126,9 @@ console.log(goku);
     Saídas:
         Son undefined
         Son Goku
-    
+
     Son undefined é exibido pois é definido dentro da função revelarSaiyaman uma variável local, com mesmo nome de uma varíavel global.
     Quando é realizada a concatenação o valor da varíavel gohan passa a ser undefined.
-    
+
     Son Goku é exibido porque dentro da função revelarSaiyaman o valor da variável global está sendo alterada para 'Son Goku'.
  */
