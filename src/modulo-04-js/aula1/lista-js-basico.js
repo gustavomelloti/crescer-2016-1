@@ -21,14 +21,10 @@ function maiorTexto(palavras) {
 
 //3
 function imprime(instrutores, fn) {
-    typeof (fn === 'function')
-        fn(instrutores);
-}
-
-function imprimeInstrutor(instrutores) {
-    for (var i in instrutores)
-        console.log('olá querido instrutor:', instrutores[i]);
-}
+    instrutores.forEach(function(instrutor) {
+        if (typeof fn === 'function') fn(instrutor);
+    });
+};
 
 //4
 function adicionar(parcela1) {
