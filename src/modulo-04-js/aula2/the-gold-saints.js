@@ -39,7 +39,7 @@ function obterMesesComMaisAniversarios() {
     var mesesOrdenados = meses.sort(function(a, b) {
         return b.quantidadeAniversarios - a.quantidadeAniversarios;
     });
-    
+
     var i = 0, nomeMeses = [];
 
     while(mesesOrdenados[0].quantidadeAniversarios == mesesOrdenados[i].quantidadeAniversarios) {
@@ -52,9 +52,9 @@ function obterMesesComMaisAniversarios() {
 
 /* Exercício 4 */
 function obterAlturaMedia() {
-    return (Object.keys(goldSaints).reduce(function(previous, key) {
+    return parseFloat((Object.keys(goldSaints).reduce(function(previous, key) {
         return previous + goldSaints[key].alturaCm;
-    }, 0) / goldSaints.length / 100).toFixed(2);
+    }, 0) / goldSaints.length / 100).toFixed(2));
 }
 
 /* Exercício 5 */
@@ -65,7 +65,9 @@ function obterAlturaMediana() {
 
     var posicao = Math.round(alturas.length/2);
 
-    return ((alturas.length % 2 === 0 ? (alturas[posicao] + alturas[posicao]) / 2  : alturas[posicao]) / 100).toFixed(2);
+    return parseFloat(
+        ((alturas.length % 2 === 0 ? (alturas[posicao] + alturas[posicao]) / 2  : alturas[posicao]) / 100).toFixed(2)
+    );
 }
 
 /* Exercício 6 - A */
@@ -85,13 +87,15 @@ function obterPesoMedioCavaleiros(cavaleiros) {
 
     var posicao =  Math.round(pesos.length/2);
 
-    return ((pesos.length % 2 === 0 ? (pesos[posicao] + pesos[posicao]) / 2  : pesos[posicao]) / 2.2046).toFixed(2);
+    return parseFloat(
+        ((pesos.length % 2 === 0 ? (pesos[posicao] + pesos[posicao]) / 2  : pesos[posicao]) * 0.45).toFixed(2)
+    );
 }
 
 /* Exercício 7 */
 function obterIMC() {
     return goldSaints.map(function(e){
-        return e.pesoLb !== undefined ? calcularIMC(e.alturaCm/100, e.pesoLb / 2.2046) : undefined;
+        return calcularIMC(e.alturaCm/100, e.pesoLb * 0.45);
     }).filter(Number);
 }
 
@@ -102,7 +106,7 @@ function calcularIMC(altura, peso) {
 /* Exercício 8 */
 function obterSobrepeso() {
     return goldSaints.filter(function(e){
-        var imc = calcularIMC(e.alturaCm/100, e.pesoLb / 2.2046);
+        var imc = calcularIMC(e.alturaCm / 100, e.pesoLb * 0.45);
         return imc >= 25 && imc <= 29.99;
     });
 }
