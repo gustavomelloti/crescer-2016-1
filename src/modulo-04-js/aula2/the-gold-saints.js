@@ -19,6 +19,16 @@ Number.prototype.lbParaKilos = function() {
     return this / 2.20462262;
 };
 
+Date.prototype.formatarData = function(){
+    var d = new Date(this || Date.now()),
+        month = '' + (d.getMonth() + 1),
+        day = '' + d.getDate(),
+        year = d.getFullYear();
+    if (month.length < 2) month = '0' + month;
+    if (day.length < 2) day = '0' + day;
+  return [day, month, year].join('/');
+}
+
 var apenasComPesoDefinido = function(e) {
   return typeof e.pesoLb !== 'undefined';
 };
