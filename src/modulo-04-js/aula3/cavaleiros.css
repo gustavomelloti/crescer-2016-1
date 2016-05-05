@@ -24,3 +24,9 @@
     color:white;
     width: 200px;
 }
+
+
+#frmNovoCavaleiro > input, select {
+	display: block;
+	margin-bottom: 30px;
+}
