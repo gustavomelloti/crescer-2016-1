@@ -1,0 +1,26 @@
+
+.cavaleiros {
+	width: 850px;
+	margin: 20px auto;
+}
+
+.cavaleiros > div:nth-child(4n+5) {
+    clear: left;
+}
+
+.cavaleiros > div {
+	margin-left: 20px;
+	margin-bottom: 20px;
+    float: left;
+    position: relative;
+}
+
+.detalhes {
+    position: absolute;
+    z-index: 1;
+    background-color: #0E374A;
+    margin-left: 120px;
+    margin-top: -124px;
+    color:white;
+    width: 200px;
+}
