@@ -8,7 +8,7 @@ $(document).ready(function(){
 
     function adicionarCavaleiroHtml(i) {
         $div = $('<div>').attr('data-id-cavaleiro', goldSaints[i].id);
-            $div = $div.append($('<img>').attr('src', 'download.jpg'));
+            $div = $div.append($('<img>').attr('src', goldSaints[i].imagens[0].url));
 
             $divDetalhes = $('<div>').addClass('detalhes').css('display', 'none');
                 $divDetalhes.append( $('<div>').append($('<span>Nome:</span> <span>'+goldSaints[i].nome+'</span>')));
