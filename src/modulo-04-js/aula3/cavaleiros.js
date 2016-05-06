@@ -14,14 +14,14 @@ $(document).ready(function(){
 			$divDetalhes.append( $('<div>').append($('<span>Signo:</span> <span>'+goldSaints[i].signo+'</span>'))) ;
 			$divDetalhes.append( $('<div>').append($('<span>Tipo Sanguíneo:</span> <span>'+goldSaints[i].tipoSanguineo+'</span>'))) ;
 
-        $(".cavaleiros").append($div.append($divDetalhes));
+        $('.cavaleiros').append($div.append($divDetalhes));
     }
 
-    $(".cavaleiros > div").mouseover(function(){
+    $('body').on('mouseover', '.cavaleiros > div', function(){
     	$(this).find('div').show();
     });
-
-     $(".cavaleiros > div").mouseout(function(){
+    
+    $('body').on('mouseout', '.cavaleiros > div', function(){
     	$(this).find('div').hide();
     });
 });

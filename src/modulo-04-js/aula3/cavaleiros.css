@@ -22,11 +22,5 @@
     margin-left: 120px;
     margin-top: -124px;
     color:white;
-    width: 200px;
-}
-
-
-#frmNovoCavaleiro > input, select {
-	display: block;
-	margin-bottom: 30px;
+    width: 250px;
 }
