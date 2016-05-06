@@ -8,7 +8,9 @@ $(document).ready(function(){
 
     function adicionarCavaleiroHtml(i) {
         $div = $('<div>').attr('data-id-cavaleiro', goldSaints[i].id);
+            $div = $div.append($('<img>').attr('src', 'img/delete.png').addClass('delete'));
             $div = $div.append($('<img>').attr('src', goldSaints[i].imagens[0].url));
+
 
             $divDetalhes = $('<div>').addClass('detalhes').css('display', 'none');
                 $divDetalhes.append( $('<div>').append($('<span>Nome:</span> <span>'+goldSaints[i].nome+'</span>')));
@@ -28,13 +30,13 @@ $(document).ready(function(){
     function adicionarCavaleiro() {
         var golpesCavaleiro = [];
             $("[name^='golpes']").each(function(){ golpesCavaleiro.push($(this).val())});
-            
+
         goldSaints.push({
             id: goldSaints.length,
             dataNascimento: $("#slDataNascimento").datepicker('getDate'),
             nome: $('#txtNomeCavaleiro').val(),
             imagens: [
-                $("[name^='urlImagem']").map(function(index){ return { url:$("#txtUrlImagem"+ (index+1)).val(), isThumb: $('#ckThumb'+ (index+1)).is(":checked") }})
+                $("[name^='urlImagem']").map(function(index){ return { url:$("#txtUrlImagem"+ (index+1)).val(), isThumb: $('#ckThumb'+ (index+1)).is(":checked") }})[0]
             ],
             golpes: golpesCavaleiro,
             tipoSanguineo: $('#slTipoSanguineo').val(),
@@ -45,34 +47,52 @@ $(document).ready(function(){
             localNascimento: $('#txtLocalNascimento').val()
         });
 
+        atualizarCavaleiros();
+    }
+
+    function atualizarCavaleiros() {
         localStorage['cavaleiros'] = JSON.stringify(goldSaints);
     }
 
     function limparForm() {
-        $("[name^='golpes']").each(function(i){ 
+        $("[name^='golpes']").each(function(i){
             if (i !== 0) {
                 $(this).prev().remove();
                 $(this).remove();
             }
         });
 
-        $("[name^='urlImagem']").each(function(i){ 
+        $("[name^='urlImagem']").each(function(i){
             if (i !== 0) {
                 $(this).prev().remove();
                 $(this).next().remove();
-                $(this).remove();   
+                $(this).remove();
             }
         });
-        
+
         $(this).trigger("reset");
     }
 
     $('body').on('mouseover', '.cavaleiros > div', function(){
         $(this).find('div').show();
     });
-    
+
     $('body').on('mouseout', '.cavaleiros > div', function(){
         $(this).find('div').hide();
+    });
+
+    $('body').on('click', '.delete', function(){
+        var idCavaleiro = $(this).parent('div:first').attr('data-id-cavaleiro');
+
+        $(this).parent('div:first').remove();
+
+        var indexCavaleiro = Object.keys(goldSaints).filter(function(i){
+            return goldSaints[i].id == idCavaleiro;
+        }, 0)[0];
+
+        goldSaints.splice(indexCavaleiro,1);
+
+        atualizarCavaleiros();
     });
 
     $('#frmNovoCavaleiro').submit(function(e) {
