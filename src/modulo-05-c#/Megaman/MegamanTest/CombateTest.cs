@@ -190,6 +190,7 @@ namespace MegamanTest
 
             r.EquiparUpgrade(new CanhaoDePlasma());
             r.EquiparUpgrade(new CanhaoDePlasma());
+            r.EquiparUpgrade(new CanhaoDePlasma());
 
             m.EquiparUpgrade(r);
             m.Atacar(p);
@@ -198,7 +199,7 @@ namespace MegamanTest
         }
 
         [TestMethod]
-        public void TentandoEquiparMegamanCom4UpgradeCanhaDePlasmaAtacaProtoman()
+        public void TentandoEquiparMegamanCom5UpgradeCanhaDePlasmaAtacaProtoman()
         {
             Megaman m = new Megaman();
             Protoman p = new Protoman();
@@ -206,10 +207,72 @@ namespace MegamanTest
             m.EquiparUpgrade(new CanhaoDePlasma());
             m.EquiparUpgrade(new CanhaoDePlasma());
             m.EquiparUpgrade(new CanhaoDePlasma());
+            m.EquiparUpgrade(new CanhaoDePlasma());
+            m.EquiparUpgrade(new CanhaoDePlasma());
 
             m.Atacar(p);
 
             Assert.AreEqual(p.Vida, 90);
+        }
+
+        [TestMethod]
+        public void MegamanComUgradeBotasECanhaERushComUpgradeCanhaoDePlasmaAtacaProtoman()
+        {
+            Megaman m = new Megaman();
+            Protoman p = new Protoman();
+            Rush r = new Rush();
+
+            r.EquiparUpgrade(new CanhaoDePlasma());
+            r.EquiparUpgrade(new CanhaoDePlasma());
+
+            m.EquiparUpgrade(r);
+            m.EquiparUpgrade(new CanhaoDePlasma());
+            m.EquiparUpgrade(new BotasdeSuperVelocidade());
+            m.Atacar(p);
+
+            Assert.AreEqual(p.Vida, 85);
+        }
+
+        [TestMethod]
+        public void ProtomanComEscudoERushCom2EscudosEhAtacadoPorMegaman()
+        {
+            Megaman m = new Megaman();
+            Protoman p = new Protoman();
+            Rush r = new Rush();
+
+            r.EquiparUpgrade(new EscudoDeEnergia());
+            r.EquiparUpgrade(new EscudoDeEnergia());
+            p.EquiparUpgrade(new EscudoDeEnergia());
+            p.EquiparUpgrade(r);
+
+            m.Atacar(p);
+
+            Assert.AreEqual(p.Vida, 100);
+        }
+
+        [TestMethod]
+        public void ProtomanComEscudoERushCom2EscudosEhAtacadoPorMegamanComUgradeBotasECanhaERushComUpgradeCanhaoDePlasma()
+        {
+            Megaman m = new Megaman();
+            Protoman p = new Protoman();
+            Rush rProtoman = new Rush();
+            Rush mMegaman = new Rush();
+
+            rProtoman.EquiparUpgrade(new EscudoDeEnergia());
+            rProtoman.EquiparUpgrade(new EscudoDeEnergia());
+            p.EquiparUpgrade(new EscudoDeEnergia());
+            p.EquiparUpgrade(rProtoman);
+
+
+            mMegaman.EquiparUpgrade(new CanhaoDePlasma());
+            mMegaman.EquiparUpgrade(new CanhaoDePlasma());
+            m.EquiparUpgrade(mMegaman);
+            m.EquiparUpgrade(new CanhaoDePlasma());
+            m.EquiparUpgrade(new BotasdeSuperVelocidade());
+
+            m.Atacar(p);
+
+            Assert.AreEqual(p.Vida, 94);
         }
     }
 }
