@@ -1,0 +1,7 @@
+C:\Users\Gustavo\Source\Workspaces\MyFirstProject\BuildProcessTemplates\ProjetoX\development\Module B\Component H\Megaman\MegamanTest\bin\Debug\MegamanTest.dll
+C:\Users\Gustavo\Source\Workspaces\MyFirstProject\BuildProcessTemplates\ProjetoX\development\Module B\Component H\Megaman\MegamanTest\bin\Debug\MegamanTest.pdb
+C:\Users\Gustavo\Source\Workspaces\MyFirstProject\BuildProcessTemplates\ProjetoX\development\Module B\Component H\Megaman\MegamanTest\bin\Debug\Megaman.dll
+C:\Users\Gustavo\Source\Workspaces\MyFirstProject\BuildProcessTemplates\ProjetoX\development\Module B\Component H\Megaman\MegamanTest\bin\Debug\Megaman.pdb
+C:\Users\Gustavo\Source\Workspaces\MyFirstProject\BuildProcessTemplates\ProjetoX\development\Module B\Component H\Megaman\MegamanTest\obj\Debug\MegamanTest.csprojResolveAssemblyReference.cache
+C:\Users\Gustavo\Source\Workspaces\MyFirstProject\BuildProcessTemplates\ProjetoX\development\Module B\Component H\Megaman\MegamanTest\obj\Debug\MegamanTest.dll
+C:\Users\Gustavo\Source\Workspaces\MyFirstProject\BuildProcessTemplates\ProjetoX\development\Module B\Component H\Megaman\MegamanTest\obj\Debug\MegamanTest.pdb
