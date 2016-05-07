@@ -41,8 +41,8 @@ $(document).ready(function(){
             golpes: golpesCavaleiro,
             tipoSanguineo: $('#slTipoSanguineo').val(),
             signo: $('#slSigno').val(),
-            pesoLb: parseFloat($('#txtPeso').val()),
-            alturaCm : parseFloat($('#txtAltura').val()),
+            pesoLb: parseFloat($('#txtPeso').val()).kilosParaLb(),
+            alturaCm : parseFloat($('#txtAltura').val()).converterParaCentimetros(),
             localTreinamento: $('#txtLocalTreinamento').val(),
             localNascimento: $('#txtLocalNascimento').val()
         });

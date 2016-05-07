@@ -11,12 +11,20 @@ Number.prototype.converterParaMetros = function() {
     return this / 100;
 };
 
+Number.prototype.converterParaCentimetros = function() {
+    return this * 100;
+};
+
 function calcularIMC(altura, peso) {
     return peso / Math.pow(altura, 2);
 }
 
 Number.prototype.lbParaKilos = function() {
     return this / 2.20462262;
+};
+
+Number.prototype.kilosParaLb = function() {
+    return this * 0.453592;
 };
 
 Date.prototype.formatarData = function(){
