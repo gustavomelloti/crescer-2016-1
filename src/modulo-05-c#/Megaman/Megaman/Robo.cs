@@ -5,16 +5,16 @@ namespace MegamanProject
     {
         public abstract string Nome { get; }
         public int Vida { get; protected set; }
-        public List<IUpgrade> Upgrades = new List<IUpgrade>();
-        protected int ataque;
-        protected int Ataque
+        protected List<IUpgrade> Upgrades {get;set;}
+        private int ataque;
+        protected virtual int Ataque
         {
             get
             {
                 int ataquesUp = 0;
 
                 foreach (var up in Upgrades)
-                    ataquesUp += up.Ataque;
+                    ataquesUp += up.AtaqueAdicional;
 
                 return ataque + ataquesUp;
             }
@@ -23,14 +23,14 @@ namespace MegamanProject
         }
 
         protected int defesa;
-        protected int Defesa
+        protected virtual int Defesa
         {
             get
             {
                 int defesaUp = 0;
 
                 foreach (var up in Upgrades)
-                    defesaUp += up.Defesa;
+                    defesaUp += up.DefesaAdicional;
 
                 return defesa + defesaUp;
             }
@@ -43,13 +43,16 @@ namespace MegamanProject
             Vida = 100;
             ataque = 5;
             defesa = 0;
+            Upgrades = new List<IUpgrade>();
         }
 
         public virtual void PerderVida(int ataque)
         {
-            int vidaAPerder = ataque - Defesa;
+            int perder = (ataque - Defesa);
 
-            Vida -= vidaAPerder > Vida ? 0 : vidaAPerder;
+            int novaVida = Vida - (perder > 0 ? perder : 0);
+
+            Vida = novaVida > 0 ? novaVida : 0;
         }
 
         public virtual void Atacar(Robo robo)
@@ -70,8 +73,13 @@ namespace MegamanProject
 
         public void EquiparUpgrade(IUpgrade upgradeItem)
         {
-            if (Upgrades.Count < 3)
+            if (verificarSePodeEquiparUpgrade())
                 Upgrades.Add(upgradeItem);
+        }
+
+        protected virtual bool verificarSePodeEquiparUpgrade()
+        {
+            return Upgrades.Count < 3;
         }
     }
 }

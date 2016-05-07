@@ -2,15 +2,7 @@
 {
     public class EscudoDeEnergia : IUpgrade
     {
-        public string Nome
-        {
-            get
-            {
-                return "Canhão de Plasma";
-            }
-        }
-
-        public int Ataque
+        public int AtaqueAdicional
         {
             get
             {
@@ -18,7 +10,7 @@
             }
         }
 
-        public int Defesa
+        public int DefesaAdicional
         {
             get
             {
