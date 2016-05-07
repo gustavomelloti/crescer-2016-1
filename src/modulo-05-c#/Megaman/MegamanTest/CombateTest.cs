@@ -74,5 +74,52 @@ namespace MegamanTest
 
             Assert.AreEqual(p.Vida, 4);
         }
+
+        [TestMethod]
+        public void MagmanComUpgradeCanhaoDePlasmaAtacaProtoman()
+        {
+            Megaman m = new Megaman();
+            Protoman p = new Protoman();
+            m.EquiparUpgrade(new CanhaoDePlasma());
+            m.Atacar(p);
+
+            Assert.AreEqual(p.Vida, 94);
+        }
+
+        [TestMethod]
+        public void MagmanAtacaProtomanComUpgradeEscudoDeEnergia()
+        {
+            Megaman m = new Megaman();
+            Protoman p = new Protoman();
+            p.EquiparUpgrade(new EscudoDeEnergia());
+            m.Atacar(p);
+
+            Assert.AreEqual(p.Vida, 98);
+        }
+
+        [TestMethod]
+        public void MagmanComUpgradeCanhaoDePlasmaEBotasSuperVelocidadeAtacaProtoman()
+        {
+            Megaman m = new Megaman();
+            Protoman p = new Protoman();
+            m.EquiparUpgrade(new CanhaoDePlasma());
+            m.EquiparUpgrade(new BotasdeSuperVelocidade());
+            m.Atacar(p);
+
+            Assert.AreEqual(p.Vida, 93);
+        }
+
+        [TestMethod]
+        public void MagmanComUpgradeCanhaoDePlasmaEBotasSuperVelocidadeAtacaProtomanComEscudoDeEnergia()
+        {
+            Megaman m = new Megaman();
+            Protoman p = new Protoman();
+            m.EquiparUpgrade(new CanhaoDePlasma());
+            m.EquiparUpgrade(new BotasdeSuperVelocidade());
+            p.EquiparUpgrade(new EscudoDeEnergia());
+            m.Atacar(p);
+
+            Assert.AreEqual(p.Vida, 95);
+        }
     }
 }
