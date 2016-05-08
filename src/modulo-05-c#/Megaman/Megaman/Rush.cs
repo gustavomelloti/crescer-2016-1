@@ -2,15 +2,6 @@
 {
     public class Rush : Robo, IUpgrade
     {
-        public override string Nome
-        {
-            get
-            {
-                return "Rush";
-            }
-            
-        }
-
         public int AtaqueAdicional
         {
             get

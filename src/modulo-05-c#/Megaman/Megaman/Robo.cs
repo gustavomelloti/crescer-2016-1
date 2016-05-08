@@ -3,7 +3,6 @@ namespace MegamanProject
 {
     public abstract class Robo
     {
-        public abstract string Nome { get; }
         public int Vida { get; protected set; }
         protected List<IUpgrade> Upgrades {get;set;}
         private int ataque;
@@ -63,8 +62,7 @@ namespace MegamanProject
         public override string ToString()
         {
             return string.Format(
-                "Nome: {0}, Vida: {1}, Ataque: {2}, Defesa: {3}",
-                Nome,
+                "Vida: {0}, Ataque: {1}, Defesa: {2}",
                 Vida,
                 Ataque,
                 Defesa

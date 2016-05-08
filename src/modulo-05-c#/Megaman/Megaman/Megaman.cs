@@ -2,14 +2,6 @@
 {
     public class Megaman : Robo
     {
-        public override string Nome
-        {
-            get
-            {
-                return "Megaman";
-            }
-        }
-
         public Megaman()
         {
             Ataque = 6;

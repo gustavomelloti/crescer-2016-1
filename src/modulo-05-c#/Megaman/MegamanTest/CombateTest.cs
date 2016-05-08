@@ -274,5 +274,21 @@ namespace MegamanTest
 
             Assert.AreEqual(p.Vida, 94);
         }
+
+        [TestMethod]
+        public void ProtomanReviveEGanha7DeAtaqueEAtacaMegaman()
+        {
+            Megaman m = new Megaman();
+            Protoman p = new Protoman();
+
+            for (int i = 0; i < 25; i++)
+            {
+                m.Atacar(p);
+            }
+
+            p.Atacar(m);
+
+            Assert.AreEqual(m.Vida, 93);
+        }
     }
 }

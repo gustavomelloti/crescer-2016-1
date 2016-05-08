@@ -11,7 +11,7 @@ namespace MegamanTest
         {
             Megaman m = new Megaman();
 
-            Assert.AreEqual(m.ToString(), "Nome: Megaman, Vida: 100, Ataque: 6, Defesa: 0");
+            Assert.AreEqual(m.ToString(), "Vida: 100, Ataque: 6, Defesa: 0");
         }
 
         [TestMethod]
@@ -22,7 +22,7 @@ namespace MegamanTest
 
             m.Atacar(p);
 
-            Assert.AreEqual(p.ToString(), "Nome: Protoman, Vida: 96, Ataque: 5, Defesa: 2");
+            Assert.AreEqual(p.ToString(), "Vida: 96, Ataque: 5, Defesa: 2");
         }
     }
 }

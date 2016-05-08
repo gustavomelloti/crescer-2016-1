@@ -4,13 +4,6 @@
     {
         private bool jaMorreu;
 
-        public override string Nome
-        {
-            get {
-                return "Protoman";
-            }
-        }
-
         public Protoman()
         {
             Defesa = 2;
@@ -24,6 +17,7 @@
             if (Vida <= 0 && jaMorreu == false) {
                 jaMorreu = true;
                 Vida = 20;
+                Ataque = 7;
             }
         }
     }
