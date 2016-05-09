@@ -10,6 +10,8 @@
             jaMorreu = false;
         }
 
+        public Protoman(Chip c) : base(c) { }
+       
         public override void PerderVida(int vidaAPerder)
         {
             base.PerderVida(vidaAPerder);

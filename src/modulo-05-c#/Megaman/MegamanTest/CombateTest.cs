@@ -290,5 +290,38 @@ namespace MegamanTest
 
             Assert.AreEqual(m.Vida, 93);
         }
+
+        [TestMethod]
+        public void MegamanComChip3AtacaProtoman()
+        {
+            Megaman m = new Megaman(Chip.Nivel3);
+            Protoman p = new Protoman();
+        
+            m.Atacar(p);
+
+            Assert.AreEqual(p.Vida, 95);
+        }
+
+        [TestMethod]
+        public void RushTentaAtacarMegaman()
+        {
+            Megaman m = new Megaman();
+            Rush r = new Rush();
+
+            r.Atacar(m);
+
+            Assert.AreEqual(m.Vida, 100);
+        }
+
+        [TestMethod]
+        public void RushAtacaProtoman()
+        {
+            Protoman p = new Protoman();
+            Rush r = new Rush();
+
+            r.Atacar(p);
+
+            Assert.AreEqual(p.Vida, 97);
+        }
     }
 }

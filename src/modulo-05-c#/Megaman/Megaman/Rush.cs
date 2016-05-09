@@ -24,9 +24,17 @@
             defesa = 3;
         }
 
+        public Rush(Chip c) : base(c) { }
+
         protected override bool verificarSePodeEquiparUpgrade()
         {
             return Upgrades.Count < 2;
+        }
+
+        public override void Atacar(Robo robo)
+        {
+            if (! (robo is Megaman))
+                robo.Atacar(robo);
         }
     }
 }

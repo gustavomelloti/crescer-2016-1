@@ -7,6 +7,8 @@
             Ataque = 6;
         }
 
+        public Megaman(Chip c) : base(c) { }
+
         public override void Atacar(Robo robo)
         {
             int quantidadeAtaque = Vida < 30 ? Ataque + 3: Ataque;

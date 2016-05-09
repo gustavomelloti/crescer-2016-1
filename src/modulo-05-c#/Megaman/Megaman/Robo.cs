@@ -5,17 +5,18 @@ namespace MegamanProject
     {
         public int Vida { get; protected set; }
         protected List<IUpgrade> Upgrades {get;set;}
+        protected Chip ChipNivel { get; set; }
         private int ataque;
         protected virtual int Ataque
         {
             get
             {
                 int ataquesUp = 0;
-
+                           
                 foreach (var up in Upgrades)
                     ataquesUp += up.AtaqueAdicional;
 
-                return ataque + ataquesUp;
+                return AdicionarValorAtaqueChip(ataque + ataquesUp);
             }
 
             set {ataque = value;}
@@ -31,7 +32,7 @@ namespace MegamanProject
                 foreach (var up in Upgrades)
                     defesaUp += up.DefesaAdicional;
 
-                return defesa + defesaUp;
+                return AdicionarValorDefesaChip(defesa + defesaUp);
             }
 
             set { defesa = value; }
@@ -42,7 +43,13 @@ namespace MegamanProject
             Vida = 100;
             ataque = 5;
             defesa = 0;
+            ChipNivel = Chip.Nivel2;
             Upgrades = new List<IUpgrade>();
+        }
+
+        public Robo(Chip c) : this()
+        {
+            ChipNivel = c;
         }
 
         public virtual void PerderVida(int ataque)
@@ -78,6 +85,22 @@ namespace MegamanProject
         protected virtual bool verificarSePodeEquiparUpgrade()
         {
             return Upgrades.Count < 3;
+        }
+
+        private int AdicionarValorAtaqueChip(int valorAtaque)
+        {
+            if (ChipNivel == Chip.Nivel1)
+                return valorAtaque - 1;
+
+            if (ChipNivel == Chip.Nivel3)
+                return valorAtaque + 2;
+
+            return valorAtaque;
+        }
+
+        private int AdicionarValorDefesaChip(int valorDefesa)
+        {
+            return ChipNivel == Chip.Nivel3 ? valorDefesa + 1 : valorDefesa;
         }
     }
 }
