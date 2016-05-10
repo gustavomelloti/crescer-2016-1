@@ -133,7 +133,9 @@ namespace Repositorio
 
         public IList<dynamic> QuantidadeFuncionariosPorTurno()
         {
-            throw new NotImplementedException();
+            return Funcionarios.GroupBy(
+                x => x.TurnoTrabalho
+            ).Select(x => new { Quantidade = x.Count(), Turno = x.Key }).ToArray();
         }
 
         public dynamic FuncionarioMaisComplexo()
