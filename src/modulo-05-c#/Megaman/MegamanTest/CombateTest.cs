@@ -299,7 +299,7 @@ namespace MegamanTest
         
             m.Atacar(p);
 
-            Assert.AreEqual(p.Vida, 95);
+            Assert.AreEqual(p.Vida, 94);
         }
 
         [TestMethod]
@@ -317,11 +317,92 @@ namespace MegamanTest
         public void RushAtacaProtoman()
         {
             Protoman p = new Protoman();
-            Rush r = new Rush();
+            Rush r = new Rush(Chip.Nivel3);
 
             r.Atacar(p);
 
+            Assert.AreEqual(p.Vida, 96);
+        }
+
+        [TestMethod]
+        public void MegamanComUgradeBotasECanhaERushComUpgradeCanhaoDePlasmaEChip3AtacaProtoman()
+        {
+            Megaman m = new Megaman(Chip.Nivel3);
+            Protoman p = new Protoman();
+            Rush r = new Rush();
+
+            r.EquiparUpgrade(new CanhaoDePlasma());
+            r.EquiparUpgrade(new CanhaoDePlasma());
+
+            m.EquiparUpgrade(r);
+            m.EquiparUpgrade(new CanhaoDePlasma());
+            m.EquiparUpgrade(new BotasdeSuperVelocidade());
+            m.Atacar(p);
+
+            Assert.AreEqual(p.Vida, 83);
+        }
+
+        [TestMethod]
+        public void MegamanAtacaProtomanComChip3()
+        {
+            Megaman m = new Megaman();
+            Protoman p = new Protoman(Chip.Nivel3);
+
+            m.Atacar(p);
+
             Assert.AreEqual(p.Vida, 97);
+        }
+
+        [TestMethod]
+        public void MegamanComChip1AtacaProtoman()
+        {
+            Megaman m = new Megaman(Chip.Nivel1);
+            Protoman p = new Protoman();
+
+            m.Atacar(p);
+
+            Assert.AreEqual(p.Vida, 97);
+        }
+
+        [TestMethod]
+        public void MegamanComChip3AtacaProtomanComChip3()
+        {
+            Megaman m = new Megaman(Chip.Nivel3);
+            Protoman p = new Protoman(Chip.Nivel3);
+
+            m.Atacar(p);
+
+            Assert.AreEqual(p.Vida, 95);
+        }
+
+        [TestMethod]
+        public void MegamanCom3UpgradeCanhaDePlasmaAtacaEChip3AtacaProtoman()
+        {
+            Megaman m = new Megaman(Chip.Nivel3);
+            Protoman p = new Protoman();
+
+            m.EquiparUpgrade(new CanhaoDePlasma());
+            m.EquiparUpgrade(new CanhaoDePlasma());
+            m.EquiparUpgrade(new CanhaoDePlasma());
+
+            m.Atacar(p);
+
+            Assert.AreEqual(p.Vida, 88);
+        }
+
+        [TestMethod]
+        public void MegamanCom3UpgradeCanhaDePlasmaAtacaEChip3AtacaProtomanComChip3()
+        {
+            Megaman m = new Megaman(Chip.Nivel3);
+            Protoman p = new Protoman(Chip.Nivel3);
+
+            m.EquiparUpgrade(new CanhaoDePlasma());
+            m.EquiparUpgrade(new CanhaoDePlasma());
+            m.EquiparUpgrade(new CanhaoDePlasma());
+
+            m.Atacar(p);
+
+            Assert.AreEqual(p.Vida, 89);
         }
     }
 }

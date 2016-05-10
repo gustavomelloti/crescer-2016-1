@@ -24,7 +24,9 @@
             defesa = 3;
         }
 
-        public Rush(Chip c) : base(c) { }
+        public Rush(Chip c) : this() {
+            ChipNivel = c;
+        }
 
         protected override bool verificarSePodeEquiparUpgrade()
         {
@@ -34,7 +36,7 @@
         public override void Atacar(Robo robo)
         {
             if (! (robo is Megaman))
-                robo.Atacar(robo);
+                base.Atacar(robo);
         }
     }
 }

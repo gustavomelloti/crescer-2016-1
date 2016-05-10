@@ -10,8 +10,10 @@
             jaMorreu = false;
         }
 
-        public Protoman(Chip c) : base(c) { }
-       
+        public Protoman(Chip c) : this() {
+            ChipNivel = c;
+        }
+
         public override void PerderVida(int vidaAPerder)
         {
             base.PerderVida(vidaAPerder);

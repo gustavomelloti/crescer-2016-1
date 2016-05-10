@@ -7,7 +7,9 @@
             Ataque = 6;
         }
 
-        public Megaman(Chip c) : base(c) { }
+        public Megaman(Chip c) : this() {
+            ChipNivel = c;
+        }
 
         public override void Atacar(Robo robo)
         {

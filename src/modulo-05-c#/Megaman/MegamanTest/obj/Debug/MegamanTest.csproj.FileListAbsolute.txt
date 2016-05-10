@@ -13,3 +13,11 @@ C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-05-c#\Megaman\Megaman
 C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-05-c#\Megaman\MegamanTest\obj\Debug\MegamanTest.csprojResolveAssemblyReference.cache
 C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-05-c#\Megaman\MegamanTest\obj\Debug\MegamanTest.dll
 C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-05-c#\Megaman\MegamanTest\obj\Debug\MegamanTest.pdb
+C:\Users\Public\Documents\crescer-2016-1-master\src\modulo-05-c#\Megaman\MegamanTest\bin\Debug\MegamanTest.dll
+C:\Users\Public\Documents\crescer-2016-1-master\src\modulo-05-c#\Megaman\MegamanTest\bin\Debug\MegamanTest.pdb
+C:\Users\Public\Documents\crescer-2016-1-master\src\modulo-05-c#\Megaman\MegamanTest\bin\Debug\Megaman.dll
+C:\Users\Public\Documents\crescer-2016-1-master\src\modulo-05-c#\Megaman\MegamanTest\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\Public\Documents\crescer-2016-1-master\src\modulo-05-c#\Megaman\MegamanTest\bin\Debug\Megaman.pdb
+C:\Users\Public\Documents\crescer-2016-1-master\src\modulo-05-c#\Megaman\MegamanTest\obj\Debug\MegamanTest.csprojResolveAssemblyReference.cache
+C:\Users\Public\Documents\crescer-2016-1-master\src\modulo-05-c#\Megaman\MegamanTest\obj\Debug\MegamanTest.dll
+C:\Users\Public\Documents\crescer-2016-1-master\src\modulo-05-c#\Megaman\MegamanTest\obj\Debug\MegamanTest.pdb

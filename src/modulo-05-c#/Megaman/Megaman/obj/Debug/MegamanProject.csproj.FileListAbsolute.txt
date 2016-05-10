@@ -8,3 +8,8 @@ C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-05-c#\Megaman\Megaman
 C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-05-c#\Megaman\Megaman\obj\Debug\MegamanProject.csprojResolveAssemblyReference.cache
 C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-05-c#\Megaman\Megaman\obj\Debug\Megaman.dll
 C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-05-c#\Megaman\Megaman\obj\Debug\Megaman.pdb
+C:\Users\Public\Documents\crescer-2016-1-master\src\modulo-05-c#\Megaman\Megaman\bin\Debug\Megaman.dll
+C:\Users\Public\Documents\crescer-2016-1-master\src\modulo-05-c#\Megaman\Megaman\bin\Debug\Megaman.pdb
+C:\Users\Public\Documents\crescer-2016-1-master\src\modulo-05-c#\Megaman\Megaman\obj\Debug\MegamanProject.csprojResolveAssemblyReference.cache
+C:\Users\Public\Documents\crescer-2016-1-master\src\modulo-05-c#\Megaman\Megaman\obj\Debug\Megaman.dll
+C:\Users\Public\Documents\crescer-2016-1-master\src\modulo-05-c#\Megaman\Megaman\obj\Debug\Megaman.pdb

@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
+
 namespace MegamanProject
 {
     public abstract class Robo
@@ -11,12 +13,7 @@ namespace MegamanProject
         {
             get
             {
-                int ataquesUp = 0;
-                           
-                foreach (var up in Upgrades)
-                    ataquesUp += up.AtaqueAdicional;
-
-                return AdicionarValorAtaqueChip(ataque + ataquesUp);
+                return ataque + CalcularValorAtaqueUpgrade() + CalcularValorAtaqueChip();
             }
 
             set {ataque = value;}
@@ -27,12 +24,7 @@ namespace MegamanProject
         {
             get
             {
-                int defesaUp = 0;
-
-                foreach (var up in Upgrades)
-                    defesaUp += up.DefesaAdicional;
-
-                return AdicionarValorDefesaChip(defesa + defesaUp);
+                return defesa + CalcularValorDefesaUpgrade() + CalcularValorDefesaChip();
             }
 
             set { defesa = value; }
@@ -47,14 +39,9 @@ namespace MegamanProject
             Upgrades = new List<IUpgrade>();
         }
 
-        public Robo(Chip c) : this()
+        public virtual void PerderVida(int ataqueSofrido)
         {
-            ChipNivel = c;
-        }
-
-        public virtual void PerderVida(int ataque)
-        {
-            int perder = (ataque - Defesa);
+            int perder = (ataqueSofrido - Defesa);
 
             int novaVida = Vida - (perder > 0 ? perder : 0);
 
@@ -87,20 +74,32 @@ namespace MegamanProject
             return Upgrades.Count < 3;
         }
 
-        private int AdicionarValorAtaqueChip(int valorAtaque)
+        private int CalcularValorAtaqueChip()
         {
-            if (ChipNivel == Chip.Nivel1)
-                return valorAtaque - 1;
-
-            if (ChipNivel == Chip.Nivel3)
-                return valorAtaque + 2;
-
-            return valorAtaque;
+            switch (ChipNivel)
+            {
+                case Chip.Nivel1:
+                    return -1;
+                case Chip.Nivel3:
+                    return 2;
+                default:
+                    return 0;
+            }
         }
 
-        private int AdicionarValorDefesaChip(int valorDefesa)
+        private int CalcularValorDefesaChip()
         {
-            return ChipNivel == Chip.Nivel3 ? valorDefesa + 1 : valorDefesa;
+            return ChipNivel == Chip.Nivel3 ? 1 : 0;
+        }
+
+        private int CalcularValorAtaqueUpgrade()
+        {
+            return Upgrades.Sum(x => x.AtaqueAdicional);
+        }
+
+        private int CalcularValorDefesaUpgrade()
+        {
+            return Upgrades.Sum(x => x.DefesaAdicional);
         }
     }
 }
