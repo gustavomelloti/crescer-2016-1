@@ -1,0 +1,68 @@
+C:\Users\gustavo.mello\Desktop\crescer-2016-1-master (4)\crescer-2016-1-master\src\modulo-05-dotnet\Aula 3\Exemplos\01 - MVC\MVC\MVC\bin\MVC.dll.config
+C:\Users\gustavo.mello\Desktop\crescer-2016-1-master (4)\crescer-2016-1-master\src\modulo-05-dotnet\Aula 3\Exemplos\01 - MVC\MVC\MVC\bin\MVC.dll
+C:\Users\gustavo.mello\Desktop\crescer-2016-1-master (4)\crescer-2016-1-master\src\modulo-05-dotnet\Aula 3\Exemplos\01 - MVC\MVC\MVC\bin\MVC.pdb
+C:\Users\gustavo.mello\Desktop\crescer-2016-1-master (4)\crescer-2016-1-master\src\modulo-05-dotnet\Aula 3\Exemplos\01 - MVC\MVC\MVC\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\gustavo.mello\Desktop\crescer-2016-1-master (4)\crescer-2016-1-master\src\modulo-05-dotnet\Aula 3\Exemplos\01 - MVC\MVC\MVC\bin\System.Web.Helpers.dll
+C:\Users\gustavo.mello\Desktop\crescer-2016-1-master (4)\crescer-2016-1-master\src\modulo-05-dotnet\Aula 3\Exemplos\01 - MVC\MVC\MVC\bin\System.Web.Mvc.dll
+C:\Users\gustavo.mello\Desktop\crescer-2016-1-master (4)\crescer-2016-1-master\src\modulo-05-dotnet\Aula 3\Exemplos\01 - MVC\MVC\MVC\bin\System.Web.Razor.dll
+C:\Users\gustavo.mello\Desktop\crescer-2016-1-master (4)\crescer-2016-1-master\src\modulo-05-dotnet\Aula 3\Exemplos\01 - MVC\MVC\MVC\bin\System.Web.Webpages.Deployment.dll
+C:\Users\gustavo.mello\Desktop\crescer-2016-1-master (4)\crescer-2016-1-master\src\modulo-05-dotnet\Aula 3\Exemplos\01 - MVC\MVC\MVC\bin\System.Web.Webpages.dll
+C:\Users\gustavo.mello\Desktop\crescer-2016-1-master (4)\crescer-2016-1-master\src\modulo-05-dotnet\Aula 3\Exemplos\01 - MVC\MVC\MVC\bin\System.Web.Webpages.Razor.dll
+C:\Users\gustavo.mello\Desktop\crescer-2016-1-master (4)\crescer-2016-1-master\src\modulo-05-dotnet\Aula 3\Exemplos\01 - MVC\MVC\MVC\bin\System.Web.Razor.xml
+C:\Users\gustavo.mello\Desktop\crescer-2016-1-master (4)\crescer-2016-1-master\src\modulo-05-dotnet\Aula 3\Exemplos\01 - MVC\MVC\MVC\bin\System.Web.Webpages.xml
+C:\Users\gustavo.mello\Desktop\crescer-2016-1-master (4)\crescer-2016-1-master\src\modulo-05-dotnet\Aula 3\Exemplos\01 - MVC\MVC\MVC\bin\System.Web.Webpages.Deployment.xml
+C:\Users\gustavo.mello\Desktop\crescer-2016-1-master (4)\crescer-2016-1-master\src\modulo-05-dotnet\Aula 3\Exemplos\01 - MVC\MVC\MVC\bin\System.Web.Webpages.Razor.xml
+C:\Users\gustavo.mello\Desktop\crescer-2016-1-master (4)\crescer-2016-1-master\src\modulo-05-dotnet\Aula 3\Exemplos\01 - MVC\MVC\MVC\bin\System.Web.Helpers.xml
+C:\Users\gustavo.mello\Desktop\crescer-2016-1-master (4)\crescer-2016-1-master\src\modulo-05-dotnet\Aula 3\Exemplos\01 - MVC\MVC\MVC\bin\System.Web.Mvc.xml
+C:\Users\gustavo.mello\Desktop\crescer-2016-1-master (4)\crescer-2016-1-master\src\modulo-05-dotnet\Aula 3\Exemplos\01 - MVC\MVC\MVC\obj\Debug\MVC.csprojResolveAssemblyReference.cache
+C:\Users\gustavo.mello\Desktop\crescer-2016-1-master (4)\crescer-2016-1-master\src\modulo-05-dotnet\Aula 3\Exemplos\01 - MVC\MVC\MVC\obj\Debug\MVC.dll
+C:\Users\gustavo.mello\Desktop\crescer-2016-1-master (4)\crescer-2016-1-master\src\modulo-05-dotnet\Aula 3\Exemplos\01 - MVC\MVC\MVC\obj\Debug\MVC.pdb
+C:\Users\gustavo.mello\Desktop\crescer-2016-1-master (4)\crescer-2016-1-master\src\modulo-05-dotnet\Aula 3\Exemplos\01 - MVC\MVC\MVC\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\gustavo.mello\Desktop\crescer-2016-1-master (4)\crescer-2016-1-master\src\modulo-05-dotnet\Aula 3\Exemplos\01 - MVC\MVC\MVC\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-05-c#\MVC\MVC\bin\roslyn\csc.exe
+C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-05-c#\MVC\MVC\bin\roslyn\csc.exe.config
+C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-05-c#\MVC\MVC\bin\roslyn\csc.rsp
+C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-05-c#\MVC\MVC\bin\roslyn\csi.exe
+C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-05-c#\MVC\MVC\bin\roslyn\csi.rsp
+C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-05-c#\MVC\MVC\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-05-c#\MVC\MVC\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-05-c#\MVC\MVC\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-05-c#\MVC\MVC\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-05-c#\MVC\MVC\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-05-c#\MVC\MVC\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-05-c#\MVC\MVC\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-05-c#\MVC\MVC\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-05-c#\MVC\MVC\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-05-c#\MVC\MVC\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-05-c#\MVC\MVC\bin\roslyn\System.AppContext.dll
+C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-05-c#\MVC\MVC\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-05-c#\MVC\MVC\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-05-c#\MVC\MVC\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-05-c#\MVC\MVC\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-05-c#\MVC\MVC\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-05-c#\MVC\MVC\bin\roslyn\vbc.exe
+C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-05-c#\MVC\MVC\bin\roslyn\vbc.exe.config
+C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-05-c#\MVC\MVC\bin\roslyn\vbc.rsp
+C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-05-c#\MVC\MVC\bin\roslyn\VBCSCompiler.exe
+C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-05-c#\MVC\MVC\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-05-c#\MVC\MVC\bin\MVC.dll.config
+C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-05-c#\MVC\MVC\bin\MVC.dll
+C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-05-c#\MVC\MVC\bin\MVC.pdb
+C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-05-c#\MVC\MVC\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-05-c#\MVC\MVC\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-05-c#\MVC\MVC\bin\System.Web.Helpers.dll
+C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-05-c#\MVC\MVC\bin\System.Web.Mvc.dll
+C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-05-c#\MVC\MVC\bin\System.Web.Razor.dll
+C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-05-c#\MVC\MVC\bin\System.Web.Webpages.Deployment.dll
+C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-05-c#\MVC\MVC\bin\System.Web.Webpages.dll
+C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-05-c#\MVC\MVC\bin\System.Web.Webpages.Razor.dll
+C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-05-c#\MVC\MVC\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-05-c#\MVC\MVC\bin\System.Web.Razor.xml
+C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-05-c#\MVC\MVC\bin\System.Web.Webpages.xml
+C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-05-c#\MVC\MVC\bin\System.Web.Webpages.Deployment.xml
+C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-05-c#\MVC\MVC\bin\System.Web.Webpages.Razor.xml
+C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-05-c#\MVC\MVC\bin\System.Web.Helpers.xml
+C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-05-c#\MVC\MVC\bin\System.Web.Mvc.xml
+C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-05-c#\MVC\MVC\obj\Debug\MVC.csprojResolveAssemblyReference.cache
+C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-05-c#\MVC\MVC\obj\Debug\MVC.dll
+C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-05-c#\MVC\MVC\obj\Debug\MVC.pdb
