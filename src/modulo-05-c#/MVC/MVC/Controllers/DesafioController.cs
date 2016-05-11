@@ -26,7 +26,14 @@ namespace MVC.Controllers
 
         private Boolean verificarSeArquivoExiste(string arquivo)
         {
-            return System.IO.File.Exists(String.Format(@"C:\Users\Gustavo\Documents\crescer-2016-1\src\modulo-05-c#\MVC\MVC\Content\Estilos\{0}.css", arquivo));
+            return System.IO.File.Exists(
+                String.Format(
+                    "{0}{1}{2}.css", 
+                    System.AppDomain.CurrentDomain.BaseDirectory, 
+                    "Content\\Estilos\\", 
+                    arquivo
+                )
+            );
         }
     }
 }

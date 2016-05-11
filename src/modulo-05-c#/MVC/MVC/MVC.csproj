@@ -106,6 +106,7 @@
     <Content Include="Content\Estilos\hedo.css" />
     <Content Include="Content\Estilos\leon.css" />
     <Content Include="Content\Estilos\lucas.css" />
+    <Content Include="Content\Estilos\main.css" />
     <Content Include="Content\Estilos\marcelo.css" />
     <Content Include="Content\Estilos\mauricio.css" />
     <Content Include="Content\Estilos\michel.css" />
