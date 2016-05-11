@@ -36,6 +36,7 @@
         
         .conteudo > .corpo {
             padding: 15px;
+            overflow-y: auto;
         }
         
         .conteudo > .corpo.medio {
