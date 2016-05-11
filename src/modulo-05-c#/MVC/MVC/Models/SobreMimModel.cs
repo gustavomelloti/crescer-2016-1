@@ -8,6 +8,7 @@ namespace MVC.Models
     public class SobreMimModel
     {
         public string Nome { get; set; }
+        public string Universidade { get; set; }
         public int Idade { get; set; }
         public string Foto { get; set; }
     }

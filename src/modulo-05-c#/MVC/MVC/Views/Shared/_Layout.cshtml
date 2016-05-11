@@ -14,17 +14,17 @@
 <body>
     <div class="menu">
         <span class="item">
-            @Html.ActionLink("Inicio", "Index", "StreetFighter", new { style = "border: 1px solid yellow;", @class = "menu-link" })            
+            @Html.ActionLink("Inicio", "Index", "StreetFighter")            
             @*<a href="~/StreetFighter">Início</a>*@
         </span>
         <span class="item">
             <a href="https://www.google.com.br/search?q=Street+Fighter&tbm=nws">Noticia</a>
         </span>
         <span class="item">
-            <a href="ficha-tecnica.html#conteudo">Ficha Técnica</a>
+            @Html.ActionLink("Ficha Ténica", "FichaTecnica", "StreetFighter")
         </span>
         <span class="item">
-            <a href="sobre.html#conteudo">Sobre</a>
+            @Html.ActionLink("Sobre Mim", "SobreMim", "StreetFighter")
         </span>
     </div>
 

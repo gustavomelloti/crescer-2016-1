@@ -14,9 +14,22 @@ namespace MVC.Controllers
             return View();
         }
 
-        public ActionResult SobreMim()
-        { 
+        public ActionResult FichaTecnica()
+        {
             return View();
+        }
+
+        public ActionResult SobreMim()
+        {
+            var sobreMim = new SobreMimModel
+            {
+                Nome = "Gustavo Mello",
+                Idade = 19,
+                Universidade = "Unisinos",
+                Foto = "https://www.piqube.com/home/img/user-icon.png"
+            };
+
+            return View(sobreMim);
         }
     }
 }
