@@ -8,7 +8,7 @@ namespace LojaNinja.Repositorio
 {
     public class RepositorioVendas
     {
-        private const string PATH_ARQUIVO = @"C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-05-c#\LojaNinja\LojaNinja.Repositorio\vendas.txt";        
+        private const string PATH_ARQUIVO = @"C:\Users\Gustavo\Documents\crescer-2016-1\src\modulo-05-c#\LojaNinja\LojaNinja.Repositorio\vendas.txt";        
 
         public List<Pedido> ObterPedidos()
         {

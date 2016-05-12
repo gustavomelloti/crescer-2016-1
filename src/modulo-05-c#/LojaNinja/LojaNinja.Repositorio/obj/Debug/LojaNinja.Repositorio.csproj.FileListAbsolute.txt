@@ -5,3 +5,10 @@ C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-05-c#\LojaNinja\LojaN
 C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-05-c#\LojaNinja\LojaNinja.Repositorio\obj\Debug\LojaNinja.Repositorio.csprojResolveAssemblyReference.cache
 C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-05-c#\LojaNinja\LojaNinja.Repositorio\obj\Debug\LojaNinja.Repositorio.dll
 C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-05-c#\LojaNinja\LojaNinja.Repositorio\obj\Debug\LojaNinja.Repositorio.pdb
+C:\Users\Gustavo\Documents\crescer-2016-1\src\modulo-05-c#\LojaNinja\LojaNinja.Repositorio\bin\Debug\LojaNinja.Repositorio.dll
+C:\Users\Gustavo\Documents\crescer-2016-1\src\modulo-05-c#\LojaNinja\LojaNinja.Repositorio\bin\Debug\LojaNinja.Repositorio.pdb
+C:\Users\Gustavo\Documents\crescer-2016-1\src\modulo-05-c#\LojaNinja\LojaNinja.Repositorio\bin\Debug\LojaNinja.Dominio.dll
+C:\Users\Gustavo\Documents\crescer-2016-1\src\modulo-05-c#\LojaNinja\LojaNinja.Repositorio\bin\Debug\LojaNinja.Dominio.pdb
+C:\Users\Gustavo\Documents\crescer-2016-1\src\modulo-05-c#\LojaNinja\LojaNinja.Repositorio\obj\Debug\LojaNinja.Repositorio.csprojResolveAssemblyReference.cache
+C:\Users\Gustavo\Documents\crescer-2016-1\src\modulo-05-c#\LojaNinja\LojaNinja.Repositorio\obj\Debug\LojaNinja.Repositorio.dll
+C:\Users\Gustavo\Documents\crescer-2016-1\src\modulo-05-c#\LojaNinja\LojaNinja.Repositorio\obj\Debug\LojaNinja.Repositorio.pdb
