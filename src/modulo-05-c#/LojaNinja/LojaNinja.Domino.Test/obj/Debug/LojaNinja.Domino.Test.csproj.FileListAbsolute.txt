@@ -1,0 +1,8 @@
+C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-05-c#\LojaNinja\LojaNinja.Domino.Test\bin\Debug\LojaNinja.Domino.Test.dll
+C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-05-c#\LojaNinja\LojaNinja.Domino.Test\bin\Debug\LojaNinja.Domino.Test.pdb
+C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-05-c#\LojaNinja\LojaNinja.Domino.Test\bin\Debug\LojaNinja.Dominio.dll
+C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-05-c#\LojaNinja\LojaNinja.Domino.Test\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-05-c#\LojaNinja\LojaNinja.Domino.Test\bin\Debug\LojaNinja.Dominio.pdb
+C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-05-c#\LojaNinja\LojaNinja.Domino.Test\obj\Debug\LojaNinja.Domino.Test.csprojResolveAssemblyReference.cache
+C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-05-c#\LojaNinja\LojaNinja.Domino.Test\obj\Debug\LojaNinja.Domino.Test.dll
+C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-05-c#\LojaNinja\LojaNinja.Domino.Test\obj\Debug\LojaNinja.Domino.Test.pdb
