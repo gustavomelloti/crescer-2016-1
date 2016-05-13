@@ -79,7 +79,7 @@ namespace LojaNinja.MVC.Controllers
             return View(pedidos);
         }
 
-        public ActionResult Deletar(int id)
+        public ActionResult Excluir(int id)
         {
             repositorio.ExcluirPedido(id);
 

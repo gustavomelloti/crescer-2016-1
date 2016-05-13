@@ -38,7 +38,18 @@ namespace LojaNinja.Repositorio
 
         public void ExcluirPedido(int id)
         {
-            throw new NotImplementedException();
+            var linhas = File.ReadAllLines(PATH_ARQUIVO).ToList();
+
+            foreach (var l in linhas)
+            {
+                if (l.StartsWith(String.Format("{0}{1}", id, ";")))
+                {
+                    linhas.Remove(l);
+                    break;
+                }
+            }
+
+            File.WriteAllLines(PATH_ARQUIVO, linhas);
         }
 
         private List<Pedido> ConverteLinhasEmPedidos(List<string> linhasArquivo)
