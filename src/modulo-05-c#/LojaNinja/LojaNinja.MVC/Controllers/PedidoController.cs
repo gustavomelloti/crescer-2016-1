@@ -89,7 +89,8 @@ namespace LojaNinja.MVC.Controllers
         public ActionResult Editar(int id)
         {
             var pedido = new PedidoModel(repositorio.ObterPedidoPorId(id));
-            return View("cadastro",pedido);
+
+            return View("cadastro", pedido);
         }
     }
 }
