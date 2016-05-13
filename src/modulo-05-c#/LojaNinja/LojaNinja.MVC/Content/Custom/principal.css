@@ -1,3 +1,11 @@
 ﻿.container {
     padding: 25px;
 }
+
+.iconesGerenciador i {
+    font-size:18px;
+}
+
+#iconeCadastrar {
+     font-size:32px;
+}

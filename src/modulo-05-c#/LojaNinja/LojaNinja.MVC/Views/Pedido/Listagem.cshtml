@@ -5,7 +5,9 @@
 }
 
 <p>
-    @Html.ActionLink("Novo cadastro", "Cadastro")
+    <a href="@Url.Action("Cadastro")">
+        <i id="iconeCadastrar" class="fa fa-plus-circle" aria-hidden="true"></i>
+    </a>
 </p>
 <table class="table table-bordered table-striped">
     <tr>
@@ -64,9 +66,16 @@
                 @((bool)item.PedidoUrgente ? "Sim" : "Não")
             </td>
             <td>
-                @Html.ActionLink("Editar", "Editar", new { id = item.Id }) |
-                @Html.ActionLink("Ver Detalhes", "Detalhes", new { id = item.Id }) |
-                @Html.ActionLink("Remover", "Excluir", new { id = item.Id })
+                <a href="@Url.Action("Editar", new { id = item.Id })"  class="iconesGerenciador">
+                    <i class="fa fa-pencil" aria-hidden="true"></i>
+                </a>
+                <a href="@Url.Action("Detalhes", new { id = item.Id })" class="iconesGerenciador">
+                    <i class="fa fa-eye" aria-hidden="true"></i>
+                </a>
+
+                <a href="@Url.Action("Excluir", new { id = item.Id })" class="iconesGerenciador">
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </a>
             </td>
         </tr>
     }
