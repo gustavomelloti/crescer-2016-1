@@ -24,9 +24,9 @@ namespace LojaNinja.Repositorio
 
         public void IncluirPedido(Pedido pedido)
         {
-            var a = "ads";
+            var idPedido = (File.ReadLines(PATH_ARQUIVO).Count());
 
-            //File.AppendAllText(PATH_ARQUIVO, "01/02/2009 09:16;Kunai;1200;Mastercard;Sean ;Shavano Park");
+            File.AppendAllText(PATH_ARQUIVO, String.Format("{0}{1}", idPedido, convertePedidoParaCSV(pedido).Substring(1)));
         }
 
         public void AtualizarPedido(Pedido pedido)
@@ -65,6 +65,23 @@ namespace LojaNinja.Repositorio
             }
 
             return listaPedidos;
+        }
+
+        private string convertePedidoParaCSV(Pedido pedido)
+        {
+            return String.Format(
+                "{0};{1};{2};{3};{4};{5};{6};{7};{8};{9} \n",
+                pedido.Id,
+                pedido.DataPedido.ToString("dd/MM/yyyy"),
+                pedido.DataEntregaDesejada.ToString("dd/MM/yyyy"),
+                pedido.NomeProduto.ToString().Replace(",", ""),
+                pedido.Valor,
+                pedido.TipoPagamento,
+                pedido.NomeCliente,
+                pedido.Cidade,
+                pedido.Estado,
+                pedido.PedidoUrgente.ToString().ToLower()
+            );
         }
     }
 }

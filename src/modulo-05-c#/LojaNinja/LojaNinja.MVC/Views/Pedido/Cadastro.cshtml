@@ -7,8 +7,16 @@
 }
 
 @using (Html.BeginForm("Salvar", "Pedido", FormMethod.Post))
-{    
-    @Html.Hidden("id", (int) Model.Id)
+{
+
+    try {
+        @Html.Hidden("id", Model.Id)
+    }
+    catch
+    {
+        @Html.Hidden("id",0)
+    }
+    
     <div class="form-horizontal">
         <h4>Novo Pedido</h4>
         <hr />
