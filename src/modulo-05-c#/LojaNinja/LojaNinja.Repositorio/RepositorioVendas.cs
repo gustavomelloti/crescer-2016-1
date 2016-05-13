@@ -22,11 +22,13 @@ namespace LojaNinja.Repositorio
             return this.ObterPedidos().FirstOrDefault(x => x.Id == id);
         }
 
-        public void IncluirPedido(Pedido pedido)
+        public int IncluirPedido(Pedido pedido)
         {
             var idPedido = (File.ReadLines(PATH_ARQUIVO).Count());
 
             File.AppendAllText(PATH_ARQUIVO, String.Format("{0}{1}", idPedido, convertePedidoParaCSV(pedido).Substring(1)));
+
+            return idPedido;
         }
 
         public void AtualizarPedido(Pedido pedido)

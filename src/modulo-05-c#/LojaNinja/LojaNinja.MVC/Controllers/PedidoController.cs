@@ -28,19 +28,22 @@ namespace LojaNinja.MVC.Controllers
 
             if (ModelState.IsValid)
             {
-                Pedido pedido = null;
+                PedidoModel pedidoModel = null;
 
                 try
                 {
                     if (model.Id <= 0)
                     {
-                        pedido = new Pedido(model.DataEntrega, model.NomeProduto, model.Valor, model.TipoPagamento, model.NomeCliente, model.Cidade, model.Estado);
-                        repositorio.IncluirPedido(pedido);
+                        var pedido = new Pedido(model.DataEntrega, model.NomeProduto, model.Valor, model.TipoPagamento, model.NomeCliente, model.Cidade, model.Estado);
+                        var idPedido = repositorio.IncluirPedido(pedido);
+                        pedidoModel = new PedidoModel(pedido);
+                        pedidoModel.Id = idPedido;
                     }
                     else
                     {
-                        pedido = new Pedido(model.Id, model.DataPedido, model.DataEntrega, model.NomeProduto, model.Valor, model.TipoPagamento, model.NomeCliente, model.Cidade, model.Estado, model.PedidoUrgente);
+                        var pedido = new Pedido(model.Id, model.DataPedido, model.DataEntrega, model.NomeProduto, model.Valor, model.TipoPagamento, model.NomeCliente, model.Cidade, model.Estado, model.PedidoUrgente);
                         repositorio.AtualizarPedido(pedido);
+                        pedidoModel = new PedidoModel(pedido);
                     }
 
                 } 
@@ -50,7 +53,8 @@ namespace LojaNinja.MVC.Controllers
                     return View("Cadastro", model);
                 }
 
-                return View("Detalhes", new PedidoModel(pedido));
+                return View("Detalhes", pedidoModel);
+                
             }
             else
             {
