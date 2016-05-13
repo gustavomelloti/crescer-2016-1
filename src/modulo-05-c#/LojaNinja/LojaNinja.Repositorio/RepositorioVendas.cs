@@ -24,11 +24,20 @@ namespace LojaNinja.Repositorio
 
         public int IncluirPedido(Pedido pedido)
         {
-            var idPedido = (File.ReadLines(PATH_ARQUIVO).Count());
+            var idPedido = ObterProximoId();
 
             File.AppendAllText(PATH_ARQUIVO, String.Format("{0}{1}", idPedido, convertePedidoParaCSV(pedido).Substring(1)));
 
             return idPedido;
+        }
+
+        private int ObterProximoId()
+        {
+            var linhas = File.ReadAllLines(PATH_ARQUIVO).ToArray();
+
+            var linha = linhas[linhas.Length - 1];
+
+            return Convert.ToInt16(linha.Split(';')[0]) + 1;
         }
 
         public void AtualizarPedido(Pedido pedido)

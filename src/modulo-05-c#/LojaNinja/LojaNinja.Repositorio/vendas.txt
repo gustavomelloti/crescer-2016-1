@@ -994,7 +994,10 @@ N�mero Pedido;Data Pedido;Data Desejo Entrega;Nome Produto;Valor Venda;Tipo Pa
 996;01/01/2009 11:05;01/01/2009 11:05;Kunai;1200;Visa;Rima;Mullingar;Westmeath;true
 997;01/05/2009 04:10;01/05/2009 04:10;Shuriken;1200;Visa;Dania;Munich;Bayern;true
 998;01/06/2009 07:18;01/06/2009 07:18;Pokebola;1200;Visa;John;Banbury;England;true
-9990;13/05/2016;12/12/2016;asd;12,12;Diners;sdfg;sdf;sdf;false;
+999;13/05/2016;12/12/2016;asd;12,12;Diners;sdfg;sdf;sdf;false;
 1000;13/05/2016;12/12/2016;asd;12,12;Amex;asd;asd;sdf;false
 1001;13/05/2016;12/12/2016;asd;12,12;Amex;qweqe;qwe;qweqwe;false 
 1002;13/05/2016;12/12/2016;asd;12,12;Amex;asd;sad;sdf;false 
+1003;13/05/2016;25/12/2016;Facao;1200,00;Mastercard;Gustavo;Viamão;RS;false 
+1004;13/05/2016;23/12/2016;3 Listras;2000,00;Diners;Gustavo Mello;Viamão;RS;false 
+1005;13/05/2016;12/12/2016;Facao;1231,22;Diners;sadsad;aa;bbb;false 
