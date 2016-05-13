@@ -43,7 +43,6 @@ namespace LojaNinja.MVC.Models
         public string Cidade { get; set; }
 
         [Display(Name = "Estado ")]
-        [StringLength(2, ErrorMessage = "Estado deverá ter 2 caracteres")]
         [Required(ErrorMessage = "Informe o estado.")]
         public string Estado { get; set; }
 
