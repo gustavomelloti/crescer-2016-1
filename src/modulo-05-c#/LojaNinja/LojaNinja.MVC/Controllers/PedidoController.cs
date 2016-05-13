@@ -69,11 +69,11 @@ namespace LojaNinja.MVC.Controllers
             return View(pedido);
         }
 
-        public ActionResult Listagem()
+        public ActionResult Listagem(string cliente = null, string produto = null)
         {
             List<PedidoModel> pedidos = new List<PedidoModel>();
 
-            foreach (var pedido in repositorio.ObterPedidos())
+            foreach (var pedido in repositorio.ObterPedidosComFiltros(cliente, produto))
                 pedidos.Add(new PedidoModel(pedido));
 
             return View(pedidos);

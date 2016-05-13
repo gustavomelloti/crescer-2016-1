@@ -1,5 +1,10 @@
 ﻿@model LojaNinja.MVC.Models.PedidoModel
 
+@{
+    ViewBag.Title = "Cadastro de Pedido";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
 @section scripts {
     <script src="~/Scripts/jquery.validate.min.js"></script>
     <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
@@ -84,7 +89,6 @@
         </div>
     </div>
 }
-
 <div>
     @Html.ActionLink("Voltar para listagem", "Listagem")
 </div>

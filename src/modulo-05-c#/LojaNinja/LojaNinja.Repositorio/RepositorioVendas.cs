@@ -17,6 +17,29 @@ namespace LojaNinja.Repositorio
             return ConverteLinhasEmPedidos(linhasArquivo);
         }
 
+        public List<Pedido> ObterPedidosComFiltros(string cliente = null, string produto = null)
+        {
+            var pedidos = ObterPedidos();
+
+            if (cliente != null)
+                pedidos = ObterPedidosPorCliente(pedidos, cliente);
+
+            if (produto != null)
+                pedidos = ObterPedidosPorProduto(pedidos, produto);
+
+            return pedidos;
+        }
+
+        private List<Pedido> ObterPedidosPorCliente(List<Pedido> pedidos, string cliente)
+        {
+            return pedidos.Where(x => x.NomeCliente.Equals(cliente)).ToList();
+        }
+
+        private List<Pedido> ObterPedidosPorProduto(List<Pedido> pedidos, string produto)
+        {
+            return pedidos.Where(x => x.NomeProduto.Equals(produto)).ToList();
+        }
+
         public Pedido ObterPedidoPorId(int id)
         {
             return this.ObterPedidos().FirstOrDefault(x => x.Id == id);
@@ -26,7 +49,7 @@ namespace LojaNinja.Repositorio
         {
             var idPedido = ObterProximoId();
 
-            File.AppendAllText(PATH_ARQUIVO, String.Format("{0}{1}", idPedido, convertePedidoParaCSV(pedido).Substring(1)));
+            File.AppendAllText(PATH_ARQUIVO, String.Format("{0}{1}", idPedido, ConvertePedidoParaCSV(pedido).Substring(1)));
 
             return idPedido;
         }
@@ -89,7 +112,7 @@ namespace LojaNinja.Repositorio
             return listaPedidos;
         }
 
-        private string convertePedidoParaCSV(Pedido pedido)
+        private string ConvertePedidoParaCSV(Pedido pedido)
         {
             return String.Format(
                 "{0};{1};{2};{3};{4};{5};{6};{7};{8};{9} \n",

@@ -1,6 +1,7 @@
 ﻿@model IEnumerable<LojaNinja.MVC.Models.PedidoModel>
 
 @{
+    ViewBag.Title = "Listagem de Pedidos";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -35,7 +36,9 @@
         <th>
             @Html.DisplayNameFor(model => model.PedidoUrgente)
         </th>
-        <th></th>
+        <th>
+            Operações
+        </th>
     </tr>
 
     @foreach (var item in Model)
