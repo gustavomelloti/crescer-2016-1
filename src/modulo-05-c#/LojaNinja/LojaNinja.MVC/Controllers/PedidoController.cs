@@ -41,7 +41,7 @@ namespace LojaNinja.MVC.Controllers
                     return View("Cadastro", model);
                 }
 
-                return View("Detalhes", novoPedido);
+                return View("Detalhes", new PedidoModel(novoPedido));
             }
             else
             {
@@ -51,14 +51,17 @@ namespace LojaNinja.MVC.Controllers
 
         public ActionResult Detalhes(int id)
         {
-            var pedido = repositorio.ObterPedidoPorId(id);
+            var pedido = new PedidoModel(repositorio.ObterPedidoPorId(id));
 
             return View(pedido);
         }
 
         public ActionResult Listagem()
         {
-            var pedidos = repositorio.ObterPedidos();
+            List<PedidoModel> pedidos = new List<PedidoModel>();
+
+            foreach (var pedido in repositorio.ObterPedidos())
+                pedidos.Add(new PedidoModel(pedido));
 
             return View(pedidos);
         }
@@ -68,6 +71,12 @@ namespace LojaNinja.MVC.Controllers
             repositorio.ExcluirPedido(id);
 
             return View();
+        }
+
+        public ActionResult Editar(int id)
+        {
+            var pedido = new PedidoModel(repositorio.ObterPedidoPorId(id));
+            return View("cadastro",pedido);
         }
     }
 }

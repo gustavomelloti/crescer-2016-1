@@ -7,7 +7,8 @@
 }
 
 @using (Html.BeginForm("Salvar", "Pedido", FormMethod.Post))
-{
+{    
+    @Html.Hidden("id", (int) Model.Id)
     <div class="form-horizontal">
         <h4>Novo Pedido</h4>
         <hr />
@@ -33,6 +34,14 @@
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Valor, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Valor, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.TipoPagamento, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EnumDropDownListFor(model => model.TipoPagamento, "Selecione", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.TipoPagamento, "", new { @class = "text-danger" })
             </div>
         </div>
 

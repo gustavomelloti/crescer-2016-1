@@ -1,4 +1,4 @@
-﻿@model IEnumerable<LojaNinja.Dominio.Pedido>
+﻿@model IEnumerable<LojaNinja.MVC.Models.PedidoModel>
 
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -13,7 +13,7 @@
             @Html.DisplayNameFor(model => model.DataPedido)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.DataEntregaDesejada)
+            @Html.DisplayNameFor(model => model.DataEntrega)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.NomeProduto)
@@ -30,6 +30,9 @@
         <th>
             @Html.DisplayNameFor(model => model.Estado)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PedidoUrgente)
+        </th>
         <th></th>
     </tr>
 
@@ -40,7 +43,7 @@
                 @Html.DisplayFor(modelItem => item.DataPedido)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.DataEntregaDesejada)
+                @Html.DisplayFor(modelItem => item.DataEntrega)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.NomeProduto)
@@ -56,6 +59,9 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Estado)
+            </td>
+            <td>
+                @((bool)item.PedidoUrgente ? "Sim" : "Não")
             </td>
             <td>
                 @Html.ActionLink("Editar", "Editar", new { id = item.Id }) |
