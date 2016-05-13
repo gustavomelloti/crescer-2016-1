@@ -53,7 +53,7 @@ namespace LojaNinja.MVC.Controllers
                     return View("Cadastro", model);
                 }
 
-                return View("Detalhes", pedidoModel);
+                return RedirectToAction("Detalhes", pedidoModel);
                 
             }
             else
