@@ -84,9 +84,9 @@
         <dt>
             @Html.DisplayNameFor(model => model.PedidoUrgente)
         </dt>
-
+        
         <dd>
-            @((bool)Model.PedidoUrgente ? "Sim" : "Não")
+            @((bool)Model.PedidoUrgente ? @Html.Raw("<i id='relogioUrgente' class='fa fa-clock-o' aria-hidden='true'></i>") : @Html.Raw("<span> Não </span>"))
         </dd>
     </dl>
 </div>
