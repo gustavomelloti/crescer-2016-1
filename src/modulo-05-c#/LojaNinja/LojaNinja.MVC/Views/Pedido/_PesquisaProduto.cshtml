@@ -1,6 +1,8 @@
 ﻿<div class="pesquisaPedidos">
     @using (Html.BeginForm("Listagem", "Pedido", FormMethod.Post))
     {
+        @Html.AntiForgeryToken()
+        
         @Html.Label("Cliente")
         @Html.TextBox("cliente")
         @Html.Label("Produto")

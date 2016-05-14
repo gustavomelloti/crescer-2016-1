@@ -27,17 +27,20 @@ namespace LojaNinja.MVC.Controllers
             return View(pedido);
         }
 
+        [HttpGet]
+        public ActionResult Listagem()
+        {            
+            return View(FormatarPedidosEmPedidosModel(repositorio.ObterPedidos()));
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Listagem(string cliente, string produto)
         {
             ViewBag.ClientePesquisa = cliente;
             ViewBag.ProdutoPesquisa = produto;
 
-            List<PedidoModel> pedidos = new List<PedidoModel>();
-
-            foreach (var pedido in repositorio.ObterPedidosComFiltros(cliente, produto))
-                pedidos.Add(new PedidoModel(pedido));
-
-            return View(pedidos);
+            return View(FormatarPedidosEmPedidosModel(repositorio.ObterPedidosComFiltros(cliente, produto)));
         }
 
         public ActionResult Excluir(int id)
@@ -55,6 +58,10 @@ namespace LojaNinja.MVC.Controllers
 
             return View("cadastro", pedido);
         }
+
+        
+        [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Salvar(PedidoModel model)
         {
             if (model.Estado == "RS" && model.Cidade == "SL")
@@ -96,6 +103,16 @@ namespace LojaNinja.MVC.Controllers
             {
                 return View("Cadastro", model);
             }
+        }
+
+        private List<PedidoModel> FormatarPedidosEmPedidosModel(List<Pedido> pedidos)
+        {
+            List<PedidoModel> pedidosModel = new List<PedidoModel>();
+
+            foreach (var pedido in pedidos)
+                pedidosModel.Add(new PedidoModel(pedido));
+
+            return pedidosModel;
         }
     }
 }

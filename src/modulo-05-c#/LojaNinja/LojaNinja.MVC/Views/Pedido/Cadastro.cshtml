@@ -13,8 +13,10 @@
 
 @using (Html.BeginForm("Salvar", "Pedido", FormMethod.Post))
 {
-
-    try {
+    @Html.AntiForgeryToken()
+    
+    try
+    {
         @Html.Hidden("Id", Model.Id)
         @Html.Hidden("DataPedido", Model.DataPedido)
         @Html.Hidden("PedidoUrgente", Model.PedidoUrgente)
