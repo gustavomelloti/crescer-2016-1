@@ -5,11 +5,14 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<p>
+<p id="cadastroPedido">
     <a href="@Url.Action("Cadastro")">
         <i id="iconeCadastrar" class="fa fa-plus-circle" aria-hidden="true"></i>
     </a>
 </p>
+
+@Html.Partial("_PesquisaProduto")
+
 <table class="table table-bordered table-striped" id="listagemPedidos">
     <tr>
         <th colspan="9">

@@ -19,3 +19,17 @@
    text-align:center;
    font-size: 22px;
 }
+
+#cadastroPedido {
+    text-align: right;
+}
+
+.pesquisaPedidos {
+    text-align:center;
+    margin-bottom: 10px;
+}
+
+.pesquisaPedidos label, .pesquisaPedidos input {
+    margin-right: 5px;
+
+}

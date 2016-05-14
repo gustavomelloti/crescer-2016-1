@@ -1,0 +1,15 @@
+﻿<div class="pesquisaPedidos">
+    @using (Html.BeginForm("Listagem", "Pedido", FormMethod.Post))
+    {
+        @Html.Label("Cliente")
+        @Html.TextBox("cliente")
+        @Html.Label("Produto")
+        @Html.TextBox("produto")
+
+        <input type="submit" value="Pesquisar" class="btn btn-default" />
+
+        <a href="@Url.Action("Listagem")">
+            <input type="button" value="Limpar" class="btn btn-default" />
+        </a>
+    }
+</div>

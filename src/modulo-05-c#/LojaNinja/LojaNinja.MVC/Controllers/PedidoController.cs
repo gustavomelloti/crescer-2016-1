@@ -20,6 +20,41 @@ namespace LojaNinja.MVC.Controllers
             return View();
         }
 
+        public ActionResult Detalhes(int id)
+        {
+            var pedido = new PedidoModel(repositorio.ObterPedidoPorId(id));
+
+            return View(pedido);
+        }
+
+        public ActionResult Listagem(string cliente, string produto)
+        {
+            ViewBag.ClientePesquisa = cliente;
+            ViewBag.ProdutoPesquisa = produto;
+
+            List<PedidoModel> pedidos = new List<PedidoModel>();
+
+            foreach (var pedido in repositorio.ObterPedidosComFiltros(cliente, produto))
+                pedidos.Add(new PedidoModel(pedido));
+
+            return View(pedidos);
+        }
+
+        public ActionResult Excluir(int id)
+        {
+            repositorio.ExcluirPedido(id);
+
+            return View();
+        }
+
+        public ActionResult Editar(int id)
+        {
+            ViewBag.Operacao = "Editar pedido";
+
+            var pedido = new PedidoModel(repositorio.ObterPedidoPorId(id));
+
+            return View("cadastro", pedido);
+        }
         public ActionResult Salvar(PedidoModel model)
         {
             if (model.Estado == "RS" && model.Cidade == "SL")
@@ -48,53 +83,19 @@ namespace LojaNinja.MVC.Controllers
                         pedidoModel = new PedidoModel(pedido);
                     }
 
+                    return RedirectToAction("Detalhes", pedidoModel);
+
                 } 
                 catch(ArgumentException ex)
                 {
                     ModelState.AddModelError("", ex.Message);
                     return View("Cadastro", model);
                 }
-
-                return RedirectToAction("Detalhes", pedidoModel);
-                
             }
             else
             {
                 return View("Cadastro", model);
             }
-        }
-
-        public ActionResult Detalhes(int id)
-        {
-            var pedido = new PedidoModel(repositorio.ObterPedidoPorId(id));
-
-            return View(pedido);
-        }
-
-        public ActionResult Listagem(string cliente, string produto)
-        {
-            List<PedidoModel> pedidos = new List<PedidoModel>();
-
-            foreach (var pedido in repositorio.ObterPedidosComFiltros(cliente, produto))
-                pedidos.Add(new PedidoModel(pedido));
-
-            return View(pedidos);
-        }
-
-        public ActionResult Excluir(int id)
-        {
-            repositorio.ExcluirPedido(id);
-
-            return View();
-        }
-
-        public ActionResult Editar(int id)
-        {
-            ViewBag.Operacao = "Editar pedido";
-
-            var pedido = new PedidoModel(repositorio.ObterPedidoPorId(id));
-
-            return View("cadastro", pedido);
         }
     }
 }

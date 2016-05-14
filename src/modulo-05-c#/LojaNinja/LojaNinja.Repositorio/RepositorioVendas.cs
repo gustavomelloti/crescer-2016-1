@@ -21,10 +21,10 @@ namespace LojaNinja.Repositorio
         {
             var pedidos = ObterPedidos();
 
-            if (cliente != null)
+            if (!String.IsNullOrWhiteSpace(cliente))
                 pedidos = ObterPedidosPorCliente(pedidos, cliente);
 
-            if (produto != null)
+            if (!String.IsNullOrWhiteSpace(produto))
                 pedidos = ObterPedidosPorProduto(pedidos, produto);
 
             return pedidos;
@@ -32,12 +32,12 @@ namespace LojaNinja.Repositorio
 
         private List<Pedido> ObterPedidosPorCliente(List<Pedido> pedidos, string cliente)
         {
-            return pedidos.Where(x => x.NomeCliente.Equals(cliente)).ToList();
+            return pedidos.Where(x => x.NomeCliente.ToLower().Equals(cliente.ToLower())).ToList();
         }
 
         private List<Pedido> ObterPedidosPorProduto(List<Pedido> pedidos, string produto)
         {
-            return pedidos.Where(x => x.NomeProduto.Equals(produto)).ToList();
+            return pedidos.Where(x => x.NomeProduto.ToLower().Equals(produto.ToLower())).ToList();
         }
 
         public Pedido ObterPedidoPorId(int id)
