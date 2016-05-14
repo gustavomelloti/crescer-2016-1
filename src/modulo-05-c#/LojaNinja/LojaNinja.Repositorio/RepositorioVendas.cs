@@ -67,14 +67,9 @@ namespace LojaNinja.Repositorio
         {
             var linhas = File.ReadAllLines(PATH_ARQUIVO).ToList();
 
-            for (int i = 0; i < linhas.Count; i++)
-            {
-                if (linhas[i].StartsWith(String.Format("{0}{1}", pedido.Id, ";")))
-                {
-                    linhas[i] = ConvertePedidoParaCSV(pedido).Replace("\n", "");
-                    break;
-                }
-            }
+            int linhaPedido = RetornarPosicaoPedidoNoCsv(pedido.Id);
+
+            linhas[linhaPedido] = ConvertePedidoParaCSV(pedido).Replace("\n", "");
 
             File.WriteAllLines(PATH_ARQUIVO, linhas);
         }
@@ -83,16 +78,24 @@ namespace LojaNinja.Repositorio
         {
             var linhas = File.ReadAllLines(PATH_ARQUIVO).ToList();
 
-            foreach (var l in linhas)
+            linhas.RemoveAt(RetornarPosicaoPedidoNoCsv(id));
+
+            File.WriteAllLines(PATH_ARQUIVO, linhas);
+        }
+
+        private int RetornarPosicaoPedidoNoCsv(int idPedido)
+        {
+            var linhas = File.ReadAllLines(PATH_ARQUIVO).ToList();
+
+            for (int i = 0; i < linhas.Count; i++)
             {
-                if (l.StartsWith(String.Format("{0}{1}", id, ";")))
+                if (linhas[i].StartsWith(String.Format("{0}{1}", idPedido, ";")))
                 {
-                    linhas.Remove(l);
-                    break;
+                    return i;
                 }
             }
 
-            File.WriteAllLines(PATH_ARQUIVO, linhas);
+            throw new ArgumentException();
         }
 
         private List<Pedido> ConverteLinhasEmPedidos(List<string> linhasArquivo)
