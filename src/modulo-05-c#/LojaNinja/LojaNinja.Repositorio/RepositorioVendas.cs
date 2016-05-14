@@ -17,7 +17,7 @@ namespace LojaNinja.Repositorio
             return ConverteLinhasEmPedidos(linhasArquivo);
         }
 
-        public List<Pedido> ObterPedidosComFiltros(string cliente = null, string produto = null)
+        public List<Pedido> ObterPedidosComFiltros(string cliente, string produto)
         {
             var pedidos = ObterPedidos();
 
@@ -65,7 +65,18 @@ namespace LojaNinja.Repositorio
 
         public void AtualizarPedido(Pedido pedido)
         {
-            throw new NotImplementedException();
+            var linhas = File.ReadAllLines(PATH_ARQUIVO).ToList();
+
+            for (int i = 0; i < linhas.Count; i++)
+            {
+                if (linhas[i].StartsWith(String.Format("{0}{1}", pedido.Id, ";")))
+                {
+                    linhas[i] = ConvertePedidoParaCSV(pedido).Replace("\n", "");
+                    break;
+                }
+            }
+
+            File.WriteAllLines(PATH_ARQUIVO, linhas);
         }
 
         public void ExcluirPedido(int id)

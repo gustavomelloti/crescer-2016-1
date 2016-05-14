@@ -18,7 +18,7 @@ namespace LojaNinja.MVC.Models
 
         [Display(Name = "Data de entrega ")]
         [Required(ErrorMessage = "Informe a data de entrega.")]
-        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime DataEntrega { get; set; }
 
         [Display(Name = "Valor")]

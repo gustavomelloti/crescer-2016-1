@@ -15,6 +15,8 @@ namespace LojaNinja.MVC.Controllers
 
         public ActionResult Cadastro()
         {
+            ViewBag.Operacao = "Novo pedido";
+
             return View();
         }
 
@@ -69,7 +71,7 @@ namespace LojaNinja.MVC.Controllers
             return View(pedido);
         }
 
-        public ActionResult Listagem(string cliente = null, string produto = null)
+        public ActionResult Listagem(string cliente, string produto)
         {
             List<PedidoModel> pedidos = new List<PedidoModel>();
 
@@ -88,6 +90,8 @@ namespace LojaNinja.MVC.Controllers
 
         public ActionResult Editar(int id)
         {
+            ViewBag.Operacao = "Editar pedido";
+
             var pedido = new PedidoModel(repositorio.ObterPedidoPorId(id));
 
             return View("cadastro", pedido);
