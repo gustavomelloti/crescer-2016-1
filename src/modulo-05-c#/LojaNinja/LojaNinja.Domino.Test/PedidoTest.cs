@@ -1,76 +1,64 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using LojaNinja.Dominio;
+using System.Collections;
 
 namespace LojaNinja.Domino.Test
 {
     [TestClass]
     public class PedidoTest
     {
+        private ArrayList peidoDefault = new ArrayList();
+
+        public PedidoTest()
+        {
+            peidoDefault.Add(DateTime.Today.AddDays(2));
+            peidoDefault.Add("Facão 3 listras");
+            peidoDefault.Add(2000);
+            peidoDefault.Add(TipoPagamento.Mastercard);
+            peidoDefault.Add("Gustavo");
+            peidoDefault.Add("Porto Alegre");
+            peidoDefault.Add("RS");
+        }
+
         [TestMethod]
         public void GerarPedidoComEntregaParaDoisAposDataAtual()
         {
-            DateTime dataEntregaDesejada = DateTime.Today.AddDays(2);
-            string nomeProduto = "Facão 3 listras";
-            decimal valorPedido = 2000;
-            TipoPagamento tipoPagamento = TipoPagamento.Mastercard;
-            string nomeCliente = "Gustavo";
-            string cidade = "Porto Alegre";
-            string estado =  "RS";
+            Pedido pedido = new Pedido(Convert.ToDateTime(peidoDefault[0]), Convert.ToString(peidoDefault[1]), Convert.ToDecimal(peidoDefault[2]), (TipoPagamento) peidoDefault[3], Convert.ToString(peidoDefault[4]), Convert.ToString(peidoDefault[5]), Convert.ToString(peidoDefault[6]));
 
-            Pedido pedido = new Pedido(dataEntregaDesejada, nomeProduto, valorPedido, tipoPagamento, nomeCliente, cidade, estado);
-
-            Assert.AreEqual(dataEntregaDesejada, pedido.DataEntregaDesejada);
-            Assert.AreEqual(nomeProduto, pedido.NomeProduto);
-            Assert.AreEqual(valorPedido, pedido.Valor);
-            Assert.AreEqual(tipoPagamento, pedido.TipoPagamento);
-            Assert.AreEqual(nomeCliente, pedido.NomeCliente);
-            Assert.AreEqual(cidade, pedido.Cidade);
-            Assert.AreEqual(estado, pedido.Estado);
+            Assert.AreEqual(Convert.ToDateTime(peidoDefault[0]), pedido.DataEntregaDesejada);
+            Assert.AreEqual(Convert.ToString(peidoDefault[1]), pedido.NomeProduto);
+            Assert.AreEqual( Convert.ToDecimal(peidoDefault[2]), pedido.Valor);
+            Assert.AreEqual((TipoPagamento)peidoDefault[3], pedido.TipoPagamento);
+            Assert.AreEqual(Convert.ToString(peidoDefault[4]), pedido.NomeCliente);
+            Assert.AreEqual(Convert.ToString(peidoDefault[5]), pedido.Cidade);
+            Assert.AreEqual(Convert.ToString(peidoDefault[6]), pedido.Estado);
         }
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentException))]
         public void TentarGerarPedidoComDataEntregaIgualAAtual()
         {
-            DateTime dataEntregaDesejada = DateTime.Today;
-            string nomeProduto = "Facão 3 listras";
-            decimal valorPedido = 2000;
-            TipoPagamento tipoPagamento = TipoPagamento.Mastercard;
-            string nomeCliente = "Gustavo";
-            string cidade = "Porto Alegre";
-            string estado = "RS";
+            peidoDefault[0] = DateTime.Today;
 
-            Pedido pedido = new Pedido(dataEntregaDesejada, nomeProduto, valorPedido, tipoPagamento, nomeCliente, cidade, estado);
+            Pedido pedido = new Pedido(Convert.ToDateTime(peidoDefault[0]), Convert.ToString(peidoDefault[1]), Convert.ToDecimal(peidoDefault[2]), (TipoPagamento)peidoDefault[3], Convert.ToString(peidoDefault[4]), Convert.ToString(peidoDefault[5]), Convert.ToString(peidoDefault[6]));
         }
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentException))]
         public void TentarGerarPedidoComDataEntregaDeDoisDiasAtras()
         {
-            DateTime dataEntregaDesejada = DateTime.Today.AddDays(-2);
-            string nomeProduto = "Facão 3 listras";
-            decimal valorPedido = 2000;
-            TipoPagamento tipoPagamento = TipoPagamento.Mastercard;
-            string nomeCliente = "Gustavo";
-            string cidade = "Porto Alegre";
-            string estado = "RS";
+            peidoDefault[0] = DateTime.Today.AddDays(-2);
 
-            Pedido pedido = new Pedido(dataEntregaDesejada, nomeProduto, valorPedido, tipoPagamento, nomeCliente, cidade, estado);
+            Pedido pedido = new Pedido(Convert.ToDateTime(peidoDefault[0]), Convert.ToString(peidoDefault[1]), Convert.ToDecimal(peidoDefault[2]), (TipoPagamento)peidoDefault[3], Convert.ToString(peidoDefault[4]), Convert.ToString(peidoDefault[5]), Convert.ToString(peidoDefault[6]));
         }
 
         [TestMethod]
         public void GerarPedidoComDataEntregaMenorDe7Dias()
         {
-            DateTime dataEntregaDesejada = DateTime.Today.AddDays(+2);
-            string nomeProduto = "Facão 3 listras";
-            decimal valorPedido = 2000;
-            TipoPagamento tipoPagamento = TipoPagamento.Mastercard;
-            string nomeCliente = "Gustavo";
-            string cidade = "Porto Alegre";
-            string estado = "RS";
+            peidoDefault[0] = DateTime.Today.AddDays(+2);
 
-            Pedido pedido = new Pedido(dataEntregaDesejada, nomeProduto, valorPedido, tipoPagamento, nomeCliente, cidade, estado);
+            Pedido pedido = new Pedido(Convert.ToDateTime(peidoDefault[0]), Convert.ToString(peidoDefault[1]), Convert.ToDecimal(peidoDefault[2]), (TipoPagamento)peidoDefault[3], Convert.ToString(peidoDefault[4]), Convert.ToString(peidoDefault[5]), Convert.ToString(peidoDefault[6]));
 
             Assert.IsTrue(pedido.PedidoUrgente);
         }
@@ -78,15 +66,9 @@ namespace LojaNinja.Domino.Test
         [TestMethod]
         public void GerarPedidoComDataEntregaMaiorDe7Dias()
         {
-            DateTime dataEntregaDesejada = DateTime.Today.AddDays(+8);
-            string nomeProduto = "Facão 3 listras";
-            decimal valorPedido = 2000;
-            TipoPagamento tipoPagamento = TipoPagamento.Mastercard;
-            string nomeCliente = "Gustavo";
-            string cidade = "Porto Alegre";
-            string estado = "RS";
+            peidoDefault[0] = DateTime.Today.AddDays(+8);
 
-            Pedido pedido = new Pedido(dataEntregaDesejada, nomeProduto, valorPedido, tipoPagamento, nomeCliente, cidade, estado);
+            Pedido pedido = new Pedido(Convert.ToDateTime(peidoDefault[0]), Convert.ToString(peidoDefault[1]), Convert.ToDecimal(peidoDefault[2]), (TipoPagamento)peidoDefault[3], Convert.ToString(peidoDefault[4]), Convert.ToString(peidoDefault[5]), Convert.ToString(peidoDefault[6]));
 
             Assert.IsFalse(pedido.PedidoUrgente);
         }
@@ -94,15 +76,9 @@ namespace LojaNinja.Domino.Test
         [TestMethod]
         public void GerarPedidoComDataEntregaIguala7Dias()
         {
-            DateTime dataEntregaDesejada = DateTime.Today.AddDays(+7);
-            string nomeProduto = "Facão 3 listras";
-            decimal valorPedido = 2000;
-            TipoPagamento tipoPagamento = TipoPagamento.Mastercard;
-            string nomeCliente = "Gustavo";
-            string cidade = "Porto Alegre";
-            string estado = "RS";
+            peidoDefault[0] = DateTime.Today.AddDays(+7);
 
-            Pedido pedido = new Pedido(dataEntregaDesejada, nomeProduto, valorPedido, tipoPagamento, nomeCliente, cidade, estado);
+            Pedido pedido = new Pedido(Convert.ToDateTime(peidoDefault[0]), Convert.ToString(peidoDefault[1]), Convert.ToDecimal(peidoDefault[2]), (TipoPagamento)peidoDefault[3], Convert.ToString(peidoDefault[4]), Convert.ToString(peidoDefault[5]), Convert.ToString(peidoDefault[6]));
 
             Assert.IsFalse(pedido.PedidoUrgente);
         }
