@@ -99,7 +99,7 @@ namespace LojaNinja.Repositorio.Test
                 new Pedido(DateTime.Today.AddDays(5), "Facao", 120, TipoPagamento.Diners, "Gustavo", "Porto Alegre", "RS")
             );
 
-            Assert.AreEqual(5, idPedidoAdicionado);
+            Assert.AreEqual(5, _repositorioVendas.ObterPedidoPorId(idPedidoAdicionado).Id);
         }
 
         [TestMethod]

@@ -46,7 +46,7 @@ namespace LojaNinja.Repositorio
             try
             {
                 var idPedido = ObterProximoId();
-                var a = String.Format("{0}{1}", idPedido, ConvertePedidoParaCSV(pedido).Substring(1));
+                File.AppendAllText(PATH_ARQUIVO, String.Format("{0}{1}", idPedido, ConvertePedidoParaCSV(pedido).Substring(1)));
                 return idPedido;
             }
             catch
