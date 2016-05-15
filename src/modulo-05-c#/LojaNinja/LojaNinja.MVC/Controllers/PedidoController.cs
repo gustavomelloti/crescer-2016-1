@@ -22,9 +22,16 @@ namespace LojaNinja.MVC.Controllers
 
         public ActionResult Detalhes(int id)
         {
-            var pedido = new PedidoModel(repositorio.ObterPedidoPorId(id));
-
-            return View(pedido);
+            try
+            {
+                var pedido = new PedidoModel(repositorio.ObterPedidoPorId(id));
+                return View(pedido);
+            }
+            catch
+            {
+                ViewBag.Erro = "Pedido não encontrado.";
+                return View("Erro");
+            }
         }
 
         [HttpGet]
@@ -45,20 +52,32 @@ namespace LojaNinja.MVC.Controllers
 
         public ActionResult Excluir(int id)
         {
-            repositorio.ExcluirPedido(id);
-
-            return View();
+            try
+            {
+                repositorio.ExcluirPedido(id);
+                return View();
+            }
+            catch
+            {
+                ViewBag.Erro = "Erro ao excluir pedido";
+                return View("Erro");
+            }
         }
 
         public ActionResult Editar(int id)
         {
-            ViewBag.Operacao = "Editar pedido";
-
-            var pedido = new PedidoModel(repositorio.ObterPedidoPorId(id));
-
-            return View("cadastro", pedido);
+            try
+            {
+                ViewBag.Operacao = "Editar pedido";
+                var pedido = new PedidoModel(repositorio.ObterPedidoPorId(id));
+                return View("cadastro", pedido);
+            }
+            catch
+            {
+                ViewBag.Erro = "Pedido não encontrado.";
+                return View("Erro");
+            }
         }
-
         
         [HttpPost]
         [ValidateAntiForgeryToken]

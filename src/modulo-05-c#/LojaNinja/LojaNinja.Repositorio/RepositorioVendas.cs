@@ -30,6 +30,59 @@ namespace LojaNinja.Repositorio
             return pedidos;
         }
 
+        public Pedido ObterPedidoPorId(int id)
+        {
+            return this.ObterPedidos().FirstOrDefault(x => x.Id == id);
+        }
+
+        public int IncluirPedido(Pedido pedido)
+        {
+            try
+            {
+                var idPedido = ObterProximoId();
+                File.AppendAllText(PATH_ARQUIVO, String.Format("{0}{1}", idPedido, ConvertePedidoParaCSV(pedido).Substring(1)));
+                return idPedido;
+            }
+            catch
+            {
+                throw new ArgumentException();
+            }
+        }
+
+        public void AtualizarPedido(Pedido pedido)
+        {
+            try
+            {
+                var linhas = File.ReadAllLines(PATH_ARQUIVO).ToList();
+
+                int linhaPedido = RetornarPosicaoPedidoNoCsv(pedido.Id);
+
+                linhas[linhaPedido] = ConvertePedidoParaCSV(pedido).Replace("\n", "");
+
+                File.WriteAllLines(PATH_ARQUIVO, linhas);
+            }
+            catch
+            {
+                throw new ArgumentException();
+            }
+        }
+
+        public void ExcluirPedido(int id)
+        {
+            try
+            {
+                var linhas = File.ReadAllLines(PATH_ARQUIVO).ToList();
+
+                linhas.RemoveAt(RetornarPosicaoPedidoNoCsv(id));
+
+                File.WriteAllLines(PATH_ARQUIVO, linhas);
+            }
+            catch
+            {
+                throw new ArgumentException();
+            }
+        }
+
         private List<Pedido> ObterPedidosPorCliente(List<Pedido> pedidos, string cliente)
         {
             return pedidos.Where(x => x.NomeCliente.ToLower().Equals(cliente.ToLower())).ToList();
@@ -40,20 +93,6 @@ namespace LojaNinja.Repositorio
             return pedidos.Where(x => x.NomeProduto.ToLower().Equals(produto.ToLower())).ToList();
         }
 
-        public Pedido ObterPedidoPorId(int id)
-        {
-            return this.ObterPedidos().FirstOrDefault(x => x.Id == id);
-        }
-
-        public int IncluirPedido(Pedido pedido)
-        {
-            var idPedido = ObterProximoId();
-
-            File.AppendAllText(PATH_ARQUIVO, String.Format("{0}{1}", idPedido, ConvertePedidoParaCSV(pedido).Substring(1)));
-
-            return idPedido;
-        }
-
         private int ObterProximoId()
         {
             var linhas = File.ReadAllLines(PATH_ARQUIVO).ToArray();
@@ -61,26 +100,6 @@ namespace LojaNinja.Repositorio
             var linha = linhas[linhas.Length - 1];
 
             return Convert.ToInt16(linha.Split(';')[0]) + 1;
-        }
-
-        public void AtualizarPedido(Pedido pedido)
-        {
-            var linhas = File.ReadAllLines(PATH_ARQUIVO).ToList();
-
-            int linhaPedido = RetornarPosicaoPedidoNoCsv(pedido.Id);
-
-            linhas[linhaPedido] = ConvertePedidoParaCSV(pedido).Replace("\n", "");
-
-            File.WriteAllLines(PATH_ARQUIVO, linhas);
-        }
-
-        public void ExcluirPedido(int id)
-        {
-            var linhas = File.ReadAllLines(PATH_ARQUIVO).ToList();
-
-            linhas.RemoveAt(RetornarPosicaoPedidoNoCsv(id));
-
-            File.WriteAllLines(PATH_ARQUIVO, linhas);
         }
 
         private int RetornarPosicaoPedidoNoCsv(int idPedido)
