@@ -1,9 +1,5 @@
 N�mero Pedido;Data Pedido;Data Desejo Entrega;Nome Produto;Valor Venda;Tipo Pagamento;Nome Cliente;Cidade;Estado;Urgente
-1;01/01/0001;22/05/2016;Kunai;1200,00;Mastercard;carolina;Basildon;England;false 
-7;01/04/2009 13:17;01/04/2009 13:17;Faca de Gaud�rio;1200;Mastercard;Nunes;S�o Leopoldo;Rio Grande do Sul;true
-8;01/04/2009 14:11;01/04/2009 14:11;Katana;1200;Visa;Aidan;Chatou;Ile-de-France;true
-9;01/01/0001;24/12/2016;Kunai;1200;Diners;Stacy;New York                    ;NY;false 
-10;01/02/2009 09:16;01/02/2009 09:16;Kunai;1200;Mastercard;Sean ;Shavano Park                ;TX;true
+8;01/04/2009;01/04/2009;Katana;1200;Visa;Aidan;Chatou;Ile-de-France;true 
 11;01/02/2009 14:18;01/02/2009 14:18;Shuriken;1200;Visa;Richard;Riverside                   ;NJ;true
 12;01/04/2009 01:05;01/04/2009 01:05;Kunai;1200;Diners;Leanne;Julianstown;Meath;true
 13;01/05/2009 11:37;01/05/2009 11:37;Shuriken;1200;Visa;Janet;Ottawa;Ontario;true
@@ -1001,3 +997,5 @@ N�mero Pedido;Data Pedido;Data Desejo Entrega;Nome Produto;Valor Venda;Tipo Pa
 1005;13/05/2016;12/12/2016;Facao;1231,22;Diners;sadsad;aa;bbb;false 
 1006;01/01/0001;12/12/2016;asdaaaaaaaa;134234;Diners;dsfds;sdfdsf;sdfdsf;false 
 1007;14/05/2016;12/12/2016;asdas;12,12;Amex;ad;asd;asd;false 
+1008;15/05/2016;17/05/2016;Facão;120;Diners;Gustavo;Porto Alegre;RS;true 
+1009;15/05/2016;17/05/2016;Facão;120;Diners;Gustavo;Porto Alegre;RS;true 

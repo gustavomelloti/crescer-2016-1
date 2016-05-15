@@ -95,6 +95,7 @@ namespace LojaNinja.MVC.Controllers
 
                 try
                 {
+                    // cadastro
                     if (model.Id <= 0)
                     {
                         var pedido = new Pedido(model.DataEntrega, model.NomeProduto, model.Valor, model.TipoPagamento, model.NomeCliente, model.Cidade, model.Estado);
@@ -102,6 +103,7 @@ namespace LojaNinja.MVC.Controllers
                         pedidoModel = new PedidoModel(pedido);
                         pedidoModel.Id = idPedido;
                     }
+                    // edição
                     else
                     {
                         var pedido = new Pedido(model.Id, model.DataPedido, model.DataEntrega, model.NomeProduto, model.Valor, model.TipoPagamento, model.NomeCliente, model.Cidade, model.Estado, model.PedidoUrgente);

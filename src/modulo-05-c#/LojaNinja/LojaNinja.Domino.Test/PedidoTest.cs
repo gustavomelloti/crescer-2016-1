@@ -37,7 +37,7 @@ namespace LojaNinja.Domino.Test
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentException))]
-        public void TentarGerarPedidoComDataEntregaIgualAAtual()
+        public void GerarPedidoComDataEntregaIgualAAtualEDeveLancarExcecao()
         {
             peidoDefault[0] = DateTime.Today;
 
@@ -46,7 +46,7 @@ namespace LojaNinja.Domino.Test
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentException))]
-        public void TentarGerarPedidoComDataEntregaDeDoisDiasAtras()
+        public void GerarPedidoComDataEntregaDeDoisDiasAtrasEDeveLancarExcecao()
         {
             peidoDefault[0] = DateTime.Today.AddDays(-2);
 

@@ -8,8 +8,14 @@ namespace LojaNinja.Repositorio
 {
     public class RepositorioVendas
     {
-        private const string PATH_ARQUIVO = @"C:\Users\Gustavo\Documents\crescer-2016-1\src\modulo-05-c#\LojaNinja\LojaNinja.Repositorio\vendas.txt";        
+        
+        private readonly string PATH_ARQUIVO;
 
+        public RepositorioVendas(string path = @"C:\Users\Gustavo\Documents\crescer-2016-1\src\modulo-05-c#\LojaNinja\LojaNinja.Repositorio\vendas.txt")
+        {
+            PATH_ARQUIVO = path;
+        }
+        
         public List<Pedido> ObterPedidos()
         {
             var linhasArquivo = File.ReadAllLines(PATH_ARQUIVO).ToList();
@@ -40,7 +46,7 @@ namespace LojaNinja.Repositorio
             try
             {
                 var idPedido = ObterProximoId();
-                File.AppendAllText(PATH_ARQUIVO, String.Format("{0}{1}", idPedido, ConvertePedidoParaCSV(pedido).Substring(1)));
+                var a = String.Format("{0}{1}", idPedido, ConvertePedidoParaCSV(pedido).Substring(1));
                 return idPedido;
             }
             catch
