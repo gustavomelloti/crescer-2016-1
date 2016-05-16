@@ -6,14 +6,15 @@
 }
 
 @section scripts {
-<script src="~/Scripts/jquery.validate.min.js"></script>
-<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
-<script src="~/Scripts/Custom/overrides-validacao.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/Scripts/Custom/overrides-validacao.js"></script>
+    <script src="~/Scripts/Custom/Usuarios/cadastro.js"></script>
 }
 
 <h2>Cadastro de Usuários</h2>
 
-@using (Html.BeginForm("Salvar", "Usuario", FormMethod.Post))
+@using (Html.BeginForm("Salvar", "Usuario", FormMethod.Post, new { id = "CadastroForm" }))
 {
 
     @Html.AntiForgeryToken()

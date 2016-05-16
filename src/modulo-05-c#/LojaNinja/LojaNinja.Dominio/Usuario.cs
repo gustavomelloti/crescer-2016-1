@@ -17,5 +17,17 @@ namespace LojaNinja.Dominio
         public string Nome { get; set; }
 
         public string[] Permissoes { get; set; }
+
+        public Usuario(string nome, string email, string senha)
+        {
+            this.Nome  = nome;
+            this.Email = email;
+            this.Senha = senha;
+        }
+
+        public Usuario(int id, string nome, string email, string senha) : this(nome, email, senha)
+        {
+            this.Id = id;
+        }
     }
 }

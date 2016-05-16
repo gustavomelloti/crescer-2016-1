@@ -13,6 +13,8 @@ namespace LojaNinja.Repositorio
 
         public Usuario BuscarUsuarioPorAutenticacao(string email, string senha)
         {
+            throw new NotImplementedException();
+            /*
             Usuarios.Add(new Usuario()
             {
                 Email = "teste@teste.com",
@@ -31,11 +33,13 @@ namespace LojaNinja.Repositorio
             // VOCE NUNCA VIU ISSO =P
             return Usuarios.FirstOrDefault(
                 c => c.Email.Equals(email) && c.Senha.Equals(senha));
+             */
         }
 
         public void Cadastrar(Usuario usuario)
         {
-            Usuarios.Add(usuario);
+            /* Usuarios.Add(usuario); */
+            throw new NotImplementedException();
         }
     }
 }

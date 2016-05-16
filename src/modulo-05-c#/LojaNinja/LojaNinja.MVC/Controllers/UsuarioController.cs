@@ -33,9 +33,11 @@ namespace LojaNinja.MVC.Controllers
         {
             try
             {
+                _usuarioServico.AdicionarUsuario(new Usuario(usuarioModel.Nome, usuarioModel.Email, usuarioModel.Senha));
+
                 ViewBag.CadastroRealizado = "Cadastro realizado com sucesso! Agora você pode realizar Login!";
                 
-                return RedirectToAction("Login", "Autenticacao");
+                return RedirectToAction("Index", "Autenticacao");
             }
             catch
             {

@@ -36,6 +36,18 @@ namespace LojaNinja.Dominio
         }
 
 
+        public void AdicionarUsuario(Usuario usuario)
+        {
+            try
+            {
+                _usuarioRepositorio.Cadastrar(new Usuario(usuario.Nome, usuario.Email, Criptografar(usuario.Senha)));
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
         // Utilizamos este cara para criptografar um texto.
         // MD5 é muito simples e poderíamos utilizar SALT e etc, mas por hora, vamos simplificar.
         // No futuro, se precisarmos utilizar esse método em um outro lugar, devemos refatorar e

@@ -2,6 +2,8 @@
 
 @Html.ActionLink("Cadastrar-se", "Cadastrar", "Usuario")
 
+@ViewBag.CadastroRealizado
+
 <h2>Login</h2>
 
 @using (Html.BeginForm("Login", "Autenticacao", FormMethod.Post, new { @class = "form" }))
