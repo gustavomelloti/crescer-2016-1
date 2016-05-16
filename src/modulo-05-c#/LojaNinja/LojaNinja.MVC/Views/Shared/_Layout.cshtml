@@ -15,6 +15,14 @@
     <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
 </head>
 <body>
+    @{
+        if (LojaNinja.MVC.Services.SessaoService.EstaLogado)
+        { 
+            var usuario = ((LojaNinja.MVC.Models.Login.UsuarioLogadoModel)Session["USUARIO_LOGADO"]);
+            @usuario.Nome
+        }
+    }
+       
     <div class="container"> 
         @RenderBody()
     </div>
