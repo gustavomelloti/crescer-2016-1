@@ -16,7 +16,7 @@ namespace LojaNinja.MVC.Controllers
 
         public AutenticacaoController()
         {
-            _usuarioServico = new UsuarioServico(new RepositorioUsuarios());
+            _usuarioServico = new UsuarioServico(new RepositorioUsuarioADO());
         }
         
         [HttpGet]
