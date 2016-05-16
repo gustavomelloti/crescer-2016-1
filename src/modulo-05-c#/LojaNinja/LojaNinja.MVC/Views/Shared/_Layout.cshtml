@@ -17,9 +17,8 @@
 <body>
     @{
         if (LojaNinja.MVC.Services.SessaoService.EstaLogado)
-        { 
-            var usuario = ((LojaNinja.MVC.Models.Login.UsuarioLogadoModel)Session["USUARIO_LOGADO"]);
-            @usuario.Nome
+        {
+            @LojaNinja.MVC.Services.SessaoService.UsuarioLogado.Nome
         }
     }
        
