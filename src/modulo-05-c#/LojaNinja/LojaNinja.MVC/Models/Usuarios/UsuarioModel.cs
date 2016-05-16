@@ -16,8 +16,15 @@ namespace LojaNinja.MVC.Models.Usuarios
 
         [Required]
         [DisplayName("Senha")]
+        [DataType(DataType.Password)]
         [StringLength(100)]
         public string Senha { get; set; }
+
+        [Required]
+        [DisplayName("Confirma Senha")]
+        [DataType(DataType.Password)]
+        [Compare("Senha", ErrorMessage="Confirmação de senha não confere com a senha digitada.")]
+        public string ConfirmaSenha { get; set; }
 
         [Required]
         [DisplayName("E-mail")]

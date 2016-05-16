@@ -134,6 +134,7 @@
     <Compile Include="Controllers\AutenticacaoController.cs" />
     <Compile Include="Controllers\PedidoController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
+    <Compile Include="Filters\CWITolen.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -152,7 +153,6 @@
     <Content Include="Views\Pedido\Cadastro.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Pedido\Detalhes.cshtml" />
-    <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Pedido\Excluir.cshtml" />
     <Content Include="Views\Pedido\_PesquisaProduto.cshtml" />
     <Content Include="Views\Pedido\Erro.cshtml" />
@@ -167,7 +167,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Filters\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LojaNinja.Dominio\LojaNinja.Dominio.csproj">
