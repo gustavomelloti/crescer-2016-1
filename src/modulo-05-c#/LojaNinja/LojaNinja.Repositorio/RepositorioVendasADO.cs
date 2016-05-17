@@ -122,5 +122,43 @@ namespace LojaNinja.Repositorio
                 return pedido;
             }
         }
+
+        public void ExcluirPedido(int id)
+        {
+            using (var conexao = new SqlConnection(ConnectionString))
+            {
+                string sql = "DELETE FROM Pedido WHERE id=@p_id";
+
+                var comando = new SqlCommand(sql, conexao);
+
+                comando.Parameters.Add(new SqlParameter("p_id", id));
+
+                conexao.Open();
+
+                if (comando.ExecuteNonQuery() != 1)
+                {
+                    throw new ArgumentException();
+                }
+            }
+        }
+
+        public int IncluirPedido(Pedido pedido)
+        {
+            using (var conexao = new SqlConnection(ConnectionString))
+            {
+                string sql = "DELETE FROM Pedido WHERE id=@p_id";
+
+                var comando = new SqlCommand(sql, conexao);
+
+                comando.Parameters.Add(new SqlParameter("p_id", id));
+
+                conexao.Open();
+
+                if (comando.ExecuteNonQuery() != 1)
+                {
+                    throw new ArgumentException();
+                }
+            }
+        }
     }
 }
