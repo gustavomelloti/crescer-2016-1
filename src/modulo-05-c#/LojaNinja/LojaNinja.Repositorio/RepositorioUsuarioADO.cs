@@ -33,11 +33,11 @@ namespace LojaNinja.Repositorio
 
                 Usuario usuario = null;
 
-                if (leitor.Read())
+                while (leitor.Read())
                 {
                     if (usuario == null)
                     {
-                        usuario = new Usuario(Convert.ToInt32(leitor["id"]), Convert.ToString(leitor["nome"]), Convert.ToString(leitor["senha"]), Convert.ToString(leitor["email"]));
+                        usuario = new Usuario(Convert.ToInt32(leitor["Id"]), Convert.ToString(leitor["Nome"]), Convert.ToString(leitor["Senha"]), Convert.ToString(leitor["Email"]));
                     }
 
                     usuario.Permissoes.AdicionarPermissao(Convert.ToString(leitor["Permissao"]));

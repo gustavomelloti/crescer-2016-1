@@ -17,7 +17,10 @@ namespace LojaNinja.Dominio
 
         public void AdicionarPermissao(string permissao)
         {
-            Permissoes.Add(permissao);
+            if (!Permissoes.Contains(permissao)) 
+            {
+                Permissoes.Add(permissao);
+            }
         }
 
         public void RemoverPermissao(string permissao)

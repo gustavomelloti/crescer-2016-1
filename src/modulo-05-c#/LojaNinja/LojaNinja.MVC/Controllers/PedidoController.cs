@@ -54,6 +54,8 @@ namespace LojaNinja.MVC.Controllers
             return View(FormatarPedidosEmPedidosModel(repositorio.ObterPedidosComFiltros(cliente, produto)));
         }
 
+        [CWIToken(Roles = "ADMIN")]
+        [HttpGet]
         public ActionResult Excluir(int id)
         {
             try
@@ -69,6 +71,7 @@ namespace LojaNinja.MVC.Controllers
         }
 
         [CWIToken(Roles = "ADMIN")]
+        [HttpGet]
         public ActionResult Editar(int id)
         {
             try

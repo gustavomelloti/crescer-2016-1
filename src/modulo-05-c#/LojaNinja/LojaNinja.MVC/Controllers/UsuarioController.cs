@@ -19,17 +19,20 @@ namespace LojaNinja.MVC.Controllers
             _usuarioServico = new UsuarioServico(new RepositorioUsuarioADO());
         }
 
+        [HttpGet]
         public ActionResult Index()
         {
             return View();
         }
 
+        [HttpGet]
         public ActionResult Cadastrar()
         {
             return View();
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Salvar(UsuarioModel usuarioModel)
         {
             try
