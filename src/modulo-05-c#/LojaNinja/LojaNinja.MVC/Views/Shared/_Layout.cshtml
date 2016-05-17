@@ -19,6 +19,7 @@
         if (LojaNinja.MVC.Services.SessaoService.EstaLogado)
         {
             @LojaNinja.MVC.Services.SessaoService.UsuarioLogado.Nome
+            @Html.ActionLink("Deslogar", "Logout", "Autenticacao")
         }
     }
        

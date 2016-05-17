@@ -72,7 +72,7 @@ namespace LojaNinja.MVC.Filters
                                    new RouteValueDictionary
                                    {
                                        { "action", "Index" },
-                                       { "controller", "Login" }
+                                       { "controller", "Autenticacao" }
                                    });
             }
         }

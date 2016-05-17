@@ -1,4 +1,4 @@
-﻿using System;
+﻿    using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -7,6 +7,7 @@ using LojaNinja.MVC.Models.Login;
 using LojaNinja.Dominio;
 using LojaNinja.Repositorio;
 using LojaNinja.MVC.Services;
+using LojaNinja.MVC.Filters;
 
 namespace LojaNinja.MVC.Controllers
 {
@@ -55,6 +56,15 @@ namespace LojaNinja.MVC.Controllers
             }
 
             return View("Index", loginViewModel);
+        }
+
+        [HttpGet]
+        [CWIToken]
+        public ActionResult Logout()
+        {
+            SessaoService.DestruirSessao();
+
+            return View("Index");
         }
     }
 }

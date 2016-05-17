@@ -10,7 +10,7 @@ namespace LojaNinja.Repositorio
     {
         private readonly string PATH_ARQUIVO;
 
-        public RepositorioVendas(string path = @"C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-05-c#\LojaNinja\LojaNinja.Repositorio\vendas.txt")
+        public RepositorioVendas(string path = @"C:\Users\Gustavo\Documents\crescer-2016-1\src\modulo-05-c#\LojaNinja\LojaNinja.Repositorio\vendas.txt")
         {
             PATH_ARQUIVO = path;
         }

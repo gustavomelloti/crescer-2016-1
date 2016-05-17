@@ -1,4 +1,5 @@
 ﻿using LojaNinja.Dominio;
+using LojaNinja.MVC.Filters;
 using LojaNinja.MVC.Models;
 using LojaNinja.Repositorio;
 using System;
@@ -9,10 +10,12 @@ using System.Web.Mvc;
 
 namespace LojaNinja.MVC.Controllers
 {
+    [CWIToken]
     public class PedidoController : Controller
     {
         private RepositorioVendas repositorio = new RepositorioVendas();
 
+        [HttpGet]
         public ActionResult Cadastro()
         {
             ViewBag.Operacao = "Novo pedido";
@@ -20,6 +23,7 @@ namespace LojaNinja.MVC.Controllers
             return View();
         }
 
+        [HttpGet]
         public ActionResult Detalhes(int id)
         {
             try
@@ -64,6 +68,7 @@ namespace LojaNinja.MVC.Controllers
             }
         }
 
+        [CWIToken(Roles = "ADMIN")]
         public ActionResult Editar(int id)
         {
             try
