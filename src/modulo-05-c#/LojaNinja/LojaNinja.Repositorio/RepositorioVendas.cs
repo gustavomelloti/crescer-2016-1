@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace LojaNinja.Repositorio
 {
-    public class RepositorioVendas
+    public class RepositorioVendas : IPedidoRepositorio
     {
         private readonly string PATH_ARQUIVO;
 

@@ -1,6 +1,5 @@
 ﻿using LojaNinja.Dominio;
 using System;
-using System.Configuration;
 using System.Data.SqlClient;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,13 +9,11 @@ using System.Transactions;
 
 namespace LojaNinja.Repositorio
 {
-    public class RepositorioUsuarioADO : IUsuarioRepositorio
+    public class RepositorioUsuarioADO : RepositorioBase, IUsuarioRepositorio
     {
-        private readonly string connectionString = ConfigurationManager.ConnectionStrings["Con"].ConnectionString;
-
         public Usuario BuscarUsuarioPorAutenticacao(string email, string senha)
         {
-            using (var conexao = new SqlConnection(connectionString))
+            using (var conexao = new SqlConnection(ConnectionString))
             {
                 string sql = "SELECT Usuario.Nome, Usuario.Email, Usuario.Senha, Usuario.Id, Permissao.Permissao FROM Usuario"
                                + " Join UsuarioPermissao ON UsuarioPermissao.Usuario_Id = Usuario.Id"
@@ -51,7 +48,7 @@ namespace LojaNinja.Repositorio
         {
             using (TransactionScope scope = new TransactionScope())
             {
-                using (var conexao = new SqlConnection(connectionString))
+                using (var conexao = new SqlConnection(ConnectionString))
                 {
                     try
                     {

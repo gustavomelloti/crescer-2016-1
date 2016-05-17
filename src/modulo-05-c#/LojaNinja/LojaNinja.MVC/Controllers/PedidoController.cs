@@ -13,7 +13,12 @@ namespace LojaNinja.MVC.Controllers
     [CWIToken(Roles = "COMUM")]
     public class PedidoController : Controller
     {
-        private RepositorioVendas repositorio = new RepositorioVendas();
+        private IPedidoRepositorio _pedidoRepositorio;
+
+        public PedidoController()
+        {
+            _pedidoRepositorio = new RepositorioVendas();
+        }
 
         [HttpGet]
         public ActionResult Cadastro()
@@ -28,7 +33,7 @@ namespace LojaNinja.MVC.Controllers
         {
             try
             {
-                var pedido = new PedidoModel(repositorio.ObterPedidoPorId(id));
+                var pedido = new PedidoModel(_pedidoRepositorio.ObterPedidoPorId(id));
                 return View(pedido);
             }
             catch
@@ -40,8 +45,8 @@ namespace LojaNinja.MVC.Controllers
 
         [HttpGet]
         public ActionResult Listagem()
-        {            
-            return View(FormatarPedidosEmPedidosModel(repositorio.ObterPedidos()));
+        {
+            return View(FormatarPedidosEmPedidosModel(_pedidoRepositorio.ObterPedidos()));
         }
 
         [HttpPost]
@@ -51,7 +56,7 @@ namespace LojaNinja.MVC.Controllers
             ViewBag.ClientePesquisa = cliente;
             ViewBag.ProdutoPesquisa = produto;
 
-            return View(FormatarPedidosEmPedidosModel(repositorio.ObterPedidosComFiltros(cliente, produto)));
+            return View(FormatarPedidosEmPedidosModel(_pedidoRepositorio.ObterPedidosComFiltros(cliente, produto)));
         }
 
         [CWIToken(Roles = "ADMIN")]
@@ -60,7 +65,7 @@ namespace LojaNinja.MVC.Controllers
         {
             try
             {
-                repositorio.ExcluirPedido(id);
+                _pedidoRepositorio.ExcluirPedido(id);
                 return View();
             }
             catch
@@ -77,7 +82,7 @@ namespace LojaNinja.MVC.Controllers
             try
             {
                 ViewBag.Operacao = "Editar pedido";
-                var pedido = new PedidoModel(repositorio.ObterPedidoPorId(id));
+                var pedido = new PedidoModel(_pedidoRepositorio.ObterPedidoPorId(id));
                 return View("cadastro", pedido);
             }
             catch
@@ -107,7 +112,7 @@ namespace LojaNinja.MVC.Controllers
                     if (model.Id <= 0)
                     {
                         var pedido = new Pedido(model.DataEntrega, model.NomeProduto, model.Valor, model.TipoPagamento, model.NomeCliente, model.Cidade, model.Estado);
-                        var idPedido = repositorio.IncluirPedido(pedido);
+                        var idPedido = _pedidoRepositorio.IncluirPedido(pedido);
                         pedidoModel = new PedidoModel(pedido);
                         pedidoModel.Id = idPedido;
                     }
@@ -115,7 +120,7 @@ namespace LojaNinja.MVC.Controllers
                     else
                     {
                         var pedido = new Pedido(model.Id, model.DataPedido, model.DataEntrega, model.NomeProduto, model.Valor, model.TipoPagamento, model.NomeCliente, model.Cidade, model.Estado, model.PedidoUrgente);
-                        repositorio.AtualizarPedido(pedido);
+                        _pedidoRepositorio.AtualizarPedido(pedido);
                         pedidoModel = new PedidoModel(pedido);
                     }
 

@@ -43,10 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="RepositorioBase.cs" />
     <Compile Include="RepositorioUsuarioADO.cs" />
-    <Compile Include="RepositorioUsuarios.cs" />
     <Compile Include="RepositorioVendas.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RepositorioVendasADO.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LojaNinja.Dominio\LojaNinja.Dominio.csproj">
