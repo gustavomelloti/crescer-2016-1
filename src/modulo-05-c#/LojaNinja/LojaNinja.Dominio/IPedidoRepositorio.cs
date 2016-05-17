@@ -8,9 +8,9 @@ namespace LojaNinja.Dominio
 {
     public interface IPedidoRepositorio
     {
-        List<Pedido> ObterPedidosComFiltros(string cliente, string produto);
-
         List<Pedido> ObterPedidos();
+
+        List<Pedido> ObterPedidosComFiltros(string cliente, string produto);
 
         Pedido ObterPedidoPorId(int id);
 
@@ -18,6 +18,6 @@ namespace LojaNinja.Dominio
 
         void AtualizarPedido(Pedido pedido);
 
-        void ExcluirPedido(int id);
+       void  ExcluirPedido(int id);
     }
 }
