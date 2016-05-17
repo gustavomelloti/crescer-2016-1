@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace LojaNinja.Repositorio
 {
-    public class RepositorioVendasADO : RepositorioBase
+    public class RepositorioVendasADO : RepositorioBase, IPedidoRepositorio
     {
 
         public List<Pedido> ObterPedidos()
@@ -146,15 +146,57 @@ namespace LojaNinja.Repositorio
         {
             using (var conexao = new SqlConnection(ConnectionString))
             {
-                string sql = "DELETE FROM Pedido WHERE id=@p_id";
-
+                string sql = "INSERT INTO Pedido (Data_Pedido, Data_Entrega_Desejada, Nome_Produto, Valor, Tipo_Pagamento, Nome_Cliente, Cidade, Estado, Urgente) OUTPUT INSERTED.ID VALUES (@p_data_pedido, @p_data_entrega_desajada, @p_nome_produto, @p_valor, @p_tipo_pagamento, @p_nome_cliente, @p_cidade, @p_estado, @p_urgente)";
+                       
                 var comando = new SqlCommand(sql, conexao);
 
-                comando.Parameters.Add(new SqlParameter("p_id", id));
+                comando.Parameters.Add(new SqlParameter("@p_data_pedido", pedido.DataPedido));
+                comando.Parameters.Add(new SqlParameter("@p_data_entrega_desajada",pedido.DataEntregaDesejada));
+                comando.Parameters.Add(new SqlParameter("@p_nome_produto", pedido.NomeProduto));
+                comando.Parameters.Add(new SqlParameter("@p_valor", pedido.Valor));
+                comando.Parameters.Add(new SqlParameter("@p_tipo_pagamento", pedido.TipoPagamento));
+                comando.Parameters.Add(new SqlParameter("@p_nome_cliente", pedido.NomeCliente));
+                comando.Parameters.Add(new SqlParameter("@p_cidade", pedido.Cidade));
+                comando.Parameters.Add(new SqlParameter("@p_estado", pedido.Estado));
+                comando.Parameters.Add(new SqlParameter("@p_urgente", pedido.PedidoUrgente));
 
                 conexao.Open();
 
-                if (comando.ExecuteNonQuery() != 1)
+                var idPedidoCadastrado = Convert.ToInt32(comando.ExecuteScalar());
+
+                if (idPedidoCadastrado > 0)
+                {
+                    return idPedidoCadastrado;
+                }
+                else
+                {
+                    throw new ArgumentException();
+                }
+            }
+        }
+
+        public void AtualizarPedido(Pedido pedido)
+        {
+            using (var conexao = new SqlConnection(ConnectionString))
+            {
+                string sql = "UPDATE Pedido SET Data_Pedido = @p_data_pedido, Data_Entrega_Desejada = @p_data_entrega_desajada, Nome_Produto = @p_nome_produto, Valor = @p_valor, Tipo_Pagamento = @p_tipo_pagamento, Nome_Cliente = @p_nome_cliente, Cidade = @p_cidade, Estado = @p_estado, Urgente = @p_urgente WHERE Id = @p_id";
+
+                var comando = new SqlCommand(sql, conexao);
+
+                comando.Parameters.Add(new SqlParameter("@p_id", pedido.Id));
+                comando.Parameters.Add(new SqlParameter("@p_data_pedido", pedido.DataPedido));
+                comando.Parameters.Add(new SqlParameter("@p_data_entrega_desajada", pedido.DataEntregaDesejada));
+                comando.Parameters.Add(new SqlParameter("@p_nome_produto", pedido.NomeProduto));
+                comando.Parameters.Add(new SqlParameter("@p_valor", pedido.Valor));
+                comando.Parameters.Add(new SqlParameter("@p_tipo_pagamento", pedido.TipoPagamento));
+                comando.Parameters.Add(new SqlParameter("@p_nome_cliente", pedido.NomeCliente));
+                comando.Parameters.Add(new SqlParameter("@p_cidade", pedido.Cidade));
+                comando.Parameters.Add(new SqlParameter("@p_estado", pedido.Estado));
+                comando.Parameters.Add(new SqlParameter("@p_urgente", pedido.PedidoUrgente));
+
+                conexao.Open();
+
+                if (comando.ExecuteNonQuery() != 0)
                 {
                     throw new ArgumentException();
                 }

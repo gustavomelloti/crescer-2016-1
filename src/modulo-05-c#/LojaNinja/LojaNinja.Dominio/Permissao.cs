@@ -8,24 +8,12 @@ namespace LojaNinja.Dominio
 {
     public class Permissao
     {
-        public List<String> Permissoes { get; private set; }
+        public Permissao() { }
 
-        public Permissao()
-        {
-            Permissoes = new List<String>();
-        }
+        public int Id { get; set; }
 
-        public void AdicionarPermissao(string permissao)
-        {
-            if (!Permissoes.Contains(permissao)) 
-            {
-                Permissoes.Add(permissao);
-            }
-        }
+        public string Nome { get; set; }
 
-        public void RemoverPermissao(string permissao)
-        {
-            Permissoes.Remove(permissao);
-        }
+        public List<Usuario> Usuarios { get; set; }
     }
 }

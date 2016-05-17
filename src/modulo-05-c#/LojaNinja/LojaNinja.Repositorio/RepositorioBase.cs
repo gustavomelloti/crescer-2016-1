@@ -13,7 +13,7 @@ namespace LojaNinja.Repositorio
         {
             get
             {
-                return ConfigurationManager.ConnectionStrings["Batata"].ConnectionString;
+                return ConfigurationManager.ConnectionStrings["Con"].ConnectionString;
             }
         }
     }

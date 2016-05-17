@@ -17,7 +17,7 @@ namespace LojaNinja.MVC.Controllers
 
         public PedidoController()
         {
-            _pedidoRepositorio = new RepositorioVendas();
+            _pedidoRepositorio = new RepositorioVendasADO();
         }
 
         [HttpGet]

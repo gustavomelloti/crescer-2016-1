@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LojaNinja.Repositorio", "LojaNinja.Repositorio\LojaNinja.Repositorio.csproj", "{1FC9476A-0CDB-43D7-87E8-A220AE93B437}"
 EndProject
@@ -18,6 +18,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LojaNinja.Domino.Test", "LojaNinja.Domino.Test\LojaNinja.Domino.Test.csproj", "{FE17CF86-B976-458D-A64A-8B5C76A11920}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LojaNinja.Repositorio.Test", "LojaNinja.Repositorio.Test\LojaNinja.Repositorio.Test.csproj", "{193C8B49-77AA-401B-A2FD-A76807B5E8A3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LojaNinja.Repositorio.EF", "LojaNinja.Repositorio.EF\LojaNinja.Repositorio.EF.csproj", "{2F202EAE-CA63-450C-89B2-2758DB939802}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{193C8B49-77AA-401B-A2FD-A76807B5E8A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{193C8B49-77AA-401B-A2FD-A76807B5E8A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{193C8B49-77AA-401B-A2FD-A76807B5E8A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F202EAE-CA63-450C-89B2-2758DB939802}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F202EAE-CA63-450C-89B2-2758DB939802}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F202EAE-CA63-450C-89B2-2758DB939802}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F202EAE-CA63-450C-89B2-2758DB939802}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -55,5 +61,6 @@ Global
 		{151C75CE-D844-4CF4-A2BA-1E4DE8B44F0C} = {C4D0C480-B547-4940-BBA0-B3274ABBAFDB}
 		{FE17CF86-B976-458D-A64A-8B5C76A11920} = {C4D0C480-B547-4940-BBA0-B3274ABBAFDB}
 		{193C8B49-77AA-401B-A2FD-A76807B5E8A3} = {AD8CA845-A40E-472E-82C5-AA55315C65EB}
+		{2F202EAE-CA63-450C-89B2-2758DB939802} = {AD8CA845-A40E-472E-82C5-AA55315C65EB}
 	EndGlobalSection
 EndGlobal

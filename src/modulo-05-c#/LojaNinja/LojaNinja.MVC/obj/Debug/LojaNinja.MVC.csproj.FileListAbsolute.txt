@@ -71,3 +71,7 @@ C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-05-c#\LojaNinja\LojaN
 C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-05-c#\LojaNinja\LojaNinja.MVC\obj\Debug\LojaNinja.MVC.csprojResolveAssemblyReference.cache
 C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-05-c#\LojaNinja\LojaNinja.MVC\obj\Debug\LojaNinja.MVC.dll
 C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-05-c#\LojaNinja\LojaNinja.MVC\obj\Debug\LojaNinja.MVC.pdb
+C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-05-c#\LojaNinja\LojaNinja.MVC\bin\EntityFramework.dll
+C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-05-c#\LojaNinja\LojaNinja.MVC\bin\EntityFramework.SqlServer.dll
+C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-05-c#\LojaNinja\LojaNinja.MVC\bin\EntityFramework.xml
+C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-05-c#\LojaNinja\LojaNinja.MVC\bin\EntityFramework.SqlServer.xml
