@@ -29,6 +29,7 @@ namespace LojaNinja.MVC.Controllers
             return View();
         }
 
+        [HttpPost]
         public ActionResult Salvar(UsuarioModel usuarioModel)
         {
             try

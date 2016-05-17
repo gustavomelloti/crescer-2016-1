@@ -10,7 +10,7 @@ using System.Web.Mvc;
 
 namespace LojaNinja.MVC.Controllers
 {
-    [CWIToken]
+    [CWIToken(Roles = "COMUM")]
     public class PedidoController : Controller
     {
         private RepositorioVendas repositorio = new RepositorioVendas();

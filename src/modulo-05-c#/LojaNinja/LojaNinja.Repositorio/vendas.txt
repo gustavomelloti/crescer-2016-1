@@ -1,6 +1,4 @@
 N�mero Pedido;Data Pedido;Data Desejo Entrega;Nome Produto;Valor Venda;Tipo Pagamento;Nome Cliente;Cidade;Estado;Urgente
-8;01/04/2009;01/04/2009;Katana;1200;Visa;Aidan;Chatou;Ile-de-France;true 
-13;01/05/2009 11:37;01/05/2009 11:37;Shuriken;1200;Visa;Janet;Ottawa;Ontario;true
 14;01/02/2009 07:35;01/02/2009 07:35;Shuriken;1200;Diners;Hani;Salt Lake City              ;UT;true
 15;01/06/2009 12:56;01/06/2009 12:56;Katana;1200;Visa;Jeremy;Manchester;England;true
 16;01/01/2009 11:05;01/01/2009 11:05;Shuriken;1200;Diners;Janis;Ballynora;Cork;true

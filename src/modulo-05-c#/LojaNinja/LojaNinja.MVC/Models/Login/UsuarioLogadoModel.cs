@@ -17,12 +17,12 @@ namespace LojaNinja.MVC.Models.Login
 
         public string Email { get; private set; }
         public string Nome { get; private set; }
-        public string[] Permissoes { get; private set; }
+        public Permissao Permissoes { get; private set; }
 
         public bool TemPermissao(string permissao)
         {
             return Permissoes != null
-                   && Permissoes.Any(p => p.Equals(permissao));
+                   && Permissoes.Permissoes.Any(p => p.Equals(permissao));
         }
     }
 }

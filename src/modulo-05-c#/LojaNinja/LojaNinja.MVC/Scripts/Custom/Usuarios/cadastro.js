@@ -1,4 +1,5 @@
 ﻿$(document).ready(function () {
+    /*
     $("#CadastroForm").submit(function () {
         var formularioOk = true;
 
@@ -13,5 +14,5 @@
         }
 
         return formularioOk;
-    });
+    });*/
 });
