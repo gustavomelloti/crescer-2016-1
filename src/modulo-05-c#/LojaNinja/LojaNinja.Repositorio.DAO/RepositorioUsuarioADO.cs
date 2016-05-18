@@ -15,7 +15,7 @@ namespace LojaNinja.Repositorio
         {
             using (var conexao = new SqlConnection(ConnectionString))
             {
-                string sql = "SELECT Usuario.Nome, Usuario.Email, Usuario.Senha, Usuario.Id, Permissao.Permissao FROM Usuario"
+                string sql = "SELECT Usuario.Nome, Usuario.Email, Usuario.Senha, Usuario.Id, Permissao.Permissao, Permissao.Id AS PermissaoId FROM Usuario"
                                + " Join UsuarioPermissao ON UsuarioPermissao.Usuario_Id = Usuario.Id"
                                + " Join Permissao ON Permissao.Id = UsuarioPermissao.Permissao_Id "
                                + " WHERE Usuario.email=@p_email and Usuario.senha=@p_senha";
@@ -37,7 +37,7 @@ namespace LojaNinja.Repositorio
                         usuario = new Usuario(Convert.ToInt32(leitor["Id"]), Convert.ToString(leitor["Nome"]), Convert.ToString(leitor["Senha"]), Convert.ToString(leitor["Email"]));
                     }
 
-                    //usuario.Permissoes.Add(Convert.ToString(leitor["Permissao"]));
+                    usuario.Permissoes.Add(new Permissao(Convert.ToInt32(leitor["PermissaoId"]), Convert.ToString(leitor["Permissao"])));
                 }
 
                 return usuario;
@@ -69,7 +69,6 @@ namespace LojaNinja.Repositorio
                         }
 
                         //TODO: tá aceitando somente uma permissão e fixa
-
                         sql = "INSERT INTO UsuarioPermissao(Usuario_Id, Permissao_Id) Values(@p_usuario_id, @p_permissao_id)";
                         comando = new SqlCommand(sql, conexao);
                         comando.Parameters.Add(new SqlParameter("p_usuario_id", idUsuarioAdicionado));

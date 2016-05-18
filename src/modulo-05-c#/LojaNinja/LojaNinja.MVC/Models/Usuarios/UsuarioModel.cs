@@ -16,7 +16,7 @@ namespace LojaNinja.MVC.Models.Usuarios
 
         [Required(ErrorMessage = "O campo senha é obrigatório")]
         [DisplayName("Senha")]
-        [RegularExpression(@"^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$", ErrorMessage = "A senha informada deve possuir: tamanho mínimo de 8 caracteres, contendo letra minúscula e uma maiúscula.")]
+        [RegularExpression(@"^(?=.*\d)(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,}$", ErrorMessage = "A senha informada deve possuir: tamanho mínimo de 8 caracteres, contendo número, letra minúscula e maiúscula.")]
         [DataType(DataType.Password)]
         [StringLength(100)]
         public string Senha { get; set; }

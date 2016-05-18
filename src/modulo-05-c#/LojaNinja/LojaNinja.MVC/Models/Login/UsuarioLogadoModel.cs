@@ -22,7 +22,7 @@ namespace LojaNinja.MVC.Models.Login
         public bool TemPermissao(string permissao)
         {
             return Permissoes != null
-                   && Permissoes.Any(p => p.Equals(permissao));
+                   && Permissoes.Any(p => p.Nome.Equals(permissao));
         }
     }
 }

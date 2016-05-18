@@ -45,7 +45,7 @@ namespace LojaNinja.MVC.Controllers
             }
             catch
             {
-                return View();
+                return View("Cadastrar");
             }  
         }
     }
