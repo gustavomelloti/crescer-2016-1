@@ -51,12 +51,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ContextoDados.cs" />
-    <Compile Include="Migrations\201605171933033_Initial.cs" />
-    <Compile Include="Migrations\201605171933033_Initial.Designer.cs">
-      <DependentUpon>201605171933033_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\201605180425283_AdicionarTabelaPedido.cs" />
+    <Compile Include="Migrations\201605180425283_AdicionarTabelaPedido.Designer.cs">
+      <DependentUpon>201605180425283_AdicionarTabelaPedido.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RepositorioVendas.cs" />
+    <Compile Include="UsuarioRepositorio.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -69,8 +71,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201605171933033_Initial.resx">
-      <DependentUpon>201605171933033_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201605180425283_AdicionarTabelaPedido.resx">
+      <DependentUpon>201605180425283_AdicionarTabelaPedido.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

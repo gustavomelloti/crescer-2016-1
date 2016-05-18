@@ -7,13 +7,13 @@ namespace LojaNinja.Repositorio.EF.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class Initial : IMigrationMetadata
+    public sealed partial class AdicionarTabelaPedido : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Initial));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(AdicionarTabelaPedido));
         
         string IMigrationMetadata.Id
         {
-            get { return "201605171933033_Initial"; }
+            get { return "201605180425283_AdicionarTabelaPedido"; }
         }
         
         string IMigrationMetadata.Source

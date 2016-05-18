@@ -3,10 +3,27 @@ namespace LojaNinja.Repositorio.EF.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Initial : DbMigration
+    public partial class AdicionarTabelaPedido : DbMigration
     {
         public override void Up()
         {
+            CreateTable(
+                "dbo.Pedido",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        DataPedido = c.DateTime(nullable: false),
+                        DataEntregaDesejada = c.DateTime(nullable: false),
+                        NomeProduto = c.String(),
+                        Valor = c.Decimal(nullable: false, precision: 18, scale: 2),
+                        TipoPagamento = c.Int(nullable: false),
+                        NomeCliente = c.String(),
+                        Cidade = c.String(),
+                        Estado = c.String(),
+                        PedidoUrgente = c.Boolean(nullable: false),
+                    })
+                .PrimaryKey(t => t.Id);
+            
             CreateTable(
                 "dbo.Permissao",
                 c => new
@@ -51,6 +68,7 @@ namespace LojaNinja.Repositorio.EF.Migrations
             DropTable("dbo.UsuarioPermissao");
             DropTable("dbo.Usuario");
             DropTable("dbo.Permissao");
+            DropTable("dbo.Pedido");
         }
     }
 }
