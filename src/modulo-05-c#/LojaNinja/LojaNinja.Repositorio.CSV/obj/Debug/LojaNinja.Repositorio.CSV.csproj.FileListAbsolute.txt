@@ -1,0 +1,7 @@
+C:\Users\Gustavo\Documents\crescer-2016-1\src\modulo-05-c#\LojaNinja\LojaNinja.Repositorio.CSV\obj\Debug\LojaNinja.Repositorio.CSV.csprojResolveAssemblyReference.cache
+C:\Users\Gustavo\Documents\crescer-2016-1\src\modulo-05-c#\LojaNinja\LojaNinja.Repositorio.CSV\bin\Debug\LojaNinja.Repositorio.CSV.dll
+C:\Users\Gustavo\Documents\crescer-2016-1\src\modulo-05-c#\LojaNinja\LojaNinja.Repositorio.CSV\bin\Debug\LojaNinja.Repositorio.CSV.pdb
+C:\Users\Gustavo\Documents\crescer-2016-1\src\modulo-05-c#\LojaNinja\LojaNinja.Repositorio.CSV\bin\Debug\LojaNinja.Dominio.dll
+C:\Users\Gustavo\Documents\crescer-2016-1\src\modulo-05-c#\LojaNinja\LojaNinja.Repositorio.CSV\bin\Debug\LojaNinja.Dominio.pdb
+C:\Users\Gustavo\Documents\crescer-2016-1\src\modulo-05-c#\LojaNinja\LojaNinja.Repositorio.CSV\obj\Debug\LojaNinja.Repositorio.CSV.dll
+C:\Users\Gustavo\Documents\crescer-2016-1\src\modulo-05-c#\LojaNinja\LojaNinja.Repositorio.CSV\obj\Debug\LojaNinja.Repositorio.CSV.pdb

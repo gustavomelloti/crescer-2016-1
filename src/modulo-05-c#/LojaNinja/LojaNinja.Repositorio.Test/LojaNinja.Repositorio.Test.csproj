@@ -58,9 +58,9 @@
       <Project>{151c75ce-d844-4cf4-a2ba-1e4de8b44f0c}</Project>
       <Name>LojaNinja.Dominio</Name>
     </ProjectReference>
-    <ProjectReference Include="..\LojaNinja.Repositorio\LojaNinja.Repositorio.csproj">
-      <Project>{1fc9476a-0cdb-43d7-87e8-a220ae93b437}</Project>
-      <Name>LojaNinja.Repositorio</Name>
+    <ProjectReference Include="..\LojaNinja.Repositorio.CSV\LojaNinja.Repositorio.CSV.csproj">
+      <Project>{bcc52a21-c4d1-4c19-a7d1-4fea9e5475b2}</Project>
+      <Name>LojaNinja.Repositorio.CSV</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
