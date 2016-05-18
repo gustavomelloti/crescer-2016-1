@@ -10,7 +10,6 @@ C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-05-c#\LojaNinja\LojaN
 C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-05-c#\LojaNinja\LojaNinja.Repositorio.EF\obj\Debug\LojaNinja.Repositorio.EF.pdb
 C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-05-c#\LojaNinja\LojaNinja.Repositorio.EF\bin\Debug\LojaNinja.Dominio.dll
 C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-05-c#\LojaNinja\LojaNinja.Repositorio.EF\bin\Debug\LojaNinja.Dominio.pdb
-C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-05-c#\LojaNinja\LojaNinja.Repositorio.EF\obj\Debug\LojaNinja.Repositorio.EF.Migrations.Initial.resources
 C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-05-c#\LojaNinja\LojaNinja.Repositorio.EF\obj\Debug\LojaNinja.Repositorio.EF.csproj.GenerateResource.Cache
 C:\Users\Gustavo\Documents\crescer-2016-1\src\modulo-05-c#\LojaNinja\LojaNinja.Repositorio.EF\bin\Debug\LojaNinja.Repositorio.EF.dll.config
 C:\Users\Gustavo\Documents\crescer-2016-1\src\modulo-05-c#\LojaNinja\LojaNinja.Repositorio.EF\bin\Debug\LojaNinja.Repositorio.EF.dll
@@ -26,3 +25,4 @@ C:\Users\Gustavo\Documents\crescer-2016-1\src\modulo-05-c#\LojaNinja\LojaNinja.R
 C:\Users\Gustavo\Documents\crescer-2016-1\src\modulo-05-c#\LojaNinja\LojaNinja.Repositorio.EF\obj\Debug\LojaNinja.Repositorio.EF.pdb
 C:\Users\Gustavo\Documents\crescer-2016-1\src\modulo-05-c#\LojaNinja\LojaNinja.Repositorio.EF\obj\Debug\LojaNinja.Repositorio.EF.Migrations.AdicionarTabelaPedido.resources
 C:\Users\Gustavo\Documents\crescer-2016-1\src\modulo-05-c#\LojaNinja\LojaNinja.Repositorio.EF\obj\Debug\LojaNinja.Repositorio.EF.csproj.GenerateResource.Cache
+C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-05-c#\LojaNinja\LojaNinja.Repositorio.EF\obj\Debug\LojaNinja.Repositorio.EF.Migrations.AdicionarTabelaPedido.resources

@@ -48,7 +48,6 @@ C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-05-c#\LojaNinja\LojaN
 C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-05-c#\LojaNinja\LojaNinja.MVC\bin\LojaNinja.MVC.dll
 C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-05-c#\LojaNinja\LojaNinja.MVC\bin\LojaNinja.MVC.pdb
 C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-05-c#\LojaNinja\LojaNinja.MVC\bin\LojaNinja.Dominio.dll
-C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-05-c#\LojaNinja\LojaNinja.MVC\bin\LojaNinja.Repositorio.dll
 C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-05-c#\LojaNinja\LojaNinja.MVC\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-05-c#\LojaNinja\LojaNinja.MVC\bin\Microsoft.Web.Infrastructure.dll
 C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-05-c#\LojaNinja\LojaNinja.MVC\bin\System.Web.Helpers.dll
@@ -58,7 +57,6 @@ C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-05-c#\LojaNinja\LojaN
 C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-05-c#\LojaNinja\LojaNinja.MVC\bin\System.Web.Webpages.dll
 C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-05-c#\LojaNinja\LojaNinja.MVC\bin\System.Web.Webpages.Razor.dll
 C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-05-c#\LojaNinja\LojaNinja.MVC\bin\LojaNinja.Dominio.pdb
-C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-05-c#\LojaNinja\LojaNinja.MVC\bin\LojaNinja.Repositorio.pdb
 C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-05-c#\LojaNinja\LojaNinja.MVC\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-05-c#\LojaNinja\LojaNinja.MVC\bin\System.Web.Razor.xml
 C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-05-c#\LojaNinja\LojaNinja.MVC\bin\System.Web.Webpages.xml
@@ -81,3 +79,7 @@ C:\Users\Gustavo\Documents\crescer-2016-1\src\modulo-05-c#\LojaNinja\LojaNinja.M
 C:\Users\Gustavo\Documents\crescer-2016-1\src\modulo-05-c#\LojaNinja\LojaNinja.MVC\bin\LojaNinja.Repositorio.EF.dll
 C:\Users\Gustavo\Documents\crescer-2016-1\src\modulo-05-c#\LojaNinja\LojaNinja.MVC\bin\LojaNinja.Repositorio.DAO.pdb
 C:\Users\Gustavo\Documents\crescer-2016-1\src\modulo-05-c#\LojaNinja\LojaNinja.MVC\bin\LojaNinja.Repositorio.EF.pdb
+C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-05-c#\LojaNinja\LojaNinja.MVC\bin\LojaNinja.Repositorio.DAO.dll
+C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-05-c#\LojaNinja\LojaNinja.MVC\bin\LojaNinja.Repositorio.EF.dll
+C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-05-c#\LojaNinja\LojaNinja.MVC\bin\LojaNinja.Repositorio.DAO.pdb
+C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-05-c#\LojaNinja\LojaNinja.MVC\bin\LojaNinja.Repositorio.EF.pdb

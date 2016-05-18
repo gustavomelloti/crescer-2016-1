@@ -11,7 +11,6 @@ namespace LojaNinja.Repositorio.EF
 {
     public class ContextoDados : DbContext
     {
-
         public ContextoDados() : base("ConEF") { }
 
         public DbSet<Usuario> Usuario { get; set; }
