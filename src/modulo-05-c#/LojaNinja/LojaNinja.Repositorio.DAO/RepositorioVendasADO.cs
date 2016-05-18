@@ -28,20 +28,7 @@ namespace LojaNinja.Repositorio
 
                 while (leitor.Read())
                 {
-                    pedidos.Add(
-                        new Pedido(
-                            Convert.ToInt32(leitor["Id"]),
-                            Convert.ToDateTime(leitor["Data_Pedido"]),
-                            Convert.ToDateTime(leitor["Data_Entrega_Desejada"]),
-                            Convert.ToString(leitor["Nome_Produto"]),
-                            Convert.ToDecimal(leitor["Valor"]),
-                            (TipoPagamento) leitor["Tipo_Pagamento"],
-                            Convert.ToString(leitor["Nome_Cliente"]),
-                            Convert.ToString(leitor["Cidade"]),
-                            Convert.ToString(leitor["Estado"]),
-                            Convert.ToBoolean(leitor["Urgente"])
-                        )
-                    );
+                    pedidos.Add(DataReaderToPedido(leitor));
                 }
 
                 return pedidos;
@@ -62,25 +49,12 @@ namespace LojaNinja.Repositorio
                 conexao.Open();
 
                 SqlDataReader leitor = comando.ExecuteReader();
-                //TODO: Muito código repetido
+
                 List<Pedido> pedidos = new List<Pedido>();
 
                 while (leitor.Read())
                 {
-                    pedidos.Add(
-                        new Pedido(
-                            Convert.ToInt32(leitor["Id"]),
-                            Convert.ToDateTime(leitor["Data_Pedido"]),
-                            Convert.ToDateTime(leitor["Data_Entrega_Desejada"]),
-                            Convert.ToString(leitor["Nome_Produto"]),
-                            Convert.ToDecimal(leitor["Valor"]),
-                            (TipoPagamento) leitor["Tipo_Pagamento"],
-                            Convert.ToString(leitor["Nome_Cliente"]),
-                            Convert.ToString(leitor["Cidade"]),
-                            Convert.ToString(leitor["Estado"]),
-                            Convert.ToBoolean(leitor["Urgente"])
-                        )
-                    );
+                    pedidos.Add(DataReaderToPedido(leitor));
                 }
 
                 return pedidos;
@@ -102,21 +76,10 @@ namespace LojaNinja.Repositorio
                 SqlDataReader leitor = comando.ExecuteReader();
 
                 Pedido pedido = null;
-                //TODO: Muito código repetido
+
                 if (leitor.Read())
                 {
-                    pedido = new Pedido(
-                        Convert.ToInt32(leitor["Id"]),
-                        Convert.ToDateTime(leitor["Data_Pedido"]),
-                        Convert.ToDateTime(leitor["Data_Entrega_Desejada"]),
-                        Convert.ToString(leitor["Nome_Produto"]),
-                        Convert.ToDecimal(leitor["Valor"]),
-                        (TipoPagamento)leitor["Tipo_Pagamento"],
-                        Convert.ToString(leitor["Nome_Cliente"]),
-                        Convert.ToString(leitor["Cidade"]),
-                        Convert.ToString(leitor["Estado"]),
-                        Convert.ToBoolean(leitor["Urgente"])
-                    );
+                    pedido = DataReaderToPedido(leitor);
                 }
 
                 return pedido;
@@ -201,6 +164,22 @@ namespace LojaNinja.Repositorio
                     throw new ArgumentException();
                 }
             }
+        }
+
+        private Pedido DataReaderToPedido(SqlDataReader leitor)
+        {
+            return new Pedido(
+                Convert.ToInt32(leitor["Id"]),
+                Convert.ToDateTime(leitor["Data_Pedido"]),
+                Convert.ToDateTime(leitor["Data_Entrega_Desejada"]),
+                Convert.ToString(leitor["Nome_Produto"]),
+                Convert.ToDecimal(leitor["Valor"]),
+                (TipoPagamento)leitor["Tipo_Pagamento"],
+                Convert.ToString(leitor["Nome_Cliente"]),
+                Convert.ToString(leitor["Cidade"]),
+                Convert.ToString(leitor["Estado"]),
+                Convert.ToBoolean(leitor["Urgente"])
+            );
         }
     }
 }
