@@ -9,24 +9,25 @@ namespace LojaNinja.MVC.Models.Usuarios
 {
     public class UsuarioModel
     {
-        [Required]
+        [Required(ErrorMessage = "O campo nome é obrigatório")]
         [DisplayName("Nome")]
         [StringLength(120)]
         public string Nome { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "O campo senha é obrigatório")]
         [DisplayName("Senha")]
+        [RegularExpression(@"^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$", ErrorMessage = "A senha informada deve possuir: tamanho mínimo de 8 caracteres, contendo letra minúscula e uma maiúscula.")]
         [DataType(DataType.Password)]
         [StringLength(100)]
         public string Senha { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "O campo confirma senha é obrigatório")]
         [DisplayName("Confirma Senha")]
         [DataType(DataType.Password)]
         [Compare("Senha", ErrorMessage="Confirmação de senha não confere com a senha digitada.")]
         public string ConfirmaSenha { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "O campo e-mail é obrigatório")]
         [DisplayName("E-mail")]
         [StringLength(100)]
         [EmailAddress]
