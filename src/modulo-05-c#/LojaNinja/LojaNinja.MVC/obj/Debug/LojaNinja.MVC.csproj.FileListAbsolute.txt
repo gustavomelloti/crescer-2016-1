@@ -77,9 +77,7 @@ C:\Users\Gustavo\Documents\crescer-2016-1\src\modulo-05-c#\LojaNinja\LojaNinja.M
 C:\Users\Gustavo\Documents\crescer-2016-1\src\modulo-05-c#\LojaNinja\LojaNinja.MVC\bin\EntityFramework.SqlServer.dll
 C:\Users\Gustavo\Documents\crescer-2016-1\src\modulo-05-c#\LojaNinja\LojaNinja.MVC\bin\EntityFramework.xml
 C:\Users\Gustavo\Documents\crescer-2016-1\src\modulo-05-c#\LojaNinja\LojaNinja.MVC\bin\EntityFramework.SqlServer.xml
-C:\Users\Gustavo\Documents\crescer-2016-1\src\modulo-05-c#\LojaNinja\LojaNinja.MVC\bin\LojaNinja.Repositorio.CSV.dll
 C:\Users\Gustavo\Documents\crescer-2016-1\src\modulo-05-c#\LojaNinja\LojaNinja.MVC\bin\LojaNinja.Repositorio.DAO.dll
 C:\Users\Gustavo\Documents\crescer-2016-1\src\modulo-05-c#\LojaNinja\LojaNinja.MVC\bin\LojaNinja.Repositorio.EF.dll
-C:\Users\Gustavo\Documents\crescer-2016-1\src\modulo-05-c#\LojaNinja\LojaNinja.MVC\bin\LojaNinja.Repositorio.CSV.pdb
 C:\Users\Gustavo\Documents\crescer-2016-1\src\modulo-05-c#\LojaNinja\LojaNinja.MVC\bin\LojaNinja.Repositorio.DAO.pdb
 C:\Users\Gustavo\Documents\crescer-2016-1\src\modulo-05-c#\LojaNinja\LojaNinja.MVC\bin\LojaNinja.Repositorio.EF.pdb

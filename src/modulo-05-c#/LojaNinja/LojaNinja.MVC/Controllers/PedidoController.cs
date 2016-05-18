@@ -1,7 +1,7 @@
 ﻿using LojaNinja.Dominio;
 using LojaNinja.MVC.Filters;
 using LojaNinja.MVC.Models;
-using LojaNinja.Repositorio;
+using LojaNinja.Repositorio.EF;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +17,7 @@ namespace LojaNinja.MVC.Controllers
 
         public PedidoController()
         {
-            _pedidoRepositorio = new RepositorioVendasADO();
+            _pedidoRepositorio = new RepositorioVendas();
         }
 
         [HttpGet]

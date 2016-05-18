@@ -182,10 +182,6 @@
       <Project>{151c75ce-d844-4cf4-a2ba-1e4de8b44f0c}</Project>
       <Name>LojaNinja.Dominio</Name>
     </ProjectReference>
-    <ProjectReference Include="..\LojaNinja.Repositorio.CSV\LojaNinja.Repositorio.CSV.csproj">
-      <Project>{bcc52a21-c4d1-4c19-a7d1-4fea9e5475b2}</Project>
-      <Name>LojaNinja.Repositorio.CSV</Name>
-    </ProjectReference>
     <ProjectReference Include="..\LojaNinja.Repositorio.DAO\LojaNinja.Repositorio.DAO.csproj">
       <Project>{3bef01d8-5c2d-4f1d-8a9a-decace3630c5}</Project>
       <Name>LojaNinja.Repositorio.DAO</Name>
