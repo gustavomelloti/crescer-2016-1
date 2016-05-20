@@ -8,8 +8,3 @@
         adicionarImagensAlbuns(albuns);
     });
 })
-
-
-
-
-

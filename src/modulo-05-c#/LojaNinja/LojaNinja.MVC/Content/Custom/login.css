@@ -1,16 +1,8 @@
 ﻿@CHARSET "UTF-8";
-/*
-over-ride "Weak" message, show font in dark grey
-*/
 
 .progress-bar {
     color: #333;
 } 
-
-/*
-Reference:
-http://www.bootstrapzen.com/item/135/simple-login-form-logo/
-*/
 
 * {
     -webkit-box-sizing: border-box;
@@ -32,18 +24,14 @@ http://www.bootstrapzen.com/item/135/simple-login-form-logo/
 	}
 
 body {
-	background: url(http://i.imgur.com/GHr12sH.jpg) no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+    background-color: silver;
 }
 
 .login-form {
 	margin-top: 60px;
 }
 
-form[role=login] {
+form {
 	color: #5d5d5d;
 	background: #f2f2f2;
 	padding: 26px;
@@ -51,17 +39,17 @@ form[role=login] {
 	-moz-border-radius: 10px;
 	-webkit-border-radius: 10px;
 }
-	form[role=login] img {
+	form img {
 		display: block;
 		margin: 0 auto;
 		margin-bottom: 35px;
 	}
-	form[role=login] input,
-	form[role=login] button {
+	form input,
+	form button {
 		font-size: 18px;
 		margin: 16px 0;
 	}
-	form[role=login] > div {
+	form > div {
 		text-align: center;
 	}
 	
@@ -73,3 +61,7 @@ form[role=login] {
 	.form-links a {
 		color: #fff;
 	}
+
+#go {
+    margin-bottom: 10px;
+}

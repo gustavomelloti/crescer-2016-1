@@ -11,11 +11,13 @@ namespace LojaNinja.MVC.Models.Login
     {
         [Required]
         [DisplayName("E-mail")]
+        [Display(Prompt = "numbers only")]
         [StringLength(100)]
         [EmailAddress]
         public string Email { get; set; }
 
         [Required]
+        [Display(Prompt = "numbers only")]
         [DisplayName("Senha")]
         [StringLength(100)]
         public string Senha { get; set; }

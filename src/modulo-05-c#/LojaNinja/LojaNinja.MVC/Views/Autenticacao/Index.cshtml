@@ -16,43 +16,29 @@
 
     <div class="col-md-4">
         <section class="login-form">
-            <form method="post" action="#" role="login">
-                <img src="http://i.imgur.com/RcmcLv4.png" class="img-responsive" alt="" />
-                <input type="email" name="email" placeholder="Email" class="form-control input-lg" />
+            @using (Html.BeginForm("Login", "Autenticacao", FormMethod.Post, new { @class = "form" }))
+            {
+                @Html.AntiForgeryToken()
 
-                <input type="password" class="form-control input-lg" id="password" placeholder="Password" required="" />
+                <img src="http://icons.iconarchive.com/icons/iconka/buddy/128/ninja-icon.png" class="img-responsive" alt="" />
 
-                <div class="pwstrength_viewport_progress"></div>
+                <div class="form-group">
+                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control input-lg", placeholder = "E-mail" })
+                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                </div>
 
-                <button type="submit" name="go" class="btn btn-lg btn-primary btn-block">Entrar</button>
+                <div class="form-group">
+                    @Html.PasswordFor(m => m.Senha, new { @class = "form-control input-lg", placeholder = "Senha" })
+                    @Html.ValidationMessageFor(model => model.Senha, "", new { @class = "text-danger" })
+                </div>
+
+                <button type="submit" name="go" id="go" class="btn btn-lg btn-primary btn-block">Entrar</button>
+
                 <div>
                     @Html.ActionLink("Cadastrar-se", "Cadastrar", "Usuario")
                 </div>
-            </form>
+            }
         </section>
     </div>
     <div class="col-md-4"></div>
-</div> 
-@*
-@using (Html.BeginForm("Login", "Autenticacao", FormMethod.Post, new { @class = "form" }))
-{
-    @Html.AntiForgeryToken()
-
-    <div>
-        @Html.ValidationSummary(excludePropertyErrors: false)
-    </div>
-    
-    <div class="form-group">
-        @Html.LabelFor(m => m.Email) <br />
-        @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
-    </div>
-    
-    <div class="form-group">
-        @Html.LabelFor(m => m.Senha) <br />
-        @Html.PasswordFor(m => m.Senha)
-    </div>
-    
-    <div class="form-group">
-        <input type="submit" value="Entrar" />
-    </div>
-}*@
+</div>
