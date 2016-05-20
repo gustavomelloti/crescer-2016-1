@@ -9,9 +9,13 @@ function adicionarCavaleiroNoHtml(cava)
     );
 }
 
+function buscarTodosCavaleiros()
+{
+    return $.ajax({ url: urlCavaleiroGet, type: 'GET' });
+}
+
 function carregarDadosNaPagina(fn) {
-    $.ajax({ url: urlCavaleiroGet, type: 'GET' })
-    .then(
+    buscarTodosCavaleiros().then(
         function onSuccess(res) {
             res.data.forEach(function (cava) {
                 fn(cava);
@@ -39,8 +43,7 @@ function carregarDadosNaPagina(fn) {
 carregarDadosNaPagina(adicionarCavaleiroNoHtml);
 
 setInterval(function (fn) {
-    $.ajax({ url: urlCavaleiroGet, type: 'GET' })
-    .then(
+    buscarTodosCavaleiros().then(
         function onSuccess(res) {
             res.data.forEach(function (cava) {
                 if ($('[data-id-cavaleiro=' + cava.Id + ']').length === 0)
