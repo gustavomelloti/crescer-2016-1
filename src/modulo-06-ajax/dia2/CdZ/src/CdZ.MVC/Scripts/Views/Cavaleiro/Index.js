@@ -1,15 +1,20 @@
 ﻿'use strict';
 
-function carregarDadosNaPagina() {
+function adicionarCavaleiroNoHtml(cava)
+{
+    var $cavaleiros = $('#cavaleiros');
+
+    $cavaleiros.append(
+        $('<li>').attr('data-id-cavaleiro', cava.Id).append(cava.Nome)
+    );
+}
+
+function carregarDadosNaPagina(fn) {
     $.ajax({ url: urlCavaleiroGet, type: 'GET' })
     .then(
         function onSuccess(res) {
-            console.log(res.data);
-            var $cavaleiros = $('#cavaleiros');
             res.data.forEach(function (cava) {
-                $cavaleiros.append(
-                    $('<li>').attr('data-id-cavaleiro', cava.Id).append(cava.Nome)
-                );
+                fn(cava);
             });
         },
         function onError(res) {
@@ -31,18 +36,15 @@ function carregarDadosNaPagina() {
     });
 };
 
-carregarDadosNaPagina();
+carregarDadosNaPagina(adicionarCavaleiroNoHtml);
 
-setInterval(function () {
+setInterval(function (fn) {
     $.ajax({ url: urlCavaleiroGet, type: 'GET' })
     .then(
         function onSuccess(res) {
             res.data.forEach(function (cava) {
-                if ($('[data-id-cavaleiro='+cava.Id+']').length === 0) {
-                    $('#cavaleiros').append(
-                        $('<li>').attr('data-id-cavaleiro', cava.Id).append(cava.Nome)
-                    );
-                }
+                if ($('[data-id-cavaleiro=' + cava.Id + ']').length === 0)
+                    adicionarCavaleiroNoHtml(cava);
             });
         }
     );
