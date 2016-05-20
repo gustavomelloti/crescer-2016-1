@@ -16,14 +16,9 @@ var pesquisarAlbunsPorArtistaNome = function (nomeArtista, fn) {
         },
         success: function (result) {
             fn(result.albums);
+        },
+        error: function (request, status) {
+            $('#erro-albuns').html('Caro usuário, devido a um erro ' + request.status + ', não foi possível pesquisar.');
         }
-    });
+    }); 
 };
-
-var adicionarImagensAlbuns = function (albuns) {
-    $("#albuns").html("");
-
-    albuns.items.forEach(function (element) {
-        $('#albuns').append($('<li>').append($('<img>').attr('src', element.images[1].url)));
-    });
-}
