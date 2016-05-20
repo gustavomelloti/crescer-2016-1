@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace LojaNinja.Repositorio.EF
 {
-    public class UsuarioRepositorio : IUsuarioRepositorio
+    public class RepositorioUsuario : IUsuarioRepositorio
     {
         public Usuario BuscarUsuarioPorAutenticacao(string email, string senha)
         {

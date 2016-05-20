@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using LojaNinja.Repositorio;
 using LojaNinja.MVC.Models.Usuarios;
 using LojaNinja.Dominio;
+using LojaNinja.Repositorio.EF;
 
 namespace LojaNinja.MVC.Controllers
 {
@@ -16,13 +17,7 @@ namespace LojaNinja.MVC.Controllers
 
         public UsuarioController()
         {
-            _usuarioServico = new UsuarioServico(new RepositorioUsuarioADO());
-        }
-
-        [HttpGet]
-        public ActionResult Index()
-        {
-            return View();
+            _usuarioServico = new UsuarioServico(new RepositorioUsuario());
         }
 
         [HttpGet]
@@ -39,7 +34,7 @@ namespace LojaNinja.MVC.Controllers
             {
                 _usuarioServico.AdicionarUsuario(new Usuario(usuarioModel.Nome, usuarioModel.Email, usuarioModel.Senha));
 
-                ViewBag.CadastroRealizado = "Cadastro realizado com sucesso! Agora você pode realizar Login!";
+                TempData["CadastroRealizado"] = "Cadastro realizado com sucesso! Agora você pode realizar Login!";
                 
                 return RedirectToAction("Index", "Autenticacao");
             }
