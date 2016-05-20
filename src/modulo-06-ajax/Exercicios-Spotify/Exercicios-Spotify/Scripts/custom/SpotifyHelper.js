@@ -1,6 +1,6 @@
 ﻿var pesquisarAlbunsPorArtistaId = function (idArtista, fn) {
     $.ajax({
-        url: 'https://api.spotify.com/v1/artists/'+idArtista+'/albums?limit=50',
+        url: urlSpotify + 'artists/' +idArtista+'/albums?limit=50',
         success: function (result) {
             fn(result);
         }
@@ -9,7 +9,7 @@
 
 var pesquisarAlbunsPorArtistaNome = function (nomeArtista, fn) {
     $.ajax({
-        url: 'https://api.spotify.com/v1/search',
+        url: urlSpotify + 'search',
         data: {
             q: nomeArtista,
             type: 'album'
