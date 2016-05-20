@@ -1,6 +1,0 @@
-C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-06-ajax\CdZ\CdZ.Domino.Test\bin\Debug\CdZ.Domino.Test.dll
-C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-06-ajax\CdZ\CdZ.Domino.Test\bin\Debug\CdZ.Domino.Test.pdb
-C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-06-ajax\CdZ\CdZ.Domino.Test\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
-C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-06-ajax\CdZ\CdZ.Domino.Test\obj\Debug\CdZ.Domino.Test.csprojResolveAssemblyReference.cache
-C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-06-ajax\CdZ\CdZ.Domino.Test\obj\Debug\CdZ.Domino.Test.dll
-C:\Users\gustavo.mello\Documents\crescer-2016-1\src\modulo-06-ajax\CdZ\CdZ.Domino.Test\obj\Debug\CdZ.Domino.Test.pdb
