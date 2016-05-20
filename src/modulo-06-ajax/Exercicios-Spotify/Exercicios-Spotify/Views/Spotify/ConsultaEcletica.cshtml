@@ -1,26 +1,21 @@
 ﻿
 @{
-    Layout = null;
+    Layout = "~/Views/Spotify/_Shared.cshtml";
 }
 
-<!DOCTYPE html>
+@section scripts{
+    <script src="~/Scripts/custom/ConsultaEcletica.js"></script>
+}
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>ConsultaEcletica</title>
-</head>
-<body>
-    <div> 
-        <label>Digite o nome do artista:</label>
-        <input type="text" id="artista-nome" name="artista-nome" />
-        <button  id="pesquisar-artista"> Pesquisar</button>
-    </div>
-    <ul id="albuns"></ul>
-    <span id="erro-albuns"></span>
-</body>
-<script src="~/Scripts/jquery-2.2.3.min.js"></script>
-<script src="~/Scripts/custom/SpotifyHelper.js"></script>
-<script src="~/Scripts/custom/ConsultaEcletica.js"></script>
-<script src="~/Scripts/custom/Domain.js"></script>
-</html>
+@Html.ActionLink("Listagem Iron Maiden", "DonzelaDeFerro", "Spotify")
+
+<div> 
+    <label>Digite o nome do artista:</label>
+    <input type="text" id="artista-nome" name="artista-nome" />
+    <button  id="pesquisar-artista"> Pesquisar</button>
+</div>
+
+<ul id="albuns"></ul>
+
+<span id="erro-albuns"></span>
+
