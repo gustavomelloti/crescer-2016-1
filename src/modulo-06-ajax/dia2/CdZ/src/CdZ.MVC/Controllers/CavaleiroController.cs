@@ -47,9 +47,11 @@ namespace CdZ.MVC.Controllers
         [HttpGet]
         public ViewResult Editar(int id)
         {
-            var cavaleiro = _cavaleiros.Buscar(id);
+            var cavaleiroViewModel = new CavaleiroViewModel();
 
-            return View("cadastrar", cavaleiro);
+            cavaleiroViewModel.toVieModel(_cavaleiros.Buscar(id));
+
+            return View("cadastrar", cavaleiroViewModel);
         }
 
         [HttpGet]

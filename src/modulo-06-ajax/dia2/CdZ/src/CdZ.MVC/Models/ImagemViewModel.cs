@@ -15,9 +15,16 @@ namespace CdZ.MVC.Models
 
         public ImagemViewModel() { }
 
+        public ImagemViewModel(int id, string url, bool isThumb)
+        {
+            this.Id = id;
+            this.Url = url;
+            this.IsThumb = isThumb;
+        }
+
         public Imagem ToModel()
         {
-            return new Imagem(Url, IsThumb);
+            return new Imagem(Id, Url, IsThumb);
         }
     }
 }

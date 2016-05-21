@@ -38,13 +38,13 @@ namespace CdZ.MVC.Models.Cavaleiro
        
         [Required]
         [Display(Name = "Local Nascimento")]
-        public Local LocalNascimento { get; set; }
+        public LocalViewModel LocalNascimento { get; set; }
 
         [Required]
         [Display(Name = "Local Treinamento")]
-        public Local LocalTreinamento { get; set; }
+        public LocalViewModel LocalTreinamento { get; set; }
         
-        public IList<string> Golpes { get; set; }
+        public IList<GolpeViewModel> Golpes { get; set; }
         public IList<ImagemViewModel> Imagens { get; set; }
         
         public CavaleiroViewModel()
@@ -55,10 +55,24 @@ namespace CdZ.MVC.Models.Cavaleiro
 
         public Dominio.Cavaleiro ToModel()
         {
-            var golpesObj = Golpes.Select(_ => new Golpe(_)).ToList();
+            var golpesObj = Golpes.Select(_ => _.ToModel()).ToList();
             var imagensObj = Imagens.Select(_ => _.ToModel()).ToList();
 
-            return new Dominio.Cavaleiro(Nome, AlturaCm, PesoLb, DataNascimento, Signo, TipoSanguineo, LocalNascimento, LocalTreinamento, golpesObj, imagensObj);
+            return new Dominio.Cavaleiro(Nome, AlturaCm, PesoLb, DataNascimento, Signo, TipoSanguineo, LocalNascimento.ToModel(), LocalTreinamento.ToModel(), golpesObj, imagensObj);
+        }
+
+        public void toVieModel(Dominio.Cavaleiro cavaleiro)
+        {
+            this.Nome = cavaleiro.Nome;
+            this.AlturaCm = cavaleiro.AlturaCm;
+            this.PesoLb = cavaleiro.PesoLb;
+            this.DataNascimento = cavaleiro.DataNascimento;
+            this.Signo = cavaleiro.Signo;
+            this.TipoSanguineo = cavaleiro.TipoSanguineo;
+            this.LocalNascimento = new LocalViewModel(cavaleiro.LocalNascimento.Id, cavaleiro.LocalNascimento.Texto);
+            this.LocalTreinamento = new LocalViewModel(cavaleiro.LocalTreinamento.Id, cavaleiro.LocalTreinamento.Texto);
+            this.Golpes = cavaleiro.Golpes.Select(_ => new GolpeViewModel(_.Id, _.Nome)).ToList();
+            this.Imagens = cavaleiro.Imagens.Select(_ => new ImagemViewModel(_.Id, _.Url, _.IsThumb)).ToList();
         }
     }
 }
