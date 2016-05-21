@@ -45,10 +45,17 @@ carregarDadosNaPagina(adicionarCavaleiroNoHtml);
 setInterval(function (fn) {
     buscarTodosCavaleiros().then(
         function onSuccess(res) {
+            var qtd = 0;
+
             res.data.forEach(function (cava) {
-                if ($('[data-id-cavaleiro=' + cava.Id + ']').length === 0)
+                if ($('[data-id-cavaleiro=' + cava.Id + ']').length === 0) {
                     adicionarCavaleiroNoHtml(cava);
+                    qtd++;
+                }
             });
+
+            if (qtd > 0)
+                notificarNovosCavaleiros(qtd);
         }
     );
 }, 3000);
