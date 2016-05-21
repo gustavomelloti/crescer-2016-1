@@ -1,8 +1,8 @@
 ﻿'use strict';
 
 function deletarCavaleiro () {
-    $('.icon-deletar').click(function () {
-        var idCavaleiro = $(this).attr('data-id-cavaleiro');
+
+        var idCavaleiro = parseInt($(this).parent('li:first').attr('data-id-cavaleiro'));
 
         $.ajax({
             url: urlCavaleiroDelete,
@@ -12,10 +12,11 @@ function deletarCavaleiro () {
                 $('[data-id-cavaleiro=' + idCavaleiro + ']').remove();
             },
             error: function () {
+                //substituir por notificação
                 alert('erro ao deletar');
             }
         });
-    });
+
 };
 
 function adicionarCavaleiroNoHtml(cava)
