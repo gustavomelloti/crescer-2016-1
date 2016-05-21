@@ -22,13 +22,26 @@
     <div class="form-horizontal">
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-       
-            <!-- nome -->
-            <label for="txtNomeCavaleiro">Nome</label>
-            <input id="txtNomeCavaleiro" type="text" name="nome" placeholder="Ex: Shiryu">
-            <!-- tipoSanguineo -->
-            <label for="slTipoSanguineo">Tipo Sanguíneo</label>
-            @Html.EnumDropDownListFor(x => x.TipoSanguineo)
+     
+        <div class="form-group">
+            @Html.LabelFor(model => model.Nome, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.Nome, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Nome, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.TipoSanguineo, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EnumDropDownListFor(x => x.TipoSanguineo, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.TipoSanguineo, "", new { @class = "text-danger" })
+            </div>
+        </div>
+           
+
+
+        
             <!-- dataNascimento -->
             <label for="txtDtNascimento">Data de nascimento</label>
             <input id="txtDtNascimento" type="text" name="dataNascimento" placeholder="Ex: 4/11/2016">

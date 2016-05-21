@@ -14,10 +14,8 @@ $(function () {
             type: 'POST',
             data: converterFormParaCavaleiro($frmNovoCavaleiro)
         }).done(function (res) {
-            console.log('sadasopd');
+           
         });
-
-        $frmNovoCavaleiro[0].reset();
 
         return e.preventDefault();
     });
@@ -56,7 +54,7 @@ function converterFormParaCavaleiro($form) {
     });
 
     return {
-        Nome: formData.get('nome'),
+        Nome: formData.get('Nome'),
         AlturaCm: formData.get('alturaMetros'),
         PesoLb: formData.get('pesoKg'),
         Signo: formData.get('Signo'), 
