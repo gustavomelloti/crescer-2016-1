@@ -29,6 +29,7 @@ namespace CdZ.MVC.Controllers
         [HttpPost]
         public JsonResult Post(CavaleiroViewModel cavaleiro)
         {
+            var a = 'a';
             var novoId = _cavaleiros.Adicionar(cavaleiro.ToModel());
             Response.StatusCode = (int)HttpStatusCode.Created;
             return Json(new { id = novoId });
@@ -40,6 +41,20 @@ namespace CdZ.MVC.Controllers
             _cavaleiros.Excluir(idCavaleiro);
             Response.StatusCode = (int)HttpStatusCode.Accepted;
             return Json(new {});
+        }
+
+        [HttpGet]
+        public ViewResult Cadastrar()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ViewResult SalvarCavaleiro(CavaleiroViewModel cavaleiroViewModel)
+        {
+            _cavaleiros.Adicionar(cavaleiroViewModel.ToModel());
+            return View();
         }
     }
 }

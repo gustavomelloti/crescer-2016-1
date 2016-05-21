@@ -5,16 +5,10 @@
 </style>
 
 <h3>Listagem de cavaleiros</h3>
-
+@Html.ActionLink("Cadastrar Cavaleiro", "Cadastrar", "Cavaleiro")
 <ul id="cavaleiros"></ul>
 <div id="feedback"></div>
 <button id="btnCriar">Criar hard-coded!</button>  
-
-<script>
-    var urlCavaleiroGet = '@Url.Action("Get")';
-    var urlCavaleiroPost = '@Url.Action("Post")';
-    var urlCavaleiroDelete = '@Url.Action("Delete")';
-</script>
 
 @section scripts {
     <script src="~/Scripts/Notifications/Cavaleiro.js"></script>

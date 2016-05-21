@@ -13,6 +13,7 @@
     <link href="~/Content/bootstrap.css" rel="stylesheet" />
     <link href="~/Content/Custom/principal.css" rel="stylesheet" />
     <script src="~/Scripts/jquery-2.2.3.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
     <script src="~/Scripts/jquery.validate.min.js"></script>
     <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
 </head>
@@ -41,6 +42,11 @@
         }).ajaxComplete(function () {
             $('#spinner').hide();
         });
+    </script>
+    <script>
+        var urlCavaleiroGet = '@Url.Action("Get")';
+        var urlCavaleiroPost = '@Url.Action("Post")';
+        var urlCavaleiroDelete = '@Url.Action("Delete")';
     </script>
     @RenderSection("scripts", false)   
 </body>

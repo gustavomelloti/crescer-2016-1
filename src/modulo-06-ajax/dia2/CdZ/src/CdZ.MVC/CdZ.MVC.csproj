@@ -57,6 +57,9 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -110,6 +113,7 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\Custom\ArrayExtensions.js" />
     <Content Include="Scripts\Custom\overrides-validacao.js" />
     <None Include="Scripts\jquery-2.2.3.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -122,6 +126,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\Notifications\Cavaleiro.js" />
+    <Content Include="Scripts\Views\Cavaleiro\cadastro-cavaleiros.js" />
     <Content Include="Scripts\Views\Cavaleiro\Index.js" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -155,6 +160,7 @@
     <Content Include="Views\Usuario\Cadastrar.cshtml" />
     <Content Include="Views\Cavaleiro\Index.cshtml" />
     <Content Include="Views\Cavaleiro\Detalhes.cshtml" />
+    <Content Include="Views\Cavaleiro\Cadastrar.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
