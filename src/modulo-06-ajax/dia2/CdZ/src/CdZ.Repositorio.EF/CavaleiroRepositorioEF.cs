@@ -28,7 +28,7 @@ namespace CdZ.Repositorio.EF
         {
             using (var db = new ContextoDeDados())
             {
-                return db.Cavaleiro.Find(id);
+                return db.Cavaleiro.Include("Imagens").Include("Golpes").SingleOrDefault(x => x.Id == id);
             }
         }
 
@@ -37,7 +37,7 @@ namespace CdZ.Repositorio.EF
             using (var db = new ContextoDeDados())
             {
                 //TODO: paginar
-                return db.Cavaleiro.ToList();
+                return db.Cavaleiro.Include("Imagens").ToList();
             }
         }
 
@@ -50,7 +50,7 @@ namespace CdZ.Repositorio.EF
                  * infelizmente precisamos buscar o objeto no banco para então
                  * removê-lo.
                  */
-                Cavaleiro cavaleiroASerExcluido = db.Cavaleiro.Find(id);
+                Cavaleiro cavaleiroASerExcluido = this.Buscar(id);
                 db.Entry<Cavaleiro>(cavaleiroASerExcluido).State = EntityState.Deleted;
                 db.SaveChanges();
             }

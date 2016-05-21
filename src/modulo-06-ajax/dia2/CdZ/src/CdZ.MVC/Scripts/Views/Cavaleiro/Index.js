@@ -1,12 +1,40 @@
 ﻿'use strict';
 
+function deletarCavaleiro () {
+    var idCavaleiro = $(this).attr('data-id-cavaleiro');
+    
+    $.ajax({
+        url: urlCavaleiroDelete,
+        data: { idCavaleiro: idCavaleiro },
+        type: 'DELETE',
+        success: function (response) {
+            $('[data-id-cavaleiro=' + idCavaleiro + ']').remove();
+        },
+        error: function () {
+            alert('erro ao deletar');
+        }
+    });
+};
+
 function adicionarCavaleiroNoHtml(cava)
 {
-    var $cavaleiros = $('#cavaleiros');
+    var $cavaleiros = $('#cavaleiros'),
+        li = $('<li>').attr('data-id-cavaleiro', cava.Id);
+            li.append($('<img>').attr('src', buscarImagemCavaleiro(cava)));
+            li.append($('<span>').html('Deletar').addClass('icon-deletar'));
+        
+            li.click(deletarCavaleiro)
 
-    $cavaleiros.append(
-        $('<li>').attr('data-id-cavaleiro', cava.Id).append(cava.Nome)
-    );
+    $cavaleiros.append(li);
+}
+
+function buscarImagemCavaleiro(cava)
+{
+    var imagemThumb = cava.Imagens.filter(function (c) {
+        return c.IsThumb;
+    })[0];
+
+    return imagemThumb != undefined ? imagemThumb.Url : 'https://cdn0.iconfinder.com/data/icons/social-flat-rounded-rects/512/anonymous-128.png';
 }
 
 function buscarTodosCavaleiros()
@@ -17,27 +45,22 @@ function buscarTodosCavaleiros()
 function carregarDadosNaPagina(fn) {
     buscarTodosCavaleiros().then(
         function onSuccess(res) {
+            console.log(res);
             res.data.forEach(function (cava) {
                 fn(cava);
             });
         },
         function onError(res) {
-            console.error(':(');
-            console.error(res);
-
             var criarSpanComErro = function (msg) {
                 return $('<span>').text(msg).addClass('erro');
             };
 
             $('#feedback')
-            .append(criarSpanComErro(res.status))
-            .append($('<br>'))
-            .append(criarSpanComErro(res.statusText));
+                .append(criarSpanComErro(res.status))
+                .append($('<br>'))
+                .append(criarSpanComErro(res.statusText));
         }
     )
-    .always(function (res) {
-        console.log('acabouuuuuuuu');
-    });
 };
 
 carregarDadosNaPagina(adicionarCavaleiroNoHtml);
