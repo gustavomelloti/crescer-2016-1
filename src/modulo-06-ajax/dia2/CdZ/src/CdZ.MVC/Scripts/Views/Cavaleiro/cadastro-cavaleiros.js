@@ -2,7 +2,7 @@
 
 $(function () {
 
-    $('#txtDtNascimento').datepicker({
+    $('#DataNascimento').datepicker({
         dateFormat: 'dd/mm/yy'
     });
 
@@ -38,7 +38,7 @@ function converterFormParaCavaleiro($form) {
 
     var formData = new FormData($form[0]);
 
-    var data = $('#txtDtNascimento').datepicker('getDate');
+    var data = $('#DataNascimento').datepicker('getDate');
 
     var novasImagens = [];
     $('#novasImagens li').each(function (indice, elem) {
@@ -55,17 +55,17 @@ function converterFormParaCavaleiro($form) {
 
     return {
         Nome: formData.get('Nome'),
-        AlturaCm: formData.get('alturaMetros'),
-        PesoLb: formData.get('pesoKg'),
+        AlturaCm: formData.get('AlturaCm'),
+        PesoLb: formData.get('PesoLb'),
         Signo: formData.get('Signo'), 
         TipoSanguineo: formData.get('TipoSanguineo'),
         DataNascimento: data.toISOString(),
         Golpes: novosGolpes,
         LocalNascimento: {
-            Texto: formData.get('localNascimento')
+            Texto: formData.get('LocalNascimento')
         },
         LocalTreinamento: {
-            Texto: formData.get('localTreinamento')
+            Texto: formData.get('LocalTreinamento')
         },
         Imagens: novasImagens
     };

@@ -39,30 +39,64 @@
             </div>
         </div>
            
+        <div class="form-group">
+            @Html.LabelFor(model => model.DataNascimento, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.DataNascimento, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.DataNascimento, "", new { @class = "text-danger" })
+            </div>
+        </div>
 
+        <div class="form-group">
+            @Html.LabelFor(model => model.AlturaCm, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.AlturaCm, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.AlturaCm, "", new { @class = "text-danger" })
+            </div>
+        </div>
 
-        
-            <!-- dataNascimento -->
-            <label for="txtDtNascimento">Data de nascimento</label>
-            <input id="txtDtNascimento" type="text" name="dataNascimento" placeholder="Ex: 4/11/2016">
-            <!-- altura em metros -->
-            <label for="nbAlturaMetros">Altura (metros)</label>
-            <input id="nbAlturaMetros" type="number" name="alturaMetros" placeholder="Ex: 1.76" min="0" step="0.01"> <!-- step: https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/Input -->
-            <!-- peso em kilos -->
-            <label for="nbPesoKilos">Peso (kilos)</label>
-            <input id="nbPesoKilos" type="number" name="pesoKg" placeholder="Ex: 73.5" min="0" step="0.01">
-            <!-- signo -->
-            <label for="slSigno">Signo</label>
+        <div class="form-group">
+            @Html.LabelFor(model => model.PesoLb, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.PesoLb, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.PesoLb, "", new { @class = "text-danger" })
+            </div>
+        </div>
             
-            @Html.EnumDropDownListFor(x => x.Signo)
+        <div class="form-group">
+            @Html.LabelFor(model => model.Signo, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EnumDropDownListFor(x => x.Signo, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Signo, "", new { @class = "text-danger" })
+            </div>
+        </div>
 
 
-            <!-- localNascimento -->
-            <label for="txtLocalNascimento">Local de nascimento</label>
-            <input id="txtLocalNascimento" type="text" name="localNascimento" placeholder="Ex: Porto Alegre">
-            <!-- localTreinamento -->
-            <label for="txtLocalTreinamento">Local de treinamento</label>
-            <input id="txtLocalTreinamento" type="text" name="localTreinamento" placeholder="Ex: Alvorada">
+        <div class="form-group">
+            @Html.LabelFor(model => model.LocalNascimento, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.LocalNascimento, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.LocalNascimento, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.LocalTreinamento, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.LocalTreinamento, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.LocalTreinamento, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.LocalTreinamento, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.LocalTreinamento, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.LocalTreinamento, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
             <!-- Adicionar golpe -->
             <button id="btnAdicionarGolpe" type="button">Adicionar golpe...</button>
             <ul id="novosGolpes"></ul>
