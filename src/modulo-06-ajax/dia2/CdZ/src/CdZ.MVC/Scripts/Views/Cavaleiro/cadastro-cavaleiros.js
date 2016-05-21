@@ -3,7 +3,9 @@
 $(function () {
 
     $('#DataNascimento').datepicker({
-        dateFormat: 'dd/mm/yy'
+        dateFormat: 'dd/mm/yy',
+        changeYear: true,
+        yearRange: "1900:2016"
     });
 
     var $frmNovoCavaleiro = $('#frmNovoCavaleiro');
