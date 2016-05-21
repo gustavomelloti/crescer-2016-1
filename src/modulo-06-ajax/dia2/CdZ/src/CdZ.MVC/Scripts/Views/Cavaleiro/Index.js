@@ -31,8 +31,22 @@ function adicionarCavaleiroNoHtml(cava)
 }
 
 function gerarHtmlDetalhesCavaleiro(cava) {
-    return $('<div>').attr('style', 'display:none').attr('id', 'dialog' + cava.Id)
-        .append('<div>').html(cava.Nome);
+    var divPrincipal =  $('<div>').attr('style', 'display:none').attr('id', 'dialog' + cava.Id),
+        table = $('<table>');
+
+    //id
+    table.append($('<tr>').append($('<th>').html('Id:').append($('<td>').html(cava.Id))));
+    
+    //nome
+    table.append($('<tr>').append($('<th>').html('Nome:').append($('<td>').html(cava.Nome))));
+
+    //signo
+    table.append($('<tr>').append($('<th>').html('Signo:').append($('<td>').html(cava.Signo))));
+
+    //Tipo Sanguíneo
+    table.append($('<tr>').append($('<th>').html('Tipo Sanguíneo:').append($('<td>').html(cava.TipoSanguineo))));
+
+    return divPrincipal.append(table);
 }
 
 function buscarImagemCavaleiro(cava)

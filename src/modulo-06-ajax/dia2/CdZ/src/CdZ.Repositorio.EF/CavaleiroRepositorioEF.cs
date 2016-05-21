@@ -37,7 +37,7 @@ namespace CdZ.Repositorio.EF
             using (var db = new ContextoDeDados())
             {
                 //TODO: paginar
-                return db.Cavaleiro.Include("Imagens").Include("Golpes"). ToList();
+                return db.Cavaleiro.Include("Imagens").Include("Golpes").ToList();
             }
         }
 
