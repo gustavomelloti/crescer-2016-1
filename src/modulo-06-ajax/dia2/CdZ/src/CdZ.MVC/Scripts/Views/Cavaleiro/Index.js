@@ -1,18 +1,20 @@
 ﻿'use strict';
 
 function deletarCavaleiro () {
-    var idCavaleiro = $(this).attr('data-id-cavaleiro');
-    
-    $.ajax({
-        url: urlCavaleiroDelete,
-        data: { idCavaleiro: idCavaleiro },
-        type: 'DELETE',
-        success: function (response) {
-            $('[data-id-cavaleiro=' + idCavaleiro + ']').remove();
-        },
-        error: function () {
-            alert('erro ao deletar');
-        }
+    $('.icon-deletar').click(function () {
+        var idCavaleiro = $(this).attr('data-id-cavaleiro');
+
+        $.ajax({
+            url: urlCavaleiroDelete,
+            data: { idCavaleiro: idCavaleiro },
+            type: 'DELETE',
+            success: function (response) {
+                $('[data-id-cavaleiro=' + idCavaleiro + ']').remove();
+            },
+            error: function () {
+                alert('erro ao deletar');
+            }
+        });
     });
 };
 
@@ -20,12 +22,17 @@ function adicionarCavaleiroNoHtml(cava)
 {
     var $cavaleiros = $('#cavaleiros'),
         li = $('<li>').attr('data-id-cavaleiro', cava.Id);
-            li.append($('<img>').attr('src', buscarImagemCavaleiro(cava)));
-            li.append($('<span>').html('Deletar').addClass('icon-deletar'));
-        
-            li.click(deletarCavaleiro)
+            li.append(($('<img>').attr('src', buscarImagemCavaleiro(cava))).click(abrirModalDetalhesCavaleiro));
+            li.append($('<span>').html($('<a>').attr('href', urlCavaleiroEdit + '/' + cava.Id).html('Editar | ')));
+            li.append(($('<span>').html('Deletar').addClass('icon-deletar')).click(deletarCavaleiro));
+            li.append(gerarHtmlDetalhesCavaleiro(cava));
 
     $cavaleiros.append(li);
+}
+
+function gerarHtmlDetalhesCavaleiro(cava) {
+    return $('<div>').attr('style', 'display:none').attr('id', 'dialog' + cava.Id)
+        .append('<div>').html(cava.Nome);
 }
 
 function buscarImagemCavaleiro(cava)
@@ -82,3 +89,11 @@ setInterval(function (fn) {
         }
     );
 }, 3000);
+
+function abrirModalDetalhesCavaleiro()
+{
+    var idCavaleiro = $(this).parents('li:first').attr('data-id-cavaleiro');
+
+    $('#dialog' + idCavaleiro).dialog({});
+}
+

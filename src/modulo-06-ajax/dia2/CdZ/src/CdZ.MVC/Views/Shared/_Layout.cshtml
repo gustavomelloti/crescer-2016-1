@@ -39,15 +39,16 @@
     </div>
     <script>
         $(document).ajaxSend(function () {
-            $('#spinner').show();
+           // $('#spinner').show();
         }).ajaxComplete(function () {
-            $('#spinner').hide();
+            //$('#spinner').hide();
         });
     </script>
     <script>
         var urlCavaleiroGet = '@Url.Action("Get")';
         var urlCavaleiroPost = '@Url.Action("Post")';
         var urlCavaleiroDelete = '@Url.Action("Delete")';
+        var urlCavaleiroEdit = '@Url.Action("Editar")';
     </script>
     @RenderSection("scripts", false)   
 </body>
