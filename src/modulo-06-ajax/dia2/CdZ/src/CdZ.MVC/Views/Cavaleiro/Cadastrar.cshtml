@@ -14,7 +14,9 @@
 }
 
 <h2>Cadastrar Cavaleiro</h2>
-
+<div>
+    @Html.ActionLink("Retornar a listagem", "Index")
+</div>
 @using (Html.BeginForm("SalvarCavaleiro", "Cavaleiro",FormMethod.Post, new { id = "frmNovoCavaleiro" }))
 {
     @Html.AntiForgeryToken()
@@ -88,20 +90,9 @@
         </div>
 
 
-
-            <!-- Adicionar golpe -->
-            <button id="btnAdicionarGolpe" type="button">Adicionar golpe...</button>
-            <ul id="novosGolpes"></ul>
-            <!-- Adicionar imagem -->
-            <button id="btnAdicionarImg" type="button">Adicionar imagem...</button>
-            <ul id="novasImagens"></ul>
-           
-       
-   
-        <div id="detalhes-cavaleiro"></div>
-        <ul id="cavaleiros"></ul>
-
         <div class="form-group">
+            <button id="btnAdicionarGolpe" type="button">Adicionar golpe...</button>
+            <button id="btnAdicionarImg" type="button">Adicionar imagem...</button>
             <div class="col-md-offset-2 col-md-10">
                 <button type="submit" class="btn btn-primary">Cadastrar!</button>
             </div>
@@ -109,6 +100,17 @@
     </div>
 }
 
-<div>
-    @Html.ActionLink("Retornar a listagem", "Index")
+<div class="form-group" style="display:none" id="estrutura-golpe">
+    <label class="control-label col-md-2" for="Golpe">Golpes</label>
+    <div class="col-md-10 golpes">
+        <input class="form-control" name="golpe" type="text">
+    </div>
+ </div>
+
+<div class="form-group" style="display:none" id="estrutura-imagem">
+    <label class="control-label col-md-2" for="imagem">Imagem</label>
+    <div class="col-md-10 imagens">
+        <input name="urlImagem" type="text">
+        <input name="isThumb" type="checkbox" checked> É thumbnail?
+    </div>
 </div>

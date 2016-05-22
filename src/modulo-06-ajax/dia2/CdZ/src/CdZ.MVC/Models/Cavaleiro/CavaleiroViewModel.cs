@@ -26,6 +26,7 @@ namespace CdZ.MVC.Models.Cavaleiro
         
         [Required]
         [Display(Name = "Data Nascimento")]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime DataNascimento { get; set; }
 
         [Display(Name = "Signo")]

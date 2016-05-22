@@ -101,7 +101,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\Custom\index.css" />
+    <Content Include="Content\Custom\listagem-cavaleiros.css" />
     <Content Include="Content\Custom\principal.css" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />

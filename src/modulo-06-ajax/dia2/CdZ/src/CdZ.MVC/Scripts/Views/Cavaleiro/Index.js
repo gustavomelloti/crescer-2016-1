@@ -1,5 +1,7 @@
 ﻿'use strict';
 
+// SEPARAR FUNCIONALIADES EM ARQUIVOS (TÁ TUDO MISTURADO)
+
 function deletarCavaleiro () {
     var idCavaleiro = parseInt($(this).parent('li:first').attr('data-id-cavaleiro'));
 
@@ -102,6 +104,7 @@ function abrirModalDetalhesCavaleiro()
             $('#d_imagens').html();
         },
         function onError(res) {
+            //substituir por notificação
             alert('erro ao buscar detalhes');
         }
     );

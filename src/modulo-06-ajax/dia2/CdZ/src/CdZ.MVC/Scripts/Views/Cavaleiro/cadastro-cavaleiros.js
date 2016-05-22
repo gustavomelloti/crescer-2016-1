@@ -1,7 +1,6 @@
 ﻿'use strict';
 
 $(function () {
-
     $('#DataNascimento').datepicker({
         dateFormat: 'dd/mm/yy',
         changeYear: true,
@@ -16,22 +15,19 @@ $(function () {
             type: 'POST',
             data: converterFormParaCavaleiro($frmNovoCavaleiro)
         }).done(function (res) {
-           
+            console.log('cadastrou');
         });
 
         return e.preventDefault();
     });
 
-    // Adicionando campos para imagens
-    var $novasImagens = $('#novasImagens');
 
     $('#btnAdicionarImg').click(function () {
-        var $novoLi = gerarElementoLiComInputs();
-        $novasImagens.append($novoLi);
+        $('.form-horizontal > .form-group').last().before(gerarElementoLiComInputs());
     });
 
     $('#btnAdicionarGolpe').click(function () {
-        $('#novosGolpes').append(gerarElementoLiComInputTexto());
+        $('.form-horizontal > .form-group').last().before(gerarElementoLiComInputTexto());
     });
 
 });
@@ -43,7 +39,7 @@ function converterFormParaCavaleiro($form) {
     var data = $('#DataNascimento').datepicker('getDate');
 
     var novasImagens = [];
-    $('#novasImagens li').each(function (indice, elem) {
+    $('.imagens').each(function (indice, elem) {
         novasImagens.push({
             url: $(this).find('input[name=urlImagem]').val(),
             isThumb: $(this).find('input[name=isThumb]').is(':checked')
@@ -51,7 +47,7 @@ function converterFormParaCavaleiro($form) {
     });
 
     var novosGolpes = [];
-    $('#novosGolpes li').each(function (i) {
+    $('.golpes').each(function (i) {
         novosGolpes.push($(this).find('input[name=golpe]').val());
     });
 
@@ -73,32 +69,10 @@ function converterFormParaCavaleiro($form) {
     };
 }
 
-function adicionarBtnExclusao(idCavaleiro, $img) {
-    var $btnExcluir = $('<button>')
-      // É possível criar atributos novos, sugestão: utilizar o prefixo data-*
-      // Desta forma não quebramos a especificação do HTML de informar mais de um elemento com o mesmo id
-      .attr('data-cavaleiro-id', idCavaleiro)
-      .addClass('btn btn-small btn-danger btn-canto-imagem')
-      .text('X');
-    $btnExcluir.insertAfter($img);
-    $btnExcluir.click(excluirCavaleiro);
-};
-
 function gerarElementoLiComInputs() {
-    var $novoTxt = $('<input>').attr('name', 'urlImagem').attr('type', 'text').attr('placeholder', 'Ex: bit.ly/shiryu.png');
-    var $novoCheckbox =
-      // Dentro de um label para pode vincular o texto ao checkbox
-      $('<label>')
-        .append(
-          $('<input>')
-          .attr('type', 'checkbox')
-          .attr('name', 'isThumb')
-          .attr('checked', 'checked'))
-        .append('É thumbnail?');
-    return $('<li>').append($novoTxt).append($novoCheckbox);
+    return $('#estrutura-imagem').clone().attr('style', '');
 };
 
 function gerarElementoLiComInputTexto() {
-    var $novoTxt = $('<input>').attr('name', 'golpe').attr('type', 'text').attr('placeholder', 'Ex: Pó de diamante');
-    return $('<li>').append($novoTxt);
+    return $('#estrutura-golpe').clone().attr('style', '');
 };
