@@ -5,7 +5,7 @@ namespace CdZ.Dominio
 {
     public class Cavaleiro
     {
-        public int Id { get; private set; }
+        public int Id { get; set; }
         public string Nome { get; set; }
         public double AlturaCm { get; set; }
         public double PesoLb { get; set; }
@@ -17,9 +17,6 @@ namespace CdZ.Dominio
         public IList<Golpe> Golpes { get; private set; }
         public IList<Imagem> Imagens { get; private set; }
 
-        /*
-         * Precisamos deste construtor por causa do Entity Framework.
-         */
         private Cavaleiro()
         {
             Golpes = new List<Golpe>();

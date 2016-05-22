@@ -26,7 +26,7 @@ namespace CdZ.MVC.Models.Cavaleiro
         
         [Required]
         [Display(Name = "Data Nascimento")]
-        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime DataNascimento { get; set; }
 
         [Display(Name = "Signo")]
@@ -62,8 +62,18 @@ namespace CdZ.MVC.Models.Cavaleiro
             return new Dominio.Cavaleiro(Nome, AlturaCm, PesoLb, DataNascimento, Signo, TipoSanguineo, LocalNascimento.ToModel(), LocalTreinamento.ToModel(), golpesObj, imagensObj);
         }
 
+        public Dominio.Cavaleiro ToModelWithId()
+        {
+            var cavaleiro = this.ToModel();
+
+            cavaleiro.Id = this.Id;
+
+            return cavaleiro;
+        }
+
         public void toVieModel(Dominio.Cavaleiro cavaleiro)
         {
+            this.Id = cavaleiro.Id;
             this.Nome = cavaleiro.Nome;
             this.AlturaCm = cavaleiro.AlturaCm;
             this.PesoLb = cavaleiro.PesoLb;

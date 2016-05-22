@@ -15,7 +15,7 @@ $(function () {
             type: 'POST',
             data: converterFormParaCavaleiro($frmNovoCavaleiro)
         }).done(function (res) {
-            console.log('cadastrou');
+            window.location = urlCavalieroBase;
         });
 
         return e.preventDefault();
@@ -52,6 +52,7 @@ function converterFormParaCavaleiro($form) {
     });
 
     return {
+        Id: formData.get('Id'),
         Nome: formData.get('Nome'),
         AlturaCm: formData.get('AlturaCm'),
         PesoLb: formData.get('PesoLb'),
@@ -60,10 +61,10 @@ function converterFormParaCavaleiro($form) {
         DataNascimento: data.toISOString(),
         Golpes: novosGolpes,
         LocalNascimento: {
-            Texto: formData.get('LocalNascimento')
+            Texto: formData.get('LocalNascimento.Texto')
         },
         LocalTreinamento: {
-            Texto: formData.get('LocalTreinamento')
+            Texto: formData.get('LocalTreinamento.Texto')
         },
         Imagens: novasImagens
     };

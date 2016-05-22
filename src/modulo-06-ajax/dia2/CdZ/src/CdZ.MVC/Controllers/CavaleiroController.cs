@@ -35,9 +35,17 @@ namespace CdZ.MVC.Controllers
         [HttpPost]
         public JsonResult Post(CavaleiroViewModel cavaleiro)
         {
-            var novoId = _cavaleiros.Adicionar(cavaleiro.ToModel());
+            if (cavaleiro.Id > 0)
+            {
+                _cavaleiros.Atualizar(cavaleiro.ToModelWithId());
+            }
+            else
+            {
+                _cavaleiros.Adicionar(cavaleiro.ToModel());
+            }
+
             Response.StatusCode = (int)HttpStatusCode.Created;
-            return Json(new { id = novoId });
+            return Json(new { });
         }
 
         [HttpDelete]
@@ -48,8 +56,6 @@ namespace CdZ.MVC.Controllers
             return Json(new {});
         }
 
-
-        
         [HttpGet]
         public ViewResult Editar(int id)
         {
@@ -63,14 +69,6 @@ namespace CdZ.MVC.Controllers
         [HttpGet]
         public ViewResult Cadastrar()
         {
-            return View();
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ViewResult SalvarCavaleiro(CavaleiroViewModel cavaleiroViewModel)
-        {
-            _cavaleiros.Adicionar(cavaleiroViewModel.ToModel());
             return View();
         }
     }
