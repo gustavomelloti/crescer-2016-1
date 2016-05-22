@@ -35,7 +35,7 @@ namespace CdZ.MVC.Controllers
         [HttpPost]
         public JsonResult Post(CavaleiroViewModel cavaleiro)
         {
-            if (cavaleiro.Id > 0)
+            if (cavaleiro.Id.HasValue)
             {
                 _cavaleiros.Atualizar(cavaleiro.ToModelWithId());
             }

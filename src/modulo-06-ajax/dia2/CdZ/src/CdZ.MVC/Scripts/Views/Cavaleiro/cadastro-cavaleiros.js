@@ -66,10 +66,12 @@ function converterFormParaCavaleiro($form) {
         DataNascimento: data.toISOString(),
         Golpes: novosGolpes,
         LocalNascimento: {
-            Texto: formData.get('LocalNascimento.Texto')
+            Texto: formData.get('LocalNascimento.Texto'),
+            Id: formData.get('LocalNascimento.Id')
         },
         LocalTreinamento: {
-            Texto: formData.get('LocalTreinamento.Texto')
+            Texto: formData.get('LocalTreinamento.Texto'),
+            Id: formData.get('LocalTreinamento.Id')
         },
         Imagens: novasImagens
     };

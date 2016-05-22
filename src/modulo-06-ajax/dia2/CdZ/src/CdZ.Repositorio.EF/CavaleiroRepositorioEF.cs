@@ -21,7 +21,12 @@ namespace CdZ.Repositorio.EF
         {
             using (var db = new ContextoDeDados())
             {
-                return db.Cavaleiro.Include("Imagens").Include("Golpes").Include("LocalTreinamento").Include("LocalNascimento").SingleOrDefault(x => x.Id == id);
+                return db.Cavaleiro
+                    .Include("Imagens")
+                    .Include("Golpes")
+                    .Include("LocalTreinamento")
+                    .Include("LocalNascimento")
+                    .SingleOrDefault(x => x.Id == id);
             }
         }
 
@@ -52,8 +57,6 @@ namespace CdZ.Repositorio.EF
         {
             using (var db = new ContextoDeDados())
             {
-                // Atualizamos o estado de todos os objetos envolvidos em relacionamentos com Cavaleiro.
-                // Caso Id seja diferente de 0, é atualizado. Caso seja 0, é inserido.
                 db.Entry<Local>(cavaleiro.LocalNascimento).State = cavaleiro.LocalNascimento.Id == default(int) ? EntityState.Added : EntityState.Modified;
                 db.Entry<Local>(cavaleiro.LocalTreinamento).State = cavaleiro.LocalTreinamento.Id == default(int) ? EntityState.Added : EntityState.Modified;
 

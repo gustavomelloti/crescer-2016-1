@@ -22,15 +22,8 @@
 @using (Html.BeginForm("Post", "Cavaleiro", FormMethod.Post, new { id = "frmNovoCavaleiro" }))
 {  
     @Html.AntiForgeryToken()
-   
-    try
-    {
-        @Html.Hidden("Id", Model.Id)
-    }
-    catch
-    {
-        @Html.Hidden("Id", 0)
-    }
+    
+    @Html.HiddenFor(model => model.Id)
     
     <div class="form-horizontal">
         <hr />
@@ -88,6 +81,7 @@
         <div class="form-group">
             @Html.Label("Local Nascimento", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
+                @Html.HiddenFor(model => model.LocalNascimento.Id)
                 @Html.EditorFor(model => model.LocalNascimento.Texto, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.LocalNascimento.Texto, "", new { @class = "text-danger" })
             </div>
@@ -96,6 +90,7 @@
         <div class="form-group">
             @Html.Label("Local Treinamento", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
+                @Html.HiddenFor(model => model.LocalTreinamento.Id)
                 @Html.EditorFor(model => model.LocalTreinamento.Texto, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.LocalTreinamento.Texto, "", new { @class = "text-danger" })
             </div>
@@ -108,7 +103,7 @@
                 @Html.Partial("~/Views/Cavaleiro/_Golpes.cshtml", golpe)
             }
         }
-        catch { 
+        catch {
             @Html.Display("deu")
         }
 

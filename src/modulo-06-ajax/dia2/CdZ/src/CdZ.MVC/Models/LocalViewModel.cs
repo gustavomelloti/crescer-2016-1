@@ -7,7 +7,7 @@ namespace CdZ.MVC.Models
 {
     public class LocalViewModel
     {
-        public int Id { get; set; }
+        public int? Id { get; set; }
         public string Texto { get; set; }
         
         public LocalViewModel() { }
@@ -20,7 +20,10 @@ namespace CdZ.MVC.Models
 
         public Dominio.Local ToModel()
         {
-            return new Dominio.Local(Id, Texto);
+            if (Id.HasValue)
+                return new Dominio.Local((int)Id, Texto);
+            else
+                return new Dominio.Local(Texto);
         }
     }
 }

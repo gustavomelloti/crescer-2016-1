@@ -9,7 +9,7 @@ namespace CdZ.MVC.Models.Cavaleiro
 {
     public class CavaleiroViewModel
     {
-        public int Id { get; set; }
+        public int? Id { get; set; }
 
         [Required]
         [Display(Name="Nome")]
@@ -66,7 +66,7 @@ namespace CdZ.MVC.Models.Cavaleiro
         {
             var cavaleiro = this.ToModel();
 
-            cavaleiro.Id = this.Id;
+            cavaleiro.Id = (int)this.Id;
 
             return cavaleiro;
         }
