@@ -9,12 +9,6 @@ namespace CdZ.Repositorio.EF
         {
             using (var db = new ContextoDeDados())
             {
-                /*
-                 * Neste caso, o usuário possui uma lista de permissões.
-                 * Essa lista de permissões é uma tabela no banco também.
-                 * Podemos, através do include, dizer que, além de carregar os dados
-                 * do usuário, deve trazer carregados as permissões dele.
-                 */
                 Usuario usuario = db.Usuario.Include("Permissoes").FirstOrDefault(
                     u =>
                         u.Email.Equals(email) 

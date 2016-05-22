@@ -5,10 +5,6 @@ using System.Linq;
 
 namespace CdZ.Repositorio.EF
 {
-    /*
-     * Criamos nosso repositório de pedidos aqui, implementando nossa
-     * interface de regras de repositório de pedidos.
-     */
     public class CavaleiroRepositorioEF : ICavaleiroRepositorio
     {
         public int Adicionar(Cavaleiro cavaleiro)
@@ -34,7 +30,7 @@ namespace CdZ.Repositorio.EF
             using (var db = new ContextoDeDados())
             {
                 //TODO: paginar
-                return db.Cavaleiro.Include("Imagens").Include("Golpes").Include("LocalTreinamento").Include("LocalNascimento").ToList();
+                return db.Cavaleiro.Include("Imagens").ToList();
             }
         }
 

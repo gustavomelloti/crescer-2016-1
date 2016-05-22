@@ -1,22 +1,20 @@
 ﻿'use strict';
 
 function deletarCavaleiro () {
+    var idCavaleiro = parseInt($(this).parent('li:first').attr('data-id-cavaleiro'));
 
-        var idCavaleiro = parseInt($(this).parent('li:first').attr('data-id-cavaleiro'));
-
-        $.ajax({
-            url: urlCavaleiroDelete,
-            data: { idCavaleiro: idCavaleiro },
-            type: 'DELETE',
-            success: function (response) {
-                $('[data-id-cavaleiro=' + idCavaleiro + ']').remove();
-            },
-            error: function () {
-                //substituir por notificação
-                alert('erro ao deletar');
-            }
-        });
-
+    $.ajax({
+        url: urlCavaleiroDelete,
+        data: { idCavaleiro: idCavaleiro },
+        type: 'DELETE',
+        success: function (response) {
+            $('[data-id-cavaleiro=' + idCavaleiro + ']').remove();
+        },
+        error: function () {
+            //substituir por notificação
+            alert('erro ao deletar');
+        }
+    });
 };
 
 function adicionarCavaleiroNoHtml(cava)
@@ -26,28 +24,8 @@ function adicionarCavaleiroNoHtml(cava)
             li.append(($('<img>').attr('src', buscarImagemCavaleiro(cava))).click(abrirModalDetalhesCavaleiro));
             li.append($('<span>').html($('<a>').attr('href', urlCavaleiroEdit + '/' + cava.Id).html('Editar | ')));
             li.append(($('<span>').html('Deletar').addClass('icon-deletar')).click(deletarCavaleiro));
-            li.append(gerarHtmlDetalhesCavaleiro(cava));
 
     $cavaleiros.append(li);
-}
-
-function gerarHtmlDetalhesCavaleiro(cava) {
-    var divPrincipal =  $('<div>').attr('style', 'display:none').attr('id', 'dialog' + cava.Id),
-        table = $('<table>');
-
-    //id
-    table.append($('<tr>').append($('<th>').html('Id:').append($('<td>').html(cava.Id))));
-    
-    //nome
-    table.append($('<tr>').append($('<th>').html('Nome:').append($('<td>').html(cava.Nome))));
-
-    //signo
-    table.append($('<tr>').append($('<th>').html('Signo:').append($('<td>').html(cava.Signo))));
-
-    //Tipo Sanguíneo
-    table.append($('<tr>').append($('<th>').html('Tipo Sanguíneo:').append($('<td>').html(cava.TipoSanguineo))));
-
-    return divPrincipal.append(table);
 }
 
 function buscarImagemCavaleiro(cava)
@@ -109,6 +87,29 @@ function abrirModalDetalhesCavaleiro()
 {
     var idCavaleiro = $(this).parents('li:first').attr('data-id-cavaleiro');
 
-    $('#dialog' + idCavaleiro).dialog({});
+    buscarCavaleiroPorId(idCavaleiro).then(
+        function onSuccess(res) {
+            $('#d_id').html(res.data.Id);
+            $('#d_nome').html(res.data.Nome);
+            $('#d_peso').html(res.data.PesoLb);
+            $('#d_altura').html(res.data.AlturaCm);
+            $('#d_nascimento').html(res.data.DataNascimento);
+            $('#d_signo').html(res.data.Signo);
+            $('#d_tipo_sanguineo').html(res.data.TipoSanguineo);
+            $('#d_local_nascimento').html(res.data.LocalNascimento);
+            $('#d_local_treinamento').html(res.data.LocalTreinameno);
+            $('#d_golpes').html();
+            $('#d_imagens').html();
+        },
+        function onError(res) {
+            alert('erro ao buscar detalhes');
+        }
+    );
+
+    $('#dialog').dialog({});
 }
 
+function buscarCavaleiroPorId(id)
+{
+    return $.ajax({ url: urlCavaleiroGetId, type: 'GET', data:{id : id} });
+}
