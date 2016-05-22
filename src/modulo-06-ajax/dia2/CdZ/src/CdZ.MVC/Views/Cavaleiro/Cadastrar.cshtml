@@ -13,7 +13,7 @@
     <script src="~/Scripts/Custom/ArrayExtensions.js"></script>
 }
 
-<h2>Cadastrar Cavaleiro</h2>
+<h2>@ViewBag.Acao</h2>
 <div>
     @Html.ActionLink("Retornar a listagem", "Index")
 </div>
@@ -100,6 +100,18 @@
                 @Html.ValidationMessageFor(model => model.LocalTreinamento.Texto, "", new { @class = "text-danger" })
             </div>
         </div>
+
+        @try
+        {
+            foreach (var golpe in Model.Golpes)
+            {
+                @Html.Partial("~/Views/Cavaleiro/_Golpes.cshtml", golpe)
+            }
+        }
+        catch { 
+            @Html.Display("deu")
+        }
+        
 
         <div class="form-group">
             <button id="btnAdicionarGolpe" type="button">Adicionar golpe...</button>

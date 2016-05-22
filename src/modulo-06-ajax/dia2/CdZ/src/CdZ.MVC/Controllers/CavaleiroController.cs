@@ -59,6 +59,8 @@ namespace CdZ.MVC.Controllers
         [HttpGet]
         public ViewResult Editar(int id)
         {
+            ViewBag.Acao = "Edição de Cavaleiros";
+
             var cavaleiroViewModel = new CavaleiroViewModel();
 
             cavaleiroViewModel.toVieModel(_cavaleiros.Buscar(id));
@@ -69,6 +71,8 @@ namespace CdZ.MVC.Controllers
         [HttpGet]
         public ViewResult Cadastrar()
         {
+            ViewBag.Acao = "Cadastro de Cavaleiros";
+
             return View();
         }
     }
