@@ -11,10 +11,10 @@ function deletarCavaleiro () {
         type: 'DELETE',
         success: function (response) {
             $('[data-id-cavaleiro=' + idCavaleiro + ']').remove();
+            notificarCavaleiros('Cavaleiro excluído!');
         },
         error: function () {
-            //substituir por notificação
-            alert('erro ao deletar');
+            alert('Erro ao deletar cavaleiro');
         }
     });
 };
@@ -80,7 +80,7 @@ setInterval(function (fn) {
             });
 
             if (qtd > 0)
-                notificarNovosCavaleiros(qtd);
+                notificarCavaleiros(qtd + ' novo(s) cavaleiro(s) foram adicionado(s)!');
         }
     );
 }, 3000);
@@ -102,14 +102,12 @@ function abrirModalDetalhesCavaleiro()
             $('#d_local_treinamento').html(res.data.LocalTreinameno);
             $('#d_golpes').html();
             $('#d_imagens').html();
+            $('#dialog').dialog({});
         },
         function onError(res) {
-            //substituir por notificação
-            alert('erro ao buscar detalhes');
+            alert("Erro ao buscar detalhes do cavaleiro");
         }
     );
-
-    $('#dialog').dialog({});
 }
 
 function buscarCavaleiroPorId(id)
