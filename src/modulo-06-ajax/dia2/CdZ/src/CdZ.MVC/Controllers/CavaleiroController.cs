@@ -3,6 +3,7 @@ using CdZ.MVC.Models.Cavaleiro;
 using CdZ.MVC.Services;
 using System.Net;
 using System.Web.Mvc;
+using PagedList;
 
 namespace CdZ.MVC.Controllers
 {
@@ -13,7 +14,16 @@ namespace CdZ.MVC.Controllers
         [HttpGet]
         public ActionResult Index()
         {
-            return View();
+            return View("Listagem");
+        }
+
+        [HttpGet]
+        public ActionResult List(int? page)
+        {
+            int pageSize = 2;
+            int pageNumber = (page ?? 1);
+            var cavaleiros = _cavaleiros.Todos().ToPagedList(pageNumber, pageSize);
+            return PartialView("_ListagemCaveleiros", cavaleiros);
         }
 
         [HttpGet]

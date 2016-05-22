@@ -1,0 +1,26 @@
+﻿
+@model PagedList.IPagedList<CdZ.Dominio.Cavaleiro>
+@using PagedList.Mvc;
+
+<div id="content">
+    <ul>
+        @foreach (var cavaleiro in Model)
+        {
+            <li data-id-cavaleiro="@cavaleiro.Id">
+                <img src="@cavaleiro.Imagens[0].Url">
+                <span>
+                    <a href="/Cavaleiro/Editar/"@cavaleiro.Id>
+                        <i class="fa fa-pencil"></i>
+                    </a>
+                </span>
+                <span class="icon-deletar">
+                    <i class="fa fa-times"></i>
+                </span>
+            </li>
+        }
+    </ul>
+
+    <div id="contentPager">
+        @Html.PagedListPager(Model, page => Url.Action("List", new { page }))
+    </div>
+</div>

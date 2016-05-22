@@ -65,7 +65,7 @@ function carregarDadosNaPagina(fn) {
     )
 };
 
-carregarDadosNaPagina(adicionarCavaleiroNoHtml);
+
 
 setInterval(function (fn) {
     buscarTodosCavaleiros().then(
@@ -91,6 +91,7 @@ function abrirModalDetalhesCavaleiro()
 
     buscarCavaleiroPorId(idCavaleiro).then(
         function onSuccess(res) {
+            console.log(res);
             $('#d_id').html(res.data.Id);
             $('#d_nome').html(res.data.Nome);
             $('#d_peso').html(res.data.PesoLb);
