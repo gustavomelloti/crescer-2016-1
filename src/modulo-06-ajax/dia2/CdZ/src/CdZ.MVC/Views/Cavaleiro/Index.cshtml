@@ -1,13 +1,22 @@
-﻿<style>
-    .erro {
-        color: red;
-    }
-</style>
+﻿
+@{
+    ViewBag.Title = "Listagem Cavaleiros";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
 
-<h3>Listagem de cavaleiros</h3>
-@Html.ActionLink("Cadastrar Cavaleiro", "Cadastrar", "Cavaleiro")
+@section scripts {
+    <script src="~/Scripts/Notifications/Cavaleiro.js"></script>
+    <script src="~/Scripts/Views/Cavaleiro/Index.js"></script>
+    <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
+}
+
+ <h3>
+    Listagem de cavaleiros 
+    <a href="@Url.Action("Cadastrar", "Cavaleiro")"> <i class="fa fa-plus-circle" aria-hidden="true"></i> </a>
+</h3>
+
+
 <ul id="cavaleiros"></ul>
-<div id="feedback"></div>
 
 <div style="display:none" id="dialog">
     <table>
@@ -57,8 +66,3 @@
         </tr>
     </table>
 </div>
-
-@section scripts {
-    <script src="~/Scripts/Notifications/Cavaleiro.js"></script>
-    <script src="~/Scripts/Views/Cavaleiro/Index.js"></script>
-}

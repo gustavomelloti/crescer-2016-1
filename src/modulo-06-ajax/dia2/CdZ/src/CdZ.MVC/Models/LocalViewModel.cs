@@ -9,18 +9,18 @@ namespace CdZ.MVC.Models
     {
         public int Id { get; set; }
         public string Texto { get; set; }
-
-        public Dominio.Local ToModel()
-        {
-            return new Dominio.Local(Id, Texto);
-        }
-
+        
         public LocalViewModel() { }
 
         public LocalViewModel(int id, string texto)
         {
             this.Id = id;
             this.Texto = texto;
+        }
+
+        public Dominio.Local ToModel()
+        {
+            return new Dominio.Local(Id, Texto);
         }
     }
 }
