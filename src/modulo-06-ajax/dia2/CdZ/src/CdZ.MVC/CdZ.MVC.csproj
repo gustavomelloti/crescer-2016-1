@@ -172,6 +172,7 @@
     <Content Include="Views\Cavaleiro\Index.cshtml" />
     <Content Include="Views\Cavaleiro\Detalhes.cshtml" />
     <Content Include="Views\Cavaleiro\Cadastrar.cshtml" />
+    <Content Include="Views\Cavaleiro\_Golpes.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
