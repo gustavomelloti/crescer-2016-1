@@ -4,6 +4,6 @@
     <label class="control-label col-md-2" for="Golpe">Golpes</label>
     <div class="col-md-10 golpes">
         @Html.Hidden("idGolpe", Model.Id)
-        <input class="form-control" name="golpe" type="text" value="@Model.Nome">
+        @Html.EditorFor(x => x.Nome, new { htmlAttributes = new { name = "golpe", @class = "form-control" } })
     </div>
 </div>
