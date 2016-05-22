@@ -1,0 +1,10 @@
+﻿@model CdZ.MVC.Models.ImagemViewModel
+
+<div class="form-group">
+    <label class="control-label col-md-2" for="imagem">Imagem</label>
+    <div class="col-md-10 imagens">
+        @Html.Hidden("IdImagem", Model.Id)
+        @Html.EditorFor(x => x.Url, new { htmlAttributes = new {  name = "urlImagem" } })
+        @Html.EditorFor(x => x.IsThumb, new { htmlAttributes = new { name = "isThumb" } }) É thumbnail?
+    </div>
+</div>

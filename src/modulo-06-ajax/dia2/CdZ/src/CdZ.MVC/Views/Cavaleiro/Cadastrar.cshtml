@@ -9,7 +9,7 @@
     <script src="~/Scripts/jquery.validate.js"></script>
     <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
     <script src="~/Scripts/Custom/overrides-validacao.js"></script>
-    <script src="~/Scripts/Views/Cavaleiro/cadastro-cavaleiros.js?d=2"></script>
+    <script src="~/Scripts/Views/Cavaleiro/cadastro-cavaleiros.js"></script>
     <script src="~/Scripts/Custom/ArrayExtensions.js"></script>
 }
 
@@ -111,7 +111,18 @@
         catch { 
             @Html.Display("deu")
         }
-        
+
+        @try
+        {
+            foreach (var imagem in Model.Imagens)
+            {
+                @Html.Partial("~/Views/Cavaleiro/_Imagens.cshtml", imagem)
+            }
+        }
+        catch
+        {
+            @Html.Display("deu")
+        }        
 
         <div class="form-group">
             <button id="btnAdicionarGolpe" type="button">Adicionar golpe...</button>
