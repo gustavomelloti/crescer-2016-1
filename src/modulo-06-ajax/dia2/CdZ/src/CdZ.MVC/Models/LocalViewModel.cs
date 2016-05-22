@@ -15,6 +15,8 @@ namespace CdZ.MVC.Models
             return new Dominio.Local(Id, Texto);
         }
 
+        public LocalViewModel() { }
+
         public LocalViewModel(int id, string texto)
         {
             this.Id = id;

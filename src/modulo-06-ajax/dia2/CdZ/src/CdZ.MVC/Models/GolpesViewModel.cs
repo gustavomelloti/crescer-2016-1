@@ -15,6 +15,8 @@ namespace CdZ.MVC.Models
             return new Dominio.Golpe(Id, Nome);
         }
 
+        public GolpeViewModel() { }
+
         public GolpeViewModel(int id, string nome)
         {
             this.Id = id;
