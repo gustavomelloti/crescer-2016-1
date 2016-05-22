@@ -1,22 +1,5 @@
 ﻿'use strict';
 
-function deletarCavaleiro() {
-    var idCavaleiro = parseInt($(this).parent('li:first').attr('data-id-cavaleiro'));
-
-    $.ajax({
-        url: urlCavaleiroDelete,
-        data: { idCavaleiro: idCavaleiro },
-        type: 'DELETE',
-        success: function (response) {
-            $('[data-id-cavaleiro=' + idCavaleiro + ']').remove();
-            notificarCavaleiros('Cavaleiro excluído!');
-        },
-        error: function () {
-            alert('Erro ao deletar cavaleiro');
-        }
-    });
-};
-
 function abrirModalDetalhesCavaleiro() {
     var idCavaleiro = $(this).parents('li:first').attr('data-id-cavaleiro');
 
@@ -57,5 +40,22 @@ $(function () {
             }
         });
         return false;
+    });
+
+    $(document).on("click", ".icon-deletar", function () {
+        var idCavaleiro = parseInt($(this).parent('li:first').attr('data-id-cavaleiro'));
+
+        $.ajax({
+            url: urlCavaleiroDelete,
+            data: { idCavaleiro: idCavaleiro },
+            type: 'DELETE',
+            success: function (response) {
+                $('[data-id-cavaleiro=' + idCavaleiro + ']').remove();
+                notificarCavaleiros('Cavaleiro excluído!');
+            },
+            error: function () {
+                alert('Erro ao deletar cavaleiro');
+            }
+        });
     });
 });
