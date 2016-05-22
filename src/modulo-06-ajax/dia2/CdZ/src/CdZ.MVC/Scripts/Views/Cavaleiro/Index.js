@@ -22,8 +22,8 @@ function adicionarCavaleiroNoHtml(cava)
     var $cavaleiros = $('#cavaleiros'),
         li = $('<li>').attr('data-id-cavaleiro', cava.Id);
             li.append(($('<img>').attr('src', buscarImagemCavaleiro(cava))).click(abrirModalDetalhesCavaleiro));
-            li.append($('<span>').html($('<a>').attr('href', urlCavaleiroEdit + '/' + cava.Id).html('Editar | ')));
-            li.append(($('<span>').html('Deletar').addClass('icon-deletar')).click(deletarCavaleiro));
+            li.append($('<span>').html($('<a>').attr('href', urlCavaleiroEdit + '/' + cava.Id).html($('<i>').addClass('fa fa-pencil'))));
+            li.append(($('<span>').html('<i>').addClass('icon-deletar fa fa-times')).click(deletarCavaleiro));
 
     $cavaleiros.append(li);
 }
