@@ -52,6 +52,21 @@ namespace CdZ.Repositorio.EF
         {
             using (var db = new ContextoDeDados())
             {
+                // Atualizamos o estado de todos os objetos envolvidos em relacionamentos com Cavaleiro.
+                // Caso Id seja diferente de 0, é atualizado. Caso seja 0, é inserido.
+                db.Entry<Local>(cavaleiro.LocalNascimento).State = cavaleiro.LocalNascimento.Id == default(int) ? EntityState.Added : EntityState.Modified;
+                db.Entry<Local>(cavaleiro.LocalTreinamento).State = cavaleiro.LocalTreinamento.Id == default(int) ? EntityState.Added : EntityState.Modified;
+
+                foreach (var golpe in cavaleiro.Golpes)
+                {
+                    db.Entry<Golpe>(golpe).State = golpe.Id == default(int) ? EntityState.Added : EntityState.Modified;
+                }
+
+                foreach (var imagem in cavaleiro.Imagens)
+                {
+                    db.Entry<Imagem>(imagem).State = imagem.Id == default(int) ? EntityState.Added : EntityState.Modified;
+                }
+
                 db.Entry<Cavaleiro>(cavaleiro).State = EntityState.Modified;
                 db.SaveChanges();
             }

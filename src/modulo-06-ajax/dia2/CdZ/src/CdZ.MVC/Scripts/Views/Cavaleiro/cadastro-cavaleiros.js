@@ -10,6 +10,7 @@ $(function () {
     var $frmNovoCavaleiro = $('#frmNovoCavaleiro');
 
     $frmNovoCavaleiro.submit(function (e) {
+      
         $.ajax({
             url: urlCavaleiroPost,
             type: 'POST',
@@ -39,7 +40,7 @@ function converterFormParaCavaleiro($form) {
     var data = $('#DataNascimento').datepicker('getDate');
 
     var novasImagens = [];
-    $('.imagens').each(function (indice, elem) {
+    $('.imagens:visible').each(function (indice, elem) {
         novasImagens.push({
             url: $(this).find('input[name=urlImagem]').val(),
             isThumb: $(this).find('input[name=isThumb]').is(':checked')
@@ -47,8 +48,10 @@ function converterFormParaCavaleiro($form) {
     });
 
     var novosGolpes = [];
-    $('.golpes').each(function (i) {
-        novosGolpes.push($(this).find('input[name=golpe]').val());
+    $('.golpes:visible').each(function (i) {
+        novosGolpes.push({
+            Nome: $(this).find('input[name=golpe]').val()
+        });
     });
 
     return {
