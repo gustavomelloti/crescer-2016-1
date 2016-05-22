@@ -1,9 +1,9 @@
 ﻿@model CdZ.MVC.Models.GolpeViewModel
 
-<div class="form-group" id="estrutura-golpe">
+<div class="form-group">
     <label class="control-label col-md-2" for="Golpe">Golpes</label>
     <div class="col-md-10 golpes">
-        @Html.Hidden("IdGolpe", Model.Id)
+        @Html.Hidden("idGolpe", Model.Id)
         <input class="form-control" name="golpe" type="text" value="@Model.Nome">
     </div>
 </div>

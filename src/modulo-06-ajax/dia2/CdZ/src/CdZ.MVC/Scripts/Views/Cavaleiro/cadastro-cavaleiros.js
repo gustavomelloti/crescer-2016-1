@@ -42,6 +42,7 @@ function converterFormParaCavaleiro($form) {
     var novasImagens = [];
     $('.imagens:visible').each(function (indice, elem) {
         novasImagens.push({
+            Id: $(this).find('input[name=idImagem]').val(),
             url: $(this).find('input[name=urlImagem]').val(),
             isThumb: $(this).find('input[name=isThumb]').is(':checked')
         });
@@ -50,7 +51,8 @@ function converterFormParaCavaleiro($form) {
     var novosGolpes = [];
     $('.golpes:visible').each(function (i) {
         novosGolpes.push({
-            Nome: $(this).find('input[name=golpe]').val()
+            Nome: $(this).find('input[name=golpe]').val(),
+            Id: $(this).find('input[name=idGolpe]').val()
         });
     });
 
