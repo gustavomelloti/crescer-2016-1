@@ -38,17 +38,21 @@ namespace CdZ.Repositorio.EF
         {
             using (var db = new ContextoDeDados())
             {
-                Cavaleiro cavaleiroASerExcluido = this.Buscar(id);
-                db.Entry<Cavaleiro>(cavaleiroASerExcluido).State = EntityState.Deleted;
+                var cavaleiroASerExcluido = db.Cavaleiro.Find(id);
+                var localNascimento = db.Cavaleiro.Include(_ => _.LocalNascimento).Single(_ => _.Id == id).LocalNascimento;
+                var localTreinamento = db.Cavaleiro.Include(_ => _.LocalTreinamento).Single(_ => _.Id == id).LocalTreinamento;
+                db.Cavaleiro.Remove(cavaleiroASerExcluido);
+                db.Local.Remove(localNascimento);
+                db.Local.Remove(localTreinamento);
                 db.SaveChanges();
             }
         }
 
-        public void Atualizar(Cavaleiro pedido)
+        public void Atualizar(Cavaleiro cavaleiro)
         {
             using (var db = new ContextoDeDados())
             {
-                db.Entry<Cavaleiro>(pedido).State = EntityState.Modified;
+                db.Entry<Cavaleiro>(cavaleiro).State = EntityState.Modified;
                 db.SaveChanges();
             }
         }
