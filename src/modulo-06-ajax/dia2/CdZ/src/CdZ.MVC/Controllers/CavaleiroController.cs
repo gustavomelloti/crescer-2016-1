@@ -72,6 +72,7 @@ namespace CdZ.MVC.Controllers
             ViewBag.Acao = "Edição de Cavaleiros";
             var cavaleiroViewModel = new CavaleiroViewModel();
             cavaleiroViewModel.toVieModel(_cavaleiros.Buscar(id));
+
             return View("cadastrar", cavaleiroViewModel);
         }
 
