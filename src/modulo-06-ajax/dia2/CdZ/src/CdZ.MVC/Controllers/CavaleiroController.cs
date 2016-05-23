@@ -23,8 +23,13 @@ namespace CdZ.MVC.Controllers
         {
             int pageSize = 2;
             int pageNumber = (page ?? 1);
+
             ViewBag.QtdCavaleiros = _cavaleiros.BuscarQuantidadeDeCavaleiros();
-            return PartialView("_ListagemCaveleiros", _cavaleiros.Todos().FromModel().ToPagedList(pageNumber, pageSize));
+
+            return PartialView(
+                "_ListagemCaveleiros", 
+                _cavaleiros.Todos().FromModel().ToPagedList(pageNumber, pageSize)
+            );
         }
 
         [HttpGet]
@@ -40,7 +45,7 @@ namespace CdZ.MVC.Controllers
         [HttpGet]
         public JsonResult GetById(int id)
         {
-            return Json(new { data = _cavaleiros.Buscar(id) }, JsonRequestBehavior.AllowGet);
+            return Json(new { data = _cavaleiros.Buscar(id).FromModelAllData() }, JsonRequestBehavior.AllowGet);
         }
 
         [HttpPost]
