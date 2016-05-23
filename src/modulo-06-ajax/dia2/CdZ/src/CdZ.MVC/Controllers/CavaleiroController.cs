@@ -23,6 +23,7 @@ namespace CdZ.MVC.Controllers
         {
             int pageSize = 2;
             int pageNumber = (page ?? 1);
+            ViewBag.QtdCavaleiros = _cavaleiros.BuscarQuantidadeDeCavaleiros();
             return PartialView("_ListagemCaveleiros", _cavaleiros.Todos().FromModel().ToPagedList(pageNumber, pageSize));
         }
 

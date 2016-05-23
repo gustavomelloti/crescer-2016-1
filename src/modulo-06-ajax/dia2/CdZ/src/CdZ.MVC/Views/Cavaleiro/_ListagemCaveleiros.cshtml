@@ -2,6 +2,13 @@
 @model PagedList.IPagedList<CdZ.MVC.Models.Cavaleiro.CavaleiroViewModel>
 @using PagedList.Mvc;
 
+
+<script>
+    var totalCavaleiros = @ViewBag.QtdCavaleiros
+</script>
+
+Total Cavaleiros: <b id="qtdCavaleiros"></b>
+
 <div id="content">
     <ul>
         @foreach (var cavaleiro in Model)
@@ -26,3 +33,20 @@
         @Html.PagedListPager(Model, page => Url.Action("List", new { page }))
     </div>
 </div>
+
+<script>
+    $(function(){
+        var $bListagemQuatnidade = $('#qtdCavaleiros');
+
+        if ($bListagemQuatnidade.is(':empty'))
+            $($bListagemQuatnidade).html(totalCavaleiros);
+        else {
+            var diferenca = totalCavaleiros - parseInt($bListagemQuatnidade.html());
+            
+            if (diferenca !== 0) {
+                $bListagemQuatnidade.html(totalCavaleiros);
+                notificarCavaleiros(diferenca + ' novo(s) cavaleiro(s) foram adicionado(s)!');
+            }
+        }
+    });
+</script>

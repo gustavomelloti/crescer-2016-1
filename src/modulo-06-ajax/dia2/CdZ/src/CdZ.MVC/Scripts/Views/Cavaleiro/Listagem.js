@@ -1,5 +1,7 @@
 ﻿'use strict';
 
+var qtdRegistros = 0;
+
 function buscarCavaleiroPorId(id) {
     return $.ajax({ url: urlCavaleiroGetId, type: 'GET', data: { id: id } });
 }
