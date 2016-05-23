@@ -27,7 +27,7 @@ namespace CdZ.MVC.Controllers
             ViewBag.QtdCavaleiros = _cavaleiros.BuscarQuantidadeDeCavaleiros();
 
             return PartialView(
-                "_ListagemCaveleiros", 
+                "_ListagemCaveleiros",
                 _cavaleiros.Todos().FromModel().ToPagedList(pageNumber, pageSize)
             );
         }

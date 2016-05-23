@@ -33,7 +33,7 @@ namespace CdZ.MVC.Extensions
                 Nome = cavaleiro.Nome,
                 AlturaCm = cavaleiro.AlturaCm,
                 PesoLb = cavaleiro.PesoLb,
-                DataNascimento = cavaleiro.DataNascimento,
+                DataNascimentoObj = cavaleiro.DataNascimento,
                 Signo = cavaleiro.Signo,
                 SignoDescricao = ((Signo)cavaleiro.Signo).ToString(),
                 TipoSanguineo = cavaleiro.TipoSanguineo,

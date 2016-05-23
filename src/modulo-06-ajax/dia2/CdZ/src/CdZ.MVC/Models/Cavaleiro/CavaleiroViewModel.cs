@@ -1,9 +1,10 @@
 ﻿using CdZ.Dominio;
+using CdZ.MVC.Extensions;
 using System;
-using System.Linq;
 using System.Collections.Generic;
-using Dominio = CdZ.Dominio;
 using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Web.Script.Serialization;
 
 namespace CdZ.MVC.Models.Cavaleiro
 {
@@ -27,7 +28,15 @@ namespace CdZ.MVC.Models.Cavaleiro
         [Required]
         [Display(Name = "Data Nascimento")]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
-        public DateTime DataNascimento { get; set; }
+        public string DataNascimento { get; set; }
+        // Esta annotation [ScriptIgnore] é para "não enviar este campo no JSON"
+
+        [ScriptIgnore]
+        public DateTime DataNascimentoObj
+        {
+            get { return DataNascimento.FromISOToDateTime(); }
+            set { DataNascimento = value.FromDateTimeToISOString(); }
+        }
 
         [Display(Name = "Signo")]
         [Range(1, 13, ErrorMessage="O campo Signo é obrigatório")]
@@ -56,7 +65,6 @@ namespace CdZ.MVC.Models.Cavaleiro
         
         public CavaleiroViewModel()
         {
-            DataNascimento = DateTime.Today;
         }
 
         public Dominio.Cavaleiro ToModel()
@@ -64,7 +72,7 @@ namespace CdZ.MVC.Models.Cavaleiro
             var golpesObj = Golpes.Select(_ => _.ToModel()).ToList();
             var imagensObj = Imagens.Select(_ => _.ToModel()).ToList();
 
-            return new Dominio.Cavaleiro(Nome, AlturaCm, PesoLb, DataNascimento, Signo, TipoSanguineo, LocalNascimento.ToModel(), LocalTreinamento.ToModel(), golpesObj, imagensObj);
+            return new Dominio.Cavaleiro(Nome, AlturaCm, PesoLb, DataNascimentoObj, Signo, TipoSanguineo, LocalNascimento.ToModel(), LocalTreinamento.ToModel(), golpesObj, imagensObj);
         }
 
         public Dominio.Cavaleiro ToModelWithId()
@@ -82,7 +90,7 @@ namespace CdZ.MVC.Models.Cavaleiro
             this.Nome = cavaleiro.Nome;
             this.AlturaCm = cavaleiro.AlturaCm;
             this.PesoLb = cavaleiro.PesoLb;
-            this.DataNascimento = cavaleiro.DataNascimento;
+            this.DataNascimentoObj = cavaleiro.DataNascimento;
             this.Signo = cavaleiro.Signo;
             this.TipoSanguineo = cavaleiro.TipoSanguineo;
             this.LocalNascimento = new LocalViewModel(cavaleiro.LocalNascimento.Id, cavaleiro.LocalNascimento.Texto);
