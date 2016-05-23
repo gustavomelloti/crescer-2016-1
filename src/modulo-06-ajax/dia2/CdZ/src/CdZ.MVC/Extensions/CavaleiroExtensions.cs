@@ -20,7 +20,7 @@ namespace CdZ.MVC.Extensions
             {
                 Id = cavaleiro.Id,
                 Nome = cavaleiro.Nome,
-                UrlThumb = urlThumb != null ? urlThumb : "http://cf.ellassaben.com/a1304/be0a1887-5a40-4698-b740-25445fd3995d.jpg"
+                UrlThumb = urlThumb != null ? urlThumb : "http://data.whicdn.com/images/22194390/tumblr_ly0lu5sxWO1qf8vn3o1_500_large.jpg"
             };
         }
 
