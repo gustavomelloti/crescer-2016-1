@@ -1,6 +1,7 @@
 ﻿using CdZ.Dominio;
 using CdZ.MVC.Models;
 using CdZ.MVC.Models.Cavaleiro;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -21,6 +22,26 @@ namespace CdZ.MVC.Extensions
                 Id = cavaleiro.Id,
                 Nome = cavaleiro.Nome,
                 UrlThumb = urlThumb != null ? urlThumb : "http://data.whicdn.com/images/22194390/tumblr_ly0lu5sxWO1qf8vn3o1_500_large.jpg"
+            };
+        }
+
+        public static CavaleiroViewModel FromModelAllData(this Cavaleiro cavaleiro)
+        {
+            return new CavaleiroViewModel
+            {
+                Id = cavaleiro.Id,
+                Nome = cavaleiro.Nome,
+                AlturaCm = cavaleiro.AlturaCm,
+                PesoLb = cavaleiro.PesoLb,
+                DataNascimento = cavaleiro.DataNascimento,
+                Signo = cavaleiro.Signo,
+                SignoDescricao = ((Signo)cavaleiro.Signo).ToString(),
+                TipoSanguineo = cavaleiro.TipoSanguineo,
+                TipoSanguineoDescricao = ((TipoSanguineo) cavaleiro.TipoSanguineo).ToString(),
+                LocalNascimento = new LocalViewModel(cavaleiro.LocalNascimento.Id, cavaleiro.LocalNascimento.Texto),
+                LocalTreinamento = new LocalViewModel(cavaleiro.LocalTreinamento.Id, cavaleiro.LocalTreinamento.Texto),
+                Golpes = cavaleiro.Golpes.Select(_ => new GolpeViewModel(_.Id, _.Nome)).ToList(),
+                Imagens = cavaleiro.Imagens.Select(_ => new ImagemViewModel(_.Id, _.Url, _.IsThumb)).ToList()
             };
         }
 

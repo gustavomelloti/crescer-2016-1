@@ -33,10 +33,14 @@ namespace CdZ.MVC.Models.Cavaleiro
         [Range(1, 13, ErrorMessage="O campo Signo é obrigatório")]
         public Signo Signo { get; set; }
 
+        public string SignoDescricao { get; set; }
+
         [Display(Name = "Tipo Sanguíneo")]
         [Range(1, 6, ErrorMessage="O campo Tipo Sanguíneo é obrigatório")]
         public TipoSanguineo TipoSanguineo { get; set; }
        
+        public string TipoSanguineoDescricao { get; set; }
+
         [Required]
         [Display(Name = "Local Nascimento")]
         public LocalViewModel LocalNascimento { get; set; }
