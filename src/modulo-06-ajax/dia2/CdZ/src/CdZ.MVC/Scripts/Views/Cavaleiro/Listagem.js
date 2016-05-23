@@ -36,7 +36,7 @@ $(function () {
                 $('#d_nome').html(res.data.Nome);
                 $('#d_peso').html(res.data.PesoLb.lbParaKilos().formatarNumero());
                 $('#d_altura').html(res.data.AlturaCm.converterParaMetros().formatarNumero());
-                $('#d_nascimento').html(res.data.DataNascimento);
+                $('#d_nascimento').html(new Date(res.data.DataNascimento).formatarDataPadraoBr());
                 $('#d_signo').html(res.data.SignoDescricao);
                 $('#d_tipo_sanguineo').html(res.data.TipoSanguineoDescricao);
                 $('#d_local_nascimento').html(res.data.LocalNascimento.Texto);
