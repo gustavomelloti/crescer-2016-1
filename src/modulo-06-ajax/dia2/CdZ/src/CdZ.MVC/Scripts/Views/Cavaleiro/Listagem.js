@@ -1,7 +1,5 @@
 ﻿'use strict';
 
-var qtdRegistros = 0;
-
 function buscarCavaleiroPorId(id) {
     return $.ajax({ url: urlCavaleiroGetId, type: 'GET', data: { id: id } });
 }
@@ -17,6 +15,17 @@ function trocarPagina(pagina) {
     });
 }
 
+function adicionarImagensNoHtml(imgs)
+{
+    var $span = $('<span>');
+
+    imgs.forEach(function (e) {
+        $span.append($('<img>').attr('src', e.Url));
+    })
+    
+    return $span;
+}
+
 $(function () {
     //detalhes
     $(document).on("click", ".info", function () {
@@ -25,16 +34,19 @@ $(function () {
             function onSuccess(res) {
                 $('#d_id').html(res.data.Id);
                 $('#d_nome').html(res.data.Nome);
-                $('#d_peso').html(res.data.PesoLb);
-                $('#d_altura').html(res.data.AlturaCm);
+                $('#d_peso').html(res.data.PesoLb.lbParaKilos().formatarNumero());
+                $('#d_altura').html(res.data.AlturaCm.converterParaMetros().formatarNumero());
                 $('#d_nascimento').html(res.data.DataNascimento);
-                $('#d_signo').html(res.data.Signo);
-                $('#d_tipo_sanguineo').html(res.data.TipoSanguineo);
-                $('#d_local_nascimento').html(res.data.LocalNascimento);
-                $('#d_local_treinamento').html(res.data.LocalTreinameno);
-                $('#d_golpes').html();
-                $('#d_imagens').html();
-                $('#dialog').dialog({});
+                $('#d_signo').html(res.data.SignoDescricao);
+                $('#d_tipo_sanguineo').html(res.data.TipoSanguineoDescricao);
+                $('#d_local_nascimento').html(res.data.LocalNascimento.Texto);
+                $('#d_local_treinamento').html(res.data.LocalTreinamento.Texto);
+                $('#d_golpes').html(res.data.Golpes.map(function (e) { return e.Nome }).toString());
+                $('#d_imagens').html(adicionarImagensNoHtml(res.data.Imagens));
+                $('#dialog').dialog({
+                    width: 600,
+                    height: 500
+                });
             },
             function onError(res) {
                 alert("Erro ao buscar detalhes do cavaleiro");

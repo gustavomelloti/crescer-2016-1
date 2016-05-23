@@ -49,7 +49,7 @@ function converterFormParaCavaleiro($form) {
     });
 
     var novosGolpes = [];
-    $('.golpes:visible').each(function (i) {
+    $('.golpes:visible').each(function () {
         novosGolpes.push({
             Nome: $(this).find('input[name=golpe]').val(),
             Id: $(this).find('input[name=idGolpe]').val()
