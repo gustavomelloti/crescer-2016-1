@@ -36,15 +36,15 @@ Total Cavaleiros: <b id="qtdCavaleiros"></b>
 
 <script>
     $(function(){
-        var $bListagemQuatnidade = $('#qtdCavaleiros');
+        var $bListagemQuantidade = $('#qtdCavaleiros');
 
-        if ($bListagemQuatnidade.is(':empty'))
-            $($bListagemQuatnidade).html(totalCavaleiros);
+        if ($bListagemQuantidade.is(':empty'))
+            $($bListagemQuantidade).html(totalCavaleiros);
         else {
-            var diferenca = totalCavaleiros - parseInt($bListagemQuatnidade.html());
+            var diferenca = totalCavaleiros - parseInt($bListagemQuantidade.html());
             
             if (diferenca !== 0) {
-                $bListagemQuatnidade.html(totalCavaleiros);
+                $bListagemQuantidade.html(totalCavaleiros);
                 notificarCavaleiros(diferenca + ' novo(s) cavaleiro(s) foram adicionado(s)!');
             }
         }
