@@ -52,7 +52,6 @@ namespace CdZ.MVC.Models.Cavaleiro
         
         public CavaleiroViewModel()
         {
-            // TODO: corrigir model-bind
             DataNascimento = DateTime.Today;
         }
 

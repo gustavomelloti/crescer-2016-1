@@ -70,11 +70,8 @@ namespace CdZ.MVC.Controllers
         public ViewResult Editar(int id)
         {
             ViewBag.Acao = "Edição de Cavaleiros";
-
             var cavaleiroViewModel = new CavaleiroViewModel();
-
             cavaleiroViewModel.toVieModel(_cavaleiros.Buscar(id));
-
             return View("cadastrar", cavaleiroViewModel);
         }
 
