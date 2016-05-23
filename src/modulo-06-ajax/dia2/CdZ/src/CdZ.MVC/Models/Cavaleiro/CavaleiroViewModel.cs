@@ -47,6 +47,8 @@ namespace CdZ.MVC.Models.Cavaleiro
         
         public IList<GolpeViewModel> Golpes { get; set; }
         public IList<ImagemViewModel> Imagens { get; set; }
+
+        public string UrlThumb { get; set; }
         
         public CavaleiroViewModel()
         {

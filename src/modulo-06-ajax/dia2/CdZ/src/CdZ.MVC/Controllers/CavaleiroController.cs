@@ -1,4 +1,5 @@
-﻿using CdZ.Dominio;
+﻿using CdZ.MVC.Extensions;
+using CdZ.Dominio;
 using CdZ.MVC.Models.Cavaleiro;
 using CdZ.MVC.Services;
 using System.Net;
@@ -22,8 +23,7 @@ namespace CdZ.MVC.Controllers
         {
             int pageSize = 2;
             int pageNumber = (page ?? 1);
-            var cavaleiros = _cavaleiros.Todos().ToPagedList(pageNumber, pageSize);
-            return PartialView("_ListagemCaveleiros", cavaleiros);
+            return PartialView("_ListagemCaveleiros", _cavaleiros.Todos().FromModel().ToPagedList(pageNumber, pageSize));
         }
 
         [HttpGet]
@@ -82,7 +82,6 @@ namespace CdZ.MVC.Controllers
         public ViewResult Cadastrar()
         {
             ViewBag.Acao = "Cadastro de Cavaleiros";
-
             return View();
         }
     }
