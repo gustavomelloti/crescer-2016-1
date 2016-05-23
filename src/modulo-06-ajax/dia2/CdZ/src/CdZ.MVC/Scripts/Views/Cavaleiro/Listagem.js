@@ -4,7 +4,19 @@ function buscarCavaleiroPorId(id) {
     return $.ajax({ url: urlCavaleiroGetId, type: 'GET', data: { id: id } });
 }
 
+function trocarPagina(pagina) {
+    $.ajax({
+        url: pagina,
+        type: 'GET',
+        cache: false,
+        success: function (result) {
+            $('#content').html(result);
+        }
+    });
+}
+
 $(function () {
+    //detalhes
     $(document).on("click", ".info", function () {
         var idCavaleiro = $(this).parents('li:first').attr('data-id-cavaleiro');
         buscarCavaleiroPorId(idCavaleiro).then(
@@ -28,20 +40,14 @@ $(function () {
         );
     });
 
-
-
+    
+    //paginação
     $(document).on("click", "#contentPager a[href]", function () {
-        $.ajax({
-            url: $(this).attr("href"),
-            type: 'GET',
-            cache: false,
-            success: function (result) {
-                $('#content').html(result);
-            }
-        });
+        trocarPagina($(this).attr("href"));
         return false;
     });
 
+    //deletar
     $(document).on("click", ".icon-deletar", function () {
         var idCavaleiro = parseInt($(this).parent('li:first').attr('data-id-cavaleiro'));
 
@@ -58,4 +64,8 @@ $(function () {
             }
         });
     });
+
+    setInterval(function () {
+        trocarPagina(urlCavalieroPaginacao + $('.active a').html());
+    }, 6000);
 });
