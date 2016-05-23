@@ -73,5 +73,13 @@ namespace CdZ.Repositorio.EF
                 db.SaveChanges();
             }
         }
+
+        public int BuscarQuantidadeDeCavaleiros()
+        {
+            using (var db = new ContextoDeDados())
+            {
+                return db.Cavaleiro.Count();
+            }
+        }
     }
 }
