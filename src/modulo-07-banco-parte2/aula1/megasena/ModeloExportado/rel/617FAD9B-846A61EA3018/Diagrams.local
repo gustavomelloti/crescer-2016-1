@@ -1,0 +1,4 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.relational.RelationalDesign>
+   <object objectType="main_view" objectID="E590887D-8FFA-3330-13CB-3B622879AFF4" name="MegaSena" visible="true"/>
+</oracle.dbtools.crest.model.design.relational.RelationalDesign>

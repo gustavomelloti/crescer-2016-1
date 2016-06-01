@@ -1,0 +1,81 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="E372048C-A279-FC5C-D2F6-069DD4AE6D63" name="Ganhador">
+<createdBy>gustavo.mello</createdBy>
+<createdTime>2016-05-31 17:14:35 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<ordsAlias>table_5</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID" id="55656E88-B198-983B-7464-ECB1D14CF305">
+<createdBy>gustavo.mello</createdBy>
+<createdTime>2016-05-31 17:15:36 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="IDAposta" id="2C9BDF6C-F49A-C2BA-9BAB-33D88D1C1824">
+<createdBy>gustavo.mello</createdBy>
+<createdTime>2016-05-31 17:14:50 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="B88A35BD-38A0-B533-6A05-E945F0D46066" referredColumn="4596510D-23B2-E702-A74F-3671EB366D45"/>
+</associations>
+</Column>
+<Column name="QuantidadeAcertos" id="A44A4AB8-B5B4-AE5D-4BFE-7AC1F1F145C2">
+<createdBy>gustavo.mello</createdBy>
+<createdTime>2016-05-31 17:17:02 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ValorPremio" id="864D83A3-3C78-C194-E363-9A7D6F4929D8">
+<createdBy>gustavo.mello</createdBy>
+<createdTime>2016-05-31 17:17:02 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>12</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,12,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="E607A8DE-5EC8-E0D5-88F6-518B326999BB" name="Ganhador_PK">
+<createdBy>gustavo.mello</createdBy>
+<createdTime>2016-05-31 17:15:36 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="55656E88-B198-983B-7464-ECB1D14CF305"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F1BD43AF-5858-2E12-6B16-8AF68C678F47" name="Ganhador_Aposta_FK">
+<createdBy>gustavo.mello</createdBy>
+<createdTime>2016-05-31 17:14:50 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2C9BDF6C-F49A-C2BA-9BAB-33D88D1C1824"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

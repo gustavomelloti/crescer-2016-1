@@ -1,0 +1,104 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="BC4FF5E1-6C96-104E-8D93-BBF22E021CB6" name="Aposta">
+<createdBy>gustavo.mello</createdBy>
+<createdTime>2016-05-31 17:06:21 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<ordsAlias>table_2</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="IDAposta" id="4596510D-23B2-E702-A74F-3671EB366D45">
+<createdBy>gustavo.mello</createdBy>
+<createdTime>2016-05-31 17:09:24 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="IDConcurso" id="3794C577-94A9-F8BA-174C-9DB0D622497D">
+<createdBy>gustavo.mello</createdBy>
+<createdTime>2016-05-31 17:09:52 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E8511640-C0A7-98E1-595A-54105F94B688" referredColumn="94B25635-3DFC-D8FE-EBFD-ABF38B1472D5"/>
+</associations>
+</Column>
+<Column name="IDNumeroApostaValor" id="1BE1CA7B-F882-CCEE-DA81-090760C2977B">
+<createdBy>gustavo.mello</createdBy>
+<createdTime>2016-05-31 17:51:32 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="A53D1631-3ECC-1BB3-5726-6FD279E445DE" referredColumn="2552BAB0-7113-A30A-CEE6-61E1FA8E07BB"/>
+</associations>
+</Column>
+<Column name="DataAposta" id="9A3D8A54-DF13-B94F-7119-90D3F082468D">
+<createdBy>gustavo.mello</createdBy>
+<createdTime>2016-05-31 17:09:24 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Bolao" id="FBEEB6A8-0A0C-3056-4B8B-0EE60202DDC7">
+<createdBy>gustavo.mello</createdBy>
+<createdTime>2016-05-31 17:09:24 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="5563DE34-950A-FE36-A6C8-8FE1C9855377" name="Aposta_PK">
+<createdBy>gustavo.mello</createdBy>
+<createdTime>2016-05-31 17:09:24 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4596510D-23B2-E702-A74F-3671EB366D45"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F7E97B30-9FE8-015C-20AD-14E3FACB59AB" name="Aposta_Concurso_FK">
+<createdBy>gustavo.mello</createdBy>
+<createdTime>2016-05-31 17:09:52 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3794C577-94A9-F8BA-174C-9DB0D622497D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="49443102-D4A9-F20E-83E9-26C1ACB9D7E6" name="Aposta_NumeroApostaValor_FK">
+<createdBy>gustavo.mello</createdBy>
+<createdTime>2016-05-31 17:51:32 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1BE1CA7B-F882-CCEE-DA81-090760C2977B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

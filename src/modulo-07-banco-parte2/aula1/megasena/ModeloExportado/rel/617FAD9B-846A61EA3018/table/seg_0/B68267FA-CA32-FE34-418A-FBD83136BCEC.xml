@@ -1,0 +1,57 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="B68267FA-CA32-FE34-418A-FBD83136BCEC" name="Concurso">
+<createdBy>gustavo.mello</createdBy>
+<createdTime>2016-05-31 17:01:55 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<ordsAlias>table_1</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="IDConcurso" id="94B25635-3DFC-D8FE-EBFD-ABF38B1472D5">
+<createdBy>gustavo.mello</createdBy>
+<createdTime>2016-05-31 17:04:15 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Data" id="5FCDAE77-6E4B-4A08-6C8C-A226E56D2481">
+<createdBy>gustavo.mello</createdBy>
+<createdTime>2016-05-31 17:04:15 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Premio" id="5B6EA1DF-BCA2-D129-E408-D4A7D77E524C">
+<createdBy>gustavo.mello</createdBy>
+<createdTime>2016-05-31 17:04:15 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>12</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,12,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="A39BEE9E-426E-BC6A-A8E6-1979A17ABF31" name="Concurso_PK">
+<createdBy>gustavo.mello</createdBy>
+<createdTime>2016-05-31 17:04:15 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="94B25635-3DFC-D8FE-EBFD-ABF38B1472D5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

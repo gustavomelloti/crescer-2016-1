@@ -1,0 +1,14 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="911FE063-9007-5666-B5F6-BE85BD8E9530" containerWithKeyObject="22D9A334-BAFE-C80F-6490-9B6D6ECF4241" localFKIndex="8827EE79-4365-91A3-27E0-D581D0290B4B" name="ConcursoNumeroSorteado_FK">
+<createdBy>gustavo.mello</createdBy>
+<createdTime>2016-05-31 18:44:55 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>B68267FA-CA32-FE34-418A-FBD83136BCEC</referredTableID>
+<keyObject>A39BEE9E-426E-BC6A-A8E6-1979A17ABF31</keyObject>
+<referredKeyID>A39BEE9E-426E-BC6A-A8E6-1979A17ABF31</referredKeyID>
+<mandatory>true</mandatory>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

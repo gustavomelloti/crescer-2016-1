@@ -1,0 +1,95 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="859718AF-7201-561B-F44D-AAC459B59E8E" name="ValorPagoConcurso">
+<createdBy>gustavo.mello</createdBy>
+<createdTime>2016-05-31 17:26:34 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<ordsAlias>table_9</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="IDValorPagoConcurso" id="34B9CFD3-8A2B-4EAB-103A-38D12F287BA5">
+<createdBy>gustavo.mello</createdBy>
+<createdTime>2016-05-31 17:29:58 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="IDValorPago" id="986FA0A7-D6D9-A25B-2E47-D788FA10B603">
+<createdBy>gustavo.mello</createdBy>
+<createdTime>2016-05-31 17:34:13 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="957320CA-383A-DA10-B912-750BB1360DA0" referredColumn="8FA8F35E-AAA5-E5D1-2010-8B42FCE1D81B"/>
+</associations>
+</Column>
+<Column name="IDConcurso" id="C1726C6B-EDAA-8286-E245-771186895A32">
+<createdBy>gustavo.mello</createdBy>
+<createdTime>2016-05-31 17:30:17 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="0F882D1D-2083-5AF3-14EF-974C8DA1F434" referredColumn="94B25635-3DFC-D8FE-EBFD-ABF38B1472D5"/>
+</associations>
+</Column>
+<Column name="Valor" id="9F9A5419-E253-1210-6439-79780FF8912A">
+<createdBy>gustavo.mello</createdBy>
+<createdTime>2016-05-31 17:29:58 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,10,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="476A8F19-7EB1-5066-68FA-DB3CA4A903AB" name="PercentualPremioBruto_PK">
+<createdBy>gustavo.mello</createdBy>
+<createdTime>2016-05-31 17:29:58 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="34B9CFD3-8A2B-4EAB-103A-38D12F287BA5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="D329ED89-9827-49A4-D475-1090A0C9788E" name="ValorPagoConcurso_Concurso_FK">
+<createdBy>gustavo.mello</createdBy>
+<createdTime>2016-05-31 17:30:17 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C1726C6B-EDAA-8286-E245-771186895A32"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="D52D9DDA-7B28-C895-6D27-47B5DD684CFC" name="ValorPagoConcurso_ValorPago_FK">
+<createdBy>gustavo.mello</createdBy>
+<createdTime>2016-05-31 17:34:13 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="986FA0A7-D6D9-A25B-2E47-D788FA10B603"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
