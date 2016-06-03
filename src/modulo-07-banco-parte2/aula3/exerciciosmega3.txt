@@ -1,0 +1,52 @@
+create or replace package body PCK_CONCURSO is
+
+  -- Private type declarations
+  
+  /* Conforme especificacao deve gerar 1 registro na tabela concurso */
+  procedure geraProximoConcurso as
+       VVALORCONCURSO NUMBER(12,2);
+       VVALORCONCURSOSENA NUMBER(12,2);
+       VIDULTIMOCONCURSO INTEGER;
+       VULTIMOCONCURSOACUMULOU INTEGER;
+       VDATAULTIMOSORTEIO DATE;
+    begin
+    
+        SELECT DATA_SORTEIO, IDCONCURSO, ACUMULOU, PREMIO_SENA
+          INTO VDATAULTIMOSORTEIO, VIDULTIMOCONCURSO,VULTIMOCONCURSOACUMULOU, VVALORCONCURSOSENA
+          FROM CONCURSO
+          WHERE ROWNUM = 1
+          ORDER BY IDCONCURSO DESC;
+       
+        SELECT SUM(VALOR)
+          INTO VVALORCONCURSO
+          FROM APOSTA
+          WHERE IDCONCURSO = VIDULTIMOCONCURSO;
+       
+       
+       IF (VULTIMOCONCURSOACUMULOU > 0) THEN
+          VVALORCONCURSO := VVALORCONCURSO + VVALORCONCURSOSENA;
+       END IF;
+           
+        IF (TO_CHAR(VDATAULTIMOSORTEIO, 'D') = 7) THEN
+          VDATAULTIMOSORTEIO := VDATAULTIMOSORTEIO + 4;
+        ELSE 
+          VDATAULTIMOSORTEIO := VDATAULTIMOSORTEIO + 3;
+        END IF;
+        
+        PCK_MEGASENA.SALVACONCURSO(VIDULTIMOCONCURSO + 1, VDATAULTIMOSORTEIO, VVALORCONCURSO * 0.453);
+    end;
+  ----------------------------------------------------------------------
+  /* Conforme especificacao deve atualizar a tabela de acertadores */    
+  procedure atualizaAcertadores as
+       -- variaveis       
+    begin      
+        --
+        --insert into aposta_premiada ...
+        null; --> remover
+    end;
+  ----------------------------------------------------------------------
+  
+begin
+  -- Initialization
+  null;
+end PCK_CONCURSO;
