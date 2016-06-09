@@ -16,18 +16,15 @@ public class MeuCalendarioUtil {
         return formatDayOfWeek.format(dataFormata);
     }
     
-    public long elapsedDate(String data) throws ParseException {
+    public String elapsedDate(String data) throws ParseException {
         SimpleDateFormat formatInput = new SimpleDateFormat("dd/MM/yyyy");
         
-        Calendar now = Calendar.getInstance();
-        Calendar dataInformada = Calendar.getInstance();
-        Date d = formatInput.parse(data);
-        dataInformada.set(d.getYear(), d.getMonth(), d.getDay());
-
-        long diferencaEmMilisegundos = now.getTimeInMillis() - dataInformada.getTimeInMillis();
+        long diffInMillis = new Date().getTime() - formatInput.parse(data).getTime();
         
-        return diferencaEmMilisegundos / (24 * 60 * 60 * 1000);
+        Calendar c = Calendar.getInstance();
+        c.setTimeInMillis(diffInMillis);
+        c.add(Calendar.YEAR, -1970);
         
-        //TODO: ajustar
+        return String.format("%03d ano(s), %03d mese(s) e %03d dia(s)", c.YEAR, c.MONTH, c.DAY_OF_MONTH);
     }
 }
