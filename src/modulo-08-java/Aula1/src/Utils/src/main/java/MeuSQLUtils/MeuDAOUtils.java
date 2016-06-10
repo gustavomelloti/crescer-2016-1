@@ -64,7 +64,7 @@ public class MeuDAOUtils {
                 preparedStatement.setString(2, arquivo[i].split(";")[1]);
                 preparedStatement.executeUpdate();
             }
-            con.commit(); 
+            con.commit();
         } catch (Exception ex) {
             throw ex;
         }

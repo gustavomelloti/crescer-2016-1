@@ -51,6 +51,7 @@ public class MeuReaderUtils {
         }
     }
     
+    //TODO: refatorar
     public String[] retornarConteudoArquivoArray(String arquivo) throws FileNotFoundException,IllegalArgumentException, IOException {
         BufferedReader bufferReader = null;
         Reader reader = null;

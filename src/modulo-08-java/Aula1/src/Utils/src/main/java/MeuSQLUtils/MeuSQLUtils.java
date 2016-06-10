@@ -14,11 +14,11 @@ import java.util.Calendar;
 
 
 public class MeuSQLUtils {
-    MeuFileUtils fileUtils;
-    MeuReaderUtils readerUtils;
-    MeuWriterUtils writerUtils;
-    MeuDAOUtils daoUtils;
-    PessoaDAO pessoaDao;
+    private MeuFileUtils fileUtils;
+    private MeuReaderUtils readerUtils;
+    private MeuWriterUtils writerUtils;
+    private MeuDAOUtils daoUtils;
+    private PessoaDAO pessoaDao;
     
     public MeuSQLUtils() throws SQLException {
         readerUtils = new MeuReaderUtils();
