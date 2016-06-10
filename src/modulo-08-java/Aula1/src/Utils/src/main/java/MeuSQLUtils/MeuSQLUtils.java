@@ -1,9 +1,11 @@
 package MeuSQLUtils;
 
+import br.com.crescer.aula3.PessoaDAO;
 import ConnectionUtils.ConnectionUtils;
 import FilesUtil.MeuReaderUtils;
 import FilesUtil.MeuFileUtils;
 import FilesUtil.MeuWriterUtils;
+import br.com.crescer.aula3.Pessoa;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
@@ -45,8 +47,18 @@ public class MeuSQLUtils {
     }
     
     public void exportarCsv() throws IOException {
-        String nome = "Pessoas_" + new SimpleDateFormat("dd_MM_yyyy_HH_mm").format(Calendar.getInstance().getTime()) + ".csv";
-        fileUtils.criar(nome);
-        writerUtils.escreverConteudo(nome,  pessoaDao.listAll());
+        ArrayList<String> conteudo = new ArrayList<>();
+        
+        String arquivoCSV = "Pessoas_" + new SimpleDateFormat("dd_MM_yyyy_HH_mm").format(Calendar.getInstance().getTime()) + ".csv";
+        fileUtils.criar(arquivoCSV);
+        
+        //título das colunas
+        conteudo.add("ID,NOME");
+        
+        for (Pessoa p : pessoaDao.listAll()) {
+            conteudo.add(p.getId() + "," + p.getNome());
+        }
+
+        writerUtils.escreverConteudo(arquivoCSV, conteudo);
     }
 }

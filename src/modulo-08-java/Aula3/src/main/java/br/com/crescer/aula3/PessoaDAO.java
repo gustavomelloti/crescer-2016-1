@@ -1,3 +1,5 @@
+package br.com.crescer.aula3;
+
 
 
 
@@ -21,7 +23,7 @@ public class PessoaDAO implements IPessoa {
     
     @Override
     public void insert(Pessoa p) {
-        String insert = "INSERT INTO PESSOA (ID_PESSOA, NM_PESSOA) VALUES ((SELECT MAX(ID_PESSOA) + 1 FROM PESSOA), ?)"; 
+        String insert = "INSERT INTO PESSOA (ID, NOME) VALUES ((SELECT MAX(ID_PESSOA) + 1 FROM PESSOA), ?)"; 
  
         try (final PreparedStatement preparedStatement = con.prepareStatement(insert)) {
             preparedStatement.setString(1 ,p.getNome());
@@ -37,7 +39,7 @@ public class PessoaDAO implements IPessoa {
 
     @Override
     public void update(Pessoa p) {
-        String insert = "UPDATE PESSOA SET NM_PESSOA = ? WHERE ID_PESSOA = ?"; 
+        String insert = "UPDATE PESSOA SET NOME = ? WHERE ID = ?"; 
  
         try (final PreparedStatement preparedStatement = con.prepareStatement(insert)) {
             preparedStatement.setString(1 ,p.getNome());
@@ -54,7 +56,7 @@ public class PessoaDAO implements IPessoa {
 
     @Override
     public void delete(Pessoa p) {
-        String delete = "DELETE FROM PESSOA WHERE ID_PESSOA = ?";
+        String delete = "DELETE FROM PESSOA WHERE ID = ?";
         
         try (final PreparedStatement preparedStatement = con.prepareStatement(delete)) {
             preparedStatement.setInt(1 ,p.getId());
@@ -87,7 +89,7 @@ public class PessoaDAO implements IPessoa {
 
     @Override
     public List<Pessoa> findNome(String nome) {
-        String query = "SELECT * FROM PESSOA WHERE NM_PESSOA LIKE ?";
+        String query = "SELECT * FROM PESSOA WHERE NOME LIKE ?";
        
         try (final Statement statement = con.createStatement();final PreparedStatement preparedStatement = con.prepareStatement(query)) {
             preparedStatement.setString(1, "%" + nome + "%");
@@ -108,7 +110,7 @@ public class PessoaDAO implements IPessoa {
         List<Pessoa> pessoas = new ArrayList<>();
       
         while(result.next()) {
-            pessoas.add(new Pessoa(result.getInt("ID_PESSOA"), result.getString("NM_PESSOA")));
+            pessoas.add(new Pessoa(result.getInt("ID"), result.getString("NOME")));
         }
         
         return pessoas;

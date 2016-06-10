@@ -13,10 +13,6 @@ public class MeuWriterUtils {
         Writer writer = null;
          
         try {
-            if (arquivo.lastIndexOf(".txt") == -1) {
-                throw new IllegalArgumentException();
-            }
-                
             writer = new FileWriter(arquivo);
             bufferWriter = new BufferedWriter(writer);
             
