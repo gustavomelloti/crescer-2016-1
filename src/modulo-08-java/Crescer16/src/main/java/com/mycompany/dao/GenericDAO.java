@@ -1,10 +1,10 @@
 package com.mycompany.dao;
 
+import JPAUtils.EntityManagerUtils;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import com.mycompany.interfaces.IGenericDAO;
-import com.mycompay.entity.Cidade;
 import javax.persistence.EntityTransaction;
 
 public class GenericDAO<T> implements IGenericDAO<T> {
