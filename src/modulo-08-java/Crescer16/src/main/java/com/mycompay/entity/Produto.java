@@ -17,8 +17,8 @@ import javax.persistence.TemporalType;
 @Table(name = "PRODUTO")
 public class Produto implements Serializable {
     @Id 
-    @GeneratedValue(strategy = SEQUENCE, generator = "SQCIDADE")
-    @SequenceGenerator(name = "SQCIDADE", sequenceName = "SQCIDADE", allocationSize = 1)
+    @GeneratedValue(strategy = SEQUENCE, generator = "SQPRODUTO")
+    @SequenceGenerator(name = "SQPRODUTO", sequenceName = "SQPRODUTO", allocationSize = 1)
     @Basic(optional = false)
     @Column(name = "IDPRODUTO")
     private long id;
