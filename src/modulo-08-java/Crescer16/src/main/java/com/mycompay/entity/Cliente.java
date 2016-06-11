@@ -21,7 +21,7 @@ public class Cliente implements Serializable {
     @Basic(optional = false)
     @Column(name = "IDCLIENTE")
     private long id;
-    
+ 
     @Basic(optional = false)
     @Column(name = "NOME")
     private String nome;
@@ -42,15 +42,31 @@ public class Cliente implements Serializable {
     @JoinColumn(name = "IDCIDADE")
     private Cidade cidade;
     
-    @Basic(optional = false)
+    @Basic(optional = true)
     @Column(name = "CEP")
-    private int cep;
+    private Integer cep;
     
     @Basic(optional = false)
     @Column(name = "SITUACAO")
     private char situacao;
 
     public Cliente() {}
+    
+    public Cliente(long id, String nome, String razaoSocial, String endereco, String bairro, Cidade cidade, int cep, char situacao) {
+        this(nome, razaoSocial, endereco, bairro, cidade, cep, situacao);
+        this.id = id;
+    }
+    
+    public Cliente(String nome, String razaoSocial, String endereco, String bairro, Cidade cidade, int cep, char situacao) {
+        this.nome = nome;
+        this.razaoSocial = razaoSocial;
+        this.endereco = endereco;
+        this.bairro = bairro;
+        this.cidade = cidade;
+        this.cep = cep;
+        this.situacao = situacao;
+    }
+    
     /**
      * @return the id
      */

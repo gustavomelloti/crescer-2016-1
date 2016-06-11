@@ -1,5 +1,6 @@
 package com.mycompay.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -14,7 +15,7 @@ import javax.persistence.TemporalType;
 
 @Entity
 @Table(name = "PRODUTO")
-public class Produto {
+public class Produto implements Serializable {
     @Id 
     @GeneratedValue(strategy = SEQUENCE, generator = "SQCIDADE")
     @SequenceGenerator(name = "SQCIDADE", sequenceName = "SQCIDADE", allocationSize = 1)
@@ -43,13 +44,28 @@ public class Produto {
     @Column(name = "SITUACAO")
     private char situacao;    
 
+    public Produto() {}
+    
+    public Produto(String nome, Date data, double precoCusto, double precoVenda, char situacao) {
+        this.nome = nome;
+        this.data = data;
+        this.precoCusto = precoCusto;
+        this.precoVenda = precoVenda;
+        this.situacao = situacao;
+    }
+
+    public Produto(long id, String nome, Date data, double precoCusto, double precoVenda, char situacao) {
+        this(nome, data, precoCusto, precoVenda, situacao);
+        this.id = id;
+    }
+    
     /**
      * @return the id
      */
     public long getId() {
         return id;
     }
-
+    
     /**
      * @param id the id to set
      */
