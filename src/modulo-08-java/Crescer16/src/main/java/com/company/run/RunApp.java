@@ -1,17 +1,15 @@
 package com.company.run;
 
-import com.mycompay.entity.Cidade;
-import com.mycompay.entity.Cliente;
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
+import com.mycompany.dao.*;
+import com.mycompay.entity.*;
 
 public class RunApp {
-    static final EntityManagerFactory emf = Persistence.createEntityManagerFactory("CRESCER16");
-    static final EntityManager em = emf.createEntityManager();
-    
     public static void main(String[] args) {
-        Cliente cliente = em.find(Cliente.class, 2l);
-        System.out.println(cliente.getNome());
+        //ClienteDAO cDAO = new ClienteDAO();
+        CidadeDAO cidadeDAO = new CidadeDAO();
+        
+        for(Cidade c : cidadeDAO.listAll()) {
+            System.out.println(c.getNome());
+        }
     }
 }

@@ -28,6 +28,18 @@ public class Cidade implements Serializable  {
     @Column(name = "UF")
     private String uf;
 
+    public Cidade(String nome, String uf) {
+        this.nome = nome;
+        this.uf = uf;
+    }
+    
+    public Cidade(long id, String nome, String uf) {
+        this(nome, uf);
+        this.id = id;
+    }
+    
+    public Cidade() {}
+    
     /**
      * @return the id
      */

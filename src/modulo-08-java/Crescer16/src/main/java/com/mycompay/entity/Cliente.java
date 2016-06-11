@@ -1,6 +1,5 @@
 package com.mycompay.entity;
 
-import static com.sun.xml.internal.ws.api.model.wsdl.WSDLBoundOperation.ANONYMOUS.optional;
 import java.io.Serializable;
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -51,6 +50,7 @@ public class Cliente implements Serializable {
     @Column(name = "SITUACAO")
     private char situacao;
 
+    public Cliente() {}
     /**
      * @return the id
      */
