@@ -4,6 +4,7 @@
     <provider>org.hibernate.ejb.HibernatePersistence</provider>
     <class>com.mycompay.entity.Cidade</class>
     <class>com.mycompay.entity.Cliente</class>
+    <class>com.mycompay.entity.Produto</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@localhost:1521:xe"/>
       <property name="javax.persistence.jdbc.user" value="CRESCER16"/>
