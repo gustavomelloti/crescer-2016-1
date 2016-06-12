@@ -67,114 +67,66 @@ public class Cliente implements Serializable {
         this.situacao = situacao;
     }
     
-    /**
-     * @return the id
-     */
     public long getId() {
         return id;
     }
 
-    /**
-     * @param id the id to set
-     */
     public void setId(long id) {
         this.id = id;
     }
 
-    /**
-     * @return the nome
-     */
     public String getNome() {
         return nome;
     }
 
-    /**
-     * @param nome the nome to set
-     */
     public void setNome(String nome) {
         this.nome = nome;
     }
 
-    /**
-     * @return the razaoSocial
-     */
     public String getRazaoSocial() {
         return razaoSocial;
     }
 
-    /**
-     * @param razaoSocial the razaoSocial to set
-     */
     public void setRazaoSocial(String razaoSocial) {
         this.razaoSocial = razaoSocial;
     }
 
-    /**
-     * @return the endereco
-     */
     public String getEndereco() {
         return endereco;
     }
 
-    /**
-     * @param endereco the endereco to set
-     */
     public void setEndereco(String endereco) {
         this.endereco = endereco;
     }
 
-    /**
-     * @return the bairro
-     */
     public String getBairro() {
         return bairro;
     }
 
-    /**
-     * @param bairro the bairro to set
-     */
     public void setBairro(String bairro) {
         this.bairro = bairro;
     }
 
-    /**
-     * @return the cidade
-     */
     public Cidade getCidade() {
         return cidade;
     }
 
-    /**
-     * @param cidade the cidade to set
-     */
     public void setCidade(Cidade cidade) {
         this.cidade = cidade;
     }
 
-    /**
-     * @return the cep
-     */
     public int getCep() {
         return cep;
     }
 
-    /**
-     * @param cep the cep to set
-     */
     public void setCep(int cep) {
         this.cep = cep;
     }
 
-    /**
-     * @return the situacao
-     */
     public char getSituacao() {
         return situacao;
     }
 
-    /**
-     * @param situacao the situacao to set
-     */
     public void setSituacao(char situacao) {
         this.situacao = situacao;
     }

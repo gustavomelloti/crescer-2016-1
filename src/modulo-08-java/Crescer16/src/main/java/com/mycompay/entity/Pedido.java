@@ -2,6 +2,7 @@ package com.mycompay.entity;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -52,22 +53,22 @@ public class Pedido implements Serializable {
     @OneToMany
     @JoinColumn(name = "IDPEDIDO")
     @Basic(optional = false)
-    private PedidoItem pedidoItem;
+    private List<PedidoItem> itens;
         
     public Pedido() {}
     
-    public Pedido(long id, Cliente cliente, Date dataPedido, Date dataEntrega, double valorPedido, char situacao, PedidoItem pedidoItem) {
+    public Pedido(long id, Cliente cliente, Date dataPedido, Date dataEntrega, double valorPedido, char situacao, List<PedidoItem> pedidoItem) {
         this(cliente, dataPedido, dataEntrega, valorPedido, situacao, pedidoItem);
         this.id = id;
     }
 
-    public Pedido(Cliente cliente, Date dataPedido, Date dataEntrega, double valorPedido, char situacao, PedidoItem pedidoItem) {
+    public Pedido(Cliente cliente, Date dataPedido, Date dataEntrega, double valorPedido, char situacao, List<PedidoItem> pedidoItem) {
         this.cliente = cliente;
         this.dataPedido = dataPedido;
         this.dataEntrega = dataEntrega;
         this.valorPedido = valorPedido;
         this.situacao = situacao;
-        this.pedidoItem = pedidoItem;
+        this.itens = pedidoItem;
     }
     
     public long getId() {
@@ -78,12 +79,12 @@ public class Pedido implements Serializable {
         this.id = id;
     }
 
-    public PedidoItem getPedidoItem() {
-        return pedidoItem;
+    public List<PedidoItem> getPedidoItem() {
+        return itens;
     }
 
-    public void setPedidoItem(PedidoItem pedidoItem) {
-        this.pedidoItem = pedidoItem;
+    public void setPedidoItem(List<PedidoItem> pedidoItem) {
+        this.itens = pedidoItem;
     }
 
     public Cliente getCliente() {

@@ -44,4 +44,8 @@ public class GenericDAO<T> implements IGenericDAO<T> {
     public List<T> listAll() {
         return em.createQuery(String.format("SELECT t FROM %s t", persistentClass.getSimpleName())).getResultList();
     }
+    
+    public T findById(long id) {
+        return em.find(persistentClass, id);
+    }
 }

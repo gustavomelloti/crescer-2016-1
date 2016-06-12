@@ -7,6 +7,8 @@
     <class>com.mycompay.entity.Produto</class>
     <class>com.mycompay.entity.PedidoItem</class>
     <class>com.mycompay.entity.Pedido</class>
+    <class>com.mycompay.entity.Material</class>
+    <class>com.mycompay.entity.ProdutoMaterial</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@localhost:1521:xe"/>
       <property name="javax.persistence.jdbc.user" value="CRESCER16"/>

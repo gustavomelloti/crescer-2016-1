@@ -59,86 +59,50 @@ public class Produto implements Serializable {
         this.id = id;
     }
     
-    /**
-     * @return the id
-     */
     public long getId() {
         return id;
     }
     
-    /**
-     * @param id the id to set
-     */
     public void setId(long id) {
         this.id = id;
     }
 
-    /**
-     * @return the nome
-     */
     public String getNome() {
         return nome;
     }
 
-    /**
-     * @param nome the nome to set
-     */
     public void setNome(String nome) {
         this.nome = nome;
     }
-
-    /**
-     * @return the data
-     */
+    
     public Date getData() {
         return data;
     }
 
-    /**
-     * @param data the data to set
-     */
     public void setData(Date data) {
         this.data = data;
     }
 
-    /**
-     * @return the precoCusto
-     */
     public double getPrecoCusto() {
         return precoCusto;
     }
 
-    /**
-     * @param precoCusto the precoCusto to set
-     */
     public void setPrecoCusto(double precoCusto) {
         this.precoCusto = precoCusto;
     }
 
-    /**
-     * @return the precoVenda
-     */
     public double getPrecoVenda() {
         return precoVenda;
     }
 
-    /**
-     * @param precoVenda the precoVenda to set
-     */
     public void setPrecoVenda(double precoVenda) {
         this.precoVenda = precoVenda;
     }
 
-    /**
-     * @return the situacao
-     */
     public char getSituacao() {
         return situacao;
     }
 
-    /**
-     * @param situacao the situacao to set
-     */
     public void setSituacao(char situacao) {
         this.situacao = situacao;
     }

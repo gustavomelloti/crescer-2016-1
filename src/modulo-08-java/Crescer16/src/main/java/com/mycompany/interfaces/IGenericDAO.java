@@ -11,4 +11,6 @@ public interface IGenericDAO<T> {
     void delete(T entity);
 
     List<T> listAll();
+    
+    T findById(long id);
 }

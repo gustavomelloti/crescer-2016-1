@@ -8,7 +8,7 @@ import javax.persistence.GeneratedValue;
 import static javax.persistence.GenerationType.SEQUENCE;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
+import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -30,6 +30,14 @@ public class PedidoItem implements Serializable {
     @Column(name = "PRECOUNITARIO")
     private double precoUnitario;
     
+    @Basic(optional = false)
+    @Column(name = "SITUACAO")
+    private char situacao;
+
+    @ManyToOne
+    @JoinColumn(name = "IDPRODUTO")
+    private Produto produto;
+    
     public PedidoItem(){}
     
     public PedidoItem(long id, double quantidade, double precoUnitario, char situacao, Produto produto) {
@@ -42,16 +50,7 @@ public class PedidoItem implements Serializable {
         this.situacao = situacao;
         this.produto = produto;
     }
-    
-    @Basic(optional = false)
-    @Column(name = "SITUACAO")
-    private char situacao;
-
-    @OneToOne
-    @JoinColumn(name = "IDPRODUTO")
-    @Basic(optional = false)
-    private Produto produto;
-
+   
     public long getId() {
         return id;
     }
@@ -84,11 +83,11 @@ public class PedidoItem implements Serializable {
         this.situacao = situacao;
     }
 
-    public Produto getPessoa() {
+    public Produto getProduto() {
         return produto;
     }
 
-    public void setPessoa(Produto pessoa) {
+    public void setProduto(Produto pessoa) {
         this.produto = pessoa;
     }
 }
