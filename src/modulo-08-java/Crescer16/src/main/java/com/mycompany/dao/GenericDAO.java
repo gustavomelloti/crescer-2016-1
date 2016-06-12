@@ -20,23 +20,23 @@ public class GenericDAO<T> implements IGenericDAO<T> {
     }
     
     @Override
-    public void insert(Object entity) {
+    public void insert(T entity) {
         transaction.begin();
         em.persist(entity);
         transaction.commit();
     }
 
     @Override
-    public void update(Object entity) {
+    public void update(T entity) {
         transaction.begin();
         em.merge(entity);
         transaction.commit();
     }
 
     @Override
-    public void delete(Object entity) {
+    public void delete(T entity) {
         transaction.begin();
-        em.remove(em.merge(entity));
+        em.remove(entity);
         transaction.commit();
     }
 

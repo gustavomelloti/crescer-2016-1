@@ -1,13 +1,14 @@
 package com.company.run;
 
-import com.mycompany.dao.*;
-import com.mycompay.entity.Material;
+import com.mycompany.services.*;
+import com.mycompay.entity.Pedido;
+import java.io.IOException;
 
 
 public class RunApp {
-    public static void main(String[] args) {
-        ProdutoMaterialDAO p  = new ProdutoMaterialDAO();
-        //CidadeDAO cidadeDAO = new CidadeDAO();
-        System.out.println(p.findById((long) 67625).getProduto().getNome());       
+    public static void main(String[] args) throws IOException {
+        PedidoService c = new PedidoService();
+        Pedido p = (c.findById((long) 162));
+        c.delete(p);
     }
 }
