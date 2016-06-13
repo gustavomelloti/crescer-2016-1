@@ -8,7 +8,7 @@ public interface IGenericDAO<T> {
 
     void update(T entity);
 
-    void delete(T entity);
+    void delete(long id);
 
     List<T> listAll();
     

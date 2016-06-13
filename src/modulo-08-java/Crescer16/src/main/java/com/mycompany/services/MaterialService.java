@@ -53,8 +53,8 @@ public class MaterialService implements IGenericEntity<Material> {
     }
 
     @Override
-    public void delete(Material material) {
-        mDAO.delete(material);
+    public void delete(long id) {
+        mDAO.delete(id);
     }
 
     @Override

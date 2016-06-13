@@ -8,7 +8,7 @@ public interface IGenericEntity<T>  {
 
     void update(T entity);
 
-    void delete(T entity);
+    void delete(long id);
     
     void exportarCSV();
 

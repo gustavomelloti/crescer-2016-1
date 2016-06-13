@@ -57,8 +57,8 @@ public class ClienteService implements IGenericEntity<Cliente>{
     }
 
     @Override
-    public void delete(Cliente cliente) {
-       cDAO.delete(cliente);
+    public void delete(long id) {
+       cDAO.delete(id);
     }
 
     @Override

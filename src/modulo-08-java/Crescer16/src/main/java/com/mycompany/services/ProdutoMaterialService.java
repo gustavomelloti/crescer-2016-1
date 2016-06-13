@@ -53,8 +53,8 @@ public class ProdutoMaterialService implements IGenericEntity<ProdutoMaterial> {
     }
 
     @Override
-    public void delete(ProdutoMaterial produtoMaterial) {
-        pmDAO.delete(produtoMaterial);
+    public void delete(long id) {
+        pmDAO.delete(id);
     }
 
     @Override

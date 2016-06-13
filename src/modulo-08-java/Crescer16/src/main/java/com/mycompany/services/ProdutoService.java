@@ -55,8 +55,8 @@ public class ProdutoService implements IGenericEntity<Produto> {
     }
 
     @Override
-    public void delete(Produto produto) {
-        pDAO.delete(produto);
+    public void delete(long id) {
+        pDAO.delete(id);
     }
 
     @Override

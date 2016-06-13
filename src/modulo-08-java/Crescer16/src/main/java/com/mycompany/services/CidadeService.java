@@ -30,8 +30,8 @@ public class CidadeService implements IGenericEntity<Cidade>{
     }
 
     @Override
-    public void delete(Cidade cidade) {
-        cDAO.delete(cidade);
+    public void delete(long id) {
+        cDAO.delete(id);
     }
 
     @Override
