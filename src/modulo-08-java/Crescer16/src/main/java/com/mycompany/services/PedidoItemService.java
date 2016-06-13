@@ -54,8 +54,8 @@ public class PedidoItemService implements IGenericEntity<PedidoItem> {
     }
 
     @Override
-    public void delete(PedidoItem pedidoItem) {
-        piDAO.delete(pedidoItem);
+    public void delete(long id) {
+        piDAO.delete(id);
     }
 
     @Override
