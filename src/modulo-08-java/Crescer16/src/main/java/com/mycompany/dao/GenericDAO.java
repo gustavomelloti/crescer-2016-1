@@ -9,9 +9,9 @@ import javax.persistence.EntityTransaction;
 
 public class GenericDAO<T> implements IGenericDAO<T> {
     @PersistenceContext
-    private final EntityManager em;
-    private final Class<T> persistentClass;
-    private final EntityTransaction transaction;
+    protected final EntityManager em;
+    protected final Class<T> persistentClass;
+    protected final EntityTransaction transaction;
     
     public GenericDAO(Class<T> typeParameterClass) {
         this.persistentClass = typeParameterClass;
@@ -34,17 +34,20 @@ public class GenericDAO<T> implements IGenericDAO<T> {
     }
 
     @Override
-    public void delete(T entity) {
+    public void delete(long id) {
         transaction.begin();
-        em.remove(entity);
+        em.remove(this.findById(id));
         transaction.commit();
     }
 
     @Override
     public List<T> listAll() {
-        return em.createQuery(String.format("SELECT t FROM %s t", persistentClass.getSimpleName())).getResultList();
+        return em.createQuery(
+            String.format("SELECT t FROM %s t", persistentClass.getSimpleName())
+        ).getResultList();
     }
     
+    @Override
     public T findById(long id) {
         return em.find(persistentClass, id);
     }
