@@ -38,11 +38,23 @@ public class PedidoItem implements Serializable {
     @JoinColumn(name = "IDPRODUTO")
     private Produto produto;
     
+    @ManyToOne
+    @JoinColumn(name = "IDPEDIDO")
+    private Pedido Pedido;
+    
     public PedidoItem(){}
     
     public PedidoItem(long id, double quantidade, double precoUnitario, char situacao, Produto produto) {
         this(quantidade, precoUnitario, situacao, produto);
         this.id = id;
+    }
+
+    public Pedido getPedido() {
+        return Pedido;
+    }
+
+    public void setPedido(Pedido Pedido) {
+        this.Pedido = Pedido;
     }
     public PedidoItem(double quantidade, double precoUnitario, char situacao, Produto produto) {
         this.quantidade = quantidade;
