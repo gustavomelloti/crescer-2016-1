@@ -7,12 +7,13 @@ import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import static javax.persistence.GenerationType.SEQUENCE;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -28,7 +29,7 @@ public class Pedido implements Serializable {
     @Column(name = "IDPEDIDO")
     private long id;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "IDCLIENTE")
     @Basic(optional = false)
     private Cliente cliente;
@@ -50,10 +51,9 @@ public class Pedido implements Serializable {
     @Basic(optional = false)
     @Column(name = "SITUACAO")
     private char situacao;
-    
-    @OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true)
+
+    @OneToMany(orphanRemoval = true)
     @JoinColumn(name = "IDPEDIDO")
-    @Basic(optional = false)
     private List<PedidoItem> itens;
         
     public Pedido() {}

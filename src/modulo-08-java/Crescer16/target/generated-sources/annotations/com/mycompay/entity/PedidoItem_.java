@@ -11,6 +11,7 @@ public abstract class PedidoItem_ {
 	public static volatile SingularAttribute<PedidoItem, Double> precoUnitario;
 	public static volatile SingularAttribute<PedidoItem, Character> situacao;
 	public static volatile SingularAttribute<PedidoItem, Produto> produto;
+	public static volatile SingularAttribute<PedidoItem, Pedido> Pedido;
 	public static volatile SingularAttribute<PedidoItem, Long> id;
 	public static volatile SingularAttribute<PedidoItem, Double> quantidade;
 
