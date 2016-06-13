@@ -4,10 +4,8 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 import javax.persistence.Basic;
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import static javax.persistence.GenerationType.SEQUENCE;
 import javax.persistence.Id;
@@ -52,7 +50,7 @@ public class Pedido implements Serializable {
     @Column(name = "SITUACAO")
     private char situacao;
 
-    @OneToMany(orphanRemoval = true)
+    @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "IDPEDIDO")
     private List<PedidoItem> itens;
         
