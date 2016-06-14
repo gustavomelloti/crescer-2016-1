@@ -1,3 +1,5 @@
+<%@page import="java.util.List"%>
+<%@page import="br.com.crescer.aula5.Pessoa"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -8,23 +10,43 @@
     </head>
     <body>
         <div class="container">
-            <form role="form" action="pessoa">
+            <form role="form" action="pessoa" method="POST">
                 <div class="form-group">
                     <label for="nome">Nome:</label>
-                    <input type="text"  class="form-control" id="nome" name="nome">
+                    <input type="text"  class="form-control" id="nome" name="nome" required="">
                 </div>
                 <div class="form-group">
                     <label for="idade">Idade:</label>
-                    <input type="text"  class="form-control" id="idade" name="idade">
+                    <input type="text"  class="form-control" id="idade" name="idade" required="">
                 </div>
                 <div class="form-group">
                     <label for="sexo">Sexo:</label>
-                    <input type="radio" name="sexo" value="Masculino"> Masculino
-                    <input type="radio" name="sexo" value="Feminino"> Feminino
-                    <input type="radio" name="sexo" value="Outro"> Outro
+                    <input type="radio" name="sexo" value="MASCULINO" required=""> Masculino
+                    <input type="radio" name="sexo" value="FEMININO" required=""> Feminino
+                    <input type="radio" name="sexo" value="OUTRO" required=""> Outro
                 </div>
               <button type="submit" class="btn btn-default">Submit</button>
             </form>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Idade</th>
+                        <th>Sexo</th>
+                    </tr>
+               </thead>
+               <tbody>
+                    <%
+                        for (Pessoa exercise : (List<Pessoa>)request.getAttribute("pessoas")) { %>
+                            <tr>
+                                <td> <%= exercise.getNome()%> </td>
+                                <td> <%= exercise.getIdade()%> </td>
+                                <td> <%= exercise.getSexo()%> </td>
+                            </tr> <%
+                        }
+                    %>
+               </tbody>
+            </table>
         </div>
     </body>
 </html>
