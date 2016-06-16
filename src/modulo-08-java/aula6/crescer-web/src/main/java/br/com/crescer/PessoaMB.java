@@ -11,6 +11,15 @@ import javax.faces.bean.ViewScoped;
 public class PessoaMB implements Serializable {
 
     private Pessoa pessoa;
+    private String msg;
+
+    public String getMsg() {
+        return msg;
+    }
+
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
 
     public Pessoa getPessoa() {
         return pessoa;
@@ -26,7 +35,9 @@ public class PessoaMB implements Serializable {
     }
 
     public void process() {
+        this.setMsg("Pessoa cadastrada com sucesso!");
         this.clearForm();
+        //TODO INSERIR NO BANCO
     }
     
     public void clearForm() {

@@ -9,10 +9,10 @@
             <ui:define name="content">
                 <h:form id="form-pessoa">
                     <div class="container">
+                        <h:outputText value="#{pessoa.msg}" rendered="#{not empty pessoa.msg}" styleClass="alert alert-success"/>
                         <h1>
                             <h:outputText value="Cadastro de Pessoa"/>
                         </h1>
-
                         <div class="row">
                             <div class="col-md-12">
                                 <h:outputLabel value="Nome"/>
