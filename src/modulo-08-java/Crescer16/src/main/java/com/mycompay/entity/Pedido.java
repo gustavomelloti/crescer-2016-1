@@ -50,7 +50,7 @@ public class Pedido implements Serializable {
     @Column(name = "SITUACAO")
     private char situacao;
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany
     @JoinColumn(name = "IDPEDIDO")
     private List<PedidoItem> itens;
         
