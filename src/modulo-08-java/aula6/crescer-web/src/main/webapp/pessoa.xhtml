@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <body>
+        <ui:composition template="template.xhtml">
+            <ui:define name="content">
+                <h:form id="form-pessoa">
+                    <div class="container">
+                        <h1>
+                            <h:outputText value="Cadastro de Pessoa"/>
+                        </h1>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h:outputLabel value="Nome"/>
+                                <h:inputText styleClass="form-control" id="nome" value="#{pessoa.pessoa.nome}"/>
+                            </div>
+                            <div class="col-md-12">
+                                <h:outputLabel value="Idade"/>
+                                <h:inputText styleClass="form-control" id="idade" value="#{pessoa.pessoa.idade}"/>
+                            </div>
+                        </div>
+                        <div class="row" id="opcoes-form">
+                            <div class="col-md-12">
+                                <h:commandButton value="enviar" styleClass="btn btn-success" action="#{pessoa.process()}">
+                                    <f:ajax execute="@form" render="@form"/>
+                                </h:commandButton>
+                            </div>
+                        </div>
+                    </div>
+                </h:form>
+            </ui:define>
+        </ui:composition>
+    </body>
+</html>
