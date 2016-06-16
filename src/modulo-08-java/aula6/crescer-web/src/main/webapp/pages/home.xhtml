@@ -3,11 +3,18 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:h="http://java.sun.com/jsf/html">
+
     <body>
-        <ui:composition template="template.xhtml">
-            <ui:define name="content">
-                <h:link value="Cadastrar Pessoa" outcome="pessoa" />
+
+        <ui:composition template="./../template/template.xhtml">
+
+            <ui:define name="page.content">
+                <h1 class="page-header">
+                    <h:outputText value="#{bundle['page.template.title']}"/>
+                </h1>
             </ui:define>
+
         </ui:composition>
+
     </body>
 </html>
