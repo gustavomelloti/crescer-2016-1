@@ -23,8 +23,8 @@ import javax.persistence.Table;
 public class Pessoa extends SerializableID<Long> {
 
     @Id
-    @GeneratedValue(strategy = SEQUENCE, generator = "SEQ_PESSOA")
-    @SequenceGenerator(name = "SEQ_PESSOA", sequenceName = "SEQ_PESSOA", allocationSize = 1)
+    @GeneratedValue(strategy = SEQUENCE, generator = "SQPESSOA")
+    @SequenceGenerator(name = "SQPESSOA", sequenceName = "SQPESSOA", allocationSize = 1)
     @Basic(optional = false)
     @Column(name = "ID_PESSOA")
     private Long id;
