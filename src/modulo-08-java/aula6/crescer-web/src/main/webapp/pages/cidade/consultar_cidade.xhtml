@@ -38,10 +38,9 @@
                         <h:commandLink action="#{cidadeController.remove}" value="Excluir">
                             <f:setPropertyActionListener target="#{cidadeController.entity}" value="#{c}"/>
                         </h:commandLink>
-           
                         
-                        <h:commandLink action="nova" value="#{bundle['page.search.edit']}">
-                            <f:setPropertyActionListener target="#{cidadeController.entity}" value="#{c}"/>
+                        <h:commandLink value="#{bundle['page.search.edit']}" action="editar">
+                            <f:setPropertyActionListener target="#{cidadeController.entity}" value="#{c}" />
                         </h:commandLink>
                     </h:column>
                     <h:column>

@@ -8,11 +8,12 @@ import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.RequestScoped;
 import javax.faces.bean.ViewScoped;
 
 
 @ManagedBean
-@ViewScoped
+@RequestScoped
 public class CidadeController extends AbstractController<Cidade, CidadeService> {
     
     @EJB
@@ -27,10 +28,6 @@ public class CidadeController extends AbstractController<Cidade, CidadeService> 
     public void init() {
         this.setEntity(new Cidade());
         this.listAll();
-    }
-   
-    public String editar() {
-        return "pages/cidade/manter_cidade.xhtml";
     }
 
     public String save() {
