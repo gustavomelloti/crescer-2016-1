@@ -20,6 +20,10 @@ public class CidadeService {
     }
     
     public Iterable<Cidade> findAll() {
-        return cidadeRepository.findAll();
+        return cidadeRepository.findAllByOrderByIdAsc();
+    }
+    
+    public Cidade findById(long id) {
+        return cidadeRepository.findOne(id);
     }
 }

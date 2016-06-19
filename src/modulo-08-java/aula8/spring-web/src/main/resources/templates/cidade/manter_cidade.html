@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+        <title th:text="#{title.home}"></title>
+    </head>
+    <body>
+        <div class="container">
+
+            <h1 th:text="#{cidade.form}" class="page-header"></h1>
+
+            <form action="#" th:action="@{/cidade/salvar}" th:object="${cidade}" method="post">
+                <input style="display:none;" class="form-control" type="text" th:field="*{id}" value="cidade.id" />
+                <div class="form-group">
+                    <label for="nome" th:text="#{cidade.nome}"></label>
+                    <input class="form-control" type="text" th:field="*{nome}" />
+                </div>
+                
+                <div class="form-group">
+                    <label for="uf" th:text="#{cidade.uf}"></label>
+                    <input class="form-control" type="text" th:field="*{uf}" />
+                </div>
+                
+                <div class="form-group">
+                    <input class="btn btn-success" type="submit" th:value="#{form.submit}" /> 
+                    <input class="btn btn-primary" type="reset" th:value="#{form.reset}" />
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

@@ -1,7 +1,11 @@
 br\com\crescer\entity\Pessoa.class
-br\com\crescer\service\PessoaService.class
+br\com\crescer\entity\Cidade.class
+br\com\crescer\service\CidadeService.class
 br\com\crescer\AppRun.class
+br\com\crescer\controller\Example.class
+br\com\crescer\controller\CidadeController.class
+br\com\crescer\repository\CidadeRepository.class
+br\com\crescer\service\PessoaService.class
 br\com\crescer\controller\PessoaController.class
 br\com\crescer\repository\PessoaRepository.class
-br\com\crescer\controller\Example.class
 br\com\crescer\controller\PessoaRest.class
