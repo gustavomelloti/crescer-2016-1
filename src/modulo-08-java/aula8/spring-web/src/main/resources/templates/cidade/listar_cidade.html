@@ -1,4 +1,3 @@
-
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
     <head>
@@ -11,7 +10,6 @@
     </head>
     <body>
         <div class="container">
-
             <h1 th:text="#{cidade.list}" class="page-header"></h1>
             
             <table class="table table-hover">
@@ -25,38 +23,15 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr th:each="p : ${cidades}">
-                        <td th:text="${p.id}">ID</td>
-                        <td th:text="${p.nome}">NOME</td>
-                        <td th:text="${p.uf}">UF</td>
-                        <td>
-                            <a th:href="@{'/cidade/editar?id=' + ${p.id}}" th:text="#{table.edit}"></a>
-                        </td>
-                        <td>
-                            <a th:attr="data-id=${p.id}" th:text="#{table.delete}"></a>
-                        </td> 
-                    </tr>
+                    <tr></tr>
                 </tbody>
             </table>
         </div>
     </body>
+    <script type="text/javascript" th:src="@{/js/cidade/model/cidadeModel.js}" />
+    <script type="text/javascript" th:src="@{/js/cidade/view/cidadeView.js}" />
+    <script>
+        new cidadeView().init();
+    </script>
 </html>
 
-<script>
-    $("tbody tr td:last-child a").click(function(){
-        var tr = $(this).parents('tr:first'),
-            id = $(this).attr('data-id');
-            
-        $.ajax({
-            url: 'deletar',
-            data: {id:id},
-            type: "POST",
-            success: function() {
-                tr.remove();
-            },
-            error: function(){
-                alert("Erro ao deletar");
-            }
-        });
-    });
-</script>

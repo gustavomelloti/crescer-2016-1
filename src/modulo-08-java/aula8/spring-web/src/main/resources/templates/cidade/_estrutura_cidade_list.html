@@ -1,0 +1,11 @@
+<tr th:each="c : ${cidades}">
+    <td th:text="${c.id}"></td>
+    <td th:text="${c.nome}"></td>
+    <td th:text="${c.uf}"></td>
+    <td>
+        <a th:href="@{'/cidade/editar?id=' + ${c.id}}" th:text="#{table.edit}"></a>
+    </td>
+    <td>
+        <a th:attr="data-id=${c.id}" th:text="#{table.delete}"></a>
+     </td> 
+</tr>
